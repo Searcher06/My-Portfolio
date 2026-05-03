@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Findora project mockup">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#052e2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="950" cy="120" r="140" fill="#22d3ee" opacity="0.22"/>
+  <circle cx="220" cy="540" r="170" fill="#34d399" opacity="0.20"/>
+  <rect x="110" y="120" width="980" height="460" rx="26" fill="#0b1220" stroke="#1f2937"/>
+  <text x="160" y="200" fill="#a7f3d0" font-size="54" font-family="Arial, sans-serif" font-weight="700">Findora</text>
+  <text x="160" y="250" fill="#cbd5e1" font-size="30" font-family="Arial, sans-serif">Trust-based lost and found platform</text>
+  <rect x="160" y="300" width="300" height="42" rx="12" fill="#064e3b"/>
+  <text x="180" y="328" fill="#6ee7b7" font-size="22" font-family="Arial, sans-serif">Claim Verification</text>
+  <rect x="480" y="300" width="280" height="42" rx="12" fill="#0c4a6e"/>
+  <text x="500" y="328" fill="#67e8f9" font-size="22" font-family="Arial, sans-serif">Dispute Control</text>
+  <rect x="780" y="300" width="250" height="42" rx="12" fill="#3f3f46"/>
+  <text x="800" y="328" fill="#e2e8f0" font-size="22" font-family="Arial, sans-serif">Status Timeline</text>
+</svg>

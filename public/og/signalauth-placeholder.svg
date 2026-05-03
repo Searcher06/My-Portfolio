@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="SignalAuth project mockup">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1326"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="980" cy="180" r="160" fill="#60a5fa" opacity="0.2"/>
+  <circle cx="240" cy="560" r="150" fill="#a78bfa" opacity="0.15"/>
+  <rect x="120" y="120" width="960" height="460" rx="26" fill="#111827" stroke="#334155"/>
+  <text x="170" y="210" fill="#c4b5fd" font-size="54" font-family="Arial, sans-serif" font-weight="700">SignalAuth</text>
+  <text x="170" y="260" fill="#cbd5e1" font-size="30" font-family="Arial, sans-serif">Adaptive authentication and risk engine</text>
+  <rect x="170" y="320" width="860" height="140" rx="18" fill="#0f172a" stroke="#475569"/>
+  <text x="210" y="380" fill="#93c5fd" font-size="28" font-family="Arial, sans-serif">Device Trust • Session Controls • Risk Scoring</text>
+</svg>
