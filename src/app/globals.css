@@ -8,16 +8,16 @@
     --fg: #f0f2f5;
     --fg-muted: #8b95a8;
     --fg-dim: #5c6575;
-    --accent: #00d4aa;
-    --accent-glow: rgba(0, 212, 170, 0.25);
-    --accent-dim: rgba(0, 212, 170, 0.1);
+    --accent: #6366F1;
+    --accent-glow: rgba(99, 102, 241, 0.25);
+    --accent-dim: rgba(99, 102, 241, 0.1);
     --card: rgba(17, 20, 26, 0.85);
     --card-border: rgba(255, 255, 255, 0.08);
     --border: rgba(255, 255, 255, 0.1);
     --border-subtle: rgba(255, 255, 255, 0.05);
     --white: #ffffff;
-    --brand: #00d4aa;
-    --brand-dim: #00a080;
+    --brand: #6366F1;
+    --brand-dim: #4F46E5;
   }
 
   html {
@@ -70,9 +70,9 @@ body {
   font-family: var(--font-sans);
   background: var(--bg);
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 212, 170, 0.12), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(0, 150, 200, 0.08), transparent),
-    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(0, 200, 150, 0.06), transparent),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(59, 130, 246, 0.08), transparent),
+    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(59, 130, 246, 0.06), transparent),
     linear-gradient(180deg, #0a0c10 0%, #0f1218 50%, #0a0c10 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -158,7 +158,7 @@ body {
 
 /* Button base */
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent) 0%, #00b894 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #818CF8 100%);
   color: var(--bg);
   font-weight: 600;
   transition: all 0.3s ease;

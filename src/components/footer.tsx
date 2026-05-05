@@ -6,13 +6,13 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-[rgba(255,255,255,0.05)] bg-[#0a0c10]">
-      <div className="absolute inset-0 bg-gradient-to-t from-[#00d4aa]/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#6366F1]/5 to-transparent" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-8">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-[#111418] border border-[rgba(255,255,255,0.08)] flex items-center justify-center">
-              <svg className="w-4 h-4 text-[#00d4aa]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="w-4 h-4 text-[#6366F1]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
               </svg>
             </div>
@@ -31,7 +31,7 @@ export function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-[#111418] border border-[rgba(255,255,255,0.05)] flex items-center justify-center text-[#8b95a8] hover:text-[#00d4aa] hover:border-[rgba(0,212,170,0.2)] hover:bg-[rgba(0,212,170,0.05)] transition-all"
+                className="w-9 h-9 rounded-lg bg-[#111418] border border-[rgba(255,255,255,0.05)] flex items-center justify-center text-[#8b95a8] hover:text-[#6366F1] hover:border-[rgba(99,102,241,0.2)] hover:bg-[rgba(99,102,241,0.05)] transition-all"
                 aria-label={link.label}
               >
                 {link.label === "GitHub" && (

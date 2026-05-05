@@ -38,16 +38,16 @@ export function Navbar() {
             aria-label="Home - Alex Morgan Portfolio"
           >
             <div className="relative w-10 h-10 sm:w-12 sm:h-12">
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#00d4aa] to-[#00b894] opacity-20 blur-sm group-hover:opacity-30 transition-opacity" />
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#6366F1] to-[#818CF8] opacity-20 blur-sm group-hover:opacity-30 transition-opacity" />
               <div className="relative w-full h-full rounded-xl bg-[#111418] border border-[rgba(255,255,255,0.1)] flex items-center justify-center">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#00d4aa]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#6366F1]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                 </svg>
               </div>
             </div>
             <div className="flex flex-col">
               <span className="font-display font-bold text-base sm:text-lg text-[#f0f2f5] tracking-tight">Alex Morgan</span>
-              <span className="text-[10px] sm:text-xs text-[#00d4aa] font-semibold tracking-[0.15em] uppercase">Senior Full-Stack Engineer</span>
+              <span className="text-[10px] sm:text-xs text-[#6366F1] font-semibold tracking-[0.15em] uppercase">Senior Full-Stack Engineer</span>
             </div>
           </Link>
 
@@ -61,14 +61,14 @@ export function Navbar() {
                     href={item.href}
                     className={`relative px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
                       isActive
-                        ? "text-[#00d4aa] bg-[rgba(0,212,170,0.08)]"
+                        ? "text-[#6366F1] bg-[rgba(99,102,241,0.08)]"
                         : "text-[#8b95a8] hover:text-[#f0f2f5] hover:bg-[rgba(255,255,255,0.03)]"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
                     <span className="relative z-10">{item.label}</span>
                     {isActive && (
-                      <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#00d4aa]/20 to-[#00b894]/20" />
+                      <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#6366F1]/20 to-[#818CF8]/20" />
                     )}
                   </Link>
                 </li>
@@ -93,7 +93,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden relative w-10 h-10 rounded-xl bg-[#111418] border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#f0f2f5] hover:border-[#00d4aa] transition-colors"
+            className="md:hidden relative w-10 h-10 rounded-xl bg-[#111418] border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#f0f2f5] hover:border-[#6366F1] transition-colors"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label="Toggle navigation menu"
@@ -123,7 +123,7 @@ export function Navbar() {
                   href={item.href}
                   className={`block px-4 py-3 rounded-xl text-base font-medium transition-all ${
                     isActive
-                      ? "bg-[rgba(0,212,170,0.1)] text-[#00d4aa]"
+                      ? "bg-[rgba(99,102,241,0.1)] text-[#6366F1]"
                       : "text-[#8b95a8] hover:bg-[rgba(255,255,255,0.03)] hover:text-[#f0f2f5]"
                   }`}
                   aria-current={isActive ? "page" : undefined}

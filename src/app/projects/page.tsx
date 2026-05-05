@@ -7,7 +7,7 @@ export default function ProjectsPage() {
       <p className="mt-3 max-w-2xl text-slate-300">
         Case studies are being expanded. For now, the homepage highlights Findora and selected systems work.
       </p>
-      <Link href="/" className="mt-6 inline-flex text-sm font-semibold text-[#8ff0da]">
+      <Link href="/" className="mt-6 inline-flex text-sm font-semibold text-[#C7D2FE]">
         Back to home
       </Link>
     </main>
