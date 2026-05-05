@@ -491,7 +491,12 @@ export default function HomePage() {
         whileInView="show"
         viewport={{ once: true, amount: 0.18 }}
       >
-        <h3 className="text-2xl font-bold text-white sm:text-3xl">Other Projects</h3>
+        <div className="flex items-end justify-between gap-3">
+          <h3 className="text-2xl font-bold text-white sm:text-3xl">Other Projects</h3>
+          <Link href="/projects" className="text-sm font-semibold text-[#A5B4FC] hover:text-[#C7D2FE]">
+            View All Projects
+          </Link>
+        </div>
         <motion.div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
           {otherProjects.map((project) => (
             <motion.article
