@@ -31,9 +31,9 @@ const credibilityPoints = [
 ];
 
 const quickStats = [
-  { label: "Projects Built", value: "14", trend: "+4 this year" },
-  { label: "Business Workflows Improved", value: "31", trend: "Across different product types" },
-  { label: "Performance Improvement", value: "38%", trend: "Faster app experience for users" },
+  { label: "Projects Built", value: "7", trend: "+3 this year" },
+  { label: "Business Workflows Improved", value: "3", trend: "Across different product types" },
+  { label: "Performance Improvement", value: "35%", trend: "Faster app experience for users" },
   { label: "Current Focus", value: "Findora", trend: "A trust-first product for real communities" },
 ];
 
@@ -217,14 +217,19 @@ export default function HomePage() {
       <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
         <nav className="mx-auto flex h-18 w-full max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-transparent px-4 py-3 backdrop-blur-xl shadow-[0_24px_55px_-25px_rgba(99,102,241,0.45)] sm:h-20 sm:px-6">
           <a href="#home" className="inline-flex items-center gap-3 text-sm font-semibold text-white">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#6366F1] to-[#818CF8] text-base text-[#061117]">A</span>
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#6366F1] to-[#818CF8] text-base text-[#061117]">
+              A
+            </span>
             <span className="text-base">Ahmad Ibrahim</span>
           </a>
 
           <ul className="hidden items-center gap-2 md:flex">
             {navItems.map((item) => (
               <li key={item.label}>
-                <a href={item.href} className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm text-slate-300 transition hover:bg-white/10 hover:text-white">
+                <a
+                  href={item.href}
+                  className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm text-slate-300 transition hover:bg-white/10 hover:text-white"
+                >
                   <span className="material-symbols-outlined text-[18px]">{item.icon}</span>
                   {item.label}
                 </a>
@@ -270,37 +275,37 @@ export default function HomePage() {
               animate={{ opacity: 1, x: 0, transition: { type: "spring", stiffness: 240, damping: 24 } }}
               exit={{ opacity: 0, x: 18 }}
             >
-            <div className="w-14 rounded-2xl border border-white/15 bg-[#070d15]/95 p-2 backdrop-blur-xl">
-              <div className="space-y-2">
-                {navItems.map((item) => (
-                  <a
-                    key={`mini-${item.label}`}
-                    href={item.href}
-                    onClick={() => setMobileNavOpen(false)}
-                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#A5B4FC]"
-                  >
-                    <span className="material-symbols-outlined text-[18px]">{item.icon}</span>
-                  </a>
-                ))}
+              <div className="w-14 rounded-2xl border border-white/15 bg-[#070d15]/95 p-2 backdrop-blur-xl">
+                <div className="space-y-2">
+                  {navItems.map((item) => (
+                    <a
+                      key={`mini-${item.label}`}
+                      href={item.href}
+                      onClick={() => setMobileNavOpen(false)}
+                      className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#A5B4FC]"
+                    >
+                      <span className="material-symbols-outlined text-[18px]">{item.icon}</span>
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <div className="w-56 rounded-2xl border border-white/15 bg-[#0b101a]/95 p-3 backdrop-blur-xl shadow-[0_25px_55px_-30px_rgba(99,102,241,0.6)]">
-              <p className="mb-2 px-2 text-xs uppercase tracking-[0.15em] text-slate-400">Navigation</p>
-              <div className="space-y-1">
-                {navItems.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => setMobileNavOpen(false)}
-                    className="flex items-center gap-2 rounded-lg px-2 py-2 text-sm text-slate-200 transition hover:bg-white/10"
-                  >
-                    <span className="material-symbols-outlined text-[18px] text-[#A5B4FC]">{item.icon}</span>
-                    {item.label}
-                  </a>
-                ))}
+              <div className="w-56 rounded-2xl border border-white/15 bg-[#0b101a]/95 p-3 backdrop-blur-xl shadow-[0_25px_55px_-30px_rgba(99,102,241,0.6)]">
+                <p className="mb-2 px-2 text-xs uppercase tracking-[0.15em] text-slate-400">Navigation</p>
+                <div className="space-y-1">
+                  {navItems.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setMobileNavOpen(false)}
+                      className="flex items-center gap-2 rounded-lg px-2 py-2 text-sm text-slate-200 transition hover:bg-white/10"
+                    >
+                      <span className="material-symbols-outlined text-[18px] text-[#A5B4FC]">{item.icon}</span>
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
             </motion.aside>
           </>
         )}
@@ -349,9 +354,12 @@ export default function HomePage() {
           </div>
           <motion.div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap" variants={fadeUp}>
             <motion.div whileHover={reduceMotion ? undefined : { y: -2 }}>
-              <Link href="/projects" className="btn-primary inline-flex w-full items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold sm:w-auto sm:text-base">
-              View Projects
-            </Link>
+              <Link
+                href="/projects"
+                className="btn-primary inline-flex w-full items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold sm:w-auto sm:text-base"
+              >
+                View Projects
+              </Link>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -362,14 +370,18 @@ export default function HomePage() {
             <div className="mb-6 flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-[#6366F1] to-[#818CF8] p-[1px]">
-                  <div className="flex h-full w-full items-center justify-center rounded-[11px] bg-[#0f141c] text-sm font-bold text-[#C7D2FE]">AF</div>
+                  <div className="flex h-full w-full items-center justify-center rounded-[11px] bg-[#0f141c] text-sm font-bold text-[#C7D2FE]">
+                    AF
+                  </div>
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-white">Ahmad Ibrahim</p>
                   <p className="text-xs text-slate-400">Backend-Focused Full-Stack Engineer</p>
                 </div>
               </div>
-              <span className="rounded-full border border-indigo-400/40 bg-indigo-400/15 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-indigo-100">Active</span>
+              <span className="rounded-full border border-indigo-400/40 bg-indigo-400/15 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-indigo-100">
+                Active
+              </span>
             </div>
 
             <div className="space-y-3 rounded-2xl border border-white/15 bg-black/35 p-4 font-mono text-xs sm:text-sm">
@@ -377,13 +389,30 @@ export default function HomePage() {
                 <p className="text-slate-400">profile.ts</p>
                 <span className="rounded border border-[#A5B4FC]/30 bg-[#A5B4FC]/10 px-1.5 py-0.5 text-[10px] text-[#C7D2FE]">v2026</span>
               </div>
-              <p><span className="text-[#A5B4FC]">name</span>: <span className="text-slate-200">&quot;Ahmad Ibrahim&quot;</span></p>
-              <p><span className="text-[#A5B4FC]">role</span>: <span className="text-slate-200">&quot;Backend-Focused Full-Stack Engineer&quot;</span></p>
-              <p><span className="text-[#A5B4FC]">focus</span>: <span className="text-slate-200">&quot;Trust systems, auth, APIs&quot;</span></p>
-              <p><span className="text-[#A5B4FC]">core</span>: <span className="text-slate-200">[&quot;Node.js&quot;, &quot;PostgreSQL&quot;, &quot;React&quot;]</span></p>
-              <p><span className="text-[#A5B4FC]">currently</span>: <span className="text-slate-200">&quot;Building Findora&quot;</span></p>
-              <p><span className="text-[#A5B4FC]">style</span>: <span className="text-slate-200">&quot;Fast execution, high ownership&quot;</span></p>
-              <p><span className="text-[#A5B4FC]">status</span>: <span className="text-indigo-400">&quot;open_for_collaboration&quot;</span></p>
+              <p>
+                <span className="text-[#A5B4FC]">name</span>: <span className="text-slate-200">&quot;Ahmad Ibrahim&quot;</span>
+              </p>
+              <p>
+                <span className="text-[#A5B4FC]">role</span>:{" "}
+                <span className="text-slate-200">&quot;Backend-Focused Full-Stack Engineer&quot;</span>
+              </p>
+              <p>
+                <span className="text-[#A5B4FC]">focus</span>: <span className="text-slate-200">&quot;Trust systems, auth, APIs&quot;</span>
+              </p>
+              <p>
+                <span className="text-[#A5B4FC]">core</span>:{" "}
+                <span className="text-slate-200">[&quot;Node.js&quot;, &quot;PostgreSQL&quot;, &quot;React&quot;]</span>
+              </p>
+              <p>
+                <span className="text-[#A5B4FC]">currently</span>: <span className="text-slate-200">&quot;Building Findora&quot;</span>
+              </p>
+              <p>
+                <span className="text-[#A5B4FC]">style</span>:{" "}
+                <span className="text-slate-200">&quot;Fast execution, high ownership&quot;</span>
+              </p>
+              <p>
+                <span className="text-[#A5B4FC]">status</span>: <span className="text-indigo-400">&quot;open_for_collaboration&quot;</span>
+              </p>
             </div>
           </div>
         </motion.aside>
@@ -398,7 +427,12 @@ export default function HomePage() {
       >
         <div className="mx-auto grid w-full max-w-7xl gap-2 px-4 py-5 sm:px-6 md:grid-cols-3 lg:px-8">
           {credibilityPoints.map((point) => (
-            <p key={point} className="rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-sm font-medium text-slate-200 sm:text-base">{point}</p>
+            <p
+              key={point}
+              className="rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-sm font-medium text-slate-200 sm:text-base"
+            >
+              {point}
+            </p>
           ))}
         </div>
       </motion.section>
@@ -411,7 +445,13 @@ export default function HomePage() {
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <motion.div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+        <motion.div
+          className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4"
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+        >
           {quickStats.map((stat) => (
             <motion.article
               key={stat.label}
@@ -438,20 +478,39 @@ export default function HomePage() {
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#161f2d] via-[#101620] to-[#0b0f16] p-6 sm:p-8 lg:p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C7D2FE]">Featured Project</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">Findora</h2>
-          <p className="mt-2 text-lg text-slate-300">A trust-based lost and found system for real communities.</p>
+          <p className="mt-2 text-lg text-slate-300">Built for the moment between losing something and getting it back</p>
           <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_0.9fr]">
             <div className="space-y-5 text-slate-300">
               <div className="overflow-hidden rounded-2xl border border-white/10">
-                <Image src="/og/findora-placeholder.svg" alt="Findora dashboard preview" width={1200} height={700} className="h-auto w-full" />
+                <Image
+                  src="/og/findora-placeholder.svg"
+                  alt="Findora dashboard preview"
+                  width={1200}
+                  height={700}
+                  className="h-auto w-full"
+                />
               </div>
-              <p><span className="font-semibold text-white">Problem:</span> People lose valuables every day, but recovery workflows are fragmented, unverified, and easy to abuse. Most existing systems fail when trust is lowest.</p>
-              <p><span className="font-semibold text-white">Why it matters:</span> Failed recovery does not just lose items; it erodes confidence in communities and organizations.</p>
-              <p><span className="font-semibold text-white">Solution:</span> I designed Findora as a trust workflow, not just a listing board, with structured claim validation, moderation controls, and status transparency for every report.</p>
+              <p>
+                <span className="font-semibold text-white">Problem:</span> In my department, lost items were reported the only way everyone
+                knew a WhatsApp group. Posts got buried within hours, claims were unverifiable, and items rarely made it back to their
+                owners.
+              </p>
+              <p>
+                <span className="font-semibold text-white">Why it matters:</span> A WhatsApp message is not a recovery system. Without
+                structure, verification, or accountability, the loudest message wins not the rightful owner.
+              </p>
+              <p>
+                <span className="font-semibold text-white">Solution:</span> I built Findora specifically for this environment a
+                department-scale lost and found platform with structured item reports, claim validation workflows, and moderation controls,
+                so recovery is a process, not a guess.
+              </p>
             </div>
             <div className="rounded-2xl border border-[#A5B4FC]/25 bg-gradient-to-b from-[#0e1520] to-[#0b1118] p-5 backdrop-blur-sm shadow-[0_18px_42px_-28px_rgba(99,102,241,0.75)]">
               <div className="mb-3 flex items-center justify-between">
                 <p className="text-sm font-semibold text-white">Key Features</p>
-                <span className="rounded-full border border-[#A5B4FC]/35 bg-[#A5B4FC]/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.16em] text-[#C7D2FE]">Core</span>
+                <span className="rounded-full border border-[#A5B4FC]/35 bg-[#A5B4FC]/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.16em] text-[#C7D2FE]">
+                  Core
+                </span>
               </div>
               <ul className="mt-4 space-y-3 text-sm text-slate-300 sm:text-base">
                 {findoraFeatures.map((feature) => (
@@ -476,8 +535,18 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <Link href="/projects" className="btn-primary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold">View Case Study</Link>
-                <Link href="/projects" className="btn-secondary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold">Live Demo</Link>
+                <Link
+                  href="/projects"
+                  className="btn-primary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold"
+                >
+                  View Case Study
+                </Link>
+                <Link
+                  href="/projects"
+                  className="btn-secondary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold"
+                >
+                  Live Demo
+                </Link>
               </div>
             </div>
           </div>
@@ -497,7 +566,13 @@ export default function HomePage() {
             View All Projects
           </Link>
         </div>
-        <motion.div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+        <motion.div
+          className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3"
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+        >
           {otherProjects.map((project) => (
             <motion.article
               key={project.name}
@@ -507,23 +582,38 @@ export default function HomePage() {
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#11151f]/90 p-4 hover:border-[#6366F1]/40 hover:shadow-[0_20px_45px_-25px_rgba(99,102,241,0.55)] sm:p-5"
             >
               <div className="overflow-hidden rounded-xl border border-white/10">
-                <Image src={project.image} alt={`${project.name} preview`} width={1200} height={700} className="h-40 w-full object-cover transition duration-500 group-hover:scale-[1.04]" />
+                <Image
+                  src={project.image}
+                  alt={`${project.name} preview`}
+                  width={1200}
+                  height={700}
+                  className="h-40 w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                />
               </div>
               <h4 className="mt-4 text-lg font-semibold text-white">{project.name}</h4>
-              <p className="mt-3 text-sm text-slate-300"><span className="font-medium text-slate-100">Problem:</span> {project.problem}</p>
-              <p className="mt-2 text-sm text-slate-300"><span className="font-medium text-slate-100">Solution:</span> {project.solution}</p>
+              <p className="mt-3 text-sm text-slate-300">
+                <span className="font-medium text-slate-100">Problem:</span> {project.problem}
+              </p>
+              <p className="mt-2 text-sm text-slate-300">
+                <span className="font-medium text-slate-100">Solution:</span> {project.solution}
+              </p>
               <div className="mt-4">
                 <p className="mb-2 text-xs uppercase tracking-[0.15em] text-slate-400">Tools Used</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tools.map((tool) => (
-                    <span key={tool.name} className="inline-flex items-center gap-1.5 rounded-full border border-[#A5B4FC]/30 bg-[#A5B4FC]/10 px-2.5 py-1 text-xs font-medium text-[#C7D2FE]">
+                    <span
+                      key={tool.name}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-[#A5B4FC]/30 bg-[#A5B4FC]/10 px-2.5 py-1 text-xs font-medium text-[#C7D2FE]"
+                    >
                       <img src={tool.iconUrl} alt={`${tool.name} logo`} width={14} height={14} className="h-3.5 w-3.5" loading="lazy" />
                       {tool.name}
                     </span>
                   ))}
                 </div>
               </div>
-              <Link href={project.href} className="mt-4 inline-flex text-sm font-semibold text-[#A5B4FC] hover:text-[#C7D2FE]">View Project</Link>
+              <Link href={project.href} className="mt-4 inline-flex text-sm font-semibold text-[#A5B4FC] hover:text-[#C7D2FE]">
+                View Project
+              </Link>
             </motion.article>
           ))}
         </motion.div>
@@ -541,7 +631,13 @@ export default function HomePage() {
           <h3 className="text-2xl font-bold text-white sm:text-3xl">Services & Expertise</h3>
           <p className="text-sm text-slate-300">What I can help your team build and scale.</p>
         </div>
-        <motion.div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+        <motion.div
+          className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3"
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+        >
           {services.map((service) => (
             <motion.article
               key={service.title}
@@ -573,7 +669,10 @@ export default function HomePage() {
           <h3 className="text-xl font-bold text-white">Currently exploring:</h3>
           <div className="mt-4 grid gap-3 md:grid-cols-3">
             {currentlyExploring.map((item) => (
-              <article key={item.title} className="group rounded-xl border border-white/10 bg-black/20 p-4 transition hover:-translate-y-1 hover:border-[#A5B4FC]/40 hover:shadow-[0_16px_28px_-22px_rgba(99,102,241,0.34)]">
+              <article
+                key={item.title}
+                className="group rounded-xl border border-white/10 bg-black/20 p-4 transition hover:-translate-y-1 hover:border-[#A5B4FC]/40 hover:shadow-[0_16px_28px_-22px_rgba(99,102,241,0.34)]"
+              >
                 <span className="material-symbols-outlined text-[#A5B4FC]">{item.icon}</span>
                 <p className="mt-2 font-semibold text-white">{item.title}</p>
                 <p className="mt-1 text-sm text-slate-300">{item.note}</p>
@@ -593,11 +692,17 @@ export default function HomePage() {
         <h3 className="text-2xl font-bold text-white sm:text-3xl">Skills</h3>
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
           {skillGroups.map((group) => (
-            <article key={group.label} className="rounded-2xl border border-white/10 bg-[#0f141d]/80 p-5 shadow-[0_12px_30px_-25px_rgba(99,102,241,0.28)]">
+            <article
+              key={group.label}
+              className="rounded-2xl border border-white/10 bg-[#0f141d]/80 p-5 shadow-[0_12px_30px_-25px_rgba(99,102,241,0.28)]"
+            >
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#C7D2FE]">{group.label}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
-                  <span key={item.name} className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">
+                  <span
+                    key={item.name}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200"
+                  >
                     <img src={item.iconUrl} alt={`${item.name} logo`} width={14} height={14} className="h-3.5 w-3.5" loading="lazy" />
                     {item.name}
                   </span>
@@ -629,8 +734,12 @@ export default function HomePage() {
                 }}
                 className={`flex md:items-center ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
               >
-                <article className={`relative w-full rounded-2xl border border-white/10 bg-[#101722]/85 p-4 shadow-[0_15px_35px_-25px_rgba(99,102,241,0.45)] md:w-[46%] ${index % 2 === 0 ? "md:mr-[54%]" : "md:ml-[54%]"}`}>
-                  <div className={`absolute top-8 hidden h-3 w-3 rounded-full bg-[#6366F1] md:block ${index % 2 === 0 ? "-right-8" : "-left-8"}`} />
+                <article
+                  className={`relative w-full rounded-2xl border border-white/10 bg-[#101722]/85 p-4 shadow-[0_15px_35px_-25px_rgba(99,102,241,0.45)] md:w-[46%] ${index % 2 === 0 ? "md:mr-[54%]" : "md:ml-[54%]"}`}
+                >
+                  <div
+                    className={`absolute top-8 hidden h-3 w-3 rounded-full bg-[#6366F1] md:block ${index % 2 === 0 ? "-right-8" : "-left-8"}`}
+                  />
                   <p className="text-xs uppercase tracking-[0.15em] text-[#C7D2FE]">{step.year}</p>
                   <p className="mt-2 text-base font-semibold text-white">{step.title}</p>
                   <p className="mt-2 text-sm text-slate-300">{step.highlight}</p>
@@ -665,13 +774,16 @@ export default function HomePage() {
         <h3 className="text-2xl font-bold text-white sm:text-3xl">About</h3>
         <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300 sm:text-base">
           <p>
-            I am Ahmad Ibrahim, a BSc Software Engineering student and full-stack developer. I build products that help businesses run better and give users a smoother, safer experience.
+            I am Ahmad Ibrahim, a BSc Software Engineering student and full-stack developer. I build products that help businesses run
+            better and give users a smoother, safer experience.
           </p>
           <p>
-            My strength is turning unclear ideas into clear execution. I break big goals into practical features, build them with reliability in mind, and make sure teams can maintain and improve the product over time.
+            My strength is turning unclear ideas into clear execution. I break big goals into practical features, build them with
+            reliability in mind, and make sure teams can maintain and improve the product over time.
           </p>
           <p>
-            Right now, I am focused on trust-based products like Findora, where strong user confidence, operational stability, and business value matter just as much as clean code.
+            Right now, I am focused on trust-based products like Findora, where strong user confidence, operational stability, and business
+            value matter just as much as clean code.
           </p>
         </div>
       </motion.section>
@@ -688,22 +800,47 @@ export default function HomePage() {
         <div className="mt-6 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <form className="rounded-2xl border border-white/10 bg-[#101722]/85 p-5 shadow-[0_20px_40px_-30px_rgba(99,102,241,0.28)]">
             <div className="grid gap-4 sm:grid-cols-2">
-              <label className="text-sm text-slate-300">Name
-                <input type="text" className="mt-1 w-full rounded-lg border border-white/15 bg-black/20 px-3 py-2 text-white outline-none ring-[#6366F1] focus:ring-2" placeholder="Your name" />
+              <label className="text-sm text-slate-300">
+                Name
+                <input
+                  type="text"
+                  className="mt-1 w-full rounded-lg border border-white/15 bg-black/20 px-3 py-2 text-white outline-none ring-[#6366F1] focus:ring-2"
+                  placeholder="Your name"
+                />
               </label>
-              <label className="text-sm text-slate-300">Email
-                <input type="email" className="mt-1 w-full rounded-lg border border-white/15 bg-black/20 px-3 py-2 text-white outline-none ring-[#6366F1] focus:ring-2" placeholder="you@example.com" />
+              <label className="text-sm text-slate-300">
+                Email
+                <input
+                  type="email"
+                  className="mt-1 w-full rounded-lg border border-white/15 bg-black/20 px-3 py-2 text-white outline-none ring-[#6366F1] focus:ring-2"
+                  placeholder="you@example.com"
+                />
               </label>
             </div>
-            <label className="mt-4 block text-sm text-slate-300">Subject
-              <input type="text" className="mt-1 w-full rounded-lg border border-white/15 bg-black/20 px-3 py-2 text-white outline-none ring-[#6366F1] focus:ring-2" placeholder="Project discussion" />
+            <label className="mt-4 block text-sm text-slate-300">
+              Subject
+              <input
+                type="text"
+                className="mt-1 w-full rounded-lg border border-white/15 bg-black/20 px-3 py-2 text-white outline-none ring-[#6366F1] focus:ring-2"
+                placeholder="Project discussion"
+              />
             </label>
-            <label className="mt-4 block text-sm text-slate-300">Message
-              <textarea rows={5} className="mt-1 w-full rounded-lg border border-white/15 bg-black/20 px-3 py-2 text-white outline-none ring-[#6366F1] focus:ring-2" placeholder="Tell me about your product or idea" />
+            <label className="mt-4 block text-sm text-slate-300">
+              Message
+              <textarea
+                rows={5}
+                className="mt-1 w-full rounded-lg border border-white/15 bg-black/20 px-3 py-2 text-white outline-none ring-[#6366F1] focus:ring-2"
+                placeholder="Tell me about your product or idea"
+              />
             </label>
             <div className="mt-4 flex flex-wrap gap-3">
-              <button type="button" className="btn-primary inline-flex rounded-xl px-6 py-3 text-sm font-semibold">Send Message</button>
-              <button type="button" className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-[#A5B4FC]/40 hover:text-white">
+              <button type="button" className="btn-primary inline-flex rounded-xl px-6 py-3 text-sm font-semibold">
+                Send Message
+              </button>
+              <button
+                type="button"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-[#A5B4FC]/40 hover:text-white"
+              >
                 <span className="material-symbols-outlined text-[18px]">download</span>
                 Download CV
               </button>
@@ -716,7 +853,10 @@ export default function HomePage() {
             <p className="mt-2 text-xs text-slate-400">Fastest channels to reach Ahmad Ibrahim for collaboration.</p>
 
             <div className="mt-5 space-y-2">
-              <a href="mailto:ahmad@example.com" className="group flex items-center justify-between rounded-xl border border-white/10 bg-black/20 px-3 py-2.5 transition hover:border-[#A5B4FC]/50 hover:bg-black/35">
+              <a
+                href="mailto:ahmad@example.com"
+                className="group flex items-center justify-between rounded-xl border border-white/10 bg-black/20 px-3 py-2.5 transition hover:border-[#A5B4FC]/50 hover:bg-black/35"
+              >
                 <span className="flex items-center gap-2 text-sm text-slate-200">
                   <img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail logo" className="h-4 w-4" loading="lazy" />
                   Email
@@ -724,7 +864,12 @@ export default function HomePage() {
                 <span className="text-xs text-[#A5B4FC]">ahmad@example.com</span>
               </a>
 
-              <a href="https://github.com/ahmad" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between rounded-xl border border-white/10 bg-black/20 px-3 py-2.5 transition hover:border-[#A5B4FC]/50 hover:bg-black/35">
+              <a
+                href="https://github.com/ahmad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-xl border border-white/10 bg-black/20 px-3 py-2.5 transition hover:border-[#A5B4FC]/50 hover:bg-black/35"
+              >
                 <span className="flex items-center gap-2 text-sm text-slate-200">
                   <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="GitHub logo" className="h-4 w-4" loading="lazy" />
                   GitHub
@@ -732,23 +877,40 @@ export default function HomePage() {
                 <span className="text-xs text-[#A5B4FC]">@ahmad</span>
               </a>
 
-              <a href="https://linkedin.com/in/ahmad" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between rounded-xl border border-white/10 bg-black/20 px-3 py-2.5 transition hover:border-[#A5B4FC]/50 hover:bg-black/35">
+              <a
+                href="https://linkedin.com/in/ahmad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-xl border border-white/10 bg-black/20 px-3 py-2.5 transition hover:border-[#A5B4FC]/50 hover:bg-black/35"
+              >
                 <span className="flex items-center gap-2 text-sm text-slate-200">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn logo" className="h-4 w-4" loading="lazy" />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                    alt="LinkedIn logo"
+                    className="h-4 w-4"
+                    loading="lazy"
+                  />
                   LinkedIn
                 </span>
                 <span className="text-xs text-[#A5B4FC]">/in/ahmad</span>
               </a>
 
-              <a href="https://x.com/ahmad" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between rounded-xl border border-white/10 bg-black/20 px-3 py-2.5 transition hover:border-[#A5B4FC]/50 hover:bg-black/35">
+              <a
+                href="https://x.com/ahmad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-xl border border-white/10 bg-black/20 px-3 py-2.5 transition hover:border-[#A5B4FC]/50 hover:bg-black/35"
+              >
                 <span className="flex items-center gap-2 text-sm text-slate-200">
-                  <img src="https://cdn.simpleicons.org/x/FFFFFF" alt="X logo" className="h-4 w-4" loading="lazy" />
-                  X / Twitter
+                  <img src="https://cdn.simpleicons.org/x/FFFFFF" alt="X logo" className="h-4 w-4" loading="lazy" />X / Twitter
                 </span>
                 <span className="text-xs text-[#A5B4FC]">@ahmad</span>
               </a>
 
-              <a href="#" className="group flex items-center justify-between rounded-xl border border-white/10 bg-black/20 px-3 py-2.5 transition hover:border-[#A5B4FC]/50 hover:bg-black/35">
+              <a
+                href="#"
+                className="group flex items-center justify-between rounded-xl border border-white/10 bg-black/20 px-3 py-2.5 transition hover:border-[#A5B4FC]/50 hover:bg-black/35"
+              >
                 <span className="flex items-center gap-2 text-sm text-slate-200">
                   <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord logo" className="h-4 w-4" loading="lazy" />
                   Discord
