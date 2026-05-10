@@ -47,7 +47,7 @@ const projects: ProjectDetail[] = [
     tagline: "Operational command center for incident and runbook management.",
     icon: "monitoring",
     image: "/og/opsboard-placeholder.svg",
-    status: "Case study ready",
+    status: "Project details ready",
     challenge:
       "Small teams lose visibility when incidents are tracked in chats, docs, and disconnected tools.",
     solution:
@@ -159,7 +159,7 @@ export default function ProjectsClientPage() {
           <div className="pointer-events-none absolute -right-20 -top-16 h-52 w-52 rounded-full bg-indigo-400/20 blur-3xl" />
           <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-[#a5b4fc]/12 blur-3xl" />
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c7d2fe]">Project Portfolio</p>
-          <h1 className="mt-3 text-2xl font-bold text-white sm:text-4xl lg:text-5xl">Detailed Case Studies</h1>
+          <h1 className="mt-3 text-2xl font-bold text-white sm:text-4xl lg:text-5xl">Detailed Project Breakdowns</h1>
           <p className="mt-3 max-w-3xl text-sm text-slate-300 sm:text-base">
             A deeper look at how I approach complex product challenges, design resilient systems, and deliver business-ready outcomes.
           </p>

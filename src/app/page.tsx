@@ -539,7 +539,7 @@ export default function HomePage() {
                   href="/projects"
                   className="btn-primary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold"
                 >
-                  View Case Study
+                  View Project Details
                 </Link>
                 <Link
                   href="/projects"
@@ -760,7 +760,7 @@ export default function HomePage() {
       >
         <p className="text-xl font-semibold text-white sm:text-2xl">Want to see how I design real systems?</p>
         <Link href="/projects" className="btn-primary mt-6 inline-flex rounded-xl px-6 py-3 text-sm font-semibold sm:text-base">
-          View Case Studies
+          View Full Project Breakdown
         </Link>
       </motion.section>
 
