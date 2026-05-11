@@ -17,7 +17,7 @@ export default function AboutPage() {
       <p className="mt-4 text-slate-300">
         I design and build trust-critical software with a backend-first mindset and product-level ownership.
       </p>
-      <Link href="/" className="mt-6 inline-flex text-sm font-semibold text-[#C7D2FE]">
+      <Link href="/" className="mt-6 inline-flex text-sm font-semibold text-[#93C5FD]">
         Back to home
       </Link>
     </main>

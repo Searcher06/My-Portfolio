@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
 type ProjectDetail = {
@@ -125,6 +126,13 @@ const projects: ProjectDetail[] = [
 
 export default function ProjectsClientPage() {
   const reduceMotion = useReducedMotion();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const fadeUp = {
     hidden: { opacity: 0, y: reduceMotion ? 0 : 24 },
@@ -138,40 +146,66 @@ export default function ProjectsClientPage() {
 
   return (
     <main className="relative overflow-hidden pb-20">
-      <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
-        <nav className="mx-auto flex h-18 w-full max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-transparent px-3 py-3 backdrop-blur-xl shadow-[0_18px_38px_-28px_rgba(99,102,241,0.35)] sm:h-20 sm:px-6">
-          <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-white sm:gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#6366F1] to-[#818CF8] text-base text-[#061117] sm:h-10 sm:w-10">A</span>
-            <span className="text-sm sm:text-base">Ahmad Ibrahim</span>
+
+      {/* ── Navigation ── */}
+      <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-3 sm:px-6 lg:px-8">
+        <nav className={`mx-auto flex h-[3.75rem] w-full max-w-7xl items-center justify-between rounded-2xl border px-5 backdrop-blur-2xl transition-all duration-500 sm:h-[4.25rem] sm:px-7 ${
+          scrolled
+            ? "border-white/[0.1] bg-[#020817]/95 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06),0_28px_64px_-20px_rgba(37,99,235,0.45)]"
+            : "border-white/[0.06] bg-[#020817]/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_4px_24px_rgba(37,99,235,0.1)]"
+        }`}>
+          <Link href="/" className="inline-flex shrink-0 items-center gap-3">
+            <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#2563EB] to-[#38BDF8] text-sm font-bold text-white shadow-[0_4px_16px_rgba(37,99,235,0.5)] sm:h-10 sm:w-10 sm:text-base">
+              A
+              <span className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/20" />
+            </span>
+            <span className="text-sm font-semibold text-white/90 sm:text-[0.9375rem]">Ahmad Ibrahim</span>
           </Link>
-          <div className="flex items-center gap-2">
-            <Link href="/" className="rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-200 transition hover:border-[#A5B4FC]/45 hover:text-white sm:px-4 sm:text-sm">
+          <div className="flex shrink-0 items-center gap-2.5">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-white/[0.08] bg-white/[0.04] px-3 py-2 text-xs font-semibold text-slate-300 transition-all hover:border-white/[0.14] hover:bg-white/[0.07] hover:text-white sm:px-4 sm:text-sm"
+            >
+              <span className="material-symbols-outlined text-[15px]">arrow_back</span>
               Home
             </Link>
-            <Link href="/contact" className="rounded-lg border border-[#A5B4FC]/40 bg-[#A5B4FC]/10 px-3 py-2 text-xs font-semibold text-[#C7D2FE] sm:px-4 sm:text-sm">
-              Contact
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8] px-3 py-2 text-xs font-semibold text-white shadow-[0_4px_16px_rgba(37,99,235,0.35)] transition-all hover:shadow-[0_4px_24px_rgba(37,99,235,0.6)] hover:brightness-110 sm:px-4 sm:text-sm"
+            >
+              Hire Me
+              <span className="material-symbols-outlined text-[15px]">arrow_forward</span>
             </Link>
           </div>
         </nav>
       </header>
 
+      {/* ── Background atmosphere ── */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-60 left-1/2 h-[50rem] w-[50rem] -translate-x-1/2 rounded-full bg-[#2563EB]/10 blur-[150px]" />
+        <div className="absolute -right-40 top-[30%] h-[22rem] w-[22rem] rounded-full bg-sky-600/7 blur-[110px]" />
+      </div>
+
       <div className="mx-auto w-full max-w-7xl px-4 pt-28 sm:px-6 lg:px-8">
+
+        {/* ── Page header ── */}
         <motion.section
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#111a2a] via-[#0f1624] to-[#0b101a] p-5 sm:p-8 lg:p-10"
+          className="relative overflow-hidden rounded-3xl border border-white/[0.07] bg-gradient-to-b from-[#112040] via-[#0E1E35] to-[#08101C] p-5 sm:p-8 lg:p-10"
         >
-          <div className="pointer-events-none absolute -right-20 -top-16 h-52 w-52 rounded-full bg-indigo-400/20 blur-3xl" />
-          <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-[#a5b4fc]/12 blur-3xl" />
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c7d2fe]">Project Portfolio</p>
+          <div className="pointer-events-none absolute -right-20 -top-16 h-52 w-52 rounded-full bg-blue-500/16 blur-3xl" />
+          <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-sky-700/10 blur-3xl" />
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Project Portfolio</p>
           <h1 className="mt-3 text-2xl font-bold text-white sm:text-4xl lg:text-5xl">Detailed Project Breakdowns</h1>
-          <p className="mt-3 max-w-3xl text-sm text-slate-300 sm:text-base">
+          <p className="mt-3 max-w-3xl text-sm text-slate-400 sm:text-base">
             A deeper look at how I approach complex product challenges, design resilient systems, and deliver business-ready outcomes.
           </p>
         </motion.section>
 
+        {/* ── Projects grid ── */}
         <motion.section
           variants={stagger}
           initial="hidden"
@@ -184,27 +218,27 @@ export default function ProjectsClientPage() {
               key={project.name}
               variants={fadeUp}
               whileHover={reduceMotion ? undefined : { y: -3 }}
-              className={`group relative overflow-hidden rounded-3xl border border-[#c7d2fe]/20 bg-gradient-to-br from-[#1a2435] via-[#121a29] to-[#0d1420] p-5 shadow-[0_10px_22px_-18px_rgba(129,140,248,0.2)] transition duration-300 hover:border-[#a5b4fc]/45 hover:shadow-[0_14px_28px_-20px_rgba(129,140,248,0.3)] sm:p-6 ${
+              className={`group relative overflow-hidden rounded-3xl border border-[#BFDBFE]/10 bg-gradient-to-br from-[#152540] via-[#111E35] to-[#0C1525] p-5 transition duration-300 hover:border-[#93C5FD]/32 hover:shadow-[0_16px_36px_-20px_rgba(59,130,246,0.35)] sm:p-6 ${
                 index === 0 ? "lg:col-span-2" : ""
               }`}
             >
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_0%,rgba(255,255,255,0.1),transparent_42%)] opacity-60" />
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_0%,rgba(255,255,255,0.06),transparent_42%)] opacity-60" />
 
               <div className="relative flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-black/25 text-[#a5b4fc]">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-[#2563EB]/10 text-[#60A5FA]">
                     <span className="material-symbols-outlined text-[20px]">{project.icon}</span>
                   </div>
                   <h2 className="mt-3 text-xl font-bold text-white sm:text-2xl">{project.name}</h2>
-                  <p className="mt-1 text-sm text-slate-300">{project.tagline}</p>
+                  <p className="mt-1 text-sm text-slate-400">{project.tagline}</p>
                 </div>
-                <span className="w-fit rounded-full border border-[#a5b4fc]/40 bg-[#a5b4fc]/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#dbe3ff]">
+                <span className="w-fit rounded-full border border-[#93C5FD]/28 bg-[#2563EB]/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#BFDBFE]">
                   {project.status}
                 </span>
               </div>
 
-              <div className="relative mt-5 space-y-3 text-sm text-slate-300">
-                <div className="overflow-hidden rounded-2xl border border-white/10">
+              <div className="relative mt-5 space-y-3 text-sm text-slate-400">
+                <div className="overflow-hidden rounded-2xl border border-white/[0.07]">
                   <Image
                     src={project.image}
                     alt={`${project.name} project preview`}
@@ -213,16 +247,16 @@ export default function ProjectsClientPage() {
                     className={`w-full object-cover ${index === 0 ? "h-56 lg:h-72" : "h-40 sm:h-44"}`}
                   />
                 </div>
-                <p><span className="font-semibold text-slate-100">Challenge:</span> {project.challenge}</p>
-                <p><span className="font-semibold text-slate-100">Solution:</span> {project.solution}</p>
+                <p><span className="font-semibold text-slate-200">Challenge:</span> {project.challenge}</p>
+                <p><span className="font-semibold text-slate-200">Solution:</span> {project.solution}</p>
               </div>
 
               <div className="relative mt-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#c7d2fe]">Key Impact</p>
-                <ul className="mt-3 space-y-2 text-sm text-slate-300">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#93C5FD]">Key Impact</p>
+                <ul className="mt-3 space-y-2 text-sm text-slate-400">
                   {project.impact.map((point) => (
-                    <li key={point} className="flex items-start gap-2 rounded-lg border border-white/10 bg-black/20 p-2.5">
-                      <span className="material-symbols-outlined mt-0.5 text-[16px] text-[#a5b4fc]">done</span>
+                    <li key={point} className="flex items-start gap-2 rounded-lg border border-white/[0.07] bg-black/20 p-2.5">
+                      <span className="material-symbols-outlined mt-0.5 text-[16px] text-[#60A5FA]">done</span>
                       <span>{point}</span>
                     </li>
                   ))}
@@ -230,10 +264,10 @@ export default function ProjectsClientPage() {
               </div>
 
               <div className="relative mt-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">Technology Stack</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Technology Stack</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {project.stack.map((item) => (
-                    <span key={item.name} className="inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-white/5 px-2.5 py-1 text-xs text-slate-200 sm:px-3">
+                    <span key={item.name} className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.04] px-2.5 py-1 text-xs text-slate-300 sm:px-3">
                       <img src={item.iconUrl} alt={`${item.name} logo`} width={14} height={14} className="h-3.5 w-3.5" loading="lazy" />
                       {item.name}
                     </span>
@@ -241,18 +275,19 @@ export default function ProjectsClientPage() {
                 </div>
               </div>
 
-              <div className="relative mt-5 border-t border-white/10 pt-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">Project Highlights</p>
-                <p className="mt-2 text-sm text-slate-300">{project.highlights.join(" • ")}</p>
-                {(project.liveUrl || project.repoUrl) && (
+              <div className="relative mt-5 border-t border-white/[0.07] pt-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Project Highlights</p>
+                <p className="mt-2 text-sm text-slate-400">{project.highlights.join(" · ")}</p>
+                {(project.liveUrl ?? project.repoUrl) && (
                   <div className="mt-3 flex flex-wrap gap-2">
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center rounded-lg border border-[#a5b4fc]/40 bg-[#a5b4fc]/10 px-3 py-1.5 text-xs font-semibold text-[#dbe3ff] hover:border-[#c7d2fe] hover:text-white"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-[#93C5FD]/28 bg-[#2563EB]/10 px-3 py-1.5 text-xs font-semibold text-[#BFDBFE] transition hover:border-[#93C5FD]/55 hover:text-white"
                       >
+                        <span className="material-symbols-outlined text-[14px]">open_in_new</span>
                         Live Site
                       </a>
                     )}
@@ -261,8 +296,9 @@ export default function ProjectsClientPage() {
                         href={project.repoUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:border-[#a5b4fc]/45 hover:text-white"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-slate-300 transition hover:border-[#60A5FA]/40 hover:text-white"
                       >
+                        <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="GitHub" className="h-3.5 w-3.5" />
                         GitHub Repo
                       </a>
                     )}
@@ -280,7 +316,8 @@ export default function ProjectsClientPage() {
           viewport={{ once: true, amount: 0.6 }}
           className="mt-8"
         >
-          <Link href="/" className="inline-flex text-sm font-semibold text-[#c7d2fe] hover:text-white">
+          <Link href="/" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#93C5FD] transition hover:text-white">
+            <span className="material-symbols-outlined text-[16px]">arrow_back</span>
             Back to home
           </Link>
         </motion.div>
