@@ -356,7 +356,7 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <motion.section
         id="home"
-        className="mx-auto grid min-h-[110svh] w-full max-w-7xl gap-8 px-4 pb-16 pt-28 sm:min-h-[95vh] sm:gap-10 sm:px-6 sm:pt-28 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14 lg:px-8 lg:pt-36"
+        className="mx-auto grid w-full max-w-7xl gap-6 px-4 pb-12 pt-24 sm:min-h-[88vh] sm:gap-10 sm:px-6 sm:pb-16 sm:pt-28 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14 lg:min-h-[95vh] lg:px-8 lg:pt-36"
         variants={stagger}
         initial="hidden"
         animate="show"
@@ -376,18 +376,19 @@ export default function HomePage() {
         {/* Left: headline */}
         <motion.div className="relative z-10 mx-auto w-full max-w-[34rem] space-y-7 lg:mx-0 lg:max-w-none" variants={fadeUp}>
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/[0.08] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-[#93C5FD]">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#60A5FA]" />
-              Available now · Backend &amp; Full-stack · Remote
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/[0.08] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#93C5FD] sm:text-xs sm:tracking-[0.15em]">
+              <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-[#60A5FA]" />
+              <span className="hidden sm:inline">Available now · Backend &amp; Full-stack · Remote</span>
+              <span className="sm:hidden">Available · Full-stack · Remote</span>
             </div>
             <h1 className="text-[2.2rem] font-bold leading-[1.06] tracking-tight text-white sm:text-5xl md:text-6xl xl:text-7xl">
-              I build software where{" "}
+              Backend-focused engineer building{" "}
               <span className="hero-gradient bg-gradient-to-r from-[#60A5FA] via-[#93C5FD] to-[#BFDBFE] bg-clip-text text-transparent">
-                failure isn&apos;t an option.
+                structured, secure systems.
               </span>
             </h1>
             <p className="max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
-              I help teams design and launch systems that protect users, prevent costly mistakes, and perform reliably under pressure.
+              I specialize in backend systems and full-stack development, covering API design, authentication flows, data modeling, and React frontends that connect cleanly to the systems powering them.
             </p>
           </div>
           <motion.div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap" variants={fadeUp}>
@@ -400,11 +401,22 @@ export default function HomePage() {
                 <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </Link>
             </motion.div>
+            <motion.div whileHover={reduceMotion ? undefined : { y: -2 }}>
+              <a
+                href="https://github.com/Searcher06"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold sm:w-auto sm:text-base"
+              >
+                <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="" className="h-[1.05rem] w-[1.05rem] theme-icon-invert" loading="eager" />
+                GitHub
+              </a>
+            </motion.div>
           </motion.div>
         </motion.div>
 
         {/* Right: profile card */}
-        <motion.aside className="relative z-10 mx-auto mt-4 w-full max-w-[34rem] lg:mx-0 lg:mt-0 lg:max-w-none" variants={fadeUp}>
+        <motion.aside className="relative z-10 mx-auto mt-4 hidden w-full max-w-[34rem] lg:mx-0 lg:mt-0 lg:block lg:max-w-none" variants={fadeUp}>
           <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-[#2563EB]/25 via-sky-500/12 to-transparent blur-xl" />
           <div className="force-dark dark-surface relative rounded-[2rem] border border-white/[0.09] bg-gradient-to-br from-[#102038] via-[#0E1E35] to-[#080E1C] p-5 shadow-[0_32px_80px_-24px_rgba(37,99,235,0.4)] sm:p-7">
             <div className="mb-6 flex items-center justify-between gap-3">
