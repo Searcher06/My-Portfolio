@@ -25,22 +25,23 @@ const projects: ProjectDetail[] = [
     image: "/og/findora-placeholder.svg",
     status: "In active development",
     challenge:
-      "Most lost-and-found systems break down when trust is low, proof is unclear, and disputes happen.",
+      "Most lost-and-found systems fail because reports are unstructured, communication is scattered, and ownership handovers are hard to verify.",
     solution:
-      "Designed structured claim verification, role-aware moderation, and transparent status tracking from report to resolution.",
+      "Built a full-stack workflow with secure authentication, item reporting with image uploads, real-time chat, and a two-step code exchange to verify final handovers.",
     impact: [
-      "Reduced ambiguity in ownership claims with a clear verification workflow.",
-      "Improved confidence for both reporters and moderators with visible decision timelines.",
-      "Created a scalable operating model for schools, campuses, and local organizations.",
+      "Made item recovery safer with a verified handover process instead of guess-based claims.",
+      "Improved response speed through searchable reports, status filters, and direct finder-owner chat.",
+      "Enabled moderation and accountability with role-based controls, flags, and audit visibility.",
     ],
     stack: [
-      { name: "Next.js", iconUrl: "https://cdn.simpleicons.org/nextdotjs/FFFFFF" },
-      { name: "TypeScript", iconUrl: "https://cdn.simpleicons.org/typescript/3178C6" },
+      { name: "React", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
+      { name: "Express", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
       { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
-      { name: "PostgreSQL", iconUrl: "https://cdn.simpleicons.org/postgresql/4169E1" },
-      { name: "Redis", iconUrl: "https://cdn.simpleicons.org/redis/DC382D" },
+      { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
+      { name: "Socket.IO", iconUrl: "https://cdn.simpleicons.org/socketdotio/010101" },
+      { name: "Cloudinary", iconUrl: "https://cdn.simpleicons.org/cloudinary/3448C5" },
     ],
-    highlights: ["Owner-proof claim flow", "Moderation dashboard", "Incident timeline notifications"],
+    highlights: ["2-step code handover verification", "Real-time secure chat", "Admin moderation and trust points"],
   },
   {
     name: "OpsBoard",

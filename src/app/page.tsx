@@ -38,9 +38,11 @@ const quickStats = [
 ];
 
 const findoraFeatures = [
-  "Smart claim verification and owner-proof flow",
-  "Role-aware moderation dashboard for dispute handling",
-  "Incident timeline tracking with status notifications",
+  "Secure authentication with email verification, password reset, and role-based access",
+  "Lost/found item reporting with image uploads, search, and filter tools",
+  "Real-time chat plus 2-step handover code verification for trusted returns",
+  "Admin and moderator dashboard for user management, item moderation, and audit logs",
+  "Trust points and profile stats that reward verified successful returns",
 ];
 
 const otherProjects: ProjectCard[] = [
@@ -501,8 +503,8 @@ export default function HomePage() {
               </p>
               <p>
                 <span className="font-semibold text-white">Solution:</span> I built Findora specifically for this environment a
-                department-scale lost and found platform with structured item reports, claim validation workflows, and moderation controls,
-                so recovery is a process, not a guess.
+                department-scale lost and found platform with secure auth, structured item reports, real-time chat, two-step handover
+                verification, and moderation controls so recovery is a process, not a guess.
               </p>
             </div>
             <div className="rounded-2xl border border-[#A5B4FC]/25 bg-gradient-to-b from-[#0e1520] to-[#0b1118] p-5 backdrop-blur-sm shadow-[0_18px_42px_-28px_rgba(99,102,241,0.75)]">
