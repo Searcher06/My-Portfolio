@@ -378,7 +378,7 @@ export default function HomePage() {
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/[0.08] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-[#93C5FD]">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#60A5FA]" />
-              Open to work · jobs · gigs · collabs
+              Available now · Backend &amp; Full-stack · Remote
             </div>
             <h1 className="text-[2.2rem] font-bold leading-[1.06] tracking-tight text-white sm:text-5xl md:text-6xl xl:text-7xl">
               I build software where{" "}
@@ -440,7 +440,7 @@ export default function HomePage() {
               <p><span className="text-[#93C5FD]">core</span>: <span className="text-slate-200">[&quot;Node.js&quot;, &quot;PostgreSQL&quot;, &quot;React&quot;]</span></p>
               <p><span className="text-[#93C5FD]">currently</span>: <span className="text-slate-200">&quot;Building Findora&quot;</span></p>
               <p><span className="text-[#93C5FD]">style</span>: <span className="text-slate-200">&quot;Fast execution, high ownership&quot;</span></p>
-              <p><span className="text-[#93C5FD]">status</span>: <span className="text-sky-400">&quot;open_for_collaboration&quot;</span></p>
+              <p><span className="text-[#93C5FD]">status</span>: <span className="text-sky-400">&quot;available_now&quot;</span></p>
             </div>
           </div>
         </motion.aside>

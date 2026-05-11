@@ -22,9 +22,11 @@ export const metadata: Metadata = {
     "Ahmad Ibrahim",
     "Full-Stack Engineer",
     "Backend Developer",
-    "Next.js Portfolio",
+    "Node.js Developer",
+    "Remote Software Engineer",
+    "Available for hire",
     "API Development",
-    "Software Engineer",
+    "Freelance Backend Developer",
   ],
   alternates: {
     canonical: "/",
