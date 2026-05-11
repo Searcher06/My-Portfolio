@@ -15,6 +15,8 @@ type ProjectDetail = {
   impact: string[];
   stack: { name: string; iconUrl: string }[];
   highlights: string[];
+  liveUrl?: string;
+  repoUrl?: string;
 };
 
 const projects: ProjectDetail[] = [
@@ -23,7 +25,7 @@ const projects: ProjectDetail[] = [
     tagline: "Trust-based lost and found platform for real communities.",
     icon: "verified_user",
     image: "/og/findora-placeholder.svg",
-    status: "In active development",
+    status: "Live",
     challenge:
       "Most lost-and-found systems fail because reports are unstructured, communication is scattered, and ownership handovers are hard to verify.",
     solution:
@@ -44,28 +46,32 @@ const projects: ProjectDetail[] = [
     highlights: ["2-step code handover verification", "Real-time secure chat", "Admin moderation and trust points"],
   },
   {
-    name: "OpsBoard",
-    tagline: "Operational command center for incident and runbook management.",
-    icon: "monitoring",
+    name: "Brillit",
+    tagline: "Personalized educational video platform powered by AI and fast search.",
+    icon: "smart_display",
     image: "/og/opsboard-placeholder.svg",
-    status: "Project details ready",
+    status: "Live",
     challenge:
-      "Small teams lose visibility when incidents are tracked in chats, docs, and disconnected tools.",
+      "Educational platforms often show generic content, making it hard for learners to discover videos that match their interests and learning path.",
     solution:
-      "Built a unified workspace with ownership rules, escalation paths, and an auditable timeline for every incident.",
+      "Built a full-stack learning platform with JWT auth, Google Gemini-driven recommendations, and Typesense-powered typo-tolerant search for faster discovery.",
     impact: [
-      "Faster incident coordination through centralized ownership and alerts.",
-      "Improved operational consistency using reusable runbook templates.",
-      "Stronger accountability with complete escalation and response history.",
+      "Improved learning relevance with personalized suggestions based on watch history and selected interests.",
+      "Reduced search friction with blazing-fast, typo-tolerant video discovery across educational content.",
+      "Enabled smooth user retention with secure profiles, Cloudinary media handling, and seamless YouTube playback.",
     ],
     stack: [
-      { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
-      { name: "PostgreSQL", iconUrl: "https://cdn.simpleicons.org/postgresql/4169E1" },
-      { name: "Apache Kafka", iconUrl: "https://cdn.simpleicons.org/apachekafka/231F20" },
       { name: "React", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
-      { name: "Grafana", iconUrl: "https://cdn.simpleicons.org/grafana/F46800" },
+      { name: "Express", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
+      { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
+      { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
+      { name: "Typesense", iconUrl: "/icons/typesense.svg" },
+      { name: "Google Gemini", iconUrl: "https://cdn.simpleicons.org/googlegemini/8E75FF" },
+      { name: "Cloudinary", iconUrl: "https://cdn.simpleicons.org/cloudinary/3448C5" },
     ],
-    highlights: ["Escalation policies", "Runbook workspace", "Incident audit log"],
+    highlights: ["Gemini-powered recommendations", "Typesense search engine", "JWT auth and profile personalization"],
+    liveUrl: "https://brillit.vercel.app/",
+    repoUrl: "https://github.com/Searcher06/Brillit.io",
   },
   {
     name: "SignalAuth",
@@ -238,6 +244,30 @@ export default function ProjectsClientPage() {
               <div className="relative mt-5 border-t border-white/10 pt-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">Project Highlights</p>
                 <p className="mt-2 text-sm text-slate-300">{project.highlights.join(" • ")}</p>
+                {(project.liveUrl || project.repoUrl) && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center rounded-lg border border-[#a5b4fc]/40 bg-[#a5b4fc]/10 px-3 py-1.5 text-xs font-semibold text-[#dbe3ff] hover:border-[#c7d2fe] hover:text-white"
+                      >
+                        Live Site
+                      </a>
+                    )}
+                    {project.repoUrl && (
+                      <a
+                        href={project.repoUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:border-[#a5b4fc]/45 hover:text-white"
+                      >
+                        GitHub Repo
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </motion.article>
           ))}

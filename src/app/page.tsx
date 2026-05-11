@@ -47,14 +47,15 @@ const findoraFeatures = [
 
 const otherProjects: ProjectCard[] = [
   {
-    name: "OpsBoard",
+    name: "Brillit",
     image: "/og/opsboard-placeholder.svg",
-    problem: "Small teams lose operational visibility when incidents are tracked across scattered tools.",
-    solution: "Built a unified incident and runbook workspace with ownership, escalation, and audit trails.",
+    problem: "Learners struggle to find the right educational videos quickly, and generic feeds rarely match personal learning goals.",
+    solution:
+      "Built a personalized educational video platform with AI-powered recommendations, typo-tolerant search, and secure user profiles.",
     tools: [
       { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
-      { name: "PostgreSQL", iconUrl: "https://cdn.simpleicons.org/postgresql/4169E1" },
-      { name: "Event Workflows", iconUrl: "https://cdn.simpleicons.org/apachekafka/231F20" },
+      { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
+      { name: "Typesense", iconUrl: "/icons/typesense.svg" },
     ],
     href: "/projects",
   },
