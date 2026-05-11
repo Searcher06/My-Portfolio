@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import ThemeToggle from "@/components/ThemeToggle";
 
 type ProjectDetail = {
   name: string;
@@ -159,7 +160,7 @@ export default function ProjectsClientPage() {
               A
               <span className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/20" />
             </span>
-            <span className="text-sm font-semibold text-white/90 sm:text-[0.9375rem]">Ahmad Ibrahim</span>
+            <span className="text-sm font-semibold text-white sm:text-[0.9375rem]">Ahmad Ibrahim</span>
           </Link>
           <div className="flex shrink-0 items-center gap-2.5">
             <Link
@@ -171,11 +172,12 @@ export default function ProjectsClientPage() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8] px-3 py-2 text-xs font-semibold text-white shadow-[0_4px_16px_rgba(37,99,235,0.35)] transition-all hover:shadow-[0_4px_24px_rgba(37,99,235,0.6)] hover:brightness-110 sm:px-4 sm:text-sm"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-[#3B82F6] bg-[#2563EB]/10 px-3 py-2 text-xs font-semibold text-[#3B82F6] transition-all hover:border-[#2563EB] hover:bg-[#2563EB] hover:text-white hover:shadow-[0_4px_20px_rgba(37,99,235,0.5)] sm:px-4 sm:text-sm"
             >
               Hire Me
               <span className="material-symbols-outlined text-[15px]">arrow_forward</span>
             </Link>
+            <ThemeToggle />
           </div>
         </nav>
       </header>

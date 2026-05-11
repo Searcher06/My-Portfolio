@@ -371,3 +371,136 @@ body {
 .bg-grid-pattern {
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%231f2937' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
+
+/* ─────────────── Light mode ─────────────── */
+
+html:not(.dark) body {
+  background: #DDE8F8 !important;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37, 99, 235, 0.12), transparent),
+    radial-gradient(ellipse 55% 35% at 100% 0%, rgba(56, 189, 248, 0.08), transparent),
+    radial-gradient(ellipse 45% 35% at 0% 100%, rgba(29, 78, 216, 0.07), transparent),
+    linear-gradient(180deg, #DDE8F8 0%, #E4EEFB 50%, #DDE8F8 100%) !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) header nav {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(0, 0, 0, 0.07) !important;
+  box-shadow: 0 2px 20px rgba(37, 99, 235, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+html:not(.dark) header nav ul a:hover { color: #1d4ed8 !important; }
+
+html:not(.dark) .nav-icon-btn {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: #64748b !important;
+}
+html:not(.dark) .nav-icon-btn:hover {
+  border-color: rgba(0, 0, 0, 0.14) !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) .mobile-nav-panel {
+  background-color: rgba(255, 255, 255, 0.97) !important;
+  border-color: rgba(0, 0, 0, 0.07) !important;
+  box-shadow: 0 32px 80px -20px rgba(0, 0, 0, 0.12) !important;
+}
+html:not(.dark) .mobile-nav-panel a:hover {
+  background-color: rgba(37, 99, 235, 0.07) !important;
+  color: #1d4ed8 !important;
+}
+
+/* Global text overrides */
+html:not(.dark) .text-white       { color: #0f172a !important; }
+html:not(.dark) .text-slate-200   { color: #1e293b !important; }
+html:not(.dark) .text-slate-300   { color: #334155 !important; }
+html:not(.dark) .text-slate-400   { color: #475569 !important; }
+html:not(.dark) .text-slate-500   { color: #64748b !important; }
+html:not(.dark) .text-slate-600   { color: #94a3b8 !important; }
+
+/* Light-blue accents → readable on light bg */
+html:not(.dark) .text-\[\#93C5FD\] { color: #1d4ed8 !important; }
+html:not(.dark) .text-\[\#60A5FA\] { color: #2563eb !important; }
+html:not(.dark) .text-\[\#BFDBFE\] { color: #1e40af !important; }
+
+/* Hero gradient headline → darker blues in light mode */
+html:not(.dark) .hero-gradient {
+  background-image: linear-gradient(to right, #1e3a8a, #1d4ed8, #2563eb) !important;
+}
+
+/* ── Light mode: dark-surface cards — tier 1 (card surface) ── */
+html:not(.dark) .dark-surface {
+  background: #F4F8FF !important;
+  background-image: none !important;
+  border-color: rgba(37, 99, 235, 0.13) !important;
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.8) inset,
+    0 6px 28px rgba(37, 99, 235, 0.1),
+    0 1px 4px rgba(0, 0, 0, 0.07) !important;
+}
+
+/* Tier 2: inner gradient sub-cards (Findora features panel, etc.) */
+html:not(.dark) .dark-surface [class*="from-[#0"],
+html:not(.dark) .dark-surface [class*="from-[#1"] {
+  background: #E6F0FF !important;
+  background-image: none !important;
+  border-color: rgba(37, 99, 235, 0.12) !important;
+}
+
+/* Inner solid dark hex backgrounds (avatar inner ring, etc.) */
+html:not(.dark) .dark-surface [class*="bg-[#0"],
+html:not(.dark) .dark-surface [class*="bg-[#1"] {
+  background-color: rgba(37, 99, 235, 0.08) !important;
+}
+
+/* Tier 3: semi-transparent black elements (list items, contact links, metric boxes) */
+html:not(.dark) .dark-surface [class*="bg-black/"] {
+  background-color: rgba(37, 99, 235, 0.06) !important;
+}
+
+/* White-alpha borders → visible blue-gray stroke */
+html:not(.dark) .dark-surface [class*="border-white/"] {
+  border-color: rgba(37, 99, 235, 0.12) !important;
+}
+
+/* White-alpha backgrounds (skill badges, chips) → tinted */
+html:not(.dark) .dark-surface [class*="bg-white/"] {
+  background-color: rgba(37, 99, 235, 0.07) !important;
+}
+
+/* Form inputs and textareas */
+html:not(.dark) .dark-surface input,
+html:not(.dark) .dark-surface textarea {
+  background-color: #EBF3FF !important;
+  border-color: rgba(37, 99, 235, 0.18) !important;
+  color: #0f172a !important;
+}
+html:not(.dark) .dark-surface input::placeholder,
+html:not(.dark) .dark-surface textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* ── force-dark: entire profile card stays dark regardless of theme ── */
+html:not(.dark) .force-dark.dark-surface {
+  background: linear-gradient(to bottom right, #102038, #0e1e35, #080e1c) !important;
+  background-image: linear-gradient(to bottom right, #102038, #0e1e35, #080e1c) !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+  box-shadow: 0 32px 80px -24px rgba(37, 99, 235, 0.4) !important;
+}
+
+/* Undo descendant overrides inside force-dark — these come after .dark-surface rules so same-specificity wins by source order */
+html:not(.dark) .force-dark [class*="bg-black/"]     { background-color: rgba(0, 0, 0, 0.4) !important; }
+html:not(.dark) .force-dark [class*="border-white/"] { border-color: rgba(255, 255, 255, 0.07) !important; }
+html:not(.dark) .force-dark [class*="bg-white/"]     { background-color: rgba(255, 255, 255, 0.04) !important; }
+html:not(.dark) .force-dark [class*="bg-[#0"]        { background-color: #07101c !important; }
+
+/* Restore all text colours */
+html:not(.dark) .force-dark .text-white             { color: #ffffff !important; }
+html:not(.dark) .force-dark .text-slate-200         { color: #e2e8f0 !important; }
+html:not(.dark) .force-dark .text-slate-500         { color: #64748b !important; }
+html:not(.dark) .force-dark .text-\[\#93C5FD\]     { color: #93c5fd !important; }
+html:not(.dark) .force-dark .text-sky-400           { color: #38bdf8 !important; }
+html:not(.dark) .force-dark .text-\[\#BFDBFE\]     { color: #bfdbfe !important; }

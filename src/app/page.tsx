@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import ThemeToggle from "@/components/ThemeToggle";
 
 type Tool = {
   name: string;
@@ -239,7 +240,7 @@ export default function HomePage() {
               A
               <span className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/20" />
             </span>
-            <span className="text-sm font-semibold text-white/90 sm:text-[0.9375rem]">Ahmad Ibrahim</span>
+            <span className="text-sm font-semibold text-white sm:text-[0.9375rem]">Ahmad Ibrahim</span>
           </a>
 
           {/* Desktop links */}
@@ -261,15 +262,16 @@ export default function HomePage() {
           <div className="flex items-center gap-2.5 shrink-0">
             <a
               href="#contact"
-              className="hidden items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8] px-4 py-2 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(37,99,235,0.35)] transition-all duration-300 hover:shadow-[0_4px_28px_rgba(37,99,235,0.65)] hover:brightness-110 md:inline-flex"
+              className="hidden items-center gap-1.5 rounded-xl border border-[#3B82F6] bg-[#2563EB]/10 px-4 py-2 text-sm font-semibold text-[#3B82F6] transition-all duration-200 hover:border-[#2563EB] hover:bg-[#2563EB] hover:text-white hover:shadow-[0_4px_24px_rgba(37,99,235,0.5)] md:inline-flex"
             >
               Hire Me
               <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
             </a>
+            <ThemeToggle />
             <button
               type="button"
               onClick={() => setMobileNavOpen((prev) => !prev)}
-              className="relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.04] text-white transition-colors hover:border-white/[0.14] hover:bg-white/[0.07] md:hidden"
+              className="nav-icon-btn relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.04] text-slate-400 transition-colors hover:border-white/[0.14] hover:bg-white/[0.07] md:hidden"
               aria-label="Toggle navigation"
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -301,7 +303,7 @@ export default function HomePage() {
               onClick={() => setMobileNavOpen(false)}
             />
             <motion.div
-              className="fixed inset-x-4 top-[4.5rem] z-50 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#050D1C]/96 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.85),0_0_0_1px_rgba(37,99,235,0.12)] backdrop-blur-2xl sm:inset-x-6 md:hidden"
+              className="mobile-nav-panel fixed inset-x-4 top-[4.5rem] z-50 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#050D1C]/96 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.85),0_0_0_1px_rgba(37,99,235,0.12)] backdrop-blur-2xl sm:inset-x-6 md:hidden"
               initial={{ opacity: 0, y: -10, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 300, damping: 28 } }}
               exit={{ opacity: 0, y: -8, scale: 0.97, transition: { duration: 0.16 } }}
@@ -380,7 +382,7 @@ export default function HomePage() {
             </div>
             <h1 className="text-[2.2rem] font-bold leading-[1.06] tracking-tight text-white sm:text-5xl md:text-6xl xl:text-7xl">
               I build software where{" "}
-              <span className="bg-gradient-to-r from-[#60A5FA] via-[#93C5FD] to-[#BFDBFE] bg-clip-text text-transparent">
+              <span className="hero-gradient bg-gradient-to-r from-[#60A5FA] via-[#93C5FD] to-[#BFDBFE] bg-clip-text text-transparent">
                 failure isn&apos;t an option.
               </span>
             </h1>
@@ -404,7 +406,7 @@ export default function HomePage() {
         {/* Right: profile card */}
         <motion.aside className="relative z-10 mx-auto mt-4 w-full max-w-[34rem] lg:mx-0 lg:mt-0 lg:max-w-none" variants={fadeUp}>
           <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-[#2563EB]/25 via-sky-500/12 to-transparent blur-xl" />
-          <div className="relative rounded-[2rem] border border-white/[0.09] bg-gradient-to-br from-[#102038] via-[#0E1E35] to-[#080E1C] p-5 shadow-[0_32px_80px_-24px_rgba(37,99,235,0.4)] sm:p-7">
+          <div className="force-dark dark-surface relative rounded-[2rem] border border-white/[0.09] bg-gradient-to-br from-[#102038] via-[#0E1E35] to-[#080E1C] p-5 shadow-[0_32px_80px_-24px_rgba(37,99,235,0.4)] sm:p-7">
             <div className="mb-6 flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#38BDF8] p-[1px] shadow-[0_4px_14px_rgba(37,99,235,0.4)]">
@@ -422,7 +424,7 @@ export default function HomePage() {
               </span>
             </div>
 
-            <div className="space-y-3 rounded-2xl border border-white/[0.07] bg-black/40 p-4 font-mono text-xs sm:text-sm">
+            <div className="terminal-block space-y-3 rounded-2xl border border-white/[0.07] bg-black/40 p-4 font-mono text-xs sm:text-sm">
               <div className="mb-3 flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-red-500/50" />
@@ -486,7 +488,7 @@ export default function HomePage() {
               variants={cardReveal}
               whileHover={reduceMotion ? undefined : { y: -8, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 240, damping: 16 }}
-              className="rounded-2xl border border-white/[0.07] bg-[#0C1929]/90 p-5 transition shadow-[0_14px_30px_-22px_rgba(37,99,235,0.22)] hover:border-[#2563EB]/25 hover:shadow-[0_20px_40px_-22px_rgba(37,99,235,0.38)]"
+              className="dark-surface rounded-2xl border border-white/[0.07] bg-[#0C1929]/90 p-5 transition shadow-[0_14px_30px_-22px_rgba(37,99,235,0.22)] hover:border-[#2563EB]/25 hover:shadow-[0_20x_40px_-22px_rgba(37,99,235,0.38)]"
             >
               <p className="text-xs uppercase tracking-[0.14em] text-[#93C5FD]">{stat.label}</p>
               <p className="mt-2 text-3xl font-bold text-white">{stat.value}</p>
@@ -504,7 +506,7 @@ export default function HomePage() {
         whileInView="show"
         viewport={{ once: true, amount: 0.18 }}
       >
-        <div className="relative overflow-hidden rounded-3xl border border-white/[0.07] bg-gradient-to-b from-[#112040] via-[#0E1E35] to-[#080D1C] p-6 sm:p-8 lg:p-10">
+        <div className="dark-surface relative overflow-hidden rounded-3xl border border-white/[0.07] bg-gradient-to-b from-[#112040] via-[#0E1E35] to-[#080D1C] p-6 sm:p-8 lg:p-10">
           <div className="pointer-events-none absolute -right-20 -top-16 h-56 w-56 rounded-full bg-blue-600/16 blur-3xl" />
           <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-sky-700/10 blur-3xl" />
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Featured Project</p>
@@ -605,7 +607,7 @@ export default function HomePage() {
               variants={cardReveal}
               whileHover={reduceMotion ? undefined : { y: -10, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 220, damping: 18 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[#0E1E32]/90 p-4 transition duration-300 hover:border-[#2563EB]/28 hover:shadow-[0_20px_48px_-24px_rgba(37,99,235,0.42)] sm:p-5"
+              className="dark-surface group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[#0E1E32]/90 p-4 transition duration-300 hover:border-[#2563EB]/28 hover:shadow-[0_20px_48px_-24px_rgba(37,99,235,0.42)] sm:p-5"
             >
               <div className="overflow-hidden rounded-xl border border-white/[0.07]">
                 <Image
@@ -670,7 +672,7 @@ export default function HomePage() {
               key={service.title}
               variants={cardReveal}
               whileHover={reduceMotion ? undefined : { y: -8, scale: 1.01 }}
-              className="group relative overflow-hidden rounded-2xl border border-[#BFDBFE]/10 bg-gradient-to-br from-[#152540] via-[#111E35] to-[#0C1828] p-5 transition hover:border-[#93C5FD]/32 hover:shadow-[0_16px_36px_-22px_rgba(59,130,246,0.38)]"
+              className="dark-surface group relative overflow-hidden rounded-2xl border border-[#BFDBFE]/10 bg-gradient-to-br from-[#152540] via-[#111E35] to-[#0C1828] p-5 transition hover:border-[#93C5FD]/32 hover:shadow-[0_16px_36px_-22px_rgba(59,130,246,0.38)]"
             >
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(255,255,255,0.07),transparent_42%)] opacity-70" />
               <div className="pointer-events-none absolute -left-1/3 top-0 h-full w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition duration-500 group-hover:translate-x-[260%] group-hover:opacity-100" />
@@ -692,7 +694,7 @@ export default function HomePage() {
         whileInView="show"
         viewport={{ once: true, amount: 0.18 }}
       >
-        <div className="relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-r from-[#0E1E35] via-[#0C1A2E] to-[#0D1C32] p-6 shadow-[0_20px_50px_-30px_rgba(37,99,235,0.22)]">
+        <div className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-r from-[#0E1E35] via-[#0C1A2E] to-[#0D1C32] p-6 shadow-[0_20px_50px_-30px_rgba(37,99,235,0.22)]">
           <div className="pointer-events-none absolute -right-16 -top-10 h-36 w-36 rounded-full bg-blue-500/10 blur-3xl" />
           <h3 className="text-xl font-bold text-white">Currently exploring:</h3>
           <div className="mt-4 grid gap-3 md:grid-cols-3">
@@ -723,7 +725,7 @@ export default function HomePage() {
           {skillGroups.map((group) => (
             <article
               key={group.label}
-              className="rounded-2xl border border-white/[0.07] bg-[#0D1B2E]/80 p-5 shadow-[0_12px_30px_-25px_rgba(37,99,235,0.22)]"
+              className="dark-surface rounded-2xl border border-white/[0.07] bg-[#0D1B2E]/80 p-5 shadow-[0_12px_30px_-25px_rgba(37,99,235,0.22)]"
             >
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#BFDBFE]">{group.label}</p>
               <div className="mt-4 flex flex-wrap gap-2">
@@ -765,7 +767,7 @@ export default function HomePage() {
                 className={`flex md:items-center ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
               >
                 <article
-                  className={`relative w-full rounded-2xl border border-white/[0.07] bg-[#0C1A2C]/85 p-4 shadow-[0_15px_35px_-25px_rgba(37,99,235,0.32)] md:w-[46%] ${index % 2 === 0 ? "md:mr-[54%]" : "md:ml-[54%]"}`}
+                  className={`dark-surface relative w-full rounded-2xl border border-white/[0.07] bg-[#0C1A2C]/85 p-4 shadow-[0_15px_35px_-25px_rgba(37,99,235,0.32)] md:w-[46%] ${index % 2 === 0 ? "md:mr-[54%]" : "md:ml-[54%]"}`}
                 >
                   <div
                     className={`absolute top-8 hidden h-3 w-3 rounded-full bg-[#2563EB] shadow-[0_0_10px_rgba(37,99,235,0.7)] md:block ${index % 2 === 0 ? "-right-8" : "-left-8"}`}
@@ -831,7 +833,7 @@ export default function HomePage() {
       >
         <h3 className="text-2xl font-bold text-white sm:text-3xl">Contact</h3>
         <div className="mt-6 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <form className="rounded-2xl border border-white/[0.07] bg-[#0C1929]/85 p-5 shadow-[0_20px_40px_-30px_rgba(37,99,235,0.22)]">
+          <form className="dark-surface rounded-2xl border border-white/[0.07] bg-[#0C1929]/85 p-5 shadow-[0_20px_40px_-30px_rgba(37,99,235,0.22)]">
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="text-sm text-slate-400">
                 Name
@@ -880,7 +882,7 @@ export default function HomePage() {
             </div>
           </form>
 
-          <aside className="relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-br from-[#0E1E34] via-[#0B1826] to-[#07101A] p-5 shadow-[0_24px_55px_-35px_rgba(37,99,235,0.75)]">
+          <aside className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-br from-[#0E1E34] via-[#0B1826] to-[#07101A] p-5 shadow-[0_24px_55px_-35px_rgba(37,99,235,0.75)]">
             <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#93C5FD]/12 blur-2xl" />
             <p className="text-sm uppercase tracking-[0.14em] text-[#93C5FD]">Reach me directly</p>
             <p className="mt-2 text-xs text-slate-500">Fastest channels to reach Ahmad Ibrahim for collaboration.</p>
