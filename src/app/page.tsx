@@ -8,7 +8,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 type Tool = {
   name: string;
-  iconUrl: string;
+  iconUrl: string; // test
 };
 
 type ProjectCard = {
