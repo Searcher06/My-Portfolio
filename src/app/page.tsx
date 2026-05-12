@@ -26,9 +26,9 @@ type SkillItem = {
 };
 
 const credibilityPoints = [
-  "Building Findora a safer lost and found experience",
-  "Focused on products that improve trust and user confidence",
-  "Designing reliable software that supports business growth",
+  "From rough idea to working product — without losing what made the idea good",
+  "Every feature ships with the edge cases already thought through",
+  "Code that the next developer can actually read, change, and trust",
 ];
 
 const quickStats = [
@@ -230,8 +230,8 @@ export default function HomePage() {
       <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-3 sm:px-6 lg:px-8">
         <nav className={`mx-auto flex h-[3.75rem] w-full max-w-7xl items-center justify-between rounded-2xl border px-5 backdrop-blur-2xl transition-all duration-500 sm:h-[4.25rem] sm:px-7 ${
           scrolled
-            ? "border-white/[0.1] bg-[#020817]/95 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06),0_28px_64px_-20px_rgba(37,99,235,0.45)]"
-            : "border-white/[0.06] bg-[#020817]/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_4px_24px_rgba(37,99,235,0.1)]"
+            ? "border-white/[0.08] bg-[#020817]/80 shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05),0_28px_64px_-20px_rgba(37,99,235,0.35)]"
+            : "border-transparent bg-[#020817]/30 shadow-none"
         }`}>
 
           {/* Logo */}
@@ -244,7 +244,7 @@ export default function HomePage() {
           </a>
 
           {/* Desktop links */}
-          <ul className="hidden items-center gap-0.5 md:flex">
+          <ul className="hidden items-center gap-0.5 lg:flex">
             {navItems.map((item) => (
               <li key={item.label}>
                 <a
@@ -262,7 +262,7 @@ export default function HomePage() {
           <div className="flex items-center gap-2.5 shrink-0">
             <a
               href="#contact"
-              className="hidden items-center gap-1.5 rounded-xl border border-[#3B82F6] bg-[#2563EB]/10 px-4 py-2 text-sm font-semibold text-[#3B82F6] transition-all duration-200 hover:border-[#2563EB] hover:bg-[#2563EB] hover:text-white hover:shadow-[0_4px_24px_rgba(37,99,235,0.5)] md:inline-flex"
+              className="hidden items-center gap-1.5 rounded-xl border border-[#3B82F6] bg-[#2563EB]/10 px-4 py-2 text-sm font-semibold text-[#3B82F6] transition-all duration-200 hover:border-[#2563EB] hover:bg-[#2563EB] hover:text-white hover:shadow-[0_4px_24px_rgba(37,99,235,0.5)] lg:inline-flex"
             >
               Hire Me
               <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
@@ -271,7 +271,7 @@ export default function HomePage() {
             <button
               type="button"
               onClick={() => setMobileNavOpen((prev) => !prev)}
-              className="nav-icon-btn relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.04] text-slate-400 transition-colors hover:border-white/[0.14] hover:bg-white/[0.07] md:hidden"
+              className="nav-icon-btn relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.04] text-slate-400 transition-colors hover:border-white/[0.14] hover:bg-white/[0.07] lg:hidden"
               aria-label="Toggle navigation"
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -296,14 +296,14 @@ export default function HomePage() {
         {mobileNavOpen && (
           <>
             <motion.div
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileNavOpen(false)}
             />
             <motion.div
-              className="mobile-nav-panel fixed inset-x-4 top-[4.5rem] z-50 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#050D1C]/96 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.85),0_0_0_1px_rgba(37,99,235,0.12)] backdrop-blur-2xl sm:inset-x-6 md:hidden"
+              className="mobile-nav-panel fixed inset-x-4 top-[4.5rem] z-50 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#050D1C]/96 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.85),0_0_0_1px_rgba(37,99,235,0.12)] backdrop-blur-2xl sm:inset-x-6 lg:hidden"
               initial={{ opacity: 0, y: -10, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 300, damping: 28 } }}
               exit={{ opacity: 0, y: -8, scale: 0.97, transition: { duration: 0.16 } }}
@@ -376,19 +376,24 @@ export default function HomePage() {
         {/* Left: headline */}
         <motion.div className="relative z-10 mx-auto w-full max-w-[34rem] space-y-7 lg:mx-0 lg:max-w-none" variants={fadeUp}>
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/[0.08] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#93C5FD] sm:text-xs sm:tracking-[0.15em]">
-              <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-[#60A5FA]" />
-              <span className="hidden sm:inline">Available now · Backend &amp; Full-stack · Remote</span>
-              <span className="sm:hidden">Available · Full-stack · Remote</span>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[10px] font-medium tracking-wide text-slate-400 sm:text-[11px]">
+              <span className="flex items-center gap-1.5 text-[#60A5FA]">
+                <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-[#60A5FA]" />
+                Available now
+              </span>
+              <span className="h-3 w-px bg-slate-700" aria-hidden="true" />
+              <span>Backend &amp; Full-stack</span>
+              <span className="h-3 w-px bg-slate-700" aria-hidden="true" />
+              <span>Remote</span>
             </div>
             <h1 className="text-[2.2rem] font-bold leading-[1.06] tracking-tight text-white sm:text-5xl md:text-6xl xl:text-7xl">
-              Backend-focused engineer building{" "}
+              Turning ideas into{" "}
               <span className="hero-gradient bg-gradient-to-r from-[#60A5FA] via-[#93C5FD] to-[#BFDBFE] bg-clip-text text-transparent">
-                structured, secure systems.
+                products that hold.
               </span>
             </h1>
             <p className="max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
-              I specialize in backend systems and full-stack development, covering API design, authentication flows, data modeling, and React frontends that connect cleanly to the systems powering them.
+              Ahmad Ibrahim — software gets built here. The kind that does what it promises, holds up under pressure, and doesn&apos;t fall apart six months later.
             </p>
           </div>
           <motion.div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap" variants={fadeUp}>
@@ -820,16 +825,15 @@ export default function HomePage() {
         <h3 className="text-2xl font-bold text-white sm:text-3xl">About</h3>
         <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-400 sm:text-base">
           <p>
-            I am Ahmad Ibrahim, a BSc Software Engineering student and full-stack developer. I build products that help businesses run
-            better and give users a smoother, safer experience.
+            BSc Software Engineering student with a focus on building things that actually work in production — not just in demos.
           </p>
           <p>
-            My strength is turning unclear ideas into clear execution. I break big goals into practical features, build them with
-            reliability in mind, and make sure teams can maintain and improve the product over time.
+            The work tends to start with a messy idea and end with something a real team can ship, maintain, and grow. That gap between
+            &ldquo;we need a thing&rdquo; and &ldquo;the thing is live and stable&rdquo; is where most of the interesting problems live.
           </p>
           <p>
-            Right now, I am focused on trust-based products like Findora, where strong user confidence, operational stability, and
-            business value matter just as much as clean code.
+            Drawn to products where reliability isn&apos;t optional — where users need to trust what they&apos;re looking at, and the
+            business needs to trust the system underneath.
           </p>
         </div>
       </motion.section>
