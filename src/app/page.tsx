@@ -189,6 +189,7 @@ const navItems = [
   { label: "Projects", href: "#projects", icon: "rocket_launch" },
   { label: "Services", href: "#services", icon: "design_services" },
   { label: "Journey", href: "#journey", icon: "deployed_code_history" },
+  { label: "About", href: "#about", icon: "person" },
   { label: "Contact", href: "#contact", icon: "chat" },
 ];
 
@@ -816,6 +817,7 @@ export default function HomePage() {
 
       {/* ── About ── */}
       <motion.section
+        id="about"
         className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 lg:px-8"
         variants={sectionReveal}
         initial="hidden"
@@ -823,18 +825,50 @@ export default function HomePage() {
         viewport={{ once: true, amount: 0.18 }}
       >
         <h3 className="text-2xl font-bold text-white sm:text-3xl">About</h3>
-        <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-400 sm:text-base">
-          <p>
-            BSc Software Engineering student with a focus on building things that actually work in production — not just in demos.
-          </p>
-          <p>
-            The work tends to start with a messy idea and end with something a real team can ship, maintain, and grow. That gap between
-            &ldquo;we need a thing&rdquo; and &ldquo;the thing is live and stable&rdquo; is where most of the interesting problems live.
-          </p>
-          <p>
-            Drawn to products where reliability isn&apos;t optional — where users need to trust what they&apos;re looking at, and the
-            business needs to trust the system underneath.
-          </p>
+
+        <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+
+          {/* Photo — transparent cutout, no background */}
+          <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:max-w-none">
+            <Image
+              src="/me3.png"
+              alt="Ahmad Ibrahim"
+              width={447}
+              height={558}
+              className="mx-auto h-auto w-full max-w-[320px] object-contain lg:max-w-full"
+              priority
+            />
+            {/* Name + status below */}
+            <div className="mt-4 flex items-center justify-between">
+              <div>
+                <p className="text-base font-semibold text-white">Ahmad Ibrahim</p>
+                <p className="text-sm text-slate-500">Software Engineer</p>
+              </div>
+              <span className="flex items-center gap-1.5 text-xs text-[#60A5FA]">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#60A5FA]" />
+                Available
+              </span>
+            </div>
+          </div>
+
+          {/* Text */}
+          <div className="flex flex-col justify-center space-y-5 text-sm leading-relaxed text-slate-400 sm:text-base">
+            <p className="text-lg font-semibold leading-snug text-white sm:text-xl">
+              Building software that does what it promises.
+            </p>
+            <p>
+              BSc Software Engineering student with a focus on building things that actually work in production — not just in demos.
+            </p>
+            <p>
+              The work tends to start with a messy idea and end with something a real team can ship, maintain, and grow. That gap between
+              &ldquo;we need a thing&rdquo; and &ldquo;the thing is live and stable&rdquo; is where most of the interesting problems live.
+            </p>
+            <p>
+              Drawn to products where reliability isn&apos;t optional — where users need to trust what they&apos;re looking at, and the
+              business needs to trust the system underneath.
+            </p>
+          </div>
+
         </div>
       </motion.section>
 
