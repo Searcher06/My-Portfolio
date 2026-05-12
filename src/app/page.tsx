@@ -26,7 +26,7 @@ type SkillItem = {
 };
 
 const credibilityPoints = [
-  "Building Findora — a safer lost and found experience",
+  "Building Findora a safer lost and found experience",
   "Focused on products that improve trust and user confidence",
   "Designing reliable software that supports business growth",
 ];
