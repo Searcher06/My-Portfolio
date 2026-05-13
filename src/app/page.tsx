@@ -357,7 +357,7 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <motion.section
         id="home"
-        className="mx-auto grid w-full max-w-7xl gap-6 px-4 pb-12 pt-24 sm:min-h-[88vh] sm:gap-10 sm:px-6 sm:pb-16 sm:pt-28 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14 lg:min-h-[95vh] lg:px-8 lg:pt-36"
+        className="mx-auto grid w-full max-w-7xl gap-8 px-4 pb-16 pt-20 sm:gap-10 sm:px-6 sm:pb-20 sm:pt-28 sm:min-h-[88vh] lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14 lg:min-h-[95vh] lg:px-8 lg:pt-36"
         variants={stagger}
         initial="hidden"
         animate="show"
@@ -375,8 +375,8 @@ export default function HomePage() {
         </div>
 
         {/* Left: headline */}
-        <motion.div className="relative z-10 mx-auto w-full max-w-[34rem] space-y-7 lg:mx-0 lg:max-w-none" variants={fadeUp}>
-          <div className="space-y-6">
+        <motion.div className="relative z-10 w-full space-y-6 lg:max-w-none" variants={fadeUp}>
+          <div className="space-y-5">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[10px] font-medium tracking-wide text-slate-400 sm:text-[11px]">
               <span className="flex items-center gap-1.5 text-[#60A5FA]">
                 <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-[#60A5FA]" />
@@ -387,38 +387,53 @@ export default function HomePage() {
               <span className="h-3 w-px bg-slate-700" aria-hidden="true" />
               <span>Remote</span>
             </div>
-            <h1 className="text-[2.2rem] font-bold leading-[1.06] tracking-tight text-white sm:text-5xl md:text-6xl xl:text-7xl">
+            <h1 className="text-[1.9rem] font-bold leading-[1.08] tracking-tight text-white xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
               Turning ideas into{" "}
               <span className="hero-gradient bg-gradient-to-r from-[#60A5FA] via-[#93C5FD] to-[#BFDBFE] bg-clip-text text-transparent">
                 products that hold.
               </span>
             </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg">
+            <p className="max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base lg:text-lg">
               Ahmad Ibrahim — software gets built here. The kind that does what it promises, holds up under pressure, and doesn&apos;t fall apart six months later.
             </p>
           </div>
-          <motion.div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap" variants={fadeUp}>
-            <motion.div whileHover={reduceMotion ? undefined : { y: -2 }}>
+
+          <motion.div className="flex w-full flex-col gap-3 xs:flex-row xs:flex-wrap" variants={fadeUp}>
+            <motion.div whileHover={reduceMotion ? undefined : { y: -2 }} className="w-full xs:w-auto">
               <Link
                 href="/projects"
-                className="btn-primary inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold sm:w-auto sm:text-base"
+                className="btn-primary inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold sm:text-base"
               >
                 View Projects
                 <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </Link>
             </motion.div>
-            <motion.div whileHover={reduceMotion ? undefined : { y: -2 }}>
+            <motion.div whileHover={reduceMotion ? undefined : { y: -2 }} className="w-full xs:w-auto">
               <a
                 href="https://github.com/Searcher06"
                 target="_blank"
                 rel="noreferrer"
-                className="btn-secondary inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold sm:w-auto sm:text-base"
+                className="btn-secondary inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold sm:text-base"
               >
                 <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="" className="h-[1.05rem] w-[1.05rem] theme-icon-invert" loading="eager" />
                 GitHub
               </a>
             </motion.div>
           </motion.div>
+
+          {/* Mini stats row — visible on mobile only, gives the hero visual weight */}
+          <div className="grid grid-cols-3 gap-3 pt-2 lg:hidden">
+            {[
+              { value: "7+", label: "Projects" },
+              { value: "35%", label: "Perf. gain" },
+              { value: "2022", label: "Started" },
+            ].map((s) => (
+              <div key={s.label} className="rounded-xl border border-white/[0.07] bg-white/[0.03] px-3 py-3 text-center">
+                <p className="text-base font-bold text-white sm:text-lg">{s.value}</p>
+                <p className="mt-0.5 text-[10px] text-slate-500 sm:text-xs">{s.label}</p>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Right: profile card */}
@@ -472,11 +487,11 @@ export default function HomePage() {
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="mx-auto grid w-full max-w-7xl gap-2 px-4 py-5 sm:px-6 md:grid-cols-3 lg:px-8">
+        <div className="mx-auto grid w-full max-w-7xl gap-2 px-4 py-4 sm:px-6 sm:py-5 md:grid-cols-3 lg:px-8">
           {credibilityPoints.map((point) => (
             <p
               key={point}
-              className="rounded-xl border border-white/[0.07] bg-white/[0.025] px-3 py-2.5 text-sm font-medium text-slate-300 sm:text-base"
+              className="rounded-xl border border-white/[0.07] bg-white/[0.025] px-3 py-2.5 text-xs font-medium text-slate-300 sm:text-sm"
             >
               {point}
             </p>
@@ -487,14 +502,14 @@ export default function HomePage() {
       {/* ── Quick stats ── */}
       <motion.section
         id="projects"
-        className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8"
+        className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-10 lg:px-8"
         variants={sectionReveal}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div
-          className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4"
+          className="grid grid-cols-2 gap-3 xl:grid-cols-4"
           variants={stagger}
           initial="hidden"
           whileInView="show"
@@ -506,11 +521,11 @@ export default function HomePage() {
               variants={cardReveal}
               whileHover={reduceMotion ? undefined : { y: -8, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 240, damping: 16 }}
-              className="dark-surface rounded-2xl border border-white/[0.07] bg-[#0C1929]/90 p-5 transition shadow-[0_14px_30px_-22px_rgba(37,99,235,0.22)] hover:border-[#2563EB]/25 hover:shadow-[0_20x_40px_-22px_rgba(37,99,235,0.38)]"
+              className="dark-surface rounded-2xl border border-white/[0.07] bg-[#0C1929]/90 p-4 sm:p-5 transition shadow-[0_14px_30px_-22px_rgba(37,99,235,0.22)] hover:border-[#2563EB]/25"
             >
-              <p className="text-xs uppercase tracking-[0.14em] text-[#93C5FD]">{stat.label}</p>
-              <p className="mt-2 text-3xl font-bold text-white">{stat.value}</p>
-              <p className="mt-1 text-xs text-slate-500">{stat.trend}</p>
+              <p className="text-[10px] uppercase tracking-[0.14em] text-[#93C5FD] sm:text-xs">{stat.label}</p>
+              <p className="mt-1.5 text-2xl font-bold text-white sm:mt-2 sm:text-3xl">{stat.value}</p>
+              <p className="mt-1 text-[10px] text-slate-500 sm:text-xs">{stat.trend}</p>
             </motion.article>
           ))}
         </motion.div>
@@ -518,21 +533,21 @@ export default function HomePage() {
 
       {/* ── Featured project: Findora ── */}
       <motion.section
-        className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+        className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
         variants={sectionReveal}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.18 }}
       >
-        <div className="dark-surface relative overflow-hidden rounded-3xl border border-white/[0.07] bg-gradient-to-b from-[#112040] via-[#0E1E35] to-[#080D1C] p-6 sm:p-8 lg:p-10">
+        <div className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-[#112040] via-[#0E1E35] to-[#080D1C] p-5 sm:rounded-3xl sm:p-8 lg:p-10">
           <div className="pointer-events-none absolute -right-20 -top-16 h-56 w-56 rounded-full bg-blue-600/16 blur-3xl" />
           <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-sky-700/10 blur-3xl" />
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Featured Project</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">Findora</h2>
-          <p className="mt-2 text-lg text-slate-400">Built for the moment between losing something and getting it back</p>
-          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_0.9fr]">
-            <div className="space-y-5 text-slate-400">
-              <div className="overflow-hidden rounded-2xl border border-white/[0.07]">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#93C5FD] sm:text-xs">Featured Project</p>
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-white sm:mt-3 sm:text-3xl lg:text-4xl">Findora</h2>
+          <p className="mt-1.5 text-sm text-slate-400 sm:mt-2 sm:text-lg">Built for the moment between losing something and getting it back</p>
+          <div className="mt-6 grid gap-6 sm:mt-8 lg:grid-cols-[1fr_0.9fr] lg:gap-8">
+            <div className="space-y-4 text-slate-400 sm:space-y-5">
+              <div className="overflow-hidden rounded-xl border border-white/[0.07] sm:rounded-2xl">
                 <Image
                   src="/og/findora-placeholder.svg"
                   alt="Findora dashboard preview"
@@ -541,54 +556,54 @@ export default function HomePage() {
                   className="h-auto w-full"
                 />
               </div>
-              <p>
+              <p className="text-sm sm:text-base">
                 <span className="font-semibold text-slate-200">Problem:</span> In my department, lost items were reported the only way
                 everyone knew — a WhatsApp group. Posts got buried within hours, claims were unverifiable, and items rarely made it back
                 to their owners.
               </p>
-              <p>
+              <p className="text-sm sm:text-base">
                 <span className="font-semibold text-slate-200">Why it matters:</span> A WhatsApp message is not a recovery system. Without
                 structure, verification, or accountability, the loudest message wins — not the rightful owner.
               </p>
-              <p>
+              <p className="text-sm sm:text-base">
                 <span className="font-semibold text-slate-200">Solution:</span> I built Findora specifically for this environment — a
                 department-scale lost and found platform with secure auth, structured item reports, real-time chat, two-step handover
                 verification, and moderation controls so recovery is a process, not a guess.
               </p>
             </div>
-            <div className="rounded-2xl border border-[#93C5FD]/18 bg-gradient-to-b from-[#0D1E34] to-[#08101C] p-5 shadow-[0_20px_52px_-28px_rgba(37,99,235,0.6)]">
+            <div className="rounded-xl border border-[#93C5FD]/18 bg-gradient-to-b from-[#0D1E34] to-[#08101C] p-4 shadow-[0_20px_52px_-28px_rgba(37,99,235,0.6)] sm:rounded-2xl sm:p-5">
               <div className="mb-3 flex items-center justify-between">
                 <p className="text-sm font-semibold text-white">Key Features</p>
                 <span className="rounded-full border border-[#93C5FD]/28 bg-[#2563EB]/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.16em] text-[#BFDBFE]">
                   Core
                 </span>
               </div>
-              <ul className="mt-4 space-y-3 text-sm text-slate-400 sm:text-base">
+              <ul className="mt-3 space-y-2 text-xs text-slate-400 sm:mt-4 sm:space-y-3 sm:text-sm">
                 {findoraFeatures.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 rounded-xl border border-white/[0.07] bg-black/25 p-3">
-                    <span className="material-symbols-outlined mt-0.5 text-[16px] text-[#60A5FA]">verified</span>
+                  <li key={feature} className="flex items-start gap-2 rounded-lg border border-white/[0.07] bg-black/25 p-2.5 sm:gap-3 sm:rounded-xl sm:p-3">
+                    <span className="material-symbols-outlined mt-0.5 text-[14px] text-[#60A5FA] sm:text-[16px]">verified</span>
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+              <div className="mt-3 grid grid-cols-3 gap-2 text-center sm:mt-4">
                 {[["Flow", "Secure"], ["Claims", "Verified"], ["Status", "Tracked"]].map(([sub, main]) => (
                   <div key={main} className="rounded-lg border border-white/[0.07] bg-black/25 p-2">
-                    <p className="text-[10px] uppercase tracking-[0.12em] text-slate-500">{sub}</p>
-                    <p className="text-xs font-semibold text-white">{main}</p>
+                    <p className="text-[9px] uppercase tracking-[0.12em] text-slate-500 sm:text-[10px]">{sub}</p>
+                    <p className="text-[11px] font-semibold text-white sm:text-xs">{main}</p>
                   </div>
                 ))}
               </div>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-4 flex flex-col gap-2 sm:mt-6 sm:flex-row sm:gap-3">
                 <Link
                   href="/projects"
-                  className="btn-primary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold"
+                  className="btn-primary inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold sm:px-5 sm:py-3"
                 >
                   View Project Details
                 </Link>
                 <Link
                   href="/projects"
-                  className="btn-secondary inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold"
+                  className="btn-secondary inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold sm:px-5 sm:py-3"
                 >
                   Live Demo
                 </Link>
@@ -765,16 +780,20 @@ export default function HomePage() {
       {/* ── Journey ── */}
       <motion.section
         id="journey"
-        className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8"
+        className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
         variants={sectionReveal}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.18 }}
       >
         <h3 className="text-2xl font-bold text-white sm:text-3xl">Experience Journey (2022 – 2026)</h3>
-        <div className="relative mt-8">
+        <div className="relative mt-6 sm:mt-8">
+          {/* Desktop centre line */}
           <div className="absolute left-1/2 top-0 hidden h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-[#2563EB] via-[#3B82F6] to-[#93C5FD] md:block" />
-          <motion.div className="space-y-5" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }}>
+          {/* Mobile left line */}
+          <div className="absolute left-3 top-0 h-full w-[2px] bg-gradient-to-b from-[#2563EB] via-[#3B82F6] to-[#93C5FD] md:hidden" />
+
+          <motion.div className="space-y-4 sm:space-y-5" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }}>
             {roadmap.map((step, index) => (
               <motion.div
                 key={step.year}
@@ -784,16 +803,22 @@ export default function HomePage() {
                 }}
                 className={`flex md:items-center ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
               >
+                {/* Mobile dot */}
+                <div className="relative mr-5 mt-4 shrink-0 md:hidden">
+                  <div className="h-3 w-3 rounded-full bg-[#2563EB] shadow-[0_0_10px_rgba(37,99,235,0.7)]" />
+                </div>
+
                 <article
                   className={`dark-surface relative w-full rounded-2xl border border-white/[0.07] bg-[#0C1A2C]/85 p-4 shadow-[0_15px_35px_-25px_rgba(37,99,235,0.32)] md:w-[46%] ${index % 2 === 0 ? "md:mr-[54%]" : "md:ml-[54%]"}`}
                 >
+                  {/* Desktop dot */}
                   <div
                     className={`absolute top-8 hidden h-3 w-3 rounded-full bg-[#2563EB] shadow-[0_0_10px_rgba(37,99,235,0.7)] md:block ${index % 2 === 0 ? "-right-8" : "-left-8"}`}
                   />
-                  <p className="text-xs uppercase tracking-[0.15em] text-[#93C5FD]">{step.year}</p>
-                  <p className="mt-2 text-base font-semibold text-white">{step.title}</p>
-                  <p className="mt-2 text-sm text-slate-400">{step.highlight}</p>
-                  <p className="mt-3 rounded-lg border border-white/[0.07] bg-black/20 px-2 py-1 text-xs text-slate-500">{step.metric}</p>
+                  <p className="text-[10px] uppercase tracking-[0.15em] text-[#93C5FD] sm:text-xs">{step.year}</p>
+                  <p className="mt-1.5 text-sm font-semibold text-white sm:mt-2 sm:text-base">{step.title}</p>
+                  <p className="mt-1.5 text-xs text-slate-400 sm:mt-2 sm:text-sm">{step.highlight}</p>
+                  <p className="mt-2 rounded-lg border border-white/[0.07] bg-black/20 px-2 py-1 text-[10px] text-slate-500 sm:mt-3 sm:text-xs">{step.metric}</p>
                 </article>
               </motion.div>
             ))}
@@ -803,14 +828,14 @@ export default function HomePage() {
 
       {/* ── CTA ── */}
       <motion.section
-        className="mx-auto w-full max-w-4xl px-4 py-14 text-center sm:px-6 lg:px-8"
+        className="mx-auto w-full max-w-4xl px-4 py-10 text-center sm:px-6 sm:py-14 lg:px-8"
         variants={sectionReveal}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.18 }}
       >
-        <p className="text-xl font-semibold text-white sm:text-2xl">Want to see how I design real systems?</p>
-        <Link href="/projects" className="btn-primary mt-6 inline-flex rounded-xl px-6 py-3 text-sm font-semibold sm:text-base">
+        <p className="text-lg font-semibold text-white sm:text-xl lg:text-2xl">Want to see how I design real systems?</p>
+        <Link href="/projects" className="btn-primary mt-5 inline-flex rounded-xl px-6 py-3 text-sm font-semibold sm:mt-6 sm:text-base">
           View Full Project Breakdown
         </Link>
       </motion.section>
@@ -826,23 +851,22 @@ export default function HomePage() {
       >
         <h3 className="text-2xl font-bold text-white sm:text-3xl">About</h3>
 
-        <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <div className="mt-6 grid gap-8 sm:mt-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-10">
 
-          {/* Photo — transparent cutout, no background */}
-          <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:max-w-none">
+          {/* Photo */}
+          <div className="relative mx-auto w-full max-w-[260px] sm:max-w-sm lg:mx-0 lg:max-w-none">
             <Image
               src="/me3.png"
               alt="Ahmad Ibrahim"
               width={447}
               height={558}
-              className="mx-auto h-auto w-full max-w-[320px] object-contain lg:max-w-full"
+              className="mx-auto h-auto w-full object-contain"
               priority
             />
-            {/* Name + status below */}
-            <div className="mt-4 flex items-center justify-between">
+            <div className="mt-3 flex items-center justify-between sm:mt-4">
               <div>
-                <p className="text-base font-semibold text-white">Ahmad Ibrahim</p>
-                <p className="text-sm text-slate-500">Software Engineer</p>
+                <p className="text-sm font-semibold text-white sm:text-base">Ahmad Ibrahim</p>
+                <p className="text-xs text-slate-500 sm:text-sm">Software Engineer</p>
               </div>
               <span className="flex items-center gap-1.5 text-xs text-[#60A5FA]">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#60A5FA]" />
@@ -852,8 +876,8 @@ export default function HomePage() {
           </div>
 
           {/* Text */}
-          <div className="flex flex-col justify-center space-y-5 text-sm leading-relaxed text-slate-400 sm:text-base">
-            <p className="text-lg font-semibold leading-snug text-white sm:text-xl">
+          <div className="flex flex-col justify-center space-y-4 text-sm leading-relaxed text-slate-400 sm:space-y-5 sm:text-base">
+            <p className="text-base font-semibold leading-snug text-white sm:text-lg lg:text-xl">
               Building software that does what it promises.
             </p>
             <p>
@@ -875,21 +899,21 @@ export default function HomePage() {
       {/* ── Contact ── */}
       <motion.section
         id="contact"
-        className="mx-auto w-full max-w-5xl px-4 pb-20 pt-8 sm:px-6 lg:px-8"
+        className="mx-auto w-full max-w-5xl px-4 pb-16 pt-8 sm:pb-20 sm:px-6 lg:px-8"
         variants={sectionReveal}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.18 }}
       >
         <h3 className="text-2xl font-bold text-white sm:text-3xl">Contact</h3>
-        <div className="mt-6 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <form className="dark-surface rounded-2xl border border-white/[0.07] bg-[#0C1929]/85 p-5 shadow-[0_20px_40px_-30px_rgba(37,99,235,0.22)]">
-            <div className="grid gap-4 sm:grid-cols-2">
+        <div className="mt-5 grid gap-5 sm:mt-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-6">
+          <form className="dark-surface rounded-2xl border border-white/[0.07] bg-[#0C1929]/85 p-4 shadow-[0_20px_40px_-30px_rgba(37,99,235,0.22)] sm:p-5">
+            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
               <label className="text-sm text-slate-400">
                 Name
                 <input
                   type="text"
-                  className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-2.5 text-white outline-none ring-[#2563EB] placeholder:text-slate-600 focus:border-[#2563EB]/50 focus:ring-2"
+                  className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB] placeholder:text-slate-600 focus:border-[#2563EB]/50 focus:ring-2"
                   placeholder="Your name"
                 />
               </label>
@@ -897,34 +921,34 @@ export default function HomePage() {
                 Email
                 <input
                   type="email"
-                  className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-2.5 text-white outline-none ring-[#2563EB] placeholder:text-slate-600 focus:border-[#2563EB]/50 focus:ring-2"
+                  className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB] placeholder:text-slate-600 focus:border-[#2563EB]/50 focus:ring-2"
                   placeholder="you@example.com"
                 />
               </label>
             </div>
-            <label className="mt-4 block text-sm text-slate-400">
+            <label className="mt-3 block text-sm text-slate-400 sm:mt-4">
               Subject
               <input
                 type="text"
-                className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-2.5 text-white outline-none ring-[#2563EB] placeholder:text-slate-600 focus:border-[#2563EB]/50 focus:ring-2"
+                className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB] placeholder:text-slate-600 focus:border-[#2563EB]/50 focus:ring-2"
                 placeholder="Project discussion"
               />
             </label>
-            <label className="mt-4 block text-sm text-slate-400">
+            <label className="mt-3 block text-sm text-slate-400 sm:mt-4">
               Message
               <textarea
-                rows={5}
-                className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-2.5 text-white outline-none ring-[#2563EB] placeholder:text-slate-600 focus:border-[#2563EB]/50 focus:ring-2"
+                rows={4}
+                className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB] placeholder:text-slate-600 focus:border-[#2563EB]/50 focus:ring-2"
                 placeholder="Tell me about your product or idea"
               />
             </label>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <button type="button" className="btn-primary inline-flex rounded-xl px-6 py-3 text-sm font-semibold">
+            <div className="mt-3 flex flex-col gap-2 xs:flex-row xs:flex-wrap sm:mt-4 sm:gap-3">
+              <button type="button" className="btn-primary inline-flex w-full items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold xs:w-auto">
                 Send Message
               </button>
               <button
                 type="button"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-[#60A5FA]/40 hover:text-white"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-[#60A5FA]/40 hover:text-white xs:w-auto"
               >
                 <span className="material-symbols-outlined text-[18px]">download</span>
                 Download CV
@@ -932,11 +956,11 @@ export default function HomePage() {
             </div>
           </form>
 
-          <aside className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-br from-[#0E1E34] via-[#0B1826] to-[#07101A] p-5 shadow-[0_24px_55px_-35px_rgba(37,99,235,0.75)]">
+          <aside className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-br from-[#0E1E34] via-[#0B1826] to-[#07101A] p-4 shadow-[0_24px_55px_-35px_rgba(37,99,235,0.75)] sm:p-5">
             <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#93C5FD]/12 blur-2xl" />
-            <p className="text-sm uppercase tracking-[0.14em] text-[#93C5FD]">Reach me directly</p>
-            <p className="mt-2 text-xs text-slate-500">Fastest channels to reach Ahmad Ibrahim for collaboration.</p>
-            <div className="mt-5 space-y-2">
+            <p className="text-xs uppercase tracking-[0.14em] text-[#93C5FD] sm:text-sm">Reach me directly</p>
+            <p className="mt-1.5 text-xs text-slate-500 sm:mt-2">Fastest channels to reach Ahmad Ibrahim for collaboration.</p>
+            <div className="mt-4 space-y-2 sm:mt-5">
               {[
                 { icon: "https://cdn.simpleicons.org/gmail/EA4335", label: "Email", handle: "ahmad@example.com", href: "mailto:ahmad@example.com" },
                 { icon: "https://cdn.simpleicons.org/github/FFFFFF", label: "GitHub", handle: "@ahmad", href: "https://github.com/ahmad" },
@@ -949,13 +973,13 @@ export default function HomePage() {
                   href={contact.href}
                   target={contact.href.startsWith("http") ? "_blank" : undefined}
                   rel={contact.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="group flex items-center justify-between rounded-xl border border-white/[0.07] bg-black/20 px-3 py-2.5 transition hover:border-[#93C5FD]/32 hover:bg-black/35"
+                  className="group flex items-center justify-between rounded-xl border border-white/[0.07] bg-black/20 px-3 py-3 transition hover:border-[#93C5FD]/32 hover:bg-black/35"
                 >
                   <span className="flex items-center gap-2 text-sm text-slate-300">
-                    <img src={contact.icon} alt={`${contact.label} logo`} className="h-4 w-4" loading="lazy" />
+                    <img src={contact.icon} alt={`${contact.label} logo`} className="h-4 w-4 shrink-0" loading="lazy" />
                     {contact.label}
                   </span>
-                  <span className="text-xs text-[#60A5FA]">{contact.handle}</span>
+                  <span className="ml-2 truncate text-xs text-[#60A5FA]">{contact.handle}</span>
                 </a>
               ))}
             </div>
