@@ -205,23 +205,36 @@ export default function HomePage() {
   }, []);
 
   const fadeUp = {
-    hidden: { opacity: 0, y: reduceMotion ? 0 : 24 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.55 } },
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 28 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
+    },
   };
 
   const stagger = {
     hidden: {},
-    show: { transition: { staggerChildren: reduceMotion ? 0 : 0.12 } },
+    show: { transition: { staggerChildren: reduceMotion ? 0 : 0.1 } },
   };
 
   const sectionReveal = {
-    hidden: { opacity: 0, y: reduceMotion ? 0 : 48, scale: reduceMotion ? 1 : 0.985 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.7 } },
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 40, scale: reduceMotion ? 1 : 0.98 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+    },
   };
 
   const cardReveal = {
-    hidden: { opacity: 0, y: reduceMotion ? 0 : 22 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.52 } },
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    },
   };
 
   return (
@@ -321,14 +334,11 @@ export default function HomePage() {
                     key={item.label}
                     href={item.href}
                     onClick={() => setMobileNavOpen(false)}
-                    className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-slate-300 transition-colors hover:bg-white/[0.06] hover:text-white"
+                    className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-slate-300 transition-colors hover:bg-white/[0.06] hover:text-white"
                     variants={{ hidden: { opacity: 0, y: 6 }, show: { opacity: 1, y: 0, transition: { duration: 0.28 } } }}
                   >
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[#2563EB]/20 bg-[#2563EB]/10 text-[#60A5FA]">
-                      <span className="material-symbols-outlined text-[17px]">{item.icon}</span>
-                    </span>
                     <span>{item.label}</span>
-                    <span className="material-symbols-outlined ml-auto text-[16px] text-slate-600">chevron_right</span>
+                    <span className="material-symbols-outlined text-[15px] text-slate-600">chevron_right</span>
                   </motion.a>
                 ))}
               </motion.div>
@@ -336,9 +346,8 @@ export default function HomePage() {
                 <a
                   href="#contact"
                   onClick={() => setMobileNavOpen(false)}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8] py-3 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(37,99,235,0.4)]"
+                  className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8] py-3 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(37,99,235,0.4)]"
                 >
-                  <span className="material-symbols-outlined text-[18px]">handshake</span>
                   Hire Me
                 </a>
               </div>
@@ -387,7 +396,7 @@ export default function HomePage() {
               <span className="h-3 w-px bg-slate-700" aria-hidden="true" />
               <span>Remote</span>
             </div>
-            <h1 className="text-[2.1rem] font-bold leading-[1.08] tracking-tight text-white xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
+            <h1 className="text-[2.35rem] font-bold leading-[1.08] tracking-tight text-white xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
               Turning ideas into{" "}
               <span className="hero-gradient bg-gradient-to-r from-[#60A5FA] via-[#93C5FD] to-[#BFDBFE] bg-clip-text text-transparent">
                 products that hold.
