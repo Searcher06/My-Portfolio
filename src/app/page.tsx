@@ -357,7 +357,7 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <motion.section
         id="home"
-        className="mx-auto grid w-full max-w-7xl gap-8 px-4 pb-16 pt-20 sm:gap-10 sm:px-6 sm:pb-20 sm:pt-28 sm:min-h-[88vh] lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14 lg:min-h-[95vh] lg:px-8 lg:pt-36"
+        className="mx-auto grid w-full max-w-7xl gap-8 px-4 pb-16 pt-28 sm:gap-10 sm:px-6 sm:pb-20 sm:pt-32 sm:min-h-[88vh] lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14 lg:min-h-[95vh] lg:px-8 lg:pt-36"
         variants={stagger}
         initial="hidden"
         animate="show"
@@ -387,7 +387,7 @@ export default function HomePage() {
               <span className="h-3 w-px bg-slate-700" aria-hidden="true" />
               <span>Remote</span>
             </div>
-            <h1 className="text-[1.9rem] font-bold leading-[1.08] tracking-tight text-white xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
+            <h1 className="text-[2.1rem] font-bold leading-[1.08] tracking-tight text-white xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
               Turning ideas into{" "}
               <span className="hero-gradient bg-gradient-to-r from-[#60A5FA] via-[#93C5FD] to-[#BFDBFE] bg-clip-text text-transparent">
                 products that hold.
