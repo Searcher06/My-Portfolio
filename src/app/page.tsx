@@ -204,12 +204,14 @@ export default function HomePage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
   const fadeUp = {
     hidden: { opacity: 0, y: reduceMotion ? 0 : 28 },
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.65, ease: EASE },
     },
   };
 
@@ -224,7 +226,7 @@ export default function HomePage() {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.75, ease: EASE },
     },
   };
 
@@ -233,7 +235,7 @@ export default function HomePage() {
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.6, ease: EASE },
     },
   };
 
