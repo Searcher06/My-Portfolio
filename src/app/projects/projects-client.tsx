@@ -101,28 +101,31 @@ const projects: ProjectDetail[] = [
     repoUrl: "https://github.com/Searcher06/Brillit.io",
   },
   {
-    name: "SignalAuth",
-    tagline: "Adaptive authentication for secure, low-friction product access.",
-    icon: "shield_lock",
-    image: "/og/signalauth-placeholder.svg",
-    status: "Architecture completed",
+    name: "Vestlee",
+    tagline: "Secure account management and Gmail OAuth integration foundation.",
+    icon: "lock_person",
+    image: "/vestlee.png",
+    status: "In Progress",
     challenge:
-      "B2B products often trade off strong security for smooth onboarding, hurting either trust or conversion.",
+      "Many products implement basic auth, but struggle with secure session control, clean OAuth onboarding, and reliable validation across backend and frontend flows.",
     solution:
-      "Implemented adaptive policies using risk signals, device trust scoring, and session governance controls.",
+      "Built a full-stack authentication system with JWT access control, bcrypt password security, Google OAuth for Gmail connection, session revocation, structured logging, and centralized error handling.",
     impact: [
-      "Balanced onboarding speed with stronger account protection.",
-      "Enabled risk-based auth decisions instead of one-size-fits-all friction.",
-      "Reduced exposure to high-risk sessions through governance rules.",
+      "Improved account security with encrypted credentials and revocable sessions.",
+      "Reduced onboarding friction by enabling one-click Gmail account connection.",
+      "Increased reliability and maintainability with strict input validation and global error handling.",
     ],
     stack: [
+      { name: "TypeScript", iconUrl: "https://cdn.simpleicons.org/typescript/3178C6" },
       { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
-      { name: "Redis", iconUrl: "https://cdn.simpleicons.org/redis/DC382D" },
-      { name: "Sentry", iconUrl: "https://cdn.simpleicons.org/sentry/362D59" },
+      { name: "Express", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
+      { name: "Next.js", iconUrl: "https://cdn.simpleicons.org/nextdotjs/FFFFFF" },
+      { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
+      { name: "Mongoose", iconUrl: "https://cdn.simpleicons.org/mongoose/880000" },
       { name: "JWT", iconUrl: "https://cdn.simpleicons.org/jsonwebtokens/000000" },
-      { name: "Auth0", iconUrl: "https://cdn.simpleicons.org/auth0/EB5424" },
+      { name: "Google", iconUrl: "https://cdn.simpleicons.org/google/4285F4" },
     ],
-    highlights: ["Adaptive auth rules", "Device trust layer", "Session governance"],
+    highlights: ["JWT auth + session revocation", "Google OAuth (Gmail connect)", "Validation, logging, and global error handling"],
   },
   {
     name: "HiringFlow",
@@ -280,7 +283,7 @@ export default function ProjectsClientPage() {
                     <h2 className="mt-3 text-lg font-bold text-white sm:text-xl">{project.name}</h2>
                     <p className="mt-1 text-sm text-slate-400 line-clamp-2">{project.tagline}</p>
                   </div>
-                  <span className="w-fit rounded-full border border-[#93C5FD]/28 bg-[#2563EB]/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#BFDBFE]">
+                  <span className="w-fit whitespace-nowrap rounded-full bg-[#2563EB]/10 px-2.5 py-1 text-[11px] font-semibold text-[#BFDBFE]">
                     {project.status}
                   </span>
                 </div>

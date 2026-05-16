@@ -80,16 +80,17 @@ const otherProjects: ProjectCard[] = [
     href: "/projects",
   },
   {
-    name: "SignalAuth",
-    image: "/og/signalauth-placeholder.svg",
+    name: "Vestlee",
+    image: "/vestlee.png",
     problem:
-      "B2B products struggle to balance secure authentication with low-friction onboarding.",
+      "Many account systems handle basic login but fall short on secure session control and clean external integrations like Gmail OAuth.",
     solution:
-      "Implemented adaptive auth policies with device trust, risk scoring, and session governance.",
+      "Built a full auth foundation with JWT-based access, encrypted passwords, session revocation, strong validation, and seamless Google account connection flow.",
     tools: [
-      { name: "Auth0", iconUrl: "https://cdn.simpleicons.org/auth0/EB5424" },
-      { name: "Sentry", iconUrl: "https://cdn.simpleicons.org/sentry/362D59" },
-      { name: "Redis", iconUrl: "https://cdn.simpleicons.org/redis/DC382D" },
+      { name: "Next.js", iconUrl: "https://cdn.simpleicons.org/nextdotjs/FFFFFF" },
+      { name: "TypeScript", iconUrl: "https://cdn.simpleicons.org/typescript/3178C6" },
+      { name: "Express", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
+      { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
     ],
     href: "/projects",
   },
