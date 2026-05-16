@@ -32,7 +32,7 @@ const credibilityPoints = [
 ];
 
 const quickStats = [
-  { label: "Projects Built", value: "7", trend: "+3 this year" },
+  { label: "Projects Built", value: "8", trend: "+4 this year" },
   { label: "Workflows Improved", value: "3", trend: "Across different product types" },
   { label: "Performance Gain", value: "35%", trend: "Faster app experience for users" },
   { label: "Current Focus", value: "Findora", trend: "A trust-first product for real communities" },
@@ -47,6 +47,21 @@ const findoraFeatures = [
 ];
 
 const otherProjects: ProjectCard[] = [
+  {
+    name: "Primary Colours School Management System",
+    image: "/og/primary-colours-placeholder.svg",
+    problem:
+      "School fee tracking and item distribution were fragmented, making payment review, role assignment, and fulfillment difficult to manage end-to-end.",
+    solution:
+      "Built a full workflow covering fee configuration, parent payment submissions, admin item-level review, role-based staff routing, and collection tracking with reporting.",
+    tools: [
+      { name: "React", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
+      { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
+      { name: "Express", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
+      { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
+    ],
+    href: "/projects",
+  },
   {
     name: "Brillit",
     image: "/og/opsboard-placeholder.svg",

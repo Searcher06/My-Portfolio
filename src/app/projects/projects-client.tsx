@@ -23,6 +23,31 @@ type ProjectDetail = {
 
 const projects: ProjectDetail[] = [
   {
+    name: "Primary Colours School Management System",
+    tagline: "School operations platform for payment review and item fulfillment workflows.",
+    icon: "school",
+    image: "/og/primary-colours-placeholder.svg",
+    status: "Live",
+    challenge:
+      "School operations were slowed by disconnected processes for fee setup, payment verification, and item handover, making accountability and fulfillment tracking difficult.",
+    solution:
+      "Built an end-to-end school management workflow with role-based access, configurable academic structures and fee items, parent payment submissions with evidence uploads, admin item-level review actions, and staff collection tracking.",
+    impact: [
+      "Improved fee collection operations with a structured review pipeline for pending, accepted, partial, and rejected submissions.",
+      "Reduced fulfillment bottlenecks by routing accepted items directly to staff based on role assignments.",
+      "Increased operational visibility through admin dashboards, configuration health checks, and PDF reporting.",
+    ],
+    stack: [
+      { name: "React", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
+      { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
+      { name: "Express", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
+      { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
+      { name: "Mongoose", iconUrl: "https://cdn.simpleicons.org/mongoose/880000" },
+      { name: "Tailwind CSS", iconUrl: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+    ],
+    highlights: ["Item-level admin approval flow", "Role-based staff assignment routing", "Payment evidence and fulfillment tracking"],
+  },
+  {
     name: "Findora",
     tagline: "Trust-based lost and found platform for real communities.",
     icon: "verified_user",
