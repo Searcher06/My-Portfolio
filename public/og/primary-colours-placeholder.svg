@@ -18,7 +18,7 @@
 
   <rect x="130" y="122" width="480" height="46" rx="12" fill="#0F2241"/>
   <text x="154" y="152" fill="#DBEAFE" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="24" font-weight="700">
-    Primary Colours School Management System
+    School Payment & Distribution
   </text>
 
   <rect x="130" y="194" width="330" height="370" rx="18" fill="url(#card)" stroke="#93C5FD" stroke-opacity="0.22"/>

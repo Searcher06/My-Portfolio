@@ -23,10 +23,10 @@ type ProjectDetail = {
 
 const projects: ProjectDetail[] = [
   {
-    name: "Primary Colours School Management System",
-    tagline: "School operations platform for payment review and item fulfillment workflows.",
+    name: "School Payment & Distribution Management System",
+    tagline: "Payment review and item fulfillment workflow platform.",
     icon: "school",
-    image: "/og/primary-colours-placeholder.svg",
+    image: "/schoolmanagement.png",
     status: "Live",
     challenge:
       "School operations were slowed by disconnected processes for fee setup, payment verification, and item handover, making accountability and fulfillment tracking difficult.",
@@ -51,7 +51,7 @@ const projects: ProjectDetail[] = [
     name: "Findora",
     tagline: "Trust-based lost and found platform for real communities.",
     icon: "verified_user",
-    image: "/og/findora-placeholder.svg",
+    image: "/findorabrowse.png",
     status: "Live",
     challenge:
       "Most lost-and-found systems fail because reports are unstructured, communication is scattered, and ownership handovers are hard to verify.",
@@ -76,7 +76,7 @@ const projects: ProjectDetail[] = [
     name: "Brillit",
     tagline: "Personalized educational video platform powered by AI and fast search.",
     icon: "smart_display",
-    image: "/og/opsboard-placeholder.svg",
+    image: "/brillitbrowse.png",
     status: "Live",
     challenge:
       "Educational platforms often show generic content, making it hard for learners to discover videos that match their interests and learning path.",
@@ -258,7 +258,7 @@ export default function ProjectsClientPage() {
         </motion.section>
 
         {/* ── Projects grid ── */}
-        <div className="mt-8 grid gap-5 lg:grid-cols-2">
+        <div className="mt-8 grid gap-4 lg:grid-cols-2">
           {projects.map((project, index) => {
             const slideX = rm ? 0 : index === 0 ? 0 : (index - 1) % 2 === 0 ? -52 : 52;
             const slideY = rm ? 0 : index === 0 ? 52 : 20;
@@ -270,9 +270,7 @@ export default function ProjectsClientPage() {
                 viewport={{ once: true, amount: 0.06 }}
                 transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: index === 0 ? 0 : (index - 1) * 0.08 }}
                 whileHover={rm ? undefined : { y: -6, scale: 1.012, transition: { type: "spring", stiffness: 260, damping: 22 } }}
-                className={`dark-surface group relative overflow-hidden rounded-3xl border border-[#BFDBFE]/10 bg-linear-to-br from-[#152540] via-[#111E35] to-[#0C1525] p-5 transition-colors duration-300 hover:border-[#93C5FD]/32 hover:shadow-[0_16px_36px_-20px_rgba(59,130,246,0.35)] sm:p-6 ${
-                  index === 0 ? "lg:col-span-2" : ""
-                }`}
+                className="dark-surface group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#BFDBFE]/10 bg-linear-to-br from-[#152540] via-[#111E35] to-[#0C1525] p-4 transition-colors duration-300 hover:border-[#93C5FD]/32 hover:shadow-[0_16px_36px_-20px_rgba(59,130,246,0.35)] sm:p-5"
               >
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_0%,rgba(255,255,255,0.06),transparent_42%)] opacity-60" />
 
@@ -282,8 +280,8 @@ export default function ProjectsClientPage() {
                     <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-[#2563EB]/10 text-[#60A5FA]">
                       <span className="material-symbols-outlined text-[20px]">{project.icon}</span>
                     </div>
-                    <h2 className="mt-3 text-xl font-bold text-white sm:text-2xl">{project.name}</h2>
-                    <p className="mt-1 text-sm text-slate-400">{project.tagline}</p>
+                    <h2 className="mt-3 text-lg font-bold text-white sm:text-xl">{project.name}</h2>
+                    <p className="mt-1 text-sm text-slate-400 line-clamp-2">{project.tagline}</p>
                   </div>
                   <span className="w-fit rounded-full border border-[#93C5FD]/28 bg-[#2563EB]/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#BFDBFE]">
                     {project.status}
@@ -291,25 +289,25 @@ export default function ProjectsClientPage() {
                 </div>
 
                 {/* Image + text */}
-                <div className="relative mt-5 space-y-3 text-sm text-slate-400">
-                  <div className="overflow-hidden rounded-2xl border border-white/[0.07]">
+                <div className="relative mt-4 space-y-3 text-sm text-slate-400">
+                  <div className="aspect-video overflow-hidden rounded-2xl border border-white/[0.07] bg-[#081322] p-1.5">
                     <Image
                       src={project.image}
                       alt={`${project.name} project preview`}
                       width={1200}
                       height={700}
-                      className={`w-full object-cover ${index === 0 ? "h-56 lg:h-72" : "h-40 sm:h-44"}`}
+                      className="h-full w-full object-contain object-center"
                     />
                   </div>
-                  <p><span className="font-semibold text-slate-200">Challenge:</span> {project.challenge}</p>
-                  <p><span className="font-semibold text-slate-200">Solution:</span> {project.solution}</p>
+                  <p className="line-clamp-3"><span className="font-semibold text-slate-200">Challenge:</span> {project.challenge}</p>
+                  <p className="line-clamp-3"><span className="font-semibold text-slate-200">Solution:</span> {project.solution}</p>
                 </div>
 
                 {/* Key impact — staggered slide-in */}
-                <div className="relative mt-5">
+                <div className="relative mt-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#93C5FD]">Key Impact</p>
                   <motion.ul
-                    className="mt-3 space-y-2 text-sm text-slate-400"
+                    className="mt-2.5 space-y-2 text-sm text-slate-400"
                     variants={impactList}
                     initial="hidden"
                     whileInView="show"
@@ -319,7 +317,7 @@ export default function ProjectsClientPage() {
                       <motion.li
                         key={point}
                         variants={impactItem}
-                        className="flex items-start gap-2 rounded-lg border border-white/[0.07] bg-black/20 p-2.5"
+                        className="flex items-start gap-2 rounded-lg border border-white/[0.07] bg-black/20 p-2"
                       >
                         <span className="material-symbols-outlined mt-0.5 text-[16px] text-[#60A5FA]">done</span>
                         <span>{point}</span>
@@ -329,7 +327,7 @@ export default function ProjectsClientPage() {
                 </div>
 
                 {/* Tech stack — pop-in badges */}
-                <div className="relative mt-5">
+                <div className="relative mt-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Technology Stack</p>
                   <motion.div
                     className="mt-2 flex flex-wrap gap-2"
@@ -352,7 +350,7 @@ export default function ProjectsClientPage() {
                 </div>
 
                 {/* Highlights + links */}
-                <div className="relative mt-5 border-t border-white/[0.07] pt-4">
+                <div className="relative mt-auto border-t border-white/[0.07] pt-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Project Highlights</p>
                   <p className="mt-2 text-sm text-slate-400">{project.highlights.join(" · ")}</p>
                   {(project.liveUrl ?? project.repoUrl) && (

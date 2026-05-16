@@ -20,6 +20,9 @@ type ProjectCard = {
   href: string;
 };
 
+const truncateText = (text: string, maxLength: number) =>
+  text.length > maxLength ? `${text.slice(0, maxLength).trimEnd()}...` : text;
+
 type SkillItem = {
   name: string;
   iconUrl: string;
@@ -48,8 +51,8 @@ const findoraFeatures = [
 
 const otherProjects: ProjectCard[] = [
   {
-    name: "Primary Colours School Management System",
-    image: "/og/primary-colours-placeholder.svg",
+    name: "School Payment & Distribution Management System",
+    image: "/schoolmanagement.png",
     problem:
       "School fee tracking and item distribution were fragmented, making payment review, role assignment, and fulfillment difficult to manage end-to-end.",
     solution:
@@ -64,7 +67,7 @@ const otherProjects: ProjectCard[] = [
   },
   {
     name: "Brillit",
-    image: "/og/opsboard-placeholder.svg",
+    image: "/brillitbrowse.png",
     problem:
       "Learners struggle to find the right educational videos quickly, and generic feeds rarely match personal learning goals.",
     solution:
@@ -575,7 +578,7 @@ export default function HomePage() {
             <div className="space-y-4 text-slate-400 sm:space-y-5">
               <div className="overflow-hidden rounded-xl border border-white/[0.07] sm:rounded-2xl">
                 <Image
-                  src="/og/findora-placeholder.svg"
+                  src="/findorabrowse.png"
                   alt="Findora dashboard preview"
                   width={1200}
                   height={700}
@@ -666,23 +669,23 @@ export default function HomePage() {
               variants={cardReveal}
               whileHover={reduceMotion ? undefined : { y: -10, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 220, damping: 18 }}
-              className="dark-surface group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[#0E1E32]/90 p-4 transition duration-300 hover:border-[#2563EB]/28 hover:shadow-[0_20px_48px_-24px_rgba(37,99,235,0.42)] sm:p-5"
+              className="dark-surface group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-[#0E1E32]/90 p-4 transition duration-300 hover:border-[#2563EB]/28 hover:shadow-[0_20px_48px_-24px_rgba(37,99,235,0.42)] sm:p-5"
             >
-              <div className="overflow-hidden rounded-xl border border-white/[0.07]">
+              <div className="aspect-video overflow-hidden rounded-xl border border-white/[0.07] bg-[#081322] p-1.5">
                 <Image
                   src={project.image}
                   alt={`${project.name} preview`}
                   width={1200}
                   height={700}
-                  className="h-40 w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                  className="h-full w-full object-contain object-center transition duration-500 group-hover:scale-[1.02]"
                 />
               </div>
-              <h4 className="mt-4 text-lg font-semibold text-white">{project.name}</h4>
+              <h4 className="mt-4 min-h-[3.5rem] text-lg font-semibold text-white">{project.name}</h4>
               <p className="mt-3 text-sm text-slate-400">
-                <span className="font-medium text-slate-200">Problem:</span> {project.problem}
+                <span className="font-medium text-slate-200">Problem:</span> {truncateText(project.problem, 120)}
               </p>
               <p className="mt-2 text-sm text-slate-400">
-                <span className="font-medium text-slate-200">Solution:</span> {project.solution}
+                <span className="font-medium text-slate-200">Solution:</span> {truncateText(project.solution, 130)}
               </p>
               <div className="mt-4">
                 <p className="mb-2 text-xs uppercase tracking-[0.15em] text-slate-500">Tools Used</p>
@@ -698,7 +701,7 @@ export default function HomePage() {
                   ))}
                 </div>
               </div>
-              <Link href={project.href} className="mt-4 inline-flex text-sm font-semibold text-[#60A5FA] transition hover:text-[#BFDBFE]">
+              <Link href={project.href} className="mt-auto pt-4 inline-flex text-sm font-semibold text-[#60A5FA] transition hover:text-[#BFDBFE]">
                 View Project
               </Link>
             </motion.article>
