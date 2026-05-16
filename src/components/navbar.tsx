@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -37,14 +38,7 @@ export function Navbar() {
             className="group relative flex items-center gap-3"
             aria-label="Home - Alex Morgan Portfolio"
           >
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12">
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#6366F1] to-[#818CF8] opacity-20 blur-sm group-hover:opacity-30 transition-opacity" />
-              <div className="relative w-full h-full rounded-xl bg-[#111418] border border-[rgba(255,255,255,0.1)] flex items-center justify-center">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#6366F1]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                </svg>
-              </div>
-            </div>
+            <Image src="/ahmadlogo.png" alt="Ahmad logo" width={48} height={48} className="h-10 w-auto sm:h-12" />
             <div className="flex flex-col">
               <span className="font-display font-bold text-base sm:text-lg text-[#f0f2f5] tracking-tight">Alex Morgan</span>
               <span className="text-[10px] sm:text-xs text-[#6366F1] font-semibold tracking-[0.15em] uppercase">Senior Full-Stack Engineer</span>

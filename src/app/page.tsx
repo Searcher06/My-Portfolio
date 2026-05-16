@@ -256,10 +256,7 @@ export default function HomePage() {
 
           {/* Logo */}
           <a href="#home" className="inline-flex items-center gap-3 shrink-0">
-            <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#2563EB] to-[#38BDF8] text-sm font-bold text-white shadow-[0_4px_16px_rgba(37,99,235,0.5)] sm:h-10 sm:w-10 sm:text-base">
-              A
-              <span className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/20" />
-            </span>
+            <Image src="/ahmadlogo.png" alt="Ahmad logo" width={44} height={44} className="h-9 w-auto sm:h-10" />
             <span className="text-sm font-semibold text-white sm:text-[0.9375rem]">Ahmad Ibrahim</span>
           </a>
 
@@ -457,11 +454,7 @@ export default function HomePage() {
           <div className="force-dark dark-surface relative rounded-[2rem] border border-white/[0.09] bg-gradient-to-br from-[#102038] via-[#0E1E35] to-[#080E1C] p-5 shadow-[0_32px_80px_-24px_rgba(37,99,235,0.4)] sm:p-7">
             <div className="mb-6 flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#38BDF8] p-[1px] shadow-[0_4px_14px_rgba(37,99,235,0.4)]">
-                  <div className="flex h-full w-full items-center justify-center rounded-[11px] bg-[#07101C] text-sm font-bold text-[#BFDBFE]">
-                    AF
-                  </div>
-                </div>
+                <Image src="/ahmadlogo.png" alt="Ahmad logo" width={52} height={52} className="h-11 w-auto" />
                 <div>
                   <p className="text-sm font-semibold text-white">Ahmad Ibrahim</p>
                   <p className="text-xs text-slate-500">Backend-Focused Full-Stack Engineer</p>

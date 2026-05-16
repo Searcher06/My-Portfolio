@@ -204,10 +204,7 @@ export default function ProjectsClientPage() {
 
           {/* Logo */}
           <Link href="/" className="inline-flex shrink-0 items-center gap-3">
-            <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-[#2563EB] to-[#38BDF8] text-sm font-bold text-white shadow-[0_4px_16px_rgba(37,99,235,0.5)] sm:h-10 sm:w-10 sm:text-base">
-              A
-              <span className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/20" />
-            </span>
+            <Image src="/ahmadlogo.png" alt="Ahmad logo" width={44} height={44} className="h-9 w-auto sm:h-10" />
             <span className="hidden text-sm font-semibold text-white sm:block sm:text-[0.9375rem]">Ahmad Ibrahim</span>
           </Link>
 

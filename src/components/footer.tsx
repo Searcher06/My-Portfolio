@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = [
   { label: "Home", href: "#home" },
@@ -51,10 +51,7 @@ export function Footer() {
           {/* Brand column */}
           <div className="space-y-5">
             <a href="#home" className="inline-flex items-center gap-3">
-              <span className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#2563EB] to-[#38BDF8] text-sm font-bold text-white shadow-[0_4px_16px_rgba(37,99,235,0.5)]">
-                A
-                <span className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/20" />
-              </span>
+              <Image src="/ahmadlogo.png" alt="Ahmad logo" width={44} height={44} className="h-10 w-auto" />
               <span className="text-base font-semibold text-white">Ahmad Ibrahim</span>
             </a>
             <p className="max-w-xs text-sm leading-relaxed text-slate-500">
