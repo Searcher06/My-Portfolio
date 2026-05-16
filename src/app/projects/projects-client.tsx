@@ -127,30 +127,6 @@ const projects: ProjectDetail[] = [
     ],
     highlights: ["JWT auth + session revocation", "Google OAuth (Gmail connect)", "Validation, logging, and global error handling"],
   },
-  {
-    name: "HiringFlow",
-    tagline: "Structured hiring pipeline for fairer and faster candidate decisions.",
-    icon: "group",
-    image: "/og/hiringflow-placeholder.svg",
-    status: "Production-ready prototype",
-    challenge:
-      "Candidate feedback is usually inconsistent, slowing decisions and introducing evaluation bias.",
-    solution:
-      "Created a standardized scoring workflow with calibration checkpoints and API-first integrations across hiring stages.",
-    impact: [
-      "Improved decision quality with normalized interviewer scorecards.",
-      "Reduced turnaround time by structuring feedback loops and ownership.",
-      "Made process health measurable with stage-level pipeline visibility.",
-    ],
-    stack: [
-      { name: "React", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
-      { name: "Express", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
-      { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
-      { name: "Postman", iconUrl: "https://cdn.simpleicons.org/postman/FF6C37" },
-      { name: "Google Analytics", iconUrl: "https://cdn.simpleicons.org/googleanalytics/E37400" },
-    ],
-    highlights: ["Score normalization", "Interviewer calibration", "Pipeline analytics"],
-  },
 ];
 
 export default function ProjectsClientPage() {
