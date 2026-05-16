@@ -80,20 +80,6 @@ const otherProjects: ProjectCard[] = [
     href: "/projects",
   },
   {
-    name: "HiringFlow",
-    image: "/og/hiringflow-placeholder.svg",
-    problem:
-      "Recruiting pipelines break when candidate data is inconsistent and feedback loops are slow.",
-    solution:
-      "Designed a structured hiring pipeline with score normalization, interviewer calibration, and API-first integrations.",
-    tools: [
-      { name: "React", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
-      { name: "Express", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
-      { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
-    ],
-    href: "/projects",
-  },
-  {
     name: "SignalAuth",
     image: "/og/signalauth-placeholder.svg",
     problem:
@@ -651,7 +637,7 @@ export default function HomePage() {
         viewport={{ once: true, amount: 0.18 }}
       >
         <div className="flex items-end justify-between gap-3">
-          <h3 className="text-2xl font-bold text-white sm:text-3xl">Other Projects</h3>
+          <h3 className="text-2xl font-bold text-white sm:text-3xl">Selected Projects</h3>
           <Link href="/projects" className="text-sm font-semibold text-[#60A5FA] transition hover:text-[#BFDBFE]">
             View All Projects
           </Link>
