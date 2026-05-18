@@ -97,7 +97,7 @@ const otherProjects: ProjectCard[] = [
 ];
 
 const currentlyExploring = [
-  { title: "Better auth flows", note: "Lower friction onboarding with stronger trust boundaries.", icon: "verified_user" },
+  { title: "AI systems for real-world products", note: "Exploring how AI can power useful features inside scalable web applications.", icon: "smart_toy" },
   { title: "System design patterns", note: "Reusable architecture for high-change product teams.", icon: "schema" },
   { title: "Backend performance", note: "Profiling and tuning under realistic production load.", icon: "speed" },
 ];
@@ -132,60 +132,85 @@ const services = [
 
 const skillGroups = [
   {
-    label: "Systems",
+    label: "Frontend",
     items: [
-      { name: "Auth & Authorization", iconUrl: "https://cdn.simpleicons.org/auth0/EB5424" },
-      { name: "API Design", iconUrl: "https://cdn.simpleicons.org/openapiinitiative/6BA539" },
-      { name: "Database Modeling", iconUrl: "https://cdn.simpleicons.org/postgresql/4169E1" },
+      { name: "HTML", iconUrl: "https://cdn.simpleicons.org/html5/E34F26" },
+      { name: "CSS", iconUrl: "https://cdn.simpleicons.org/css/1572B6" },
+      { name: "JavaScript", iconUrl: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+      { name: "React.js", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
+      { name: "Tailwind CSS", iconUrl: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
     ] satisfies SkillItem[],
   },
   {
-    label: "Frontend",
+    label: "Backend",
     items: [
-      { name: "React", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
-      { name: "UI Architecture", iconUrl: "https://cdn.simpleicons.org/figma/F24E1E" },
+      { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
+      { name: "Express.js", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
+    ] satisfies SkillItem[],
+  },
+  {
+    label: "Databases",
+    items: [
+      { name: "PostgreSQL", iconUrl: "https://cdn.simpleicons.org/postgresql/4169E1" },
+      { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
+    ] satisfies SkillItem[],
+  },
+  {
+    label: "Languages",
+    items: [
+      { name: "TypeScript", iconUrl: "https://cdn.simpleicons.org/typescript/3178C6" },
+      { name: "JavaScript", iconUrl: "https://cdn.simpleicons.org/javascript/F7DF1E" },
     ] satisfies SkillItem[],
   },
   {
     label: "Tools",
     items: [
-      { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
-      { name: "Express", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
-      { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
+      { name: "Git", iconUrl: "https://cdn.simpleicons.org/git/F05032" },
+      { name: "GitHub", iconUrl: "https://cdn.simpleicons.org/github/FFFFFF" },
     ] satisfies SkillItem[],
   },
 ];
 
-const roadmap = [
+const workExperience = [
   {
-    year: "2022",
-    title: "Started Coding Journey",
-    highlight: "Built first full CRUD apps and learned JS fundamentals.",
-    metric: "6 mini projects shipped",
+    role: "Backend Engineer",
+    company: "Auvra",
+    period: "Jan 13, 2026 - Present",
+    location: "Remote",
+    summary:
+      "Building and maintaining backend infrastructure for a scalable platform with a focus on reliability, security, and long-term growth.",
+    highlights: [
+      "Collaborate closely with Product, Engineering, and Design to deliver backend features that support real product needs.",
+      "Design and maintain scalable APIs, databases, and core services, including integrations for payments, KYC, and blockchain-related workflows.",
+      "Implement secure and high-performing backend architecture with strong data integrity, performance optimization, and maintainable code standards.",
+      "Participate in sprint planning, code reviews, and testing as part of an agile delivery process.",
+    ],
   },
   {
-    year: "2023",
-    title: "Backend Foundation",
-    highlight: "Moved into API design, auth flows, and data modeling patterns.",
-    metric: "12 REST endpoints in production-like builds",
+    role: "Fullstack Engineer (Contract)",
+    company: "School Fee & Management System Project",
+    period: "Feb 2026 - Apr 26, 2026",
+    location: "Lagos, Nigeria",
+    summary:
+      "Delivered an end-to-end school fee and item distribution management platform for streamlined operations.",
+    highlights: [
+      "Built full-stack workflows for fee setup, payment submissions, verification, and fulfillment tracking.",
+      "Implemented role-based access and routing to support admin and staff operational responsibilities.",
+      "Improved accountability with item-level review processes and reporting-ready data structures.",
+    ],
   },
   {
-    year: "2024",
-    title: "Architecture Phase",
-    highlight: "Designed larger workflows with roles, states, and failure handling.",
-    metric: "4 complete multi-module products",
-  },
-  {
-    year: "2025",
-    title: "Trust-Critical Focus",
-    highlight: "Shifted strongly into abuse-resistant and verification-heavy systems.",
-    metric: "Findora architecture direction established",
-  },
-  {
-    year: "2026",
-    title: "Execution at Scale",
-    highlight: "Refining reliability, speed, and design polish for real-world deployment.",
-    metric: "Current year: production-grade momentum",
+    role: "Software Engineer Intern (Backend)",
+    company: "BOI BUK Innovation Hub",
+    period: "Mar 9, 2026 - Present",
+    location: "Bayero University Kano, Nigeria",
+    summary:
+      "Contributing to the backend of a centralized platform for BUK innovation hubs to improve visibility, engagement, and administrative efficiency.",
+    highlights: [
+      "Support backend design for core modules across public pages and admin console operations.",
+      "Translate PRD requirements into APIs and service logic for hubs directory, programs, events, and communication workflows.",
+      "Help build structured backend foundations for role-based access, content workflows, and scalable institutional operations.",
+    ],
   },
 ];
 
@@ -193,7 +218,7 @@ const navItems = [
   { label: "Home", href: "#home", icon: "house" },
   { label: "Projects", href: "#projects", icon: "rocket_launch" },
   { label: "Services", href: "#services", icon: "design_services" },
-  { label: "Journey", href: "#journey", icon: "deployed_code_history" },
+  { label: "Experience", href: "#journey", icon: "deployed_code_history" },
   { label: "About", href: "#about", icon: "person" },
   { label: "Contact", href: "#contact", icon: "chat" },
 ];
@@ -407,7 +432,7 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base lg:text-lg">
-              Ahmad Ibrahim — software gets built here. The kind that does what it promises, holds up under pressure, and doesn&apos;t fall apart six months later.
+              I&apos;m Ahmad Ibrahim — a software engineer building modern web applications and backend systems that stay reliable under real-world use.
             </p>
           </div>
 
@@ -786,7 +811,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* ── Journey ── */}
+      {/* ── Work Experience ── */}
       <motion.section
         id="journey"
         className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
@@ -795,7 +820,9 @@ export default function HomePage() {
         whileInView="show"
         viewport={{ once: true, amount: 0.18 }}
       >
-        <h3 className="text-2xl font-bold text-white sm:text-3xl">Experience Journey (2022 – 2026)</h3>
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <h3 className="text-2xl font-bold text-white sm:text-3xl">Work Experience</h3>
+        </div>
         <div className="relative mt-6 sm:mt-8">
           {/* Desktop centre line */}
           <div className="absolute left-1/2 top-0 hidden h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-[#2563EB] via-[#3B82F6] to-[#93C5FD] md:block" />
@@ -803,9 +830,9 @@ export default function HomePage() {
           <div className="absolute left-3 top-0 h-full w-[2px] bg-gradient-to-b from-[#2563EB] via-[#3B82F6] to-[#93C5FD] md:hidden" />
 
           <motion.div className="space-y-4 sm:space-y-5" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }}>
-            {roadmap.map((step, index) => (
+            {workExperience.map((job, index) => (
               <motion.div
-                key={step.year}
+                key={`${job.role}-${job.company}`}
                 variants={{
                   hidden: { opacity: 0, x: reduceMotion ? 0 : index % 2 === 0 ? -48 : 48, y: reduceMotion ? 0 : 12 },
                   show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.58 } },
@@ -824,10 +851,28 @@ export default function HomePage() {
                   <div
                     className={`absolute top-8 hidden h-3 w-3 rounded-full bg-[#2563EB] shadow-[0_0_10px_rgba(37,99,235,0.7)] md:block ${index % 2 === 0 ? "-right-8" : "-left-8"}`}
                   />
-                  <p className="text-[10px] uppercase tracking-[0.15em] text-[#93C5FD] sm:text-xs">{step.year}</p>
-                  <p className="mt-1.5 text-sm font-semibold text-white sm:mt-2 sm:text-base">{step.title}</p>
-                  <p className="mt-1.5 text-xs text-slate-400 sm:mt-2 sm:text-sm">{step.highlight}</p>
-                  <p className="mt-2 rounded-lg border border-white/[0.07] bg-black/20 px-2 py-1 text-[10px] text-slate-500 sm:mt-3 sm:text-xs">{step.metric}</p>
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <p className="text-sm font-semibold text-white sm:text-base">{job.role}</p>
+                      <p className="mt-1 text-xs font-medium text-[#93C5FD] sm:text-sm">{job.company}</p>
+                    </div>
+                    <span className="rounded-full border border-[#93C5FD]/30 bg-[#2563EB]/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-[#BFDBFE]">
+                      {job.period}
+                    </span>
+                  </div>
+                  <p className="mt-2 inline-flex items-center gap-1.5 text-[11px] text-slate-500 sm:text-xs">
+                    <span className="material-symbols-outlined text-[14px]">location_on</span>
+                    {job.location}
+                  </p>
+                  <p className="mt-2 text-xs text-slate-400 sm:text-sm">{job.summary}</p>
+                  <ul className="mt-3 space-y-1.5 text-xs text-slate-400 sm:text-sm">
+                    {job.highlights.map((point) => (
+                      <li key={point} className="flex items-start gap-2">
+                        <span className="material-symbols-outlined mt-0.5 text-[14px] text-[#60A5FA]">check_circle</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </article>
               </motion.div>
             ))}
