@@ -13,6 +13,11 @@ const sameAsLinks = [
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: "/ahmadlogo.png",
+    shortcut: "/ahmadlogo.png",
+    apple: "/ahmadlogo.png",
+  },
   title: {
     default: `${personName} | ${personTitle}`,
     template: `%s | ${personName}`,

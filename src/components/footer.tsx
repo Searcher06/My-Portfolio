@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const footerLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Projects", href: "#projects" },
-  { label: "Services", href: "#services" },
-  { label: "Journey", href: "#journey" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Services", href: "/#services" },
+  { label: "Journey", href: "/#journey" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const socials = [
@@ -50,10 +51,10 @@ export function Footer() {
 
           {/* Brand column */}
           <div className="space-y-5">
-            <a href="#home" className="inline-flex items-center gap-3">
+            <Link href="/#home" className="inline-flex items-center gap-3">
               <Image src="/ahmadlogo.png" alt="Ahmad logo" width={44} height={44} className="h-10 w-auto" />
               <span className="text-base font-semibold text-white">Ahmad Ibrahim</span>
-            </a>
+            </Link>
             <p className="max-w-xs text-sm leading-relaxed text-slate-500">
               Building software that holds up — from the first commit to the last edge case.
             </p>
@@ -80,13 +81,13 @@ export function Footer() {
             <ul className="space-y-2.5">
               {footerLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="group inline-flex items-center gap-1.5 text-sm text-slate-500 transition-colors duration-200 hover:text-white"
                   >
                     <span className="h-px w-0 bg-[#60A5FA] transition-all duration-300 group-hover:w-3" />
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -103,13 +104,13 @@ export function Footer() {
               <p className="text-xs leading-relaxed text-slate-500">
                 Open to full-time roles, freelance projects, and collaborations. Remote-first.
               </p>
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 className="inline-flex items-center gap-1.5 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/25 px-3 py-2 text-xs font-semibold text-[#60A5FA] transition-all duration-300 hover:bg-[#2563EB]/20 hover:border-[#2563EB]/50"
               >
                 Get in touch
                 <span className="material-symbols-outlined text-[13px]">arrow_forward</span>
-              </a>
+              </Link>
             </div>
           </div>
 

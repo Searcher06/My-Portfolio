@@ -63,7 +63,7 @@ const otherProjects: ProjectCard[] = [
       { name: "Express", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
       { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
     ],
-    href: "/projects",
+    href: "/projects#school-payment-and-distribution-management-system",
   },
   {
     name: "Brillit",
@@ -77,7 +77,7 @@ const otherProjects: ProjectCard[] = [
       { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
       { name: "Typesense", iconUrl: "/icons/typesense.svg" },
     ],
-    href: "/projects",
+    href: "/projects#brillit",
   },
   {
     name: "Vestlee",
@@ -92,7 +92,7 @@ const otherProjects: ProjectCard[] = [
       { name: "Express", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
       { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
     ],
-    href: "/projects",
+    href: "/projects#vestlee",
   },
 ];
 

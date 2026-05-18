@@ -21,6 +21,13 @@ type ProjectDetail = {
   repoUrl?: string;
 };
 
+const toProjectId = (name: string) =>
+  name
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
 const projects: ProjectDetail[] = [
   {
     name: "School Payment & Distribution Management System",
@@ -133,11 +140,35 @@ export default function ProjectsClientPage() {
   const reduceMotion = useReducedMotion();
   const rm = !!reduceMotion;
   const [scrolled, setScrolled] = useState(false);
+  const [highlightedProjectId, setHighlightedProjectId] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+    const syncHighlightFromHash = () => {
+      const hashId = window.location.hash.replace(/^#/, "");
+      if (!hashId) {
+        setHighlightedProjectId(null);
+        return;
+      }
+
+      setHighlightedProjectId(hashId);
+      timeoutId = setTimeout(() => setHighlightedProjectId(null), 2600);
+    };
+
+    syncHighlightFromHash();
+    window.addEventListener("hashchange", syncHighlightFromHash);
+
+    return () => {
+      window.removeEventListener("hashchange", syncHighlightFromHash);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
   const headerAnim = {
@@ -236,19 +267,32 @@ export default function ProjectsClientPage() {
         {/* ── Projects grid ── */}
         <div className="mt-8 grid gap-4 lg:grid-cols-2">
           {projects.map((project, index) => {
+            const projectId = toProjectId(project.name);
+            const isHighlighted = highlightedProjectId === projectId;
             const slideX = rm ? 0 : index === 0 ? 0 : (index - 1) % 2 === 0 ? -52 : 52;
             const slideY = rm ? 0 : index === 0 ? 52 : 20;
             return (
               <motion.article
                 key={project.name}
+                id={projectId}
                 initial={{ opacity: 0, x: slideX, y: slideY }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true, amount: 0.06 }}
                 transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: index === 0 ? 0 : (index - 1) * 0.08 }}
                 whileHover={rm ? undefined : { y: -6, scale: 1.012, transition: { type: "spring", stiffness: 260, damping: 22 } }}
-                className="dark-surface group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#BFDBFE]/10 bg-linear-to-br from-[#152540] via-[#111E35] to-[#0C1525] p-4 transition-colors duration-300 hover:border-[#93C5FD]/32 hover:shadow-[0_16px_36px_-20px_rgba(59,130,246,0.35)] sm:p-5"
+                className={`dark-surface group relative scroll-mt-28 flex h-full flex-col overflow-hidden rounded-2xl border bg-linear-to-br from-[#152540] via-[#111E35] to-[#0C1525] p-4 transition-all duration-300 sm:p-5 ${
+                  isHighlighted
+                    ? "border-[#60A5FA]/80 shadow-[0_0_0_1px_rgba(96,165,250,0.45),0_0_40px_-14px_rgba(96,165,250,0.9)]"
+                    : "border-[#BFDBFE]/10 hover:border-[#93C5FD]/32 hover:shadow-[0_16px_36px_-20px_rgba(59,130,246,0.35)]"
+                }`}
               >
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_0%,rgba(255,255,255,0.06),transparent_42%)] opacity-60" />
+                {isHighlighted ? (
+                  <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-[#93C5FD]/55 bg-[#60A5FA]/20 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#BFDBFE] animate-pulse">
+                    <span className="material-symbols-outlined text-[14px]">my_location</span>
+                    Selected
+                  </span>
+                ) : null}
 
                 {/* Header row */}
                 <div className="relative flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
