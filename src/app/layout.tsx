@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const personName = "Ahmad Ibrahim";
 const personTitle = "Backend-Focused Full-Stack Engineer";
 const sameAsLinks = [
-  "https://github.com/ahmad",
+  "https://github.com/Searcher06",
   "https://linkedin.com/in/ahmad",
   "https://x.com/ahmad",
 ];

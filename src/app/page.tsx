@@ -829,8 +829,9 @@ export default function HomePage() {
           <div className="absolute left-1/2 top-3 hidden h-[calc(100%-1.5rem)] w-2 -translate-x-1/2 bg-[#93C5FD]/20 blur-sm md:block" />
           {/* Mobile left line */}
           <div className="absolute left-2 top-3 h-[calc(100%-1.5rem)] w-px bg-gradient-to-b from-transparent via-[#93C5FD] to-transparent md:hidden" />
+          <div className="absolute left-2 top-3 h-[calc(100%-1.5rem)] w-3 -translate-x-1 bg-[#93C5FD]/10 blur-[2px] md:hidden" />
 
-          <motion.div className="relative z-10 space-y-3.5 sm:space-y-5" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }}>
+          <motion.div className="relative z-10 space-y-3 sm:space-y-5" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }}>
             {workExperience.map((job, index) => (
               <motion.div
                 key={`${job.role}-${job.company}`}
@@ -838,7 +839,7 @@ export default function HomePage() {
                   hidden: { opacity: 0, x: reduceMotion ? 0 : index % 2 === 0 ? -48 : 48, y: reduceMotion ? 0 : 12 },
                   show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.58 } },
                 }}
-                className={`relative flex md:items-center ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
+                className={`relative flex items-start md:items-center ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
               >
                 {/* Desktop modern node + beam */}
                 <div className="absolute left-1/2 top-8 hidden h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-[#DBEAFE]/80 bg-[#93C5FD] shadow-[0_0_12px_rgba(147,197,253,0.6)] md:block" />
@@ -850,31 +851,31 @@ export default function HomePage() {
                   }`}
                 />
                 {/* Mobile modern node + beam */}
-                <div className="relative mr-3 mt-5 shrink-0 md:hidden">
-                  <div className="h-3 w-3 rounded-full border border-[#DBEAFE]/80 bg-[#93C5FD] shadow-[0_0_10px_rgba(147,197,253,0.5)]" />
-                  <div className="absolute left-3 top-[5px] h-[2px] w-3 bg-gradient-to-r from-[#93C5FD]/85 to-transparent" />
+                <div className="relative mr-2.5 mt-4.5 shrink-0 md:hidden">
+                  <div className="h-2.5 w-2.5 rounded-full border border-[#DBEAFE]/80 bg-[#93C5FD] shadow-[0_0_10px_rgba(147,197,253,0.5)]" />
+                  <div className="absolute left-2.5 top-[4px] h-[2px] w-2.5 bg-gradient-to-r from-[#93C5FD]/85 to-transparent" />
                 </div>
 
                 <article
-                  className={`dark-surface group relative min-w-0 w-full overflow-hidden rounded-2xl border border-white/[0.1] bg-[#0B1628] p-3.5 shadow-[0_18px_40px_-30px_rgba(15,23,42,0.9)] transition-all duration-300 hover:border-[#93C5FD]/35 hover:shadow-[0_24px_48px_-32px_rgba(59,130,246,0.38)] sm:p-5 md:w-[46%] ${index % 2 === 0 ? "md:mr-[54%]" : "md:ml-[54%]"}`}
+                  className={`dark-surface group relative min-w-0 w-full overflow-hidden rounded-xl border border-white/[0.1] bg-[#0B1628] p-3 shadow-[0_18px_40px_-30px_rgba(15,23,42,0.9)] transition-all duration-300 hover:border-[#93C5FD]/35 hover:shadow-[0_24px_48px_-32px_rgba(59,130,246,0.38)] sm:rounded-2xl sm:p-5 md:w-[46%] ${index % 2 === 0 ? "md:mr-[54%]" : "md:ml-[54%]"}`}
                 >
-                  <div className="relative z-10 flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between sm:gap-3">
+                  <div className="relative z-10 flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between sm:gap-3">
                     <div className="min-w-0 space-y-1">
-                      <p className="text-[0.98rem] font-semibold leading-snug text-white sm:text-lg">{job.role}</p>
-                      <p className="text-sm font-medium leading-snug text-[#93C5FD]">{job.company}</p>
+                      <p className="text-[0.9rem] font-semibold leading-snug text-white sm:text-lg">{job.role}</p>
+                      <p className="text-[0.82rem] font-medium leading-snug text-[#93C5FD] sm:text-sm">{job.company}</p>
                     </div>
-                    <span className="inline-flex w-fit items-center rounded-md border border-[#93C5FD]/30 bg-[#0F223A] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#BFDBFE] shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:text-[11px]">
+                    <span className="text-[10px] font-semibold tracking-[0.06em] text-[#93C5FD] sm:text-[11px]">
                       {job.period}
                     </span>
                   </div>
-                  <div className="relative z-10 mt-2 flex flex-wrap items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] px-2 py-1 text-[11px] text-slate-300">
+                  <div className="relative z-10 mt-2 flex flex-wrap items-center gap-1.5">
+                    <span className="inline-flex items-center gap-1 rounded-full border border-white/[0.08] bg-white/[0.03] px-2 py-1 text-[10px] text-slate-300 sm:text-[11px]">
                       <span className="material-symbols-outlined text-[14px] text-[#60A5FA]">location_on</span>
                       {job.location}
                     </span>
                   </div>
-                  <p className="relative z-10 mt-2.5 text-[13px] leading-relaxed text-slate-300 sm:mt-3 sm:text-sm">{job.summary}</p>
-                  <ul className="relative z-10 mt-2.5 space-y-1.5 text-[13px] text-slate-300 sm:mt-3 sm:text-sm">
+                  <p className="relative z-10 mt-2.5 text-[12px] leading-relaxed text-slate-300 sm:mt-3 sm:text-sm">{job.summary}</p>
+                  <ul className="relative z-10 mt-2.5 space-y-1.5 text-[12px] text-slate-300 sm:mt-3 sm:text-sm">
                     {job.highlights.map((point) => (
                       <li key={point} className="flex items-start gap-2">
                         <span className="material-symbols-outlined mt-0.5 text-[15px] text-[#60A5FA]">task_alt</span>
@@ -944,16 +945,9 @@ export default function HomePage() {
               Building software that does what it promises.
             </p>
             <p>
-              BSc Software Engineering student with a focus on building things that actually work in production — not just in demos.
+              I&apos;m Ahmad Ibrahim, a BSc Software Engineering student and full-stack developer focused on building reliable web applications and backend systems. I enjoy turning ideas into scalable products designed to solve real problems, stay maintainable, and hold up under real-world use.
             </p>
-            <p>
-              The work tends to start with a messy idea and end with something a real team can ship, maintain, and grow. That gap between
-              &ldquo;we need a thing&rdquo; and &ldquo;the thing is live and stable&rdquo; is where most of the interesting problems live.
-            </p>
-            <p>
-              Drawn to products where reliability isn&apos;t optional — where users need to trust what they&apos;re looking at, and the
-              business needs to trust the system underneath.
-            </p>
+            <p>Currently exploring AI-powered product experiences, scalable system design, and backend performance optimization.</p>
           </div>
 
         </div>
@@ -1025,11 +1019,10 @@ export default function HomePage() {
             <p className="mt-1.5 text-xs text-slate-500 sm:mt-2">Fastest channels to reach Ahmad Ibrahim for collaboration.</p>
             <div className="mt-4 space-y-2 sm:mt-5">
               {[
-                { icon: "https://cdn.simpleicons.org/gmail/EA4335", label: "Email", handle: "ahmad@example.com", href: "mailto:ahmad@example.com" },
-                { icon: "https://cdn.simpleicons.org/github/FFFFFF", label: "GitHub", handle: "@ahmad", href: "https://github.com/ahmad" },
+                { icon: "https://cdn.simpleicons.org/gmail/EA4335", label: "Email", handle: "Contact form", href: "/contact" },
+                { icon: "https://cdn.simpleicons.org/github/FFFFFF", label: "GitHub", handle: "@Searcher06", href: "https://github.com/Searcher06" },
                 { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", label: "LinkedIn", handle: "/in/ahmad", href: "https://linkedin.com/in/ahmad" },
                 { icon: "https://cdn.simpleicons.org/x/FFFFFF", label: "X / Twitter", handle: "@ahmad", href: "https://x.com/ahmad" },
-                { icon: "https://cdn.simpleicons.org/discord/5865F2", label: "Discord", handle: "ahmad.dev", href: "#" },
               ].map((contact) => (
                 <a
                   key={contact.label}
