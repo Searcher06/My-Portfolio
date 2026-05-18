@@ -178,25 +178,25 @@ const workExperience = [
     period: "Jan 13, 2026 - Present",
     location: "Remote",
     summary:
-      "Building and maintaining backend infrastructure for a scalable platform with a focus on reliability, security, and long-term growth.",
+      "Owning backend architecture and core services for a trust-critical platform focused on reliability, compliance, and scale.",
     highlights: [
-      "Collaborate closely with Product, Engineering, and Design to deliver backend features that support real product needs.",
-      "Design and maintain scalable APIs, databases, and core services, including integrations for payments, KYC, and blockchain-related workflows.",
-      "Implement secure and high-performing backend architecture with strong data integrity, performance optimization, and maintainable code standards.",
-      "Participate in sprint planning, code reviews, and testing as part of an agile delivery process.",
+      "Architected scalable APIs and service layers that support high-growth product requirements and faster feature delivery.",
+      "Integrated critical third-party flows including payment rails, KYC checks, and blockchain-related operations.",
+      "Enforced backend quality standards across security, data integrity, and performance optimization through code review and testing routines.",
+      "Partnered with product and design to convert fast-moving requirements into resilient backend implementations.",
     ],
   },
   {
     role: "Fullstack Engineer (Contract)",
     company: "School Fee & Management System Project",
     period: "Feb 2026 - Apr 26, 2026",
-    location: "Lagos, Nigeria",
+    location: "Kano, Nigeria",
     summary:
-      "Delivered an end-to-end school fee and item distribution management platform for streamlined operations.",
+      "Delivered a complete fee and distribution workflow platform that digitized school finance and fulfillment operations.",
     highlights: [
-      "Built full-stack workflows for fee setup, payment submissions, verification, and fulfillment tracking.",
-      "Implemented role-based access and routing to support admin and staff operational responsibilities.",
-      "Improved accountability with item-level review processes and reporting-ready data structures.",
+      "Built end-to-end flows for fee setup, parent payment submissions, verification decisions, and item collection tracking.",
+      "Implemented role-based workflows that reduced operational bottlenecks between admin reviewers and distribution staff.",
+      "Improved accountability with item-level auditability and reporting-friendly data structures for management visibility.",
     ],
   },
   {
@@ -205,11 +205,11 @@ const workExperience = [
     period: "Mar 9, 2026 - Present",
     location: "Bayero University Kano, Nigeria",
     summary:
-      "Contributing to the backend of a centralized platform for BUK innovation hubs to improve visibility, engagement, and administrative efficiency.",
+      "Building backend foundations for a centralized digital platform connecting innovation hubs across Bayero University Kano.",
     highlights: [
-      "Support backend design for core modules across public pages and admin console operations.",
-      "Translate PRD requirements into APIs and service logic for hubs directory, programs, events, and communication workflows.",
-      "Help build structured backend foundations for role-based access, content workflows, and scalable institutional operations.",
+      "Mapped PRD requirements into backend modules for hubs directory, programs, events, and communication workflows.",
+      "Contributed API and service design for both public platform experiences and admin-console operations.",
+      "Supported scalable architecture decisions around role-based access, content lifecycle management, and institutional operations.",
     ],
   },
 ];
@@ -825,11 +825,12 @@ export default function HomePage() {
         </div>
         <div className="relative mt-6 sm:mt-8">
           {/* Desktop centre line */}
-          <div className="absolute left-1/2 top-0 hidden h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-[#2563EB] via-[#3B82F6] to-[#93C5FD] md:block" />
+          <div className="absolute left-1/2 top-3 hidden h-[calc(100%-1.5rem)] w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#93C5FD] to-transparent md:block" />
+          <div className="absolute left-1/2 top-3 hidden h-[calc(100%-1.5rem)] w-2 -translate-x-1/2 bg-[#93C5FD]/20 blur-sm md:block" />
           {/* Mobile left line */}
-          <div className="absolute left-3 top-0 h-full w-[2px] bg-gradient-to-b from-[#2563EB] via-[#3B82F6] to-[#93C5FD] md:hidden" />
+          <div className="absolute left-2 top-3 h-[calc(100%-1.5rem)] w-px bg-gradient-to-b from-transparent via-[#93C5FD] to-transparent md:hidden" />
 
-          <motion.div className="space-y-4 sm:space-y-5" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }}>
+          <motion.div className="relative z-10 space-y-3.5 sm:space-y-5" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }}>
             {workExperience.map((job, index) => (
               <motion.div
                 key={`${job.role}-${job.company}`}
@@ -837,38 +838,46 @@ export default function HomePage() {
                   hidden: { opacity: 0, x: reduceMotion ? 0 : index % 2 === 0 ? -48 : 48, y: reduceMotion ? 0 : 12 },
                   show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.58 } },
                 }}
-                className={`flex md:items-center ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
+                className={`relative flex md:items-center ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
               >
-                {/* Mobile dot */}
-                <div className="relative mr-5 mt-4 shrink-0 md:hidden">
-                  <div className="h-3 w-3 rounded-full bg-[#2563EB] shadow-[0_0_10px_rgba(37,99,235,0.7)]" />
+                {/* Desktop modern node + beam */}
+                <div className="absolute left-1/2 top-8 hidden h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-[#DBEAFE]/80 bg-[#93C5FD] shadow-[0_0_12px_rgba(147,197,253,0.6)] md:block" />
+                <div
+                  className={`absolute top-[2.3rem] hidden h-[2px] md:block ${
+                    index % 2 === 0
+                      ? "left-1/2 w-9 -translate-x-full bg-gradient-to-l from-[#93C5FD]/85 to-transparent"
+                      : "left-1/2 w-9 bg-gradient-to-r from-[#93C5FD]/85 to-transparent"
+                  }`}
+                />
+                {/* Mobile modern node + beam */}
+                <div className="relative mr-3 mt-5 shrink-0 md:hidden">
+                  <div className="h-3 w-3 rounded-full border border-[#DBEAFE]/80 bg-[#93C5FD] shadow-[0_0_10px_rgba(147,197,253,0.5)]" />
+                  <div className="absolute left-3 top-[5px] h-[2px] w-3 bg-gradient-to-r from-[#93C5FD]/85 to-transparent" />
                 </div>
 
                 <article
-                  className={`dark-surface relative w-full rounded-2xl border border-white/[0.07] bg-[#0C1A2C]/85 p-4 shadow-[0_15px_35px_-25px_rgba(37,99,235,0.32)] md:w-[46%] ${index % 2 === 0 ? "md:mr-[54%]" : "md:ml-[54%]"}`}
+                  className={`dark-surface group relative min-w-0 w-full overflow-hidden rounded-2xl border border-white/[0.1] bg-[#0B1628] p-3.5 shadow-[0_18px_40px_-30px_rgba(15,23,42,0.9)] transition-all duration-300 hover:border-[#93C5FD]/35 hover:shadow-[0_24px_48px_-32px_rgba(59,130,246,0.38)] sm:p-5 md:w-[46%] ${index % 2 === 0 ? "md:mr-[54%]" : "md:ml-[54%]"}`}
                 >
-                  {/* Desktop dot */}
-                  <div
-                    className={`absolute top-8 hidden h-3 w-3 rounded-full bg-[#2563EB] shadow-[0_0_10px_rgba(37,99,235,0.7)] md:block ${index % 2 === 0 ? "-right-8" : "-left-8"}`}
-                  />
-                  <div className="flex flex-wrap items-start justify-between gap-2">
-                    <div>
-                      <p className="text-sm font-semibold text-white sm:text-base">{job.role}</p>
-                      <p className="mt-1 text-xs font-medium text-[#93C5FD] sm:text-sm">{job.company}</p>
+                  <div className="relative z-10 flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between sm:gap-3">
+                    <div className="min-w-0 space-y-1">
+                      <p className="text-[0.98rem] font-semibold leading-snug text-white sm:text-lg">{job.role}</p>
+                      <p className="text-sm font-medium leading-snug text-[#93C5FD]">{job.company}</p>
                     </div>
-                    <span className="rounded-full border border-[#93C5FD]/30 bg-[#2563EB]/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-[#BFDBFE]">
+                    <span className="inline-flex w-fit items-center rounded-md border border-[#93C5FD]/30 bg-[#0F223A] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#BFDBFE] shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:text-[11px]">
                       {job.period}
                     </span>
                   </div>
-                  <p className="mt-2 inline-flex items-center gap-1.5 text-[11px] text-slate-500 sm:text-xs">
-                    <span className="material-symbols-outlined text-[14px]">location_on</span>
-                    {job.location}
-                  </p>
-                  <p className="mt-2 text-xs text-slate-400 sm:text-sm">{job.summary}</p>
-                  <ul className="mt-3 space-y-1.5 text-xs text-slate-400 sm:text-sm">
+                  <div className="relative z-10 mt-2 flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] px-2 py-1 text-[11px] text-slate-300">
+                      <span className="material-symbols-outlined text-[14px] text-[#60A5FA]">location_on</span>
+                      {job.location}
+                    </span>
+                  </div>
+                  <p className="relative z-10 mt-2.5 text-[13px] leading-relaxed text-slate-300 sm:mt-3 sm:text-sm">{job.summary}</p>
+                  <ul className="relative z-10 mt-2.5 space-y-1.5 text-[13px] text-slate-300 sm:mt-3 sm:text-sm">
                     {job.highlights.map((point) => (
                       <li key={point} className="flex items-start gap-2">
-                        <span className="material-symbols-outlined mt-0.5 text-[14px] text-[#60A5FA]">check_circle</span>
+                        <span className="material-symbols-outlined mt-0.5 text-[15px] text-[#60A5FA]">task_alt</span>
                         <span>{point}</span>
                       </li>
                     ))}
