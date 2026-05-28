@@ -18,6 +18,7 @@ type ProjectCard = {
   solution: string;
   tools: Tool[];
   href: string;
+  liveUrl?: string;
 };
 
 const truncateText = (text: string, maxLength: number) =>
@@ -78,6 +79,7 @@ const otherProjects: ProjectCard[] = [
       { name: "Typesense", iconUrl: "/icons/typesense.svg" },
     ],
     href: "/projects#brillit",
+    liveUrl: "https://brillit.vercel.app/",
   },
   {
     name: "Vestlee",
@@ -93,8 +95,11 @@ const otherProjects: ProjectCard[] = [
       { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
     ],
     href: "/projects#vestlee",
+    liveUrl: "https://vestlee.vercel.app/",
   },
 ];
+
+const findoraLiveUrl = "https://findora-snowy.vercel.app/";
 
 const currentlyExploring = [
   { title: "AI systems for real-world products", note: "Exploring how AI can power useful features inside scalable web applications.", icon: "smart_toy" },
@@ -630,16 +635,18 @@ export default function HomePage() {
               </div>
               <div className="mt-4 flex flex-col gap-2 sm:mt-6 sm:flex-row sm:gap-3">
                 <Link
-                  href="/projects"
+                  href={findoraLiveUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   className="btn-primary inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold sm:px-5 sm:py-3"
                 >
-                  View Project Details
+                  Live Demo
                 </Link>
                 <Link
                   href="/projects"
                   className="btn-secondary inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold sm:px-5 sm:py-3"
                 >
-                  Live Demo
+                  View Project Details
                 </Link>
               </div>
             </div>
@@ -709,6 +716,16 @@ export default function HomePage() {
               <Link href={project.href} className="mt-auto pt-4 inline-flex text-sm font-semibold text-[#60A5FA] transition hover:text-[#BFDBFE]">
                 View Project
               </Link>
+              {project.liveUrl && (
+                <Link
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 inline-flex text-sm font-semibold text-[#93C5FD] transition hover:text-white"
+                >
+                  Live Site
+                </Link>
+              )}
             </motion.article>
           ))}
         </motion.div>

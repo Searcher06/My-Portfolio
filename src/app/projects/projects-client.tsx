@@ -78,6 +78,7 @@ const projects: ProjectDetail[] = [
       { name: "Cloudinary", iconUrl: "https://cdn.simpleicons.org/cloudinary/3448C5" },
     ],
     highlights: ["2-step code handover verification", "Real-time secure chat", "Admin moderation and trust points"],
+    liveUrl: "https://findora-snowy.vercel.app/",
   },
   {
     name: "Brillit",
@@ -133,6 +134,7 @@ const projects: ProjectDetail[] = [
       { name: "Google", iconUrl: "https://cdn.simpleicons.org/google/4285F4" },
     ],
     highlights: ["JWT auth + session revocation", "Google OAuth (Gmail connect)", "Validation, logging, and global error handling"],
+    liveUrl: "https://vestlee.vercel.app/",
   },
 ];
 
