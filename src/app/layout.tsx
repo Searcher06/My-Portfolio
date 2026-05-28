@@ -7,8 +7,8 @@ const personName = "Ahmad Ibrahim";
 const personTitle = "Backend-Focused Full-Stack Engineer";
 const sameAsLinks = [
   "https://github.com/Searcher06",
-  "https://linkedin.com/in/ahmad",
-  "https://x.com/ahmad",
+  "https://www.linkedin.com/in/ahmadibrahim06",
+  "https://x.com/undefined_dev",
 ];
 
 export const metadata: Metadata = {

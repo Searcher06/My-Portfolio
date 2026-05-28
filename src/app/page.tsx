@@ -713,19 +713,28 @@ export default function HomePage() {
                   ))}
                 </div>
               </div>
-              <Link href={project.href} className="mt-auto pt-4 inline-flex text-sm font-semibold text-[#60A5FA] transition hover:text-[#BFDBFE]">
-                View Project
-              </Link>
-              {project.liveUrl && (
-                <Link
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-2 inline-flex text-sm font-semibold text-[#93C5FD] transition hover:text-white"
-                >
-                  Live Site
-                </Link>
-              )}
+              <div className="mt-auto border-t border-white/[0.07] pt-4">
+                <div className={`grid gap-2 ${project.liveUrl ? "grid-cols-[1fr_auto]" : "grid-cols-1"}`}>
+                  <Link
+                    href={project.href}
+                    className="group/details inline-flex h-11 items-center justify-center gap-1.5 rounded-xl border border-white/[0.09] bg-white/[0.04] px-4 text-sm font-semibold text-slate-200 transition hover:border-white/[0.18] hover:bg-white/[0.08] hover:text-white"
+                  >
+                    View details
+                    <span className="material-symbols-outlined text-[15px] transition-transform group-hover/details:translate-x-0.5">arrow_forward</span>
+                  </Link>
+                  {project.liveUrl && (
+                    <Link
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group/live inline-flex h-11 min-w-[7.75rem] items-center justify-center gap-1.5 rounded-xl bg-white px-4 text-sm font-bold text-[#06101F] shadow-[0_14px_32px_-18px_rgba(255,255,255,0.85),0_10px_26px_-20px_rgba(56,189,248,0.9)] transition hover:bg-[#DBEAFE] hover:shadow-[0_18px_38px_-18px_rgba(255,255,255,0.95),0_14px_32px_-18px_rgba(56,189,248,0.95)]"
+                    >
+                      Live site
+                      <span className="material-symbols-outlined text-[15px] transition-transform group-hover/live:-translate-y-0.5 group-hover/live:translate-x-0.5">north_east</span>
+                    </Link>
+                  )}
+                </div>
+              </div>
             </motion.article>
           ))}
         </motion.div>

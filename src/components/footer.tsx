@@ -20,12 +20,12 @@ const socials = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/ahmad",
+    href: "https://www.linkedin.com/in/ahmadibrahim06",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
   },
   {
     label: "X",
-    href: "https://x.com/ahmad",
+    href: "https://x.com/undefined_dev",
     icon: "https://cdn.simpleicons.org/x/FFFFFF",
   },
 ];
