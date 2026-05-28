@@ -951,41 +951,70 @@ export default function HomePage() {
         whileInView="show"
         viewport={{ once: true, amount: 0.18 }}
       >
-        <h3 className="text-2xl font-bold text-white sm:text-3xl">About</h3>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Who I am</p>
+        <h3 className="mt-1 text-2xl font-bold text-white sm:text-3xl">About Me</h3>
 
-        <div className="mt-6 grid gap-8 sm:mt-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-10">
+        <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:gap-16">
 
-          {/* Photo */}
-          <div className="relative mx-auto w-full max-w-[260px] sm:max-w-sm lg:mx-0 lg:max-w-none">
-            <Image
-              src="/me3.png"
-              alt="Ahmad Ibrahim"
-              width={447}
-              height={558}
-              className="mx-auto h-auto w-full object-contain"
-              priority
-            />
-            <div className="mt-3 flex items-center justify-between sm:mt-4">
-              <div>
-                <p className="text-sm font-semibold text-white sm:text-base">Ahmad Ibrahim</p>
-                <p className="text-xs text-slate-500 sm:text-sm">Software Engineer</p>
-              </div>
-              <span className="flex items-center gap-1.5 text-xs text-[#60A5FA]">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#60A5FA]" />
-                Available
-              </span>
+          {/* ── Photo side ── */}
+          <div className="relative mx-auto flex w-full max-w-[280px] items-center justify-center sm:max-w-[320px] lg:mx-0 lg:max-w-none">
+
+            {/* Outer slow-spin dashed ring */}
+            <div className="absolute h-[88%] w-[88%] animate-spin-slow rounded-full border-2 border-dashed border-[#2563EB]/40" />
+
+            {/* Inner glow ring */}
+            <div className="absolute h-[78%] w-[78%] rounded-full bg-gradient-to-br from-[#2563EB]/20 via-[#38BDF8]/10 to-transparent blur-2xl" />
+
+            {/* Circle frame */}
+            <div className="relative z-10 h-[72%] w-[72%] overflow-hidden rounded-full ring-2 ring-[#2563EB]/30 ring-offset-4 ring-offset-transparent">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#1e3a8a]/60 to-[#0c1a3a]/80" />
+              <Image
+                src="/me3.png"
+                alt="Ahmad Ibrahim"
+                width={447}
+                height={558}
+                className="relative z-10 h-full w-full object-cover object-top"
+                priority
+              />
             </div>
+
+            {/* Floating chip — top right */}
+            <div className="about-chip absolute right-0 top-[12%] z-20 flex items-center gap-2 rounded-2xl border border-white/[0.1] bg-white/[0.07] px-3 py-2 shadow-lg backdrop-blur-md">
+              <span className="flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.8)]" />
+              <span className="text-xs font-semibold text-white">Available for work</span>
+            </div>
+
+            {/* Floating chip — bottom left */}
+            <div className="about-chip absolute bottom-[14%] left-0 z-20 flex items-center gap-2 rounded-2xl border border-white/[0.1] bg-white/[0.07] px-3 py-2 shadow-lg backdrop-blur-md">
+              <span className="material-symbols-outlined text-[14px] text-[#60A5FA]">code</span>
+              <span className="text-xs font-semibold text-white">Backend Engineer</span>
+            </div>
+
           </div>
 
-          {/* Text */}
-          <div className="flex flex-col justify-center space-y-4 text-sm leading-relaxed text-slate-400 sm:space-y-5 sm:text-base">
-            <p className="text-base font-semibold leading-snug text-white sm:text-lg lg:text-xl">
+          {/* ── Text side ── */}
+          <div className="flex flex-col justify-center space-y-5 text-sm leading-relaxed text-slate-400 sm:text-base">
+            <p className="text-lg font-bold leading-snug text-white sm:text-xl lg:text-2xl">
               Building software that does what it promises.
             </p>
             <p>
               I&apos;m Ahmad Ibrahim, a BSc Software Engineering student and full-stack developer focused on building reliable web applications and backend systems. I enjoy turning ideas into scalable products designed to solve real problems, stay maintainable, and hold up under real-world use.
             </p>
             <p>Currently exploring AI-powered product experiences, scalable system design, and backend performance optimization.</p>
+
+            {/* Mini stat row */}
+            <div className="grid grid-cols-3 gap-3 pt-2">
+              {[
+                { value: "8+", label: "Projects" },
+                { value: "2022", label: "Started" },
+                { value: "3+", label: "Roles" },
+              ].map((s) => (
+                <div key={s.label} className="dark-surface rounded-xl border border-white/[0.07] bg-white/[0.03] px-3 py-3 text-center">
+                  <p className="text-lg font-bold text-white">{s.value}</p>
+                  <p className="mt-0.5 text-[11px] text-slate-500">{s.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>

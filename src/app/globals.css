@@ -357,8 +357,25 @@ body {
   min-height: max(884px, 100dvh);
 }
 
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+html:not(.dark) .about-chip {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(37, 99, 235, 0.15) !important;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1) !important;
+}
+html:not(.dark) .about-chip span.text-white {
+  color: #0f172a !important;
+}
 
 .text-glow {
   text-shadow: 0 0 24px rgba(37, 99, 235, 0.6);
