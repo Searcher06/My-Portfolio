@@ -312,13 +312,13 @@ export default function ProjectsClientPage() {
 
                 {/* Image + text */}
                 <div className="relative mt-4 space-y-3 text-sm text-slate-400">
-                  <div className="aspect-video overflow-hidden rounded-2xl border border-white/[0.07] bg-[#081322] p-1.5">
+                  <div className="overflow-hidden rounded-2xl bg-white">
                     <Image
                       src={project.image}
                       alt={`${project.name} project preview`}
                       width={1200}
                       height={700}
-                      className="h-full w-full object-contain object-center"
+                      className="w-full h-auto"
                     />
                   </div>
                   <p className="line-clamp-3"><span className="font-semibold text-slate-200">Challenge:</span> {project.challenge}</p>

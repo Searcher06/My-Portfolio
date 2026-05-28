@@ -683,13 +683,13 @@ export default function HomePage() {
               transition={{ type: "spring", stiffness: 220, damping: 18 }}
               className="dark-surface group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-[#0E1E32]/90 p-4 transition duration-300 hover:border-[#2563EB]/28 hover:shadow-[0_20px_48px_-24px_rgba(37,99,235,0.42)] sm:p-5"
             >
-              <div className="aspect-video overflow-hidden rounded-xl border border-white/[0.07] bg-[#081322] p-1.5">
+              <div className="overflow-hidden rounded-xl bg-white">
                 <Image
                   src={project.image}
                   alt={`${project.name} preview`}
                   width={1200}
                   height={700}
-                  className="h-full w-full object-contain object-center transition duration-500 group-hover:scale-[1.02]"
+                  className="w-full h-auto transition duration-500 group-hover:scale-[1.02]"
                 />
               </div>
               <h4 className="mt-4 min-h-[3.5rem] text-lg font-semibold text-white">{project.name}</h4>
