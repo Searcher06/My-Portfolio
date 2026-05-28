@@ -310,7 +310,7 @@ export default function HomePage() {
           <div className="flex items-center gap-2.5 shrink-0">
             <a
               href="#contact"
-              className="hidden items-center gap-1.5 rounded-xl border border-[#3B82F6] bg-[#2563EB]/10 px-4 py-2 text-sm font-semibold text-[#3B82F6] transition-all duration-200 hover:border-[#2563EB] hover:bg-[#2563EB] hover:text-white hover:shadow-[0_4px_24px_rgba(37,99,235,0.5)] lg:inline-flex"
+              className="hidden items-center gap-1.5 rounded-xl bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/[0.11] hover:text-white lg:inline-flex"
             >
               Hire Me
               <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
@@ -376,13 +376,14 @@ export default function HomePage() {
                   </motion.a>
                 ))}
               </motion.div>
-              <div className="border-t border-white/[0.06] p-3">
+              <div className="p-3 pt-1">
                 <a
                   href="#contact"
                   onClick={() => setMobileNavOpen(false)}
-                  className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8] py-3 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(37,99,235,0.4)]"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8] py-3 text-sm font-semibold text-white shadow-[0_8px_28px_-6px_rgba(37,99,235,0.55),0_2px_8px_rgba(37,99,235,0.3)]"
                 >
                   Hire Me
+                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </a>
               </div>
             </motion.div>
@@ -840,80 +841,91 @@ export default function HomePage() {
       {/* ── Work Experience ── */}
       <motion.section
         id="journey"
-        className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+        className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8"
         variants={sectionReveal}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.18 }}
       >
         <div className="flex flex-wrap items-end justify-between gap-3">
-          <h3 className="text-2xl font-bold text-white sm:text-3xl">Work Experience</h3>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Career</p>
+            <h3 className="mt-1 text-2xl font-bold text-white sm:text-3xl">Work Experience</h3>
+          </div>
         </div>
-        <div className="relative mt-6 sm:mt-8">
-          {/* Desktop centre line */}
-          <div className="absolute left-1/2 top-3 hidden h-[calc(100%-1.5rem)] w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#93C5FD] to-transparent md:block" />
-          <div className="absolute left-1/2 top-3 hidden h-[calc(100%-1.5rem)] w-2 -translate-x-1/2 bg-[#93C5FD]/20 blur-sm md:block" />
-          {/* Mobile left line */}
-          <div className="absolute left-2 top-3 h-[calc(100%-1.5rem)] w-px bg-gradient-to-b from-transparent via-[#93C5FD] to-transparent md:hidden" />
-          <div className="absolute left-2 top-3 h-[calc(100%-1.5rem)] w-3 -translate-x-1 bg-[#93C5FD]/10 blur-[2px] md:hidden" />
 
-          <motion.div className="relative z-10 space-y-3 sm:space-y-5" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }}>
-            {workExperience.map((job, index) => (
-              <motion.div
-                key={`${job.role}-${job.company}`}
-                variants={{
-                  hidden: { opacity: 0, x: reduceMotion ? 0 : index % 2 === 0 ? -48 : 48, y: reduceMotion ? 0 : 12 },
-                  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.58 } },
-                }}
-                className={`relative flex items-start md:items-center ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
-              >
-                {/* Desktop modern node + beam */}
-                <div className="absolute left-1/2 top-8 hidden h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-[#DBEAFE]/80 bg-[#93C5FD] shadow-[0_0_12px_rgba(147,197,253,0.6)] md:block" />
-                <div
-                  className={`absolute top-[2.3rem] hidden h-[2px] md:block ${
-                    index % 2 === 0
-                      ? "left-1/2 w-9 -translate-x-full bg-gradient-to-l from-[#93C5FD]/85 to-transparent"
-                      : "left-1/2 w-9 bg-gradient-to-r from-[#93C5FD]/85 to-transparent"
-                  }`}
-                />
-                {/* Mobile modern node + beam */}
-                <div className="relative mr-2.5 mt-4.5 shrink-0 md:hidden">
-                  <div className="h-2.5 w-2.5 rounded-full border border-[#DBEAFE]/80 bg-[#93C5FD] shadow-[0_0_10px_rgba(147,197,253,0.5)]" />
-                  <div className="absolute left-2.5 top-[4px] h-[2px] w-2.5 bg-gradient-to-r from-[#93C5FD]/85 to-transparent" />
+        <motion.div
+          className="relative mt-8 space-y-4 sm:mt-10 sm:space-y-5"
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          {/* Vertical line */}
+          <div className="absolute left-[1.1rem] top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-[#2563EB]/60 via-[#93C5FD]/40 to-transparent sm:block" />
+
+          {workExperience.map((job, index) => (
+            <motion.article
+              key={`${job.role}-${job.company}`}
+              variants={{
+                hidden: { opacity: 0, y: reduceMotion ? 0 : 28 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+              }}
+              className="group relative sm:pl-12"
+            >
+              {/* Timeline dot */}
+              <div className="absolute left-[0.6rem] top-6 hidden h-3 w-3 -translate-x-1/2 rounded-full border-2 border-[#2563EB] bg-white shadow-[0_0_10px_rgba(37,99,235,0.7)] transition-all duration-300 group-hover:border-[#60A5FA] group-hover:shadow-[0_0_16px_rgba(96,165,250,0.8)] sm:block" />
+
+              <div className="dark-surface group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-br from-[#0D1E34] via-[#0B1828] to-[#080F1C] p-5 transition-all duration-300 hover:border-[#2563EB]/30 hover:shadow-[0_20px_48px_-24px_rgba(37,99,235,0.35)] sm:p-6">
+                {/* Subtle top glow */}
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/50 to-transparent" />
+                <div className="pointer-events-none absolute -right-16 -top-12 h-32 w-32 rounded-full bg-blue-600/8 blur-3xl" />
+
+                {/* Top row: role + period badge */}
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div className="space-y-1">
+                    <p className="text-base font-bold leading-snug text-white sm:text-lg">{job.role}</p>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-sm font-semibold text-[#60A5FA]">{job.company}</span>
+                      <span className="h-1 w-1 rounded-full bg-slate-600" />
+                      <span className="inline-flex items-center gap-1 text-xs text-slate-500">
+                        <span className="material-symbols-outlined text-[13px]">location_on</span>
+                        {job.location}
+                      </span>
+                    </div>
+                  </div>
+                  <span className="inline-flex shrink-0 items-center gap-1.5 text-[11px] font-medium text-slate-500">
+                    <span className="material-symbols-outlined text-[13px]">calendar_today</span>
+                    {job.period}
+                  </span>
                 </div>
 
-                <article
-                  className={`dark-surface group relative min-w-0 w-full overflow-hidden rounded-xl border border-white/[0.1] bg-[#0B1628] p-3 shadow-[0_18px_40px_-30px_rgba(15,23,42,0.9)] transition-all duration-300 hover:border-[#93C5FD]/35 hover:shadow-[0_24px_48px_-32px_rgba(59,130,246,0.38)] sm:rounded-2xl sm:p-5 md:w-[46%] ${index % 2 === 0 ? "md:mr-[54%]" : "md:ml-[54%]"}`}
-                >
-                  <div className="relative z-10 flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between sm:gap-3">
-                    <div className="min-w-0 space-y-1">
-                      <p className="text-[0.9rem] font-semibold leading-snug text-white sm:text-lg">{job.role}</p>
-                      <p className="text-[0.82rem] font-medium leading-snug text-[#93C5FD] sm:text-sm">{job.company}</p>
-                    </div>
-                    <span className="text-[10px] font-semibold tracking-[0.06em] text-[#93C5FD] sm:text-[11px]">
-                      {job.period}
-                    </span>
-                  </div>
-                  <div className="relative z-10 mt-2 flex flex-wrap items-center gap-1.5">
-                    <span className="inline-flex items-center gap-1 rounded-full border border-white/[0.08] bg-white/[0.03] px-2 py-1 text-[10px] text-slate-300 sm:text-[11px]">
-                      <span className="material-symbols-outlined text-[14px] text-[#60A5FA]">location_on</span>
-                      {job.location}
-                    </span>
-                  </div>
-                  <p className="relative z-10 mt-2.5 text-[12px] leading-relaxed text-slate-300 sm:mt-3 sm:text-sm">{job.summary}</p>
-                  <ul className="relative z-10 mt-2.5 space-y-1.5 text-[12px] text-slate-300 sm:mt-3 sm:text-sm">
-                    {job.highlights.map((point) => (
-                      <li key={point} className="flex items-start gap-2">
-                        <span className="material-symbols-outlined mt-0.5 text-[15px] text-[#60A5FA]">task_alt</span>
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+                {/* Divider */}
+                <div className="my-4 h-px bg-gradient-to-r from-white/[0.06] via-white/[0.04] to-transparent" />
+
+                {/* Summary */}
+                <p className="text-sm leading-relaxed text-slate-400">{job.summary}</p>
+
+                {/* Highlights */}
+                <ul className="mt-4 space-y-2.5">
+                  {job.highlights.map((point) => (
+                    <li key={point} className="flex items-start gap-3 text-sm text-slate-400">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/15">
+                        <span className="material-symbols-outlined text-[13px] text-[#60A5FA]">arrow_forward</span>
+                      </span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Index number watermark */}
+                <span className="pointer-events-none absolute bottom-4 right-5 text-[4rem] font-black leading-none text-white/[0.025] select-none">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
+            </motion.article>
+          ))}
+        </motion.div>
       </motion.section>
 
       {/* ── CTA ── */}
