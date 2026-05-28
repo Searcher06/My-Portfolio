@@ -14,8 +14,10 @@ export default function ContactPage() {
   return (
     <main className="mx-auto w-full max-w-4xl px-4 pb-20 pt-28 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold text-white sm:text-4xl">Contact</h1>
-      <p className="mt-4 text-slate-300">GitHub: github.com/Searcher06</p>
-      <p className="mt-1 text-slate-300">LinkedIn: linkedin.com/in/ahmad</p>
+      <p className="mt-4 text-slate-300">Email: <a href="mailto:ahmadibrahimsearcher@gmail.com" className="text-[#60A5FA] hover:underline">ahmadibrahimsearcher@gmail.com</a></p>
+      <p className="mt-1 text-slate-300">GitHub: <a href="https://github.com/Searcher06" target="_blank" rel="noopener noreferrer" className="text-[#60A5FA] hover:underline">github.com/Searcher06</a></p>
+      <p className="mt-1 text-slate-300">LinkedIn: <a href="https://www.linkedin.com/in/ahmadibrahim06" target="_blank" rel="noopener noreferrer" className="text-[#60A5FA] hover:underline">linkedin.com/in/ahmadibrahim06</a></p>
+      <p className="mt-1 text-slate-300">X / Twitter: <a href="https://x.com/undefined_dev" target="_blank" rel="noopener noreferrer" className="text-[#60A5FA] hover:underline">@undefined_dev</a></p>
       <Link href="/" className="mt-6 inline-flex text-sm font-semibold text-[#93C5FD]">
         Back to home
       </Link>

@@ -1037,7 +1037,7 @@ export default function HomePage() {
                 Name
                 <input
                   type="text"
-                  className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB] placeholder:text-slate-600 focus:border-[#2563EB]/50 focus:ring-2"
+                  className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB]/60 placeholder:text-slate-600 focus:border-[#2563EB]/40 focus:ring-1"
                   placeholder="Your name"
                 />
               </label>
@@ -1045,7 +1045,7 @@ export default function HomePage() {
                 Email
                 <input
                   type="email"
-                  className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB] placeholder:text-slate-600 focus:border-[#2563EB]/50 focus:ring-2"
+                  className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB]/60 placeholder:text-slate-600 focus:border-[#2563EB]/40 focus:ring-1"
                   placeholder="you@example.com"
                 />
               </label>
@@ -1054,7 +1054,7 @@ export default function HomePage() {
               Subject
               <input
                 type="text"
-                className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB] placeholder:text-slate-600 focus:border-[#2563EB]/50 focus:ring-2"
+                className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB]/60 placeholder:text-slate-600 focus:border-[#2563EB]/40 focus:ring-1"
                 placeholder="Project discussion"
               />
             </label>
@@ -1062,7 +1062,7 @@ export default function HomePage() {
               Message
               <textarea
                 rows={4}
-                className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB] placeholder:text-slate-600 focus:border-[#2563EB]/50 focus:ring-2"
+                className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB]/60 placeholder:text-slate-600 focus:border-[#2563EB]/40 focus:ring-1"
                 placeholder="Tell me about your product or idea"
               />
             </label>
@@ -1086,10 +1086,10 @@ export default function HomePage() {
             <p className="mt-1.5 text-xs text-slate-500 sm:mt-2">Fastest channels to reach Ahmad Ibrahim for collaboration.</p>
             <div className="mt-4 space-y-2 sm:mt-5">
               {[
-                { icon: "https://cdn.simpleicons.org/gmail/EA4335", label: "Email", handle: "Contact form", href: "/contact" },
+                { icon: "https://cdn.simpleicons.org/gmail/EA4335", label: "Email", handle: "ahmadibrahimsearcher@gmail.com", href: "mailto:ahmadibrahimsearcher@gmail.com" },
                 { icon: "https://cdn.simpleicons.org/github/FFFFFF", label: "GitHub", handle: "@Searcher06", href: "https://github.com/Searcher06" },
-                { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", label: "LinkedIn", handle: "/in/ahmad", href: "https://linkedin.com/in/ahmad" },
-                { icon: "https://cdn.simpleicons.org/x/FFFFFF", label: "X / Twitter", handle: "@ahmad", href: "https://x.com/ahmad" },
+                { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", label: "LinkedIn", handle: "/in/ahmadibrahim06", href: "https://www.linkedin.com/in/ahmadibrahim06" },
+                { icon: "https://cdn.simpleicons.org/x/FFFFFF", label: "X / Twitter", handle: "@undefined_dev", href: "https://x.com/undefined_dev" },
               ].map((contact) => (
                 <a
                   key={contact.label}
