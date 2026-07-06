@@ -1,44 +1,31 @@
 import type { Profile } from "@/types/content";
 
 export const profile: Profile = {
-  name: "Alex Morgan",
-  headline: "Senior Full-Stack Engineer crafting scalable products with exceptional UX.",
-  location: "San Francisco, CA",
-  bio: "I architect and ship high-performance web applications that scale to millions of users. With 6+ years of experience across startups and enterprise, I specialize in building robust backend systems, intuitive frontend experiences, and leading cross-functional teams to deliver measurable business impact. My focus is on clean code, system design, and creating products users love.",
+  name: "Ahmad Ibrahim",
+  headline: "Backend-focused full-stack engineer building reliable web applications, APIs, and trust-critical systems.",
+  location: "Kano, Nigeria (Remote)",
+  bio: "I'm a BSc Software Engineering student and full-stack developer focused on building reliable web applications and backend systems. I enjoy turning ideas into scalable products that solve real problems, stay maintainable, and hold up under real-world conditions. My work spans backend APIs, full-stack web apps, and trust-critical features — from auth flows and payment integrations to real-time systems and admin dashboards.",
   skills: [
     "TypeScript",
+    "JavaScript",
     "React",
     "Next.js",
     "Node.js",
-    "Python",
+    "Express.js",
     "PostgreSQL",
-    "Redis",
-    "AWS",
-    "Docker",
-    "Kubernetes",
-    "GraphQL",
+    "MongoDB",
+    "Tailwind CSS",
     "REST APIs",
-    "Jest/Cypress",
-    "CI/CD",
+    "JWT Authentication",
+    "Socket.IO",
+    "Cloudinary",
+    "Git",
+    "GitHub",
   ],
   socialLinks: [
-    { label: "GitHub", href: "https://github.com/alexmorgan" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/alexmorgan" },
-    { label: "Twitter", href: "https://twitter.com/alexmorgan" },
+    { label: "GitHub", href: "https://github.com/Searcher06" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/ahmadibrahim06" },
+    { label: "X / Twitter", href: "https://x.com/undefined_dev" },
+    { label: "Email", href: "mailto:ahmadibrahimsearcher@gmail.com" },
   ],
-};
-
-export const contentPrompts = {
-  headlineTemplate:
-    "I help [target users/companies] achieve [result] by building [type of software].",
-  bioTemplate:
-    "I am a [role] with [X years] building [product types]. I specialize in [strengths]. Recently, I delivered [impact] using [tools/stack].",
-  projectTemplate: {
-    problem:
-      "Who had the problem, what pain existed, and why it mattered to the business.",
-    solution:
-      "What you designed and built, key technical decisions, and why they were chosen.",
-    impact:
-      "Measured result: performance gains, conversion change, reduced manual work, or delivery speed.",
-  },
 };

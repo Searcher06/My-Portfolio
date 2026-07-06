@@ -23,46 +23,50 @@ export const metadata: Metadata = {
     template: `%s | ${personName}`,
   },
   description:
-    `Official portfolio of ${personName}. I design and build reliable software systems, APIs, and trust-critical product experiences.`,
+    `Official portfolio of ${personName} — a backend-focused full-stack engineer building reliable web applications, APIs, and trust-critical product experiences. Available for remote roles and freelance projects.`,
   keywords: [
     "Ahmad Ibrahim",
     "Full-Stack Engineer",
     "Backend Developer",
     "Node.js Developer",
+    "React Developer",
     "Remote Software Engineer",
     "Available for hire",
     "API Development",
     "Freelance Backend Developer",
+    "Nigeria software engineer",
+    "Kano developer",
+    "software portfolio",
   ],
-  alternates: {
-    canonical: "/",
-  },
   authors: [{ name: personName, url: siteUrl }],
   creator: personName,
   publisher: personName,
   category: "Technology",
   openGraph: {
-    type: "website",
-    url: "/",
+    type: "profile",
+    url: siteUrl,
     title: `${personName} | ${personTitle}`,
     description:
-      "I build software where failure is not an option. Explore projects, services, and contact details.",
+      "Building reliable web applications, APIs, and trust-critical systems. Available for remote roles and freelance projects.",
     siteName: `${personName} Portfolio`,
     images: [
       {
-        url: "/og/findora-placeholder.svg",
+        url: "/og/portfolio-og.svg",
         width: 1200,
-        height: 700,
-        alt: "Ahmad Ibrahim portfolio preview",
+        height: 630,
+        alt: `${personName} — ${personTitle}`,
       },
     ],
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: `${personName} | ${personTitle}`,
     description:
-      "I build software where failure is not an option. Explore projects and services.",
-    images: ["/og/findora-placeholder.svg"],
+      "Building reliable web applications, APIs, and trust-critical systems. Available for remote roles.",
+    images: ["/og/portfolio-og.svg"],
+    creator: "@undefined_dev",
+    site: "@undefined_dev",
   },
   robots: {
     index: true,
@@ -82,11 +86,33 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@context": "https://schema.org",
     "@type": "Person",
     name: personName,
+    givenName: "Ahmad",
+    familyName: "Ibrahim",
     jobTitle: personTitle,
     url: siteUrl,
-    image: `${siteUrl}/og/findora-placeholder.svg`,
+    email: "ahmadibrahimsearcher@gmail.com",
+    image: `${siteUrl}/me3.png`,
     sameAs: sameAsLinks,
-    knowsAbout: ["Backend Development", "API Design", "System Architecture", "Trust-Critical Software"],
+    knowsAbout: [
+      "Backend Development",
+      "API Design",
+      "System Architecture",
+      "Trust-Critical Software",
+      "Node.js",
+      "React",
+      "PostgreSQL",
+      "MongoDB",
+      "TypeScript",
+      "Full-Stack Development",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "Auvra",
+    },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Bayero University Kano",
+    },
   };
 
   const websiteJsonLd = {
@@ -95,6 +121,24 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     name: `${personName} Portfolio`,
     url: siteUrl,
     inLanguage: "en",
+    author: {
+      "@type": "Person",
+      name: personName,
+      url: siteUrl,
+    },
+  };
+
+  const profilePageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    name: `${personName} — Software Engineer Portfolio`,
+    url: siteUrl,
+    mainEntity: {
+      "@type": "Person",
+      name: personName,
+      jobTitle: personTitle,
+      url: siteUrl,
+    },
   };
 
   return (
@@ -119,6 +163,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }}
         />
       </head>
       <body className="bg-[#020817] text-white font-display overflow-x-hidden antialiased">
