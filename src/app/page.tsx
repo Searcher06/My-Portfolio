@@ -86,7 +86,7 @@ const projectsJsonLd = {
       name: "Vestlee",
       url: `${siteUrl}/projects#vestlee`,
       description:
-        "Full-stack authentication system with JWT, bcrypt, session revocation, and Google OAuth.",
+        "AI-powered job application assistant with CV tailoring, ATS match scoring, Gmail application tracking, real-time voice mock interviews via Deepgram, and CV audit with one-click fixes.",
     },
   ],
 };

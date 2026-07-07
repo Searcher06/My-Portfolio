@@ -85,14 +85,18 @@ const otherProjects: ProjectCard[] = [
     name: "Vestlee",
     image: "/vestlee.png",
     problem:
-      "Many account systems handle basic login but fall short on secure session control and clean external integrations like Gmail OAuth.",
+      "Applying for jobs is a full-time job. Developers waste hours tweaking CVs and writing cover letters per role, with no reliable way to track applications or prepare for interviews.",
     solution:
-      "Built a full auth foundation with JWT-based access, encrypted passwords, session revocation, strong validation, and seamless Google account connection flow.",
+      "Built an AI job application assistant with CV tailoring, ATS match scoring, Gmail-based application tracking, real-time voice mock interviews, and a CV audit system with one-click fixes.",
     tools: [
       { name: "Next.js", iconUrl: "https://cdn.simpleicons.org/nextdotjs/FFFFFF" },
       { name: "TypeScript", iconUrl: "https://cdn.simpleicons.org/typescript/3178C6" },
+      { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
       { name: "Express", iconUrl: "https://cdn.simpleicons.org/express/FFFFFF" },
       { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
+      { name: "Groq / Llama 3.1", iconUrl: "https://cdn.simpleicons.org/meta/0081FB" },
+      { name: "Deepgram", iconUrl: "https://cdn.simpleicons.org/deepgram/00B293" },
+      { name: "Google APIs", iconUrl: "https://cdn.simpleicons.org/google/4285F4" },
     ],
     href: "/projects#vestlee",
     liveUrl: "https://vestlee.vercel.app/",

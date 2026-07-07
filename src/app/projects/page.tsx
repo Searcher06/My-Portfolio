@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Detailed case studies of software projects built by Ahmad Ibrahim — including Findora (lost & found platform), Brillit (AI-powered learning), Vestlee (auth system), and more.",
+    "Detailed case studies of software projects built by Ahmad Ibrahim — including Findora (lost & found platform), Brillit (AI-powered learning), Vestlee (AI job application assistant), and more.",
   alternates: { canonical: "/projects" },
   openGraph: {
     title: "Projects | Ahmad Ibrahim",
