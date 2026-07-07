@@ -106,9 +106,30 @@ const otherProjects: ProjectCard[] = [
 const findoraLiveUrl = "https://findora-snowy.vercel.app/";
 
 const currentlyExploring = [
-  { title: "AI systems for real-world products", note: "Exploring how AI can power useful features inside scalable web applications.", icon: "smart_toy" },
-  { title: "System design patterns", note: "Reusable architecture for high-change product teams.", icon: "schema" },
-  { title: "Backend performance", note: "Profiling and tuning under realistic production load.", icon: "speed" },
+  {
+    title: "AI systems for real-world products",
+    note: "Exploring how AI can power genuinely useful features — recommendations, voice interfaces, and intelligent automation that solves real problems inside scalable web applications.",
+    icon: "smart_toy",
+    accent: "text-[#93C5FD]",
+    accentBg: "bg-[#93C5FD]/10",
+    accentBorder: "border-[#93C5FD]/20",
+  },
+  {
+    title: "System design patterns",
+    note: "Studying reusable architecture decisions for high-change product teams — event-driven systems, service boundaries, and patterns that scale without a full rewrite.",
+    icon: "schema",
+    accent: "text-[#60A5FA]",
+    accentBg: "bg-[#60A5FA]/10",
+    accentBorder: "border-[#60A5FA]/20",
+  },
+  {
+    title: "Backend performance",
+    note: "Profiling and tuning under realistic production load — query optimisation, caching strategies, and identifying bottlenecks that move real numbers in production.",
+    icon: "speed",
+    accent: "text-[#BFDBFE]",
+    accentBg: "bg-[#BFDBFE]/10",
+    accentBorder: "border-[#BFDBFE]/20",
+  },
 ];
 
 const services = [
@@ -584,19 +605,68 @@ export default function HomeClient() {
       </motion.section>
 
       {/* ── Currently exploring ── */}
-      <motion.section aria-label="Currently exploring" className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
-        <div className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-r from-[#0E1E35] via-[#0C1A2E] to-[#0D1C32] p-6 shadow-[0_20px_50px_-30px_rgba(37,99,235,0.22)]">
-          <div className="pointer-events-none absolute -right-16 -top-10 h-36 w-36 rounded-full bg-blue-500/10 blur-3xl" />
-          <h2 className="text-xl font-bold text-white">Currently exploring:</h2>
-          <div className="mt-4 grid gap-3 md:grid-cols-3">
-            {currentlyExploring.map((item) => (
-              <article key={item.title} className="group rounded-xl border border-white/[0.07] bg-black/20 p-4 transition hover:-translate-y-1 hover:border-[#93C5FD]/28 hover:shadow-[0_16px_28px_-22px_rgba(37,99,235,0.3)]">
-                <span className="material-symbols-outlined text-[#60A5FA]">{item.icon}</span>
-                <p className="mt-2 font-semibold text-white">{item.title}</p>
-                <p className="mt-1 text-sm text-slate-400">{item.note}</p>
-              </article>
-            ))}
+      <motion.section
+        aria-label="Currently exploring"
+        className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8"
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.18 }}
+      >
+        <div className="dark-surface relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-br from-[#0C1829] via-[#091020] to-[#070D1A] p-6 shadow-[0_32px_72px_-20px_rgba(37,99,235,0.18)] sm:p-8 lg:p-10">
+
+          {/* Ambient glows */}
+          <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#2563EB]/[0.08] blur-[90px]" />
+          <div className="pointer-events-none absolute -bottom-16 right-10 h-56 w-56 rounded-full bg-[#93C5FD]/[0.06] blur-[80px]" />
+
+          {/* Header */}
+          <div className="relative mb-8 flex items-center gap-4">
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#93C5FD]">What I&apos;m into right now</p>
+              <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">Currently Exploring</h2>
+            </div>
+            <div className="ml-2 hidden h-px flex-1 bg-gradient-to-r from-[#2563EB]/30 to-transparent sm:block" />
           </div>
+
+          {/* Cards */}
+          <motion.div
+            className="relative grid gap-4 sm:gap-5 lg:grid-cols-3"
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {currentlyExploring.map((item, i) => (
+              <motion.article
+                key={item.title}
+                variants={cardReveal}
+                whileHover={reduceMotion ? undefined : { y: -7, transition: { type: "spring", stiffness: 280, damping: 22 } }}
+                className={`group relative flex flex-col overflow-hidden rounded-2xl border bg-white/[0.03] p-5 transition-all duration-300 hover:bg-white/[0.06] sm:p-6 ${item.accentBorder}`}
+              >
+                {/* Top shimmer on hover */}
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                {/* Icon */}
+                <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl border ${item.accentBg} ${item.accentBorder}`}>
+                  <span className={`material-symbols-outlined text-[24px] ${item.accent}`}>{item.icon}</span>
+                </div>
+
+                {/* Number + title */}
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-[0.9375rem] font-bold leading-snug text-white sm:text-base">{item.title}</h3>
+                  <span className="mt-0.5 shrink-0 text-[2rem] font-black leading-none tabular-nums text-white/[0.06] transition-colors duration-300 group-hover:text-white/[0.12]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                {/* Note */}
+                <p className="mt-3 flex-1 text-sm leading-[1.75] text-slate-400 transition-colors duration-300 group-hover:text-slate-300">{item.note}</p>
+
+                {/* Bottom accent line */}
+                <div className={`mt-5 h-[2px] w-8 rounded-full transition-all duration-500 group-hover:w-full ${item.accentBg}`} />
+              </motion.article>
+            ))}
+          </motion.div>
         </div>
       </motion.section>
 
