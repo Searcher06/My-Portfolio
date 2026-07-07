@@ -83,7 +83,7 @@ const otherProjects: ProjectCard[] = [
   },
   {
     name: "Vestlee",
-    image: "/vestlee.png",
+    image: "/vestleepic.png",
     problem:
       "Applying for jobs is a full-time job. Developers waste hours tweaking CVs and writing cover letters per role, with no reliable way to track applications or prepare for interviews.",
     solution:
@@ -621,53 +621,58 @@ export default function HomeClient() {
       </motion.section>
 
       {/* ── Work Experience ── */}
-      <motion.section id="journey" aria-label="Work experience" className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Career</p>
-            <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">Work Experience</h2>
-          </div>
+      <motion.section id="journey" aria-label="Work experience" className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+        <div className="mb-10 sm:mb-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Career</p>
+          <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">Work Experience</h2>
         </div>
-        <motion.div className="relative mt-8 space-y-4 sm:mt-10 sm:space-y-5" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.1 }}>
-          <div className="absolute left-[1.1rem] top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-[#2563EB]/60 via-[#93C5FD]/40 to-transparent sm:block" />
+        <motion.div className="relative space-y-0" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.08 }}>
+          <div className="experience-rail absolute left-0 top-2 hidden h-[calc(100%-2rem)] w-px bg-gradient-to-b from-[#2563EB]/70 via-[#2563EB]/30 to-transparent sm:block" />
           {workExperience.map((job, index) => (
-            <motion.article key={`${job.role}-${job.company}`} variants={{ hidden: { opacity: 0, y: reduceMotion ? 0 : 28 }, show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } } }} className="group relative sm:pl-12">
-              <div className="absolute left-[0.6rem] top-6 hidden h-3 w-3 -translate-x-1/2 rounded-full border-2 border-[#2563EB] bg-white shadow-[0_0_10px_rgba(37,99,235,0.7)] transition-all duration-300 group-hover:border-[#60A5FA] group-hover:shadow-[0_0_16px_rgba(96,165,250,0.8)] sm:block" />
-              <div className="dark-surface group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-br from-[#0D1E34] via-[#0B1828] to-[#080F1C] p-5 transition-all duration-300 hover:border-[#2563EB]/30 hover:shadow-[0_20px_48px_-24px_rgba(37,99,235,0.35)] sm:p-6">
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/50 to-transparent" />
-                <div className="pointer-events-none absolute -right-16 -top-12 h-32 w-32 rounded-full bg-blue-600/8 blur-3xl" />
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div className="space-y-1">
-                    <p className="text-base font-bold leading-snug text-white sm:text-lg">{job.role}</p>
-                    <div className="flex flex-wrap items-center gap-2">
+            <motion.article
+              key={`${job.role}-${job.company}`}
+              variants={{ hidden: { opacity: 0, y: reduceMotion ? 0 : 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
+              className={`relative sm:pl-10 ${index !== workExperience.length - 1 ? "pb-10 sm:pb-12" : ""}`}
+            >
+              <div className="absolute left-0 top-[1.4rem] hidden -translate-x-1/2 sm:block">
+                <span className="experience-dot flex h-2.5 w-2.5 rounded-full bg-[#2563EB] shadow-[0_0_0_4px_rgba(37,99,235,0.15),0_0_12px_rgba(37,99,235,0.5)]" />
+              </div>
+
+              {/* Card */}
+              <div className="dark-surface group rounded-2xl border border-white/[0.07] bg-[#0A1628] p-5 transition-all duration-300 hover:border-[#2563EB]/20 sm:p-6 lg:p-7">
+                {/* Top row */}
+                <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-3">
+                  <div>
+                    <h3 className="text-base font-bold text-white sm:text-[1.05rem]">{job.role}</h3>
+                    <div className="mt-1.5 flex flex-wrap items-center gap-x-2.5 gap-y-1">
                       <span className="text-sm font-semibold text-[#60A5FA]">{job.company}</span>
-                      <span className="h-1 w-1 rounded-full bg-slate-600" />
-                      <span className="inline-flex items-center gap-1 text-xs text-slate-500">
+                      <span className="hidden h-3.5 w-px bg-white/20 sm:block" aria-hidden="true" />
+                      <span className="flex items-center gap-1 text-xs text-slate-500">
                         <span className="material-symbols-outlined text-[13px]">location_on</span>
                         {job.location}
                       </span>
                     </div>
                   </div>
-                  <span className="inline-flex shrink-0 items-center gap-1.5 text-[11px] font-medium text-slate-500">
-                    <span className="material-symbols-outlined text-[13px]">calendar_today</span>
+                  <span className="shrink-0 rounded-md border border-white/[0.08] bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium tabular-nums text-slate-400">
                     {job.period}
                   </span>
                 </div>
-                <div className="my-4 h-px bg-gradient-to-r from-white/[0.06] via-white/[0.04] to-transparent" />
-                <p className="text-sm leading-relaxed text-slate-400">{job.summary}</p>
-                <ul className="mt-4 space-y-2.5">
+
+                {/* Divider */}
+                <div className="my-4 h-px w-full bg-white/[0.06]" />
+
+                {/* Summary */}
+                <p className="text-sm leading-[1.75] text-slate-400">{job.summary}</p>
+
+                {/* Highlights */}
+                <ul className="mt-5 space-y-3">
                   {job.highlights.map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-sm text-slate-400">
-                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/15">
-                        <span className="material-symbols-outlined text-[13px] text-[#60A5FA]">arrow_forward</span>
-                      </span>
-                      <span>{point}</span>
+                    <li key={point} className="flex items-start gap-3">
+                      <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#2563EB]" aria-hidden="true" />
+                      <span className="text-sm leading-relaxed text-slate-400">{point}</span>
                     </li>
                   ))}
                 </ul>
-                <span className="pointer-events-none absolute bottom-4 right-5 text-[4rem] font-black leading-none text-white/[0.025] select-none">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
               </div>
             </motion.article>
           ))}

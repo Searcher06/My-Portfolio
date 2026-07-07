@@ -539,3 +539,13 @@ html:not(.dark) .btn-secondary:hover {
 html:not(.dark) .theme-icon-invert {
   filter: brightness(0) opacity(0.7);
 }
+
+/* ── Light mode: work experience timeline ── */
+html:not(.dark) .experience-rail {
+  background: linear-gradient(to bottom, rgba(37,99,235,0.5), rgba(37,99,235,0.15), transparent) !important;
+}
+
+html:not(.dark) .experience-dot {
+  background-color: #2563EB !important;
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.15), 0 0 10px rgba(37,99,235,0.35) !important;
+}

@@ -112,7 +112,7 @@ const projects: ProjectDetail[] = [
     name: "Vestlee",
     tagline: "AI-powered job application assistant — tailored CVs, cover letters, Gmail tracking, and mock interviews.",
     icon: "work",
-    image: "/vestlee.png",
+    image: "/vestleepic.png",
     status: "In Progress",
     challenge:
       "Applying for jobs is a full-time job in itself. Developers waste hours tweaking CVs and writing cover letters for every role, with no reliable way to track applications or prepare for interviews systematically.",
