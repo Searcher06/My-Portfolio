@@ -27,7 +27,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#0a0c10]/95 backdrop-blur-xl border-b border-[rgba(255,255,255,0.08)]" : ""
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#0c0c0e]/95 backdrop-blur-xl border-b border-white/[0.06]" : ""
         }`}
     >
       <nav className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Primary">

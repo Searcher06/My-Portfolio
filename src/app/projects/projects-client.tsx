@@ -222,8 +222,8 @@ export default function ProjectsClientPage() {
       <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-3 sm:px-6 lg:px-8">
         <nav className={`mx-auto flex h-[3.75rem] w-full max-w-7xl items-center justify-between rounded-2xl border px-4 backdrop-blur-2xl transition-all duration-500 sm:h-[4.25rem] sm:px-7 ${
           scrolled
-            ? "border-white/[0.1] bg-[#020817]/95 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06),0_28px_64px_-20px_rgba(37,99,235,0.45)]"
-            : "border-white/[0.06] bg-[#020817]/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_4px_24px_rgba(37,99,235,0.1)]"
+            ? "border-white/[0.1] bg-[#0c0c0e]/95 shadow-[0_8px_32px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.06)]"
+            : "border-white/[0.06] bg-[#0c0c0e]/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
         }`}>
 
           {/* Logo */}
@@ -253,10 +253,8 @@ export default function ProjectsClientPage() {
         </nav>
       </header>
 
-      {/* ── Background atmosphere ── */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-60 left-1/2 h-[50rem] w-[50rem] -translate-x-1/2 rounded-full bg-[#2563EB]/10 blur-[150px]" />
-        <div className="absolute -right-40 top-[30%] h-[22rem] w-[22rem] rounded-full bg-sky-600/7 blur-[110px]" />
+        <div className="absolute -top-60 left-1/2 h-[50rem] w-[50rem] -translate-x-1/2 rounded-full bg-[#2563EB]/[0.04] blur-[180px]" />
       </div>
 
       <div className="mx-auto w-full max-w-7xl px-4 pt-28 sm:px-6 lg:px-8">
@@ -267,10 +265,10 @@ export default function ProjectsClientPage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="dark-surface relative overflow-hidden rounded-3xl border border-white/[0.07] bg-linear-to-b from-[#112040] via-[#0E1E35] to-[#08101C] p-5 sm:p-8 lg:p-10"
+          className="dark-surface relative overflow-hidden rounded-3xl border border-white/[0.07] bg-gradient-to-b from-[#1a1a1f] via-[#141416] to-[#111113] p-5 sm:p-8 lg:p-10"
         >
-          <div className="pointer-events-none absolute -right-20 -top-16 h-52 w-52 rounded-full bg-blue-500/16 blur-3xl" />
-          <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-sky-700/10 blur-3xl" />
+          <div className="pointer-events-none absolute -right-20 -top-16 h-52 w-52 rounded-full bg-white/[0.02] blur-3xl" />
+          <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-white/[0.015] blur-3xl" />
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Project Portfolio</p>
           <h1 className="mt-3 text-2xl font-bold text-white sm:text-4xl lg:text-5xl">Detailed Project Breakdowns</h1>
           <p className="mt-3 max-w-3xl text-sm text-slate-400 sm:text-base">
@@ -294,7 +292,7 @@ export default function ProjectsClientPage() {
                 viewport={{ once: true, amount: 0.06 }}
                 transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: index === 0 ? 0 : (index - 1) * 0.08 }}
                 whileHover={rm ? undefined : { y: -6, scale: 1.012, transition: { type: "spring", stiffness: 260, damping: 22 } }}
-                className={`dark-surface group relative scroll-mt-28 flex h-full flex-col overflow-hidden rounded-2xl border bg-linear-to-br from-[#152540] via-[#111E35] to-[#0C1525] p-4 transition-all duration-300 sm:p-5 ${
+                className={`dark-surface group relative scroll-mt-28 flex h-full flex-col overflow-hidden rounded-2xl border bg-gradient-to-br from-[#1c1c22] via-[#161618] to-[#131315] p-4 transition-all duration-300 sm:p-5 ${
                   isHighlighted
                     ? "border-[#60A5FA]/80 shadow-[0_0_0_1px_rgba(96,165,250,0.45),0_0_40px_-14px_rgba(96,165,250,0.9)]"
                     : "border-[#BFDBFE]/10 hover:border-[#93C5FD]/32 hover:shadow-[0_16px_36px_-20px_rgba(59,130,246,0.35)]"

@@ -38,7 +38,7 @@ export function Footer() {
 
       {/* Background glow */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -bottom-32 left-1/2 h-[28rem] w-[52rem] -translate-x-1/2 rounded-full bg-[#2563EB]/10 blur-[120px]" />
+        <div className="absolute -bottom-32 left-1/2 h-[28rem] w-[52rem] -translate-x-1/2 rounded-full bg-white/[0.015] blur-[120px]" />
       </div>
 
       {/* Top divider line with gradient */}

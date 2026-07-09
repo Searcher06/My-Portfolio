@@ -169,7 +169,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }}
         />
       </head>
-      <body className="bg-[#020817] text-white font-display overflow-x-hidden antialiased">
+      <body className="bg-[#0c0c0e] text-white font-display overflow-x-hidden antialiased">
         {children}
         <Footer />
       </body>

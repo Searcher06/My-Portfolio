@@ -2,19 +2,19 @@
 
 @layer base {
   :root {
-    --bg: #020817;
-    --bg-secondary: #0D1B2A;
-    --bg-tertiary: #162040;
+    --bg: #0c0c0e;
+    --bg-secondary: #111113;
+    --bg-tertiary: #1a1a1f;
     --fg: #F1F5F9;
     --fg-muted: #94A3B8;
     --fg-dim: #64748B;
     --accent: #2563EB;
     --accent-bright: #3B82F6;
-    --accent-glow: rgba(37, 99, 235, 0.28);
-    --accent-dim: rgba(37, 99, 235, 0.1);
-    --card: rgba(13, 27, 42, 0.85);
-    --card-border: rgba(59, 130, 246, 0.12);
-    --border: rgba(255, 255, 255, 0.08);
+    --accent-glow: rgba(37, 99, 235, 0.18);
+    --accent-dim: rgba(37, 99, 235, 0.08);
+    --card: rgba(20, 20, 22, 0.9);
+    --card-border: rgba(255, 255, 255, 0.07);
+    --border: rgba(255, 255, 255, 0.07);
     --border-subtle: rgba(255, 255, 255, 0.04);
     --white: #ffffff;
     --brand: #2563EB;
@@ -72,10 +72,8 @@ body {
   font-family: var(--font-sans);
   background: var(--bg);
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37, 99, 235, 0.15), transparent),
-    radial-gradient(ellipse 55% 35% at 100% 0%, rgba(56, 189, 248, 0.07), transparent),
-    radial-gradient(ellipse 45% 35% at 0% 100%, rgba(29, 78, 216, 0.06), transparent),
-    linear-gradient(180deg, #020817 0%, #060F1E 50%, #020817 100%);
+    radial-gradient(ellipse 60% 40% at 50% -10%, rgba(37, 99, 235, 0.07), transparent),
+    linear-gradient(180deg, #0c0c0e 0%, #0f0f11 50%, #0c0c0e 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -468,7 +466,6 @@ html:not(.dark) .dark-surface [class*="from-[#1"] {
   border-color: rgba(37, 99, 235, 0.12) !important;
 }
 
-/* Inner solid dark hex backgrounds (avatar inner ring, etc.) */
 html:not(.dark) .dark-surface [class*="bg-[#0"],
 html:not(.dark) .dark-surface [class*="bg-[#1"] {
   background-color: rgba(37, 99, 235, 0.08) !important;
@@ -503,17 +500,18 @@ html:not(.dark) .dark-surface textarea::placeholder {
 
 /* ── force-dark: entire profile card stays dark regardless of theme ── */
 html:not(.dark) .force-dark.dark-surface {
-  background: linear-gradient(to bottom right, #102038, #0e1e35, #080e1c) !important;
-  background-image: linear-gradient(to bottom right, #102038, #0e1e35, #080e1c) !important;
+  background: linear-gradient(to bottom right, #1a1a1f, #141416, #0f0f11) !important;
+  background-image: linear-gradient(to bottom right, #1a1a1f, #141416, #0f0f11) !important;
   border-color: rgba(255, 255, 255, 0.09) !important;
-  box-shadow: 0 32px 80px -24px rgba(37, 99, 235, 0.4) !important;
+  box-shadow: 0 32px 80px -24px rgba(0, 0, 0, 0.6) !important;
 }
 
 /* Undo descendant overrides inside force-dark — these come after .dark-surface rules so same-specificity wins by source order */
 html:not(.dark) .force-dark [class*="bg-black/"]     { background-color: rgba(0, 0, 0, 0.4) !important; }
 html:not(.dark) .force-dark [class*="border-white/"] { border-color: rgba(255, 255, 255, 0.07) !important; }
 html:not(.dark) .force-dark [class*="bg-white/"]     { background-color: rgba(255, 255, 255, 0.04) !important; }
-html:not(.dark) .force-dark [class*="bg-[#0"]        { background-color: #07101c !important; }
+html:not(.dark) .force-dark [class*="bg-[#0"]        { background-color: #0f0f11 !important; }
+html:not(.dark) .force-dark [class*="bg-[#1"]        { background-color: #141416 !important; }
 
 /* Restore all text colours */
 html:not(.dark) .force-dark .text-white             { color: #ffffff !important; }

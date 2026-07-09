@@ -270,8 +270,8 @@ export default function HomeClient() {
       <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-3 sm:px-6 lg:px-8">
         <nav className={`mx-auto flex h-[4.25rem] w-full max-w-7xl items-center justify-between rounded-2xl border px-5 backdrop-blur-2xl transition-all duration-500 sm:h-[4.25rem] sm:px-7 ${
           scrolled
-            ? "border-white/[0.08] bg-[#020817]/80 shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05),0_28px_64px_-20px_rgba(37,99,235,0.35)]"
-            : "border-transparent bg-[#020817]/30 shadow-none"
+            ? "border-white/[0.08] bg-[#0c0c0e]/80 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)]"
+            : "border-transparent bg-[#0c0c0e]/30 shadow-none"
         }`}>
           <a href="#home" className="inline-flex items-center gap-3 shrink-0">
             <Image src="/ahmadlogo.png" alt="Ahmad Ibrahim logo" width={44} height={44} className="h-9 w-auto sm:h-10" />
@@ -328,7 +328,7 @@ export default function HomeClient() {
               onClick={() => setMobileNavOpen(false)}
             />
             <motion.div
-              className="mobile-nav-panel fixed inset-x-4 top-[4.5rem] z-50 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#050D1C]/96 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.85),0_0_0_1px_rgba(37,99,235,0.12)] backdrop-blur-2xl sm:inset-x-6 lg:hidden"
+              className="mobile-nav-panel fixed inset-x-4 top-[4.5rem] z-50 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111113]/96 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.85),0_0_0_1px_rgba(255,255,255,0.06)] backdrop-blur-2xl sm:inset-x-6 lg:hidden"
               initial={{ opacity: 0, y: -10, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 300, damping: 28 } }}
               exit={{ opacity: 0, y: -8, scale: 0.97, transition: { duration: 0.16 } }}
@@ -370,9 +370,7 @@ export default function HomeClient() {
 
       {/* ── Background atmosphere ── */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-72 left-1/2 h-[56rem] w-[56rem] -translate-x-1/2 rounded-full bg-[#2563EB]/10 blur-[160px]" />
-        <div className="absolute -left-44 top-[38%] h-[24rem] w-[24rem] rounded-full bg-blue-600/8 blur-[120px]" />
-        <div className="absolute -right-44 top-[55%] h-[28rem] w-[28rem] rounded-full bg-sky-500/7 blur-[130px]" />
+        <div className="absolute -top-72 left-1/2 h-[56rem] w-[56rem] -translate-x-1/2 rounded-full bg-[#2563EB]/[0.05] blur-[180px]" />
       </div>
 
       {/* ── Hero ── */}
@@ -436,7 +434,7 @@ export default function HomeClient() {
         {/* Right: profile card */}
         <motion.aside className="relative z-10 mx-auto mt-4 hidden w-full max-w-[34rem] lg:mx-0 lg:mt-0 lg:block lg:max-w-none" variants={fadeUp}>
           <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-[#2563EB]/25 via-sky-500/12 to-transparent blur-xl" />
-          <div className="force-dark dark-surface relative rounded-[2rem] border border-white/[0.09] bg-gradient-to-br from-[#102038] via-[#0E1E35] to-[#080E1C] p-5 shadow-[0_32px_80px_-24px_rgba(37,99,235,0.4)] sm:p-7">
+          <div className="force-dark dark-surface relative rounded-[2rem] border border-white/[0.09] bg-gradient-to-br from-[#1a1a1f] via-[#141416] to-[#0f0f11] p-5 shadow-[0_32px_80px_-24px_rgba(0,0,0,0.6)] sm:p-7">
             <div className="mb-6 flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <Image src="/ahmadlogo.png" alt="Ahmad Ibrahim logo" width={52} height={52} className="h-11 w-auto" />
@@ -482,7 +480,7 @@ export default function HomeClient() {
       <motion.section id="projects" aria-label="Key statistics" className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-10 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
         <motion.div className="grid grid-cols-2 gap-3 xl:grid-cols-4" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
           {quickStats.map((stat) => (
-            <motion.article key={stat.label} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 240, damping: 16 }} className="dark-surface rounded-2xl border border-white/[0.07] bg-[#0C1929]/90 p-4 sm:p-5 transition shadow-[0_14px_30px_-22px_rgba(37,99,235,0.22)] hover:border-[#2563EB]/25">
+            <motion.article key={stat.label} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 240, damping: 16 }} className="dark-surface rounded-2xl border border-white/[0.07] bg-[#161618]/90 p-4 sm:p-5 transition shadow-[0_14px_30px_-22px_rgba(0,0,0,0.4)] hover:border-white/[0.14]">
               <p className="text-[10px] uppercase tracking-[0.14em] text-[#93C5FD] sm:text-xs">{stat.label}</p>
               <p className="mt-1.5 text-2xl font-bold text-white sm:mt-2 sm:text-3xl">{stat.value}</p>
               <p className="mt-1 text-[10px] text-slate-500 sm:text-xs">{stat.trend}</p>
@@ -493,9 +491,9 @@ export default function HomeClient() {
 
       {/* ── Featured project: Findora ── */}
       <motion.section aria-label="Featured project: Findora" className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-20" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
-        <div className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-[#112040] via-[#0E1E35] to-[#080D1C] p-5 sm:rounded-3xl sm:p-8 lg:p-10">
-          <div className="pointer-events-none absolute -right-20 -top-16 h-56 w-56 rounded-full bg-blue-600/16 blur-3xl" />
-          <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-sky-700/10 blur-3xl" />
+        <div className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-[#1a1a1f] via-[#141416] to-[#111113] p-5 sm:rounded-3xl sm:p-8 lg:p-10">
+          <div className="pointer-events-none absolute -right-20 -top-16 h-56 w-56 rounded-full bg-white/[0.02] blur-3xl" />
+          <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-white/[0.015] blur-3xl" />
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#93C5FD] sm:text-xs">Featured Project</p>
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-white sm:mt-3 sm:text-3xl lg:text-4xl">Findora</h2>
           <p className="mt-1.5 text-sm text-slate-400 sm:mt-2 sm:text-lg">Built for the moment between losing something and getting it back</p>
@@ -508,7 +506,7 @@ export default function HomeClient() {
               <p className="text-sm sm:text-base"><span className="font-semibold text-slate-200">Why it matters:</span> A WhatsApp message is not a recovery system. Without structure, verification, or accountability, the loudest message wins — not the rightful owner.</p>
               <p className="text-sm sm:text-base"><span className="font-semibold text-slate-200">Solution:</span> I built Findora specifically for this environment — a department-scale lost and found platform with secure auth, structured item reports, real-time chat, two-step handover verification, and moderation controls so recovery is a process, not a guess.</p>
             </div>
-            <div className="rounded-xl border border-[#93C5FD]/18 bg-gradient-to-b from-[#0D1E34] to-[#08101C] p-4 shadow-[0_20px_52px_-28px_rgba(37,99,235,0.6)] sm:rounded-2xl sm:p-5">
+            <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-[#1a1a1f] to-[#111113] p-4 shadow-[0_20px_52px_-28px_rgba(0,0,0,0.5)] sm:rounded-2xl sm:p-5">
               <div className="mb-3 flex items-center justify-between">
                 <p className="text-sm font-semibold text-white">Key Features</p>
                 <span className="rounded-full border border-[#93C5FD]/28 bg-[#2563EB]/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.16em] text-[#BFDBFE]">Core</span>
@@ -546,7 +544,7 @@ export default function HomeClient() {
         </div>
         <motion.div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
           {otherProjects.map((project) => (
-            <motion.article key={project.name} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -10, scale: 1.02 }} transition={{ type: "spring", stiffness: 220, damping: 18 }} className="dark-surface group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-[#0D1929]/90 p-4 transition hover:border-[#93C5FD]/28 hover:shadow-[0_20px_50px_-30px_rgba(37,99,235,0.4)] sm:p-5">
+            <motion.article key={project.name} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -10, scale: 1.02 }} transition={{ type: "spring", stiffness: 220, damping: 18 }} className="dark-surface group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-[#161618]/90 p-4 transition hover:border-white/[0.14] hover:shadow-[0_20px_50px_-30px_rgba(0,0,0,0.5)] sm:p-5">
               <div className="overflow-hidden rounded-xl bg-white">
                 <Image src={project.image} alt={`${project.name} — project preview`} width={1200} height={700} className="w-full h-auto transition duration-500 group-hover:scale-[1.02]" />
               </div>
@@ -591,7 +589,7 @@ export default function HomeClient() {
         </div>
         <motion.div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
           {services.map((service) => (
-            <motion.article key={service.title} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.01 }} className="dark-surface group relative overflow-hidden rounded-2xl border border-[#BFDBFE]/10 bg-gradient-to-br from-[#152540] via-[#111E35] to-[#0C1828] p-5 transition hover:border-[#93C5FD]/32 hover:shadow-[0_16px_36px_-22px_rgba(59,130,246,0.38)]">
+            <motion.article key={service.title} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.01 }} className="dark-surface group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-[#1c1c22] via-[#161618] to-[#131315] p-5 transition hover:border-white/[0.14] hover:shadow-[0_16px_36px_-22px_rgba(0,0,0,0.5)]">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(255,255,255,0.07),transparent_42%)] opacity-70" />
               <div className="pointer-events-none absolute -left-1/3 top-0 h-full w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition duration-500 group-hover:translate-x-[260%] group-hover:opacity-100" />
               <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-[#2563EB]/10 text-[#60A5FA]">
@@ -613,11 +611,11 @@ export default function HomeClient() {
         whileInView="show"
         viewport={{ once: true, amount: 0.18 }}
       >
-        <div className="dark-surface relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-br from-[#0C1829] via-[#091020] to-[#070D1A] p-6 shadow-[0_32px_72px_-20px_rgba(37,99,235,0.18)] sm:p-8 lg:p-10">
+        <div className="dark-surface relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-br from-[#131315] via-[#111113] to-[#0f0f11] p-6 shadow-[0_32px_72px_-20px_rgba(0,0,0,0.4)] sm:p-8 lg:p-10">
 
           {/* Ambient glows */}
-          <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#2563EB]/[0.08] blur-[90px]" />
-          <div className="pointer-events-none absolute -bottom-16 right-10 h-56 w-56 rounded-full bg-[#93C5FD]/[0.06] blur-[80px]" />
+          <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#2563EB]/[0.04] blur-[90px]" />
+          <div className="pointer-events-none absolute -bottom-16 right-10 h-56 w-56 rounded-full bg-white/[0.015] blur-[80px]" />
 
           {/* Header */}
           <div className="relative mb-8 flex items-center gap-4">
@@ -675,7 +673,7 @@ export default function HomeClient() {
         <h2 className="text-2xl font-bold text-white sm:text-3xl">Skills</h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
           {skillGroups.map((group) => (
-            <article key={group.label} className="dark-surface rounded-2xl border border-white/[0.07] bg-[#0D1B2E]/80 p-5 shadow-[0_12px_30px_-25px_rgba(37,99,235,0.22)]">
+            <article key={group.label} className="dark-surface rounded-2xl border border-white/[0.07] bg-[#161618]/80 p-5 shadow-[0_12px_30px_-25px_rgba(0,0,0,0.4)]">
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#BFDBFE]">{group.label}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
@@ -709,7 +707,7 @@ export default function HomeClient() {
               </div>
 
               {/* Card */}
-              <div className="dark-surface group rounded-2xl border border-white/[0.07] bg-[#0A1628] p-5 transition-all duration-300 hover:border-[#2563EB]/20 sm:p-6 lg:p-7">
+              <div className="dark-surface group rounded-2xl border border-white/[0.07] bg-[#141416] p-5 transition-all duration-300 hover:border-white/[0.14] sm:p-6 lg:p-7">
                 {/* Top row */}
                 <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-3">
                   <div>
@@ -800,7 +798,7 @@ export default function HomeClient() {
       <motion.section id="contact" aria-label="Contact Ahmad Ibrahim" className="mx-auto w-full max-w-5xl px-4 pb-16 pt-8 sm:pb-20 sm:px-6 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <h2 className="text-2xl font-bold text-white sm:text-3xl">Contact</h2>
         <div className="mt-5 grid gap-5 sm:mt-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-6">
-          <form className="dark-surface rounded-2xl border border-white/[0.07] bg-[#0C1929]/85 p-4 shadow-[0_20px_40px_-30px_rgba(37,99,235,0.22)] sm:p-5">
+          <form className="dark-surface rounded-2xl border border-white/[0.07] bg-[#161618]/85 p-4 shadow-[0_20px_40px_-30px_rgba(0,0,0,0.4)] sm:p-5">
             <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
               <label className="text-sm text-slate-400">
                 Name
@@ -827,8 +825,8 @@ export default function HomeClient() {
               </button>
             </div>
           </form>
-          <aside className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-br from-[#0E1E34] via-[#0B1826] to-[#07101A] p-4 shadow-[0_24px_55px_-35px_rgba(37,99,235,0.75)] sm:p-5">
-            <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#93C5FD]/12 blur-2xl" />
+          <aside className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-br from-[#1a1a1f] via-[#141416] to-[#111113] p-4 shadow-[0_24px_55px_-35px_rgba(0,0,0,0.5)] sm:p-5">
+            <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-white/[0.02] blur-2xl" />
             <p className="text-xs uppercase tracking-[0.14em] text-[#93C5FD] sm:text-sm">Reach me directly</p>
             <p className="mt-1.5 text-xs text-slate-500 sm:mt-2">Fastest channels to reach Ahmad Ibrahim for collaboration.</p>
             <div className="mt-4 space-y-2 sm:mt-5">
