@@ -42,6 +42,9 @@ export const metadata: Metadata = {
   creator: personName,
   publisher: personName,
   category: "Technology",
+  verification: {
+    google: "iip2adM0IE7WeEdWvpkl0vWv5bbU6bd4D2YGI6cx2Ak",
+  },
   openGraph: {
     type: "profile",
     url: siteUrl,
