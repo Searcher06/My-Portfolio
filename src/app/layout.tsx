@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ahmadibrahim.vercel.app";
 const personName = "Ahmad Ibrahim";
 const personTitle = "Backend-Focused Full-Stack Engineer";
 const sameAsLinks = [
