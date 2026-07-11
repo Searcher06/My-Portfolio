@@ -796,56 +796,66 @@ export default function HomeClient() {
 
       {/* ── Contact ── */}
       <motion.section id="contact" aria-label="Contact Ahmad Ibrahim" className="mx-auto w-full max-w-5xl px-4 pb-16 pt-8 sm:pb-20 sm:px-6 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
-        <h2 className="text-2xl font-bold text-white sm:text-3xl">Contact</h2>
-        <div className="mt-5 grid gap-5 sm:mt-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-6">
-          <form className="dark-surface rounded-2xl border border-white/[0.07] bg-[#161618]/85 p-4 shadow-[0_20px_40px_-30px_rgba(0,0,0,0.4)] sm:p-5">
-            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
-              <label className="text-sm text-slate-400">
-                Name
-                <input type="text" className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB]/60 placeholder:text-slate-600 focus:border-[#2563EB]/40 focus:ring-1" placeholder="Your name" />
-              </label>
-              <label className="text-sm text-slate-400">
-                Email
-                <input type="email" className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB]/60 placeholder:text-slate-600 focus:border-[#2563EB]/40 focus:ring-1" placeholder="you@example.com" />
-              </label>
-            </div>
-            <label className="mt-3 block text-sm text-slate-400 sm:mt-4">
-              Subject
-              <input type="text" className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB]/60 placeholder:text-slate-600 focus:border-[#2563EB]/40 focus:ring-1" placeholder="Project discussion" />
-            </label>
-            <label className="mt-3 block text-sm text-slate-400 sm:mt-4">
-              Message
-              <textarea rows={4} className="mt-1 w-full rounded-lg border border-white/10 bg-black/25 px-3 py-3 text-sm text-white outline-none ring-[#2563EB]/60 placeholder:text-slate-600 focus:border-[#2563EB]/40 focus:ring-1" placeholder="Tell me about your product or idea" />
-            </label>
-            <div className="mt-3 flex flex-col gap-2 xs:flex-row xs:flex-wrap sm:mt-4 sm:gap-3">
-              <button type="button" className="btn-primary inline-flex w-full items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold xs:w-auto">Send Message</button>
-              <button type="button" className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-[#60A5FA]/40 hover:text-white xs:w-auto">
-                <span className="material-symbols-outlined text-[18px]">download</span>
-                Download CV
-              </button>
-            </div>
-          </form>
-          <aside className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-br from-[#1a1a1f] via-[#141416] to-[#111113] p-4 shadow-[0_24px_55px_-35px_rgba(0,0,0,0.5)] sm:p-5">
-            <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-white/[0.02] blur-2xl" />
-            <p className="text-xs uppercase tracking-[0.14em] text-[#93C5FD] sm:text-sm">Reach me directly</p>
-            <p className="mt-1.5 text-xs text-slate-500 sm:mt-2">Fastest channels to reach Ahmad Ibrahim for collaboration.</p>
-            <div className="mt-4 space-y-2 sm:mt-5">
+
+        {/* Header */}
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#93C5FD]">Let&apos;s work together</p>
+            <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">Get in Touch</h2>
+          </div>
+          <div className="flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3.5 py-1.5">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+            <span className="text-xs font-semibold text-emerald-400">Available for work</span>
+          </div>
+        </div>
+
+        {/* Two-col layout */}
+        <div className="grid gap-4 sm:gap-5 lg:grid-cols-[1fr_1fr]">
+
+          {/* Left — CTA card */}
+          <div className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[#161618] p-6 sm:p-8">
+            <div className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-[#2563EB]/[0.06] blur-[60px]" />
+            <p className="relative text-sm leading-relaxed text-slate-400 sm:text-base">
+              Open to full-time remote roles, freelance backend and full-stack projects, and long-term engineering collaborations.
+            </p>
+            <p className="relative mt-3 text-sm leading-relaxed text-slate-400">
+              Based in Kano, Nigeria. Remote-first, async-friendly, available now.
+            </p>
+            <a
+              href="mailto:ahmadibrahimsearcher@gmail.com"
+              className="btn-primary relative mt-6 inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold"
+            >
+              <span className="material-symbols-outlined text-[17px]">mail</span>
+              Send me an email
+            </a>
+          </div>
+
+          {/* Right — channels */}
+          <div className="dark-surface rounded-2xl border border-white/[0.07] bg-[#161618] p-5 sm:p-6">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Direct channels</p>
+            <div className="space-y-2.5">
               {[
                 { icon: "https://cdn.simpleicons.org/gmail/EA4335", label: "Email", handle: "ahmadibrahimsearcher@gmail.com", href: "mailto:ahmadibrahimsearcher@gmail.com" },
                 { icon: "https://cdn.simpleicons.org/github/FFFFFF", label: "GitHub", handle: "@Searcher06", href: "https://github.com/Searcher06" },
                 { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", label: "LinkedIn", handle: "/in/ahmadibrahim06", href: "https://www.linkedin.com/in/ahmadibrahim06" },
                 { icon: "https://cdn.simpleicons.org/x/FFFFFF", label: "X / Twitter", handle: "@undefined_dev", href: "https://x.com/undefined_dev" },
               ].map((contact) => (
-                <a key={contact.label} href={contact.href} target={contact.href.startsWith("http") ? "_blank" : undefined} rel={contact.href.startsWith("http") ? "noopener noreferrer" : undefined} className="group flex items-center justify-between rounded-xl border border-white/[0.07] bg-black/20 px-3 py-3 transition hover:border-[#93C5FD]/32 hover:bg-black/35">
-                  <span className="flex items-center gap-2 text-sm text-slate-300">
-                    <img src={contact.icon} alt={`${contact.label} icon`} className="h-4 w-4 shrink-0" loading="lazy" />
-                    {contact.label}
-                  </span>
-                  <span className="ml-2 truncate text-xs text-[#60A5FA]">{contact.handle}</span>
+                <a
+                  key={contact.label}
+                  href={contact.href}
+                  target={contact.href.startsWith("http") ? "_blank" : undefined}
+                  rel={contact.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="group flex items-center gap-3 rounded-xl border border-white/[0.07] bg-white/[0.03] px-4 py-3 transition-all duration-200 hover:border-white/[0.14] hover:bg-white/[0.06]"
+                >
+                  <img src={contact.icon} alt={contact.label} className="h-4 w-4 shrink-0" loading="lazy" />
+                  <span className="text-sm font-medium text-slate-300">{contact.label}</span>
+                  <span className="ml-auto truncate text-xs text-slate-500 transition-colors group-hover:text-[#60A5FA]">{contact.handle}</span>
+                  <span className="material-symbols-outlined text-[14px] text-slate-600 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-slate-400">arrow_forward</span>
                 </a>
               ))}
             </div>
-          </aside>
+          </div>
+
         </div>
       </motion.section>
     </main>
