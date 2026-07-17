@@ -377,7 +377,7 @@ export default function HomeClient() {
       <motion.section
         id="home"
         aria-label="Introduction"
-        className="mx-auto grid w-full max-w-7xl gap-8 px-4 pb-16 pt-28 sm:gap-10 sm:px-6 sm:pb-20 sm:pt-32 sm:min-h-[88vh] lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14 lg:min-h-[95vh] lg:px-8 lg:pt-36"
+        className="mx-auto grid w-full max-w-7xl gap-8 px-4 pb-16 pt-28 sm:gap-10 sm:px-6 sm:pb-20 sm:pt-28 sm:min-h-[88vh] lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14 lg:min-h-[95vh] lg:px-8 lg:pt-32"
         variants={stagger}
         initial="hidden"
         animate="show"
@@ -397,7 +397,7 @@ export default function HomeClient() {
               <span className="h-3 w-px bg-slate-700" aria-hidden="true" />
               <span>Remote</span>
             </div>
-            <h1 className="text-[2.35rem] font-bold leading-[1.08] tracking-tight text-white xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
+            <h1 className="text-[2.6rem] font-extrabold leading-[1.04] tracking-[-0.02em] text-white xs:text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem]">
               Turning ideas into{" "}
               <span className="hero-gradient bg-gradient-to-r from-[#60A5FA] via-[#93C5FD] to-[#BFDBFE] bg-clip-text text-transparent">
                 products that hold.
@@ -468,7 +468,7 @@ export default function HomeClient() {
       </motion.section>
 
       {/* ── Credibility bar ── */}
-      <motion.section aria-label="Core principles" className="border-y border-white/[0.06] bg-gradient-to-r from-white/[0.01] via-white/[0.025] to-white/[0.01]" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+      <motion.section aria-label="Core principles" className="border-y border-white/[0.06] bg-gradient-to-r from-white/[0.01] via-white/[0.025] to-white/[0.01] mt-8 sm:mt-12" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
         <div className="mx-auto grid w-full max-w-7xl gap-2 px-4 py-4 sm:px-6 sm:py-5 md:grid-cols-3 lg:px-8">
           {credibilityPoints.map((point) => (
             <p key={point} className="rounded-xl border border-white/[0.07] bg-white/[0.025] px-3 py-2.5 text-xs font-medium text-slate-300 sm:text-sm">{point}</p>
@@ -477,7 +477,7 @@ export default function HomeClient() {
       </motion.section>
 
       {/* ── Quick stats ── */}
-      <motion.section id="projects" aria-label="Key statistics" className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-10 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+      <motion.section id="projects" aria-label="Key statistics" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
         <motion.div className="grid grid-cols-2 gap-3 xl:grid-cols-4" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
           {quickStats.map((stat) => (
             <motion.article key={stat.label} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 240, damping: 16 }} className="dark-surface rounded-2xl border border-white/[0.07] bg-[#161618]/90 p-4 sm:p-5 transition shadow-[0_14px_30px_-22px_rgba(0,0,0,0.4)] hover:border-white/[0.14]">
@@ -490,7 +490,7 @@ export default function HomeClient() {
       </motion.section>
 
       {/* ── Featured project: Findora ── */}
-      <motion.section aria-label="Featured project: Findora" className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-20" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
+      <motion.section aria-label="Featured project: Findora" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <div className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-[#1a1a1f] via-[#141416] to-[#111113] p-5 sm:rounded-3xl sm:p-8 lg:p-10">
           <div className="pointer-events-none absolute -right-20 -top-16 h-56 w-56 rounded-full bg-white/[0.02] blur-3xl" />
           <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-white/[0.015] blur-3xl" />
@@ -537,7 +537,7 @@ export default function HomeClient() {
       </motion.section>
 
       {/* ── Other projects ── */}
-      <motion.section aria-label="Selected projects" className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
+      <motion.section aria-label="Selected projects" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <div className="flex items-end justify-between gap-3">
           <h2 className="text-2xl font-bold text-white sm:text-3xl">Selected Projects</h2>
           <Link href="/projects" className="text-sm font-semibold text-[#60A5FA] transition hover:text-[#BFDBFE]">View All Projects</Link>
@@ -582,7 +582,7 @@ export default function HomeClient() {
       </motion.section>
 
       {/* ── Services ── */}
-      <motion.section id="services" aria-label="Services and expertise" className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
+      <motion.section id="services" aria-label="Services and expertise" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <div className="flex flex-wrap items-end justify-between gap-3">
           <h2 className="text-2xl font-bold text-white sm:text-3xl">Services &amp; Expertise</h2>
           <p className="text-sm text-slate-500">What I can help your team build and scale.</p>
@@ -605,7 +605,7 @@ export default function HomeClient() {
       {/* ── Currently exploring ── */}
       <motion.section
         aria-label="Currently exploring"
-        className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8"
+        className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8"
         variants={sectionReveal}
         initial="hidden"
         whileInView="show"
@@ -669,7 +669,7 @@ export default function HomeClient() {
       </motion.section>
 
       {/* ── Skills ── */}
-      <motion.section aria-label="Technical skills" className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
+      <motion.section aria-label="Technical skills" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <h2 className="text-2xl font-bold text-white sm:text-3xl">Skills</h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
           {skillGroups.map((group) => (
@@ -689,7 +689,7 @@ export default function HomeClient() {
       </motion.section>
 
       {/* ── Work Experience ── */}
-      <motion.section id="journey" aria-label="Work experience" className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+      <motion.section id="journey" aria-label="Work experience" className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
         <div className="mb-10 sm:mb-14">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Career</p>
           <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">Work Experience</h2>
@@ -747,16 +747,8 @@ export default function HomeClient() {
         </motion.div>
       </motion.section>
 
-      {/* ── CTA ── */}
-      <motion.section aria-label="Call to action" className="mx-auto w-full max-w-4xl px-4 py-10 text-center sm:px-6 sm:py-14 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
-        <p className="text-lg font-semibold text-white sm:text-xl lg:text-2xl">Want to see how I design real systems?</p>
-        <Link href="/projects" className="btn-primary mt-5 inline-flex rounded-xl px-6 py-3 text-sm font-semibold sm:mt-6 sm:text-base">
-          View Full Project Breakdown
-        </Link>
-      </motion.section>
-
       {/* ── About ── */}
-      <motion.section id="about" aria-label="About Ahmad Ibrahim" className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
+      <motion.section id="about" aria-label="About Ahmad Ibrahim" className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Who I am</p>
         <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">About Me</h2>
         <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:gap-16">
@@ -795,7 +787,7 @@ export default function HomeClient() {
       </motion.section>
 
       {/* ── Contact ── */}
-      <motion.section id="contact" aria-label="Contact Ahmad Ibrahim" className="mx-auto w-full max-w-5xl px-4 pb-16 pt-8 sm:pb-20 sm:px-6 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
+      <motion.section id="contact" aria-label="Contact Ahmad Ibrahim" className="mx-auto w-full max-w-5xl px-4 pb-24 pt-16 sm:pb-32 sm:px-6 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
 
         {/* Header */}
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
@@ -856,6 +848,51 @@ export default function HomeClient() {
             </div>
           </div>
 
+        </div>
+      </motion.section>
+
+      {/* ── Bottom CTA ── */}
+      <motion.section
+        aria-label="Call to action"
+        className="relative mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8 lg:pb-32"
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="relative overflow-hidden rounded-3xl bg-[#2563EB] px-6 py-16 text-center sm:px-12 sm:py-20 lg:py-28">
+          {/* Subtle inner texture */}
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(255,255,255,0.12),transparent)]" />
+          <div className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-white/[0.06] blur-3xl" />
+          <div className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-white/[0.06] blur-2xl" />
+
+          <motion.div
+            className="relative"
+            variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } } }}
+          >
+            <p className="mx-auto text-[2rem] font-extrabold leading-[1.1] tracking-tight text-white xs:text-4xl sm:text-5xl lg:text-6xl">
+              Have a project in mind?
+            </p>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-blue-100 sm:text-base lg:text-lg">
+              Let&apos;s build something reliable together. I&apos;m available for remote roles, freelance projects, and long-term collaborations.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 xs:flex-row sm:mt-10">
+              <a
+                href="mailto:ahmadibrahimsearcher@gmail.com"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-[#2563EB] shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-200 hover:bg-blue-50 hover:shadow-[0_12px_40px_rgba(0,0,0,0.25)] xs:w-auto sm:text-base"
+              >
+                <span className="material-symbols-outlined text-[18px]">mail</span>
+                Get in Touch
+              </a>
+              <Link
+                href="/projects"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/10 xs:w-auto sm:text-base"
+              >
+                View Projects
+                <span className="material-symbols-outlined text-[17px]">arrow_forward</span>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </motion.section>
     </main>
