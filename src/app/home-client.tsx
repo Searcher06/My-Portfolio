@@ -840,9 +840,9 @@ export default function HomeClient() {
                   className="group flex items-center gap-3 rounded-xl border border-white/[0.07] bg-white/[0.03] px-4 py-3 transition-all duration-200 hover:border-white/[0.14] hover:bg-white/[0.06]"
                 >
                   <img src={contact.icon} alt={contact.label} className="h-4 w-4 shrink-0" loading="lazy" />
-                  <span className="text-sm font-medium text-slate-300">{contact.label}</span>
-                  <span className="ml-auto truncate text-xs text-slate-500 transition-colors group-hover:text-[#60A5FA]">{contact.handle}</span>
-                  <span className="material-symbols-outlined text-[14px] text-slate-600 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-slate-400">arrow_forward</span>
+                  <span className="shrink-0 text-sm font-medium text-slate-300">{contact.label}</span>
+                  <span className="ml-auto min-w-0 truncate text-xs text-slate-500 transition-colors group-hover:text-[#60A5FA] text-right">{contact.handle}</span>
+                  <span className="material-symbols-outlined shrink-0 text-[14px] text-slate-600 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-slate-400">arrow_forward</span>
                 </a>
               ))}
             </div>
