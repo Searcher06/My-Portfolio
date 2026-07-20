@@ -118,15 +118,19 @@ export default function ContactPage() {
               href={ch.href}
               target={ch.href.startsWith("http") ? "_blank" : undefined}
               rel={ch.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="group flex items-center gap-4 rounded-xl border border-white/[0.07] bg-white/[0.03] px-4 py-4 transition-all duration-200 hover:border-white/[0.14] hover:bg-white/[0.06]"
+              className="group flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 rounded-xl border border-white/[0.07] bg-white/[0.03] px-4 py-4 transition-all duration-200 hover:border-white/[0.14] hover:bg-white/[0.06]"
             >
-              <img src={ch.icon} alt={ch.label} className="h-5 w-5 shrink-0" loading="lazy" />
-              <div className="min-w-0 flex-1">
-                <p className="text-sm font-semibold text-white">{ch.label}</p>
-                <p className="text-xs text-slate-500">{ch.description}</p>
+              <div className="flex items-center gap-4 min-w-0 flex-1">
+                <img src={ch.icon} alt={ch.label} className="h-5 w-5 shrink-0" loading="lazy" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-semibold text-white">{ch.label}</p>
+                  <p className="text-xs text-slate-500 line-clamp-1 sm:line-clamp-none">{ch.description}</p>
+                </div>
               </div>
-              <span className="shrink-0 text-xs text-slate-500 transition-colors group-hover:text-[#60A5FA]">{ch.handle}</span>
-              <span className="material-symbols-outlined text-[15px] text-slate-600 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-slate-400">arrow_forward</span>
+              <div className="flex items-center justify-between sm:justify-end gap-2 pl-9 sm:pl-0 w-full sm:w-auto">
+                <span className="text-xs text-slate-500 transition-colors group-hover:text-[#60A5FA] break-all sm:break-normal">{ch.handle}</span>
+                <span className="material-symbols-outlined text-[15px] text-slate-600 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-slate-400">arrow_forward</span>
+              </div>
             </a>
           ))}
         </div>
