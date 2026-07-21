@@ -589,13 +589,13 @@ export default function HomeClient() {
           <h2 className="text-2xl font-bold text-white sm:text-3xl" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>Selected Projects</h2>
           <Link href="/projects" className="text-sm font-semibold text-[#60A5FA] transition hover:text-[#BFDBFE]">View All Projects</Link>
         </div>
-        <motion.div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+        <motion.div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
           {otherProjects.map((project) => (
             <motion.article key={project.name} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -10, scale: 1.02 }} transition={{ type: "spring", stiffness: 220, damping: 18 }} className="dark-surface group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-[#161618]/90 p-4 transition hover:border-white/[0.14] hover:shadow-[0_20px_50px_-30px_rgba(0,0,0,0.5)] sm:p-5">
               <div className="overflow-hidden rounded-xl bg-white">
                 <Image src={project.image} alt={`${project.name} — project preview`} width={1200} height={700} className="w-full h-auto transition duration-500 group-hover:scale-[1.02]" />
               </div>
-              <h3 className="mt-4 min-h-[3.5rem] text-lg font-semibold text-white">{project.name}</h3>
+              <h3 className="mt-4 text-base font-semibold text-white sm:text-lg">{project.name}</h3>
               <p className="mt-3 text-sm text-slate-400"><span className="font-medium text-slate-200">Problem:</span> {truncateText(project.problem, 120)}</p>
               <p className="mt-2 text-sm text-slate-400"><span className="font-medium text-slate-200">Solution:</span> {truncateText(project.solution, 130)}</p>
               <div className="mt-4">
@@ -616,7 +616,7 @@ export default function HomeClient() {
                     <span className="material-symbols-outlined text-[15px] transition-transform group-hover/details:translate-x-0.5">arrow_forward</span>
                   </Link>
                   {project.liveUrl && (
-                    <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="group/live inline-flex h-11 min-w-[7.75rem] items-center justify-center gap-1.5 rounded-xl bg-white px-4 text-sm font-bold text-[#06101F] shadow-[0_14px_32px_-18px_rgba(255,255,255,0.85),0_10px_26px_-20px_rgba(56,189,248,0.9)] transition hover:bg-[#DBEAFE]">
+                    <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="group/live inline-flex h-11 items-center justify-center gap-1.5 rounded-xl bg-white px-4 text-sm font-bold text-[#06101F] shadow-[0_14px_32px_-18px_rgba(255,255,255,0.85),0_10px_26px_-20px_rgba(56,189,248,0.9)] transition hover:bg-[#DBEAFE]">
                       Live site
                       <span className="material-symbols-outlined text-[15px] transition-transform group-hover/live:-translate-y-0.5 group-hover/live:translate-x-0.5">north_east</span>
                     </Link>
@@ -774,7 +774,7 @@ export default function HomeClient() {
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
           {skillGroups.map((group, idx) => (
             <article 
               key={group.label} 
@@ -892,11 +892,11 @@ export default function HomeClient() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#1e3a8a]/60 to-[#0c1a3a]/80" />
               <Image src="/me3.png" alt="Ahmad Ibrahim — Backend-Focused Full-Stack Engineer" width={447} height={558} className="relative z-10 h-full w-full object-cover object-top" priority />
             </div>
-            <div className="about-chip absolute right-0 top-[12%] z-20 flex items-center gap-2 rounded-2xl border border-white/[0.1] bg-white/[0.07] px-3 py-2 shadow-lg backdrop-blur-md">
+            <div className="about-chip absolute right-0 top-4 z-20 flex items-center gap-2 rounded-2xl border border-white/[0.1] bg-white/[0.07] px-3 py-2 shadow-lg backdrop-blur-md">
               <span className="flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.8)]" />
               <span className="text-xs font-semibold text-white">Available for work</span>
             </div>
-            <div className="about-chip absolute bottom-[14%] left-0 z-20 flex items-center gap-2 rounded-2xl border border-white/[0.1] bg-white/[0.07] px-3 py-2 shadow-lg backdrop-blur-md">
+            <div className="about-chip absolute bottom-4 left-0 z-20 flex items-center gap-2 rounded-2xl border border-white/[0.1] bg-white/[0.07] px-3 py-2 shadow-lg backdrop-blur-md">
               <span className="material-symbols-outlined text-[14px] text-[#60A5FA]">code</span>
               <span className="text-xs font-semibold text-white">Backend Engineer</span>
             </div>
