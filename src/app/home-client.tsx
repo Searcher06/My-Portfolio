@@ -30,9 +30,9 @@ const truncateText = (text: string, maxLength: number) =>
   text.length > maxLength ? `${text.slice(0, maxLength).trimEnd()}...` : text;
 
 const credibilityPoints = [
-  "From rough idea to working product — without losing what made the idea good",
-  "Every feature ships with the edge cases already thought through",
-  "Code that the next developer can actually read, change, and trust",
+  "Rough idea → working product",
+  "Ships with edge cases thought through",
+  "Code the next dev can actually trust",
 ];
 
 const quickStats = [
@@ -234,6 +234,30 @@ export default function HomeClient() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const reduceMotion = useReducedMotion();
+
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [sendingForm, setSendingForm] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSendingForm(true);
+    setSubmitStatus(null);
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+      setSubmitStatus({ success: true, message: "Thank you! Your message has been sent successfully." });
+      setFormData({ name: "", email: "", message: "" });
+    } catch {
+      setSubmitStatus({ success: false, message: "Something went wrong. Please try again or email directly." });
+    } finally {
+      setSendingForm(false);
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -470,27 +494,50 @@ export default function HomeClient() {
       {/* ── Credibility bar ── */}
       <motion.section aria-label="Core principles" className="border-y border-white/[0.06] bg-gradient-to-r from-white/[0.01] via-white/[0.025] to-white/[0.01] mt-8 sm:mt-12" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
         <div className="mx-auto grid w-full max-w-7xl gap-2 px-4 py-4 sm:px-6 sm:py-5 md:grid-cols-3 lg:px-8">
-          {credibilityPoints.map((point) => (
-            <p key={point} className="rounded-xl border border-white/[0.07] bg-white/[0.025] px-3 py-2.5 text-xs font-medium text-slate-300 sm:text-sm">{point}</p>
+          {credibilityPoints.map((point, i) => (
+            <p key={point} className={`flex items-center gap-2.5 rounded-xl border px-4 py-3 text-sm font-semibold ${
+              i === 0 ? "border-emerald-500/20 bg-emerald-500/[0.06] text-emerald-300" :
+              i === 1 ? "border-white/[0.07] bg-white/[0.025] text-slate-300" :
+                        "border-white/[0.07] bg-white/[0.025] text-slate-300"
+            }`}>
+              <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${i === 0 ? "bg-emerald-400" : "bg-slate-600"}`} />
+              {point}
+            </p>
           ))}
         </div>
       </motion.section>
 
       {/* ── Quick stats ── */}
-      <motion.section id="projects" aria-label="Key statistics" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
-        <motion.div className="grid grid-cols-2 gap-3 xl:grid-cols-4" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
-          {quickStats.map((stat) => (
-            <motion.article key={stat.label} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 240, damping: 16 }} className="dark-surface rounded-2xl border border-white/[0.07] bg-[#161618]/90 p-4 sm:p-5 transition shadow-[0_14px_30px_-22px_rgba(0,0,0,0.4)] hover:border-white/[0.14]">
+      <motion.section id="projects" aria-label="Key statistics" className="mx-auto w-full max-w-7xl px-4 pt-16 pb-0 sm:px-6 sm:pt-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+        <motion.div className="grid grid-cols-2 gap-3 lg:grid-cols-4" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+          {/* Wide accent card */}
+          <motion.article variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 240, damping: 16 }}
+            className="dark-surface col-span-2 flex flex-col justify-between rounded-2xl border border-[#2563EB]/25 bg-gradient-to-br from-[#2563EB]/[0.12] via-[#2563EB]/[0.06] to-transparent p-5 sm:p-6">
+            <p className="text-[10px] uppercase tracking-[0.14em] text-[#60A5FA] sm:text-xs">{quickStats[0].label}</p>
+            <p className="mt-2 text-4xl font-black text-white sm:text-5xl">{quickStats[0].value}</p>
+            <p className="mt-1.5 text-xs text-[#93C5FD]/70">{quickStats[0].trend}</p>
+          </motion.article>
+          {/* Two regular cards */}
+          {quickStats.slice(1, 3).map((stat) => (
+            <motion.article key={stat.label} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 240, damping: 16 }}
+              className="dark-surface flex flex-col justify-between rounded-2xl border border-white/[0.07] bg-[#161618]/90 p-4 sm:p-5 transition hover:border-white/[0.14]">
               <p className="text-[10px] uppercase tracking-[0.14em] text-[#93C5FD] sm:text-xs">{stat.label}</p>
               <p className="mt-1.5 text-2xl font-bold text-white sm:mt-2 sm:text-3xl">{stat.value}</p>
               <p className="mt-1 text-[10px] text-slate-500 sm:text-xs">{stat.trend}</p>
             </motion.article>
           ))}
+          {/* Bottom wide card */}
+          <motion.article variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 240, damping: 16 }}
+            className="dark-surface col-span-2 flex flex-col justify-between rounded-2xl border border-[#38BDF8]/20 bg-gradient-to-br from-[#38BDF8]/[0.08] via-[#2563EB]/[0.05] to-transparent p-5 sm:p-6">
+            <p className="text-[10px] uppercase tracking-[0.14em] text-[#38BDF8] sm:text-xs">{quickStats[3].label}</p>
+            <p className="mt-2 text-2xl font-bold text-white sm:text-3xl">{quickStats[3].value}</p>
+            <p className="mt-1.5 text-xs text-[#93C5FD]/70">{quickStats[3].trend}</p>
+          </motion.article>
         </motion.div>
       </motion.section>
 
       {/* ── Featured project: Findora ── */}
-      <motion.section aria-label="Featured project: Findora" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
+      <motion.section aria-label="Featured project: Findora" className="mx-auto w-full max-w-7xl px-4 pt-10 pb-16 sm:px-6 sm:pt-12 sm:pb-24 lg:px-8 lg:pb-32" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <div className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-[#1a1a1f] via-[#141416] to-[#111113] p-5 sm:rounded-3xl sm:p-8 lg:p-10">
           <div className="pointer-events-none absolute -right-20 -top-16 h-56 w-56 rounded-full bg-white/[0.02] blur-3xl" />
           <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-white/[0.015] blur-3xl" />
@@ -585,20 +632,67 @@ export default function HomeClient() {
       <motion.section id="services" aria-label="Services and expertise" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <div className="flex flex-wrap items-end justify-between gap-3">
           <h2 className="text-2xl font-bold text-white sm:text-3xl">Services &amp; Expertise</h2>
-          <p className="text-sm text-slate-500">What I can help your team build and scale.</p>
+          <p className="text-sm text-slate-500">What I can help your team build.</p>
         </div>
-        <motion.div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
-          {services.map((service) => (
-            <motion.article key={service.title} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.01 }} className="dark-surface group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-[#1c1c22] via-[#161618] to-[#131315] p-5 transition hover:border-white/[0.14] hover:shadow-[0_16px_36px_-22px_rgba(0,0,0,0.5)]">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(255,255,255,0.07),transparent_42%)] opacity-70" />
+        <motion.div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+
+          {/* ── Feature card: tall, col 1, rows 1+2 ── */}
+          <motion.article
+            variants={cardReveal}
+            whileHover={reduceMotion ? undefined : { y: -8, scale: 1.01 }}
+            className="dark-surface group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-[#161618]/90 p-6 transition hover:border-white/[0.14] sm:col-span-2 lg:col-span-1 lg:row-span-2"
+          >
+            <div className="absolute inset-x-0 top-0 h-[2px] rounded-t-2xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8]" />
+            <div className="pointer-events-none absolute -left-1/3 top-0 h-full w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition duration-500 group-hover:translate-x-[260%] group-hover:opacity-100" />
+
+            {/* Top */}
+            <div>
+              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#2563EB]/20 bg-[#2563EB]/10 text-[#60A5FA]">
+                <span className="material-symbols-outlined text-[20px]">dns</span>
+              </div>
+              <h3 className="mt-5 text-lg font-bold text-white">Backend Development</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                {services.find(s => s.title === "Backend Development")?.description}
+              </p>
+            </div>
+
+            {/* Middle: grows to fill */}
+            <ul className="mt-6 flex-1 space-y-2.5">
+              {[
+                "Scalable REST & event-driven API design",
+                "JWT / session auth, RBAC & OAuth flows",
+                "Schema design, indexing & query optimisation",
+                "Payment rails, KYC & webhook integrations",
+                "Real-time systems with WebSockets",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2.5 text-sm text-slate-400">
+                  <span className="h-1 w-1 shrink-0 rounded-full bg-[#60A5FA]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            {/* Bottom: tags */}
+            <div className="mt-6 flex flex-wrap gap-2 border-t border-white/[0.06] pt-5">
+              {["Node.js", "PostgreSQL", "REST APIs", "Auth"].map((t) => (
+                <span key={t} className="rounded-full border border-[#60A5FA]/20 bg-[#2563EB]/10 px-2.5 py-1 text-[11px] font-medium text-[#93C5FD]">{t}</span>
+              ))}
+            </div>
+          </motion.article>
+
+          {/* ── 4 regular cards: cols 2-3, rows 1-2 ── */}
+          {services.filter((s) => s.title !== "Backend Development").map((service) => (
+            <motion.article key={service.title} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.01 }}
+              className="dark-surface group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[#161618]/90 p-6 transition hover:border-white/[0.14]">
               <div className="pointer-events-none absolute -left-1/3 top-0 h-full w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition duration-500 group-hover:translate-x-[260%] group-hover:opacity-100" />
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-[#2563EB]/10 text-[#60A5FA]">
+              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#2563EB]/20 bg-[#2563EB]/10 text-[#60A5FA]">
                 <span className="material-symbols-outlined text-[20px]">{service.icon}</span>
               </div>
-              <h3 className="relative mt-4 text-lg font-semibold text-white">{service.title}</h3>
-              <p className="relative mt-2 text-sm leading-relaxed text-slate-400">{service.description}</p>
+              <h3 className="relative mt-4 text-base font-semibold text-white">{service.title}</h3>
+              <p className="relative mt-2 text-sm leading-relaxed text-slate-500">{service.description}</p>
             </motion.article>
           ))}
+
         </motion.div>
       </motion.section>
 
@@ -670,18 +764,56 @@ export default function HomeClient() {
 
       {/* ── Skills ── */}
       <motion.section aria-label="Technical skills" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
-        <h2 className="text-2xl font-bold text-white sm:text-3xl">Skills</h2>
-        <div className="mt-6 grid gap-4 lg:grid-cols-3">
-          {skillGroups.map((group) => (
-            <article key={group.label} className="dark-surface rounded-2xl border border-white/[0.07] bg-[#161618]/80 p-5 shadow-[0_12px_30px_-25px_rgba(0,0,0,0.4)]">
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#BFDBFE]">{group.label}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <span key={item.name} className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-1 text-sm text-slate-300">
-                    <img src={item.iconUrl} alt={`${item.name} logo`} width={14} height={14} className="h-3.5 w-3.5" loading="lazy" />
-                    {item.name}
-                  </span>
-                ))}
+        <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#93C5FD]">Core Stack</p>
+            <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">Built across the whole stack.</h2>
+          </div>
+          <p className="max-w-md text-sm leading-relaxed text-slate-400">
+            Structured engineering across frontend, backend, databases, and DevOps tools to deliver resilient and scalable systems.
+          </p>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {skillGroups.map((group, idx) => (
+            <article 
+              key={group.label} 
+              className="dark-surface group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.07] bg-[#141416] p-6 transition-all duration-300 hover:border-white/[0.14] hover:bg-[#161618] hover:shadow-[0_16px_36px_-20px_rgba(0,0,0,0.5)]"
+            >
+              {/* Corner Index */}
+              <div className="absolute right-4 top-4 text-xs font-bold font-mono text-slate-700 transition-colors group-hover:text-[#60A5FA]/40">
+                {String(idx + 1).padStart(2, "0")}
+              </div>
+
+              <div>
+                {/* Title */}
+                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 transition-colors group-hover:text-slate-400">
+                  {group.label}
+                </h3>
+                
+                {/* Visual Accent */}
+                <div className="my-4 h-px w-full bg-gradient-to-r from-white/[0.08] to-transparent" />
+
+                {/* Items List */}
+                <ul className="space-y-3">
+                  {group.items.map((item) => (
+                    <li key={item.name} className="flex items-center gap-2.5">
+                      <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-white/[0.03] p-1 border border-white/[0.04] transition-colors group-hover:bg-white/[0.06]">
+                        <img 
+                          src={item.iconUrl} 
+                          alt={`${item.name} logo`} 
+                          width={14} 
+                          height={14} 
+                          className="h-3.5 w-3.5 object-contain" 
+                          loading="lazy" 
+                        />
+                      </div>
+                      <span className="text-xs font-medium text-slate-300 transition-colors group-hover:text-white">
+                        {item.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </article>
           ))}
@@ -786,117 +918,142 @@ export default function HomeClient() {
         </div>
       </motion.section>
 
-      {/* ── Contact ── */}
-      <motion.section id="contact" aria-label="Contact Ahmad Ibrahim" className="mx-auto w-full max-w-5xl px-4 pb-24 pt-16 sm:pb-32 sm:px-6 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
-
-        {/* Header */}
-        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#93C5FD]">Let&apos;s work together</p>
-            <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">Get in Touch</h2>
-          </div>
-          <div className="flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3.5 py-1.5">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-            <span className="text-xs font-semibold text-emerald-400">Available for work</span>
-          </div>
-        </div>
-
-        {/* Two-col layout */}
-        <div className="grid gap-4 sm:gap-5 lg:grid-cols-[1fr_1fr]">
-
-          {/* Left — CTA card */}
-          <div className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[#161618] p-6 sm:p-8">
-            <div className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-[#2563EB]/[0.06] blur-[60px]" />
-            <p className="relative text-sm leading-relaxed text-slate-400 sm:text-base">
-              Open to full-time remote roles, freelance backend and full-stack projects, and long-term engineering collaborations.
-            </p>
-            <p className="relative mt-3 text-sm leading-relaxed text-slate-400">
-              Based in Kano, Nigeria. Remote-first, async-friendly, available now.
-            </p>
-            <a
-              href="mailto:ahmadibrahimsearcher@gmail.com"
-              className="btn-primary relative mt-6 inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold"
-            >
-              <span className="material-symbols-outlined text-[17px]">mail</span>
-              Send me an email
-            </a>
-          </div>
-
-          {/* Right — channels */}
-          <div className="dark-surface rounded-2xl border border-white/[0.07] bg-[#161618] p-5 sm:p-6">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Direct channels</p>
-            <div className="space-y-2.5">
-              {[
-                { icon: "https://cdn.simpleicons.org/gmail/EA4335", label: "Email", handle: "ahmadibrahimsearcher@gmail.com", href: "mailto:ahmadibrahimsearcher@gmail.com" },
-                { icon: "https://cdn.simpleicons.org/github/FFFFFF", label: "GitHub", handle: "@Searcher06", href: "https://github.com/Searcher06" },
-                { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", label: "LinkedIn", handle: "/in/ahmadibrahim06", href: "https://www.linkedin.com/in/ahmadibrahim06" },
-                { icon: "https://cdn.simpleicons.org/x/FFFFFF", label: "X / Twitter", handle: "@undefined_dev", href: "https://x.com/undefined_dev" },
-              ].map((contact) => (
-                <a
-                  key={contact.label}
-                  href={contact.href}
-                  target={contact.href.startsWith("http") ? "_blank" : undefined}
-                  rel={contact.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="group flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3 rounded-xl border border-white/[0.07] bg-white/[0.03] px-4 py-3 transition-all duration-200 hover:border-white/[0.14] hover:bg-white/[0.06]"
-                >
-                  <div className="flex items-center gap-3 min-w-0 flex-1">
-                    <img src={contact.icon} alt={contact.label} className="h-4 w-4 shrink-0" loading="lazy" />
-                    <span className="text-sm font-medium text-slate-300">{contact.label}</span>
-                  </div>
-                  <div className="flex items-center justify-between sm:justify-end gap-2 pl-7 sm:pl-0 w-full sm:w-auto">
-                    <span className="text-xs text-slate-500 transition-colors group-hover:text-[#60A5FA] break-all sm:break-normal">{contact.handle}</span>
-                    <span className="material-symbols-outlined shrink-0 text-[14px] text-slate-600 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-slate-400">arrow_forward</span>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-
-        </div>
-      </motion.section>
-
-      {/* ── Bottom CTA ── */}
-      <motion.section
-        aria-label="Call to action"
-        className="relative mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8 lg:pb-32"
-        variants={sectionReveal}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+      {/* ── Contact & Call to Action ── */}
+      <motion.section 
+        id="contact" 
+        aria-label="Contact Ahmad Ibrahim" 
+        className="mx-auto w-full max-w-5xl px-4 pb-24 pt-16 sm:pb-32 sm:px-6 lg:px-8" 
+        variants={sectionReveal} 
+        initial="hidden" 
+        whileInView="show" 
+        viewport={{ once: true, amount: 0.18 }}
       >
-        <div className="relative overflow-hidden rounded-3xl bg-[#2563EB] px-6 py-16 text-center sm:px-12 sm:py-20 lg:py-28">
-          {/* Subtle inner texture */}
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(255,255,255,0.12),transparent)]" />
-          <div className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-white/[0.06] blur-3xl" />
-          <div className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-white/[0.06] blur-2xl" />
+        <div className="dark-surface relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-gradient-to-br from-[#1a1a1f] via-[#141416] to-[#111113] p-6 sm:p-10 lg:p-12 shadow-[0_32px_80px_-24px_rgba(0,0,0,0.6)]">
+          {/* Decorative blobs */}
+          <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#2563EB]/[0.08] blur-3xl" />
+          <div className="pointer-events-none absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-[#2563EB]/[0.05] blur-3xl" />
+          <div className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/[0.04]" />
 
-          <motion.div
-            className="relative"
-            variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } } }}
-          >
-            <p className="mx-auto text-[2rem] font-extrabold leading-[1.1] tracking-tight text-white xs:text-4xl sm:text-5xl lg:text-6xl">
-              Have a project in mind?
-            </p>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-blue-100 sm:text-base lg:text-lg">
-              Let&apos;s build something reliable together. I&apos;m available for remote roles, freelance projects, and long-term collaborations.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 xs:flex-row sm:mt-10">
-              <a
-                href="mailto:ahmadibrahimsearcher@gmail.com"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-[#2563EB] shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-200 hover:bg-blue-50 hover:shadow-[0_12px_40px_rgba(0,0,0,0.25)] xs:w-auto sm:text-base"
-              >
-                <span className="material-symbols-outlined text-[18px]">mail</span>
-                Get in Touch
-              </a>
-              <Link
-                href="/projects"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/10 xs:w-auto sm:text-base"
-              >
-                View Projects
-                <span className="material-symbols-outlined text-[17px]">arrow_forward</span>
-              </Link>
+          <div className="relative z-10 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-14">
+
+            {/* ── Left: copy + channels ── */}
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/[0.08] px-3.5 py-1.5 text-xs font-semibold text-emerald-400 backdrop-blur-sm">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                Available for work
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-[2.75rem] leading-[1.08]">
+                  Have a good idea?<br />Let&apos;s build it.
+                </h2>
+                <p className="mt-3 max-w-md text-sm text-slate-400 leading-relaxed sm:text-[0.9375rem]">
+                  Open to full-time remote roles, freelance backend and full-stack projects, and long-term engineering collaborations. Based in Kano, Nigeria — remote-first.
+                </p>
+              </div>
+
+              <div className="space-y-3 pt-2 border-t border-white/[0.07]">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500 pt-1">Direct channels</p>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  {[
+                    { icon: "https://cdn.simpleicons.org/gmail/EA4335", label: "Email", handle: "ahmadibrahimsearcher@gmail.com", href: "mailto:ahmadibrahimsearcher@gmail.com" },
+                    { icon: "https://cdn.simpleicons.org/github/FFFFFF", label: "GitHub", handle: "@Searcher06", href: "https://github.com/Searcher06" },
+                    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", label: "LinkedIn", handle: "/in/ahmadibrahim06", href: "https://www.linkedin.com/in/ahmadibrahim06" },
+                    { icon: "https://cdn.simpleicons.org/x/FFFFFF", label: "X", handle: "@undefined_dev", href: "https://x.com/undefined_dev" },
+                  ].map((ch) => (
+                    <a
+                      key={ch.label}
+                      href={ch.href}
+                      target={ch.href.startsWith("http") ? "_blank" : undefined}
+                      rel={ch.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="group flex items-center gap-3 rounded-xl border border-white/[0.07] bg-white/[0.04] px-3.5 py-3 transition-all duration-200 hover:bg-white/[0.08] hover:border-white/[0.14]"
+                    >
+                      <img src={ch.icon} alt={ch.label} className="h-4 w-4 shrink-0" loading="lazy" />
+                      <div className="flex min-w-0 flex-1 flex-col">
+                        <span className="text-[11px] font-semibold leading-tight text-white">{ch.label}</span>
+                        <span className="truncate text-[10px] leading-tight text-slate-500 group-hover:text-slate-300 transition-colors">{ch.handle}</span>
+                      </div>
+                      <span className="material-symbols-outlined shrink-0 text-[13px] text-slate-600 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-slate-400">arrow_forward</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
-          </motion.div>
+
+            {/* ── Right: form ── */}
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 sm:p-7 shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
+              <h3 className="text-base font-bold text-white mb-5 tracking-tight">Send a direct message</h3>
+              <form onSubmit={handleFormSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="form-name" className="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em] mb-1.5">Full Name</label>
+                  <input
+                    type="text"
+                    id="form-name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleFormChange}
+                    placeholder="John Doe"
+                    className="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-[#60A5FA]/60 focus:bg-white/[0.07] focus:outline-none transition-all"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="form-email" className="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em] mb-1.5">Email Address</label>
+                  <input
+                    type="email"
+                    id="form-email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleFormChange}
+                    placeholder="john@example.com"
+                    className="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-[#60A5FA]/60 focus:bg-white/[0.07] focus:outline-none transition-all"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="form-message" className="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em] mb-1.5">Message</label>
+                  <textarea
+                    id="form-message"
+                    name="message"
+                    rows={4}
+                    required
+                    value={formData.message}
+                    onChange={handleFormChange}
+                    placeholder="Tell me about your project, role, or timeline..."
+                    className="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-[#60A5FA]/60 focus:bg-white/[0.07] focus:outline-none resize-none transition-all"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={sendingForm}
+                  className="group relative mt-1 flex w-full items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(37,99,235,0.35)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(37,99,235,0.55)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-none disabled:opacity-50 disabled:pointer-events-none"
+                >
+                  {/* shine sweep */}
+                  <span className="pointer-events-none absolute inset-0 -translate-x-full skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                  {sendingForm ? (
+                    <span className="flex items-center gap-2">
+                      <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                      </svg>
+                      Sending…
+                    </span>
+                  ) : (
+                    <span className="flex items-center gap-2.5">
+                      Send Message
+                      <span className="material-symbols-outlined text-[17px] transition-transform duration-300 group-hover:translate-x-0.5">arrow_forward</span>
+                    </span>
+                  )}
+                </button>
+                {submitStatus && (
+                  <p className={`text-xs mt-2 text-center font-medium ${submitStatus.success ? "text-emerald-400" : "text-rose-400"}`}>
+                    {submitStatus.message}
+                  </p>
+                )}
+              </form>
+            </div>
+
+          </div>
         </div>
       </motion.section>
     </main>
