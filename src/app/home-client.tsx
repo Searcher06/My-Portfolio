@@ -423,7 +423,7 @@ export default function HomeClient() {
             </div>
             <h1 className="text-[2.6rem] font-extrabold leading-[1.04] tracking-[-0.02em] text-white xs:text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem]">
               Turning ideas into{" "}
-              <span className="hero-gradient bg-gradient-to-r from-[#60A5FA] via-[#93C5FD] to-[#BFDBFE] bg-clip-text text-transparent">
+              <span className="hero-gradient bg-gradient-to-r from-[#60A5FA] via-[#93C5FD] to-[#BFDBFE] bg-clip-text text-transparent" style={{ fontFamily: "Instrument Serif, Georgia, serif", fontStyle: "italic" }}>
                 products that hold.
               </span>
             </h1>
@@ -542,7 +542,7 @@ export default function HomeClient() {
           <div className="pointer-events-none absolute -right-20 -top-16 h-56 w-56 rounded-full bg-white/[0.02] blur-3xl" />
           <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-white/[0.015] blur-3xl" />
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#93C5FD] sm:text-xs">Featured Project</p>
-          <h2 className="mt-2 text-2xl font-bold tracking-tight text-white sm:mt-3 sm:text-3xl lg:text-4xl">Findora</h2>
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-white sm:mt-3 sm:text-3xl lg:text-4xl" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>Findora</h2>
           <p className="mt-1.5 text-sm text-slate-400 sm:mt-2 sm:text-lg">Built for the moment between losing something and getting it back</p>
           <div className="mt-6 grid gap-6 sm:mt-8 lg:grid-cols-[1fr_0.9fr] lg:gap-8">
             <div className="space-y-4 text-slate-400 sm:space-y-5">
@@ -586,7 +586,7 @@ export default function HomeClient() {
       {/* ── Other projects ── */}
       <motion.section aria-label="Selected projects" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <div className="flex items-end justify-between gap-3">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">Selected Projects</h2>
+          <h2 className="text-2xl font-bold text-white sm:text-3xl" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>Selected Projects</h2>
           <Link href="/projects" className="text-sm font-semibold text-[#60A5FA] transition hover:text-[#BFDBFE]">View All Projects</Link>
         </div>
         <motion.div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
@@ -903,7 +903,7 @@ export default function HomeClient() {
           </div>
           {/* Text side */}
           <div className="flex flex-col justify-center space-y-5 text-sm leading-relaxed text-slate-400 sm:text-base">
-            <p className="text-lg font-bold leading-snug text-white sm:text-xl lg:text-2xl">Building software that does what it promises.</p>
+            <p className="text-lg font-bold leading-snug text-white sm:text-xl lg:text-2xl" style={{ fontFamily: "Instrument Serif, Georgia, serif", fontStyle: "italic" }}>Building software that does what it promises.</p>
             <p>I&apos;m Ahmad Ibrahim, a BSc Software Engineering student and full-stack developer focused on building reliable web applications and backend systems. I enjoy turning ideas into scalable products designed to solve real problems, stay maintainable, and hold up under real-world use.</p>
             <p>Currently exploring AI-powered product experiences, scalable system design, and backend performance optimization.</p>
             <div className="grid grid-cols-3 gap-3 pt-2">
@@ -944,8 +944,8 @@ export default function HomeClient() {
               </div>
 
               <div>
-                <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-[2.75rem] leading-[1.08]">
-                  Have a good idea?<br />Let&apos;s build it.
+                <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-[2.75rem] leading-[1.08]" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>
+                  Have a good idea?<br /><span className="italic">Let&apos;s build it.</span>
                 </h2>
                 <p className="mt-3 max-w-md text-sm text-slate-400 leading-relaxed sm:text-[0.9375rem]">
                   Open to full-time remote roles, freelance backend and full-stack projects, and long-term engineering collaborations. Based in Kano, Nigeria — remote-first.
