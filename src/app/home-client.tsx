@@ -620,7 +620,7 @@ export default function HomeClient() {
 
 
         {/* Case study body */}
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-14">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:gap-12">
 
           {/* Left: narrative + features + CTAs */}
           <div className="space-y-7">
@@ -659,29 +659,32 @@ export default function HomeClient() {
             </div>
           </div>
 
-          {/* Right: browser mockup */}
-          <div className="relative">
-            {/* Glow behind the frame */}
-            <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-[#2563EB]/[0.07] blur-2xl" />
-            {/* Browser chrome */}
-            <div className="relative overflow-hidden rounded-2xl border border-white/[0.1] bg-[#141416] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.6)]">
-              {/* Title bar */}
-              <div className="flex items-center gap-2 border-b border-white/[0.06] bg-[#1a1a1f] px-4 py-3">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-500/60" />
-                <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/60" />
-                <span className="h-2.5 w-2.5 rounded-full bg-green-500/60" />
-                <div className="mx-3 flex flex-1 items-center gap-2 rounded-md bg-white/[0.05] px-3 py-1">
-                  <span className="material-symbols-outlined text-[12px] text-slate-600">lock</span>
-                  <span className="text-[11px] text-slate-500">findora-snowy.vercel.app</span>
+          {/* Right: floating perspective mockup */}
+          <div className="relative flex items-center justify-center lg:justify-end">
+            {/* Ambient glow — subtle on mobile, stronger on desktop */}
+            <div className="pointer-events-none absolute -inset-2 rounded-3xl bg-[#2563EB]/[0.1] blur-[40px] lg:-inset-4 lg:bg-[#2563EB]/[0.15] lg:blur-[60px]" />
+            {/* Tilt wrapper — flat on mobile, 3D on desktop */}
+            <div className="mockup-tilt relative w-full">
+              {/* Drop shadow beneath frame — desktop only */}
+              <div className="absolute -bottom-6 left-4 right-4 hidden h-16 rounded-2xl bg-[#2563EB]/20 blur-2xl lg:block" />
+              {/* Browser frame */}
+              <div className="relative overflow-hidden rounded-xl border border-white/[0.12] bg-[#0f0f11] shadow-[0_16px_40px_-12px_rgba(0,0,0,0.5)] lg:rounded-2xl lg:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.06)]">
+                {/* Title bar */}
+                <div className="flex items-center gap-2 border-b border-white/[0.07] bg-[#1a1a1f] px-3 py-2 sm:px-4 sm:py-2.5">
+                  <span className="h-2 w-2 rounded-full bg-[#FF5F57] sm:h-2.5 sm:w-2.5" />
+                  <span className="h-2 w-2 rounded-full bg-[#FEBC2E] sm:h-2.5 sm:w-2.5" />
+                  <span className="h-2 w-2 rounded-full bg-[#28C840] sm:h-2.5 sm:w-2.5" />
+                  <div className="mx-2 flex flex-1 items-center gap-1.5 rounded-md bg-white/[0.06] px-2 py-0.5 sm:mx-3 sm:px-3 sm:py-1">
+                    <span className="material-symbols-outlined text-[10px] text-slate-600 sm:text-[11px]">lock</span>
+                    <span className="text-[10px] text-slate-500 sm:text-[11px]">findora-snowy.vercel.app</span>
+                  </div>
                 </div>
-              </div>
-              {/* Screenshot */}
-              <div className="overflow-hidden">
+                {/* Screenshot */}
                 <Image
                   src="/findorabrowse.png"
                   alt="Findora lost and found platform — browse items screen"
                   width={900}
-                  height={600}
+                  height={620}
                   className="h-auto w-full"
                 />
               </div>

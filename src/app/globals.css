@@ -570,3 +570,21 @@ html:not(.dark) .dark-fade-left {
 html:not(.dark) .dark-fade-right {
   background: linear-gradient(to left, #F5F5F7, transparent) !important;
 }
+
+/* ── Findora mockup: 3D tilt only on desktop ── */
+.mockup-tilt {
+  transform: none;
+  transform-style: preserve-3d;
+}
+
+@media (min-width: 1024px) {
+  .mockup-tilt {
+    transform: perspective(1000px) rotateY(-6deg) rotateX(3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mockup-tilt {
+    transform: none !important;
+  }
+}
