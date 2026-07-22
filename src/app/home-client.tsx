@@ -491,6 +491,41 @@ export default function HomeClient() {
         </motion.aside>
       </motion.section>
 
+      {/* ── Marquee strip ── */}
+      <div className="relative overflow-hidden border-y border-white/[0.06] bg-gradient-to-r from-white/[0.01] via-white/[0.02] to-white/[0.01] py-3.5">
+        {/* fade edges */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#0c0c0e] to-transparent z-10 dark-fade-left" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#0c0c0e] to-transparent z-10 dark-fade-right" />
+        <div className="marquee-track flex w-max items-center gap-0">
+          {[...Array(2)].map((_, pass) => (
+            <div key={pass} className="flex items-center" aria-hidden={pass === 1}>
+              {[
+                { text: "Node.js",           icon: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
+                { text: "PostgreSQL",        icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
+                { text: "REST APIs",         icon: "https://cdn.simpleicons.org/postman/FF6C37" },
+                { text: "React",             icon: "https://cdn.simpleicons.org/react/61DAFB" },
+                { text: "TypeScript",        icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+                { text: "Auth & Security",   icon: "https://cdn.simpleicons.org/jsonwebtokens/FFFFFF" },
+                { text: "MongoDB",           icon: "https://cdn.simpleicons.org/mongodb/47A248" },
+                { text: "Next.js",           icon: "https://cdn.simpleicons.org/nextdotjs/FFFFFF" },
+                { text: "Real-time Systems", icon: "https://cdn.simpleicons.org/socketdotio/FFFFFF" },
+                { text: "Payment Rails",     icon: "https://cdn.simpleicons.org/stripe/6772E5" },
+                { text: "Git",               icon: "https://cdn.simpleicons.org/git/F05032" },
+                { text: "Express.js",        icon: "https://cdn.simpleicons.org/express/FFFFFF" },
+              ].map((item) => (
+                <span key={item.text} className="flex items-center gap-8 px-6">
+                  <span className="flex items-center gap-2.5 text-sm font-medium text-slate-400">
+                    <img src={item.icon} alt="" aria-hidden="true" className="h-4 w-4 shrink-0 opacity-70" loading="lazy" />
+                    {item.text}
+                  </span>
+                  <span className="h-1 w-1 shrink-0 rounded-full bg-white/[0.15]" aria-hidden="true" />
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* ── Credibility bar ── */}
       <motion.section aria-label="Core principles" className="border-y border-white/[0.06] bg-gradient-to-r from-white/[0.01] via-white/[0.025] to-white/[0.01] mt-8 sm:mt-12" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
         <div className="mx-auto grid w-full max-w-7xl gap-2 px-4 py-4 sm:px-6 sm:py-5 md:grid-cols-3 lg:px-8">
@@ -537,49 +572,122 @@ export default function HomeClient() {
       </motion.section>
 
       {/* ── Featured project: Findora ── */}
-      <motion.section aria-label="Featured project: Findora" className="mx-auto w-full max-w-7xl px-4 pt-10 pb-16 sm:px-6 sm:pt-12 sm:pb-24 lg:px-8 lg:pb-32" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
-        <div className="dark-surface relative overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-[#1a1a1f] via-[#141416] to-[#111113] p-5 sm:rounded-3xl sm:p-8 lg:p-10">
-          <div className="pointer-events-none absolute -right-20 -top-16 h-56 w-56 rounded-full bg-white/[0.02] blur-3xl" />
-          <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-white/[0.015] blur-3xl" />
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#93C5FD] sm:text-xs">Featured Project</p>
-          <h2 className="mt-2 text-2xl font-bold tracking-tight text-white sm:mt-3 sm:text-3xl lg:text-4xl" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>Findora</h2>
-          <p className="mt-1.5 text-sm text-slate-400 sm:mt-2 sm:text-lg">Built for the moment between losing something and getting it back</p>
-          <div className="mt-6 grid gap-6 sm:mt-8 lg:grid-cols-[1fr_0.9fr] lg:gap-8">
-            <div className="space-y-4 text-slate-400 sm:space-y-5">
-              <div className="overflow-hidden rounded-xl border border-white/[0.07] sm:rounded-2xl">
-                <Image src="/findorabrowse.png" alt="Findora lost and found platform — browse items screen" width={1200} height={700} className="h-auto w-full" />
-              </div>
-              <p className="text-sm sm:text-base"><span className="font-semibold text-slate-200">Problem:</span> In my department, lost items were reported the only way everyone knew — a WhatsApp group. Posts got buried within hours, claims were unverifiable, and items rarely made it back to their owners.</p>
-              <p className="text-sm sm:text-base"><span className="font-semibold text-slate-200">Why it matters:</span> A WhatsApp message is not a recovery system. Without structure, verification, or accountability, the loudest message wins — not the rightful owner.</p>
-              <p className="text-sm sm:text-base"><span className="font-semibold text-slate-200">Solution:</span> I built Findora specifically for this environment — a department-scale lost and found platform with secure auth, structured item reports, real-time chat, two-step handover verification, and moderation controls so recovery is a process, not a guess.</p>
+      <motion.section
+        aria-label="Featured project: Findora"
+        className="mx-auto w-full max-w-7xl px-4 pt-10 pb-16 sm:px-6 sm:pt-12 sm:pb-24 lg:px-8 lg:pb-32"
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.12 }}
+      >
+        {/* Label row */}
+        <div className="flex items-center gap-3 mb-6 sm:mb-8">
+          <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#93C5FD]">Featured Project</span>
+          <div className="h-px flex-1 bg-gradient-to-r from-[#2563EB]/30 to-transparent" />
+          <Link href={findoraLiveUrl} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 transition hover:text-[#60A5FA]">
+            Live site
+            <span className="material-symbols-outlined text-[13px]">north_east</span>
+          </Link>
+        </div>
+
+        {/* Display headline */}
+        <div className="mb-8 sm:mb-10">
+          <h2
+            className="text-[3.5rem] font-extrabold leading-[0.95] tracking-tight text-white xs:text-6xl sm:text-7xl md:text-8xl lg:text-[7rem]"
+            style={{ fontFamily: "Instrument Serif, Georgia, serif" }}
+          >
+            Findora
+          </h2>
+          <p className="mt-3 max-w-2xl text-base text-slate-400 sm:text-lg lg:text-xl">
+            A trust-first lost &amp; found platform built for real communities — because a WhatsApp group is not a recovery system.
+          </p>
+        </div>
+
+        {/* Outcome metrics */}
+        <div className="mb-8 grid grid-cols-2 gap-3 sm:mb-10 sm:grid-cols-4">
+          {[
+            { value: "2-step",    label: "Handover verification" },
+            { value: "Real-time", label: "Chat between claimants" },
+            { value: "RBAC",      label: "Role-based moderation" },
+            { value: "100%",      label: "Structured recovery flow" },
+          ].map((m) => (
+            <div key={m.label} className="rounded-2xl border border-white/[0.07] bg-white/[0.02] px-4 py-4 sm:px-5 sm:py-5">
+              <p className="text-xl font-black text-white sm:text-2xl" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>{m.value}</p>
+              <p className="mt-1 text-xs text-slate-500">{m.label}</p>
             </div>
-            <div className="rounded-xl border border-white/[0.08] bg-gradient-to-b from-[#1a1a1f] to-[#111113] p-4 shadow-[0_20px_52px_-28px_rgba(0,0,0,0.5)] sm:rounded-2xl sm:p-5">
-              <div className="mb-3 flex items-center justify-between">
-                <p className="text-sm font-semibold text-white">Key Features</p>
-                <span className="rounded-full border border-[#93C5FD]/28 bg-[#2563EB]/10 px-2 py-0.5 text-[10px] uppercase tracking-[0.16em] text-[#BFDBFE]">Core</span>
+          ))}
+        </div>
+
+
+        {/* Case study body */}
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-14">
+
+          {/* Left: narrative + features + CTAs */}
+          <div className="space-y-7">
+            <div className="space-y-5 text-sm leading-relaxed text-slate-400 sm:text-base">
+              <div>
+                <p className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">The Problem</p>
+                <p>Lost items in my department were reported through a WhatsApp group. Posts got buried within hours, claims were unverifiable, and items rarely made it back to their rightful owners. The loudest message won — not the legitimate claimant.</p>
               </div>
-              <ul className="mt-3 space-y-2 text-xs text-slate-400 sm:mt-4 sm:space-y-3 sm:text-sm">
-                {findoraFeatures.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 rounded-lg border border-white/[0.07] bg-black/25 p-2.5 sm:gap-3 sm:rounded-xl sm:p-3">
-                    <span className="material-symbols-outlined mt-0.5 text-[14px] text-[#60A5FA] sm:text-[16px]">verified</span>
-                    <span>{feature}</span>
+              <div>
+                <p className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">The Solution</p>
+                <p>I built Findora as a structured recovery system — secure auth, image-based item reports, real-time chat, two-step handover code verification, and an admin dashboard for moderation. Every return becomes a verifiable process.</p>
+              </div>
+            </div>
+
+            <div>
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">What I built</p>
+              <ul className="space-y-2.5">
+                {findoraFeatures.map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-sm text-slate-400">
+                    <span className="material-symbols-outlined mt-0.5 shrink-0 text-[15px] text-[#60A5FA]">check_circle</span>
+                    {f}
                   </li>
                 ))}
               </ul>
-              <div className="mt-3 grid grid-cols-3 gap-2 text-center sm:mt-4">
-                {[["Flow", "Secure"], ["Claims", "Verified"], ["Status", "Tracked"]].map(([sub, main]) => (
-                  <div key={main} className="rounded-lg border border-white/[0.07] bg-black/25 p-2">
-                    <p className="text-[9px] uppercase tracking-[0.12em] text-slate-500 sm:text-[10px]">{sub}</p>
-                    <p className="text-[11px] font-semibold text-white sm:text-xs">{main}</p>
-                  </div>
-                ))}
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <Link href={findoraLiveUrl} target="_blank" rel="noreferrer" className="btn-primary inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold">
+                Live Demo
+                <span className="material-symbols-outlined text-[16px]">north_east</span>
+              </Link>
+              <Link href="/projects" className="btn-secondary inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold">
+                Full Case Study
+                <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right: browser mockup */}
+          <div className="relative">
+            {/* Glow behind the frame */}
+            <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-[#2563EB]/[0.07] blur-2xl" />
+            {/* Browser chrome */}
+            <div className="relative overflow-hidden rounded-2xl border border-white/[0.1] bg-[#141416] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.6)]">
+              {/* Title bar */}
+              <div className="flex items-center gap-2 border-b border-white/[0.06] bg-[#1a1a1f] px-4 py-3">
+                <span className="h-2.5 w-2.5 rounded-full bg-red-500/60" />
+                <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/60" />
+                <span className="h-2.5 w-2.5 rounded-full bg-green-500/60" />
+                <div className="mx-3 flex flex-1 items-center gap-2 rounded-md bg-white/[0.05] px-3 py-1">
+                  <span className="material-symbols-outlined text-[12px] text-slate-600">lock</span>
+                  <span className="text-[11px] text-slate-500">findora-snowy.vercel.app</span>
+                </div>
               </div>
-              <div className="mt-4 flex flex-col gap-2 sm:mt-6 sm:flex-row sm:gap-3">
-                <Link href={findoraLiveUrl} target="_blank" rel="noreferrer" className="btn-primary inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold sm:px-5 sm:py-3">Live Demo</Link>
-                <Link href="/projects" className="btn-secondary inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold sm:px-5 sm:py-3">View Project Details</Link>
+              {/* Screenshot */}
+              <div className="overflow-hidden">
+                <Image
+                  src="/findorabrowse.png"
+                  alt="Findora lost and found platform — browse items screen"
+                  width={900}
+                  height={600}
+                  className="h-auto w-full"
+                />
               </div>
             </div>
           </div>
+
         </div>
       </motion.section>
 
