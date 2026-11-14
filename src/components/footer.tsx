@@ -56,7 +56,7 @@ export function Footer() {
               <span className="text-base font-semibold text-white">Ahmad Ibrahim</span>
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-slate-500">
-              Building software that holds up — from the first commit to the last edge case.
+              Building software that holds up, from the first commit through the edge cases.
             </p>
             {/* Social icons */}
             <div className="flex items-center gap-2.5">

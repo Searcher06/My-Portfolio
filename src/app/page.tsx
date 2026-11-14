@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: "/og/portfolio-og.svg",
         width: 1200,
         height: 630,
-        alt: "Ahmad Ibrahim — Backend-Focused Full-Stack Engineer",
+        alt: "Ahmad Ibrahim, Backend-Focused Full-Stack Engineer",
       },
     ],
   },
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 const projectsJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Ahmad Ibrahim — Software Projects",
+  name: "Ahmad Ibrahim Software Projects",
   description: "A list of software projects built by Ahmad Ibrahim",
   url: `${siteUrl}/projects`,
   itemListElement: [

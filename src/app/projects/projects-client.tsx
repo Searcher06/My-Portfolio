@@ -110,14 +110,14 @@ const projects: ProjectDetail[] = [
   },
   {
     name: "Vestlee",
-    tagline: "AI-powered job application assistant — tailored CVs, cover letters, Gmail tracking, and mock interviews.",
+    tagline: "AI job application assistant for tailored CVs, cover letters, Gmail tracking, and mock interviews.",
     icon: "work",
     image: "/vestleepic.png",
     status: "In Progress",
     challenge:
       "Applying for jobs is a full-time job in itself. Developers waste hours tweaking CVs and writing cover letters for every role, with no reliable way to track applications or prepare for interviews systematically.",
     solution:
-      "Built a full-stack AI job application assistant with CV parsing, Groq-powered CV tailoring and cover letter generation, ATS match scoring, Gmail OAuth integration for automatic application tracking, real-time voice mock interviews via Deepgram, and a comprehensive CV audit system — all backed by a structured profile builder and PDF export.",
+      "Built a full-stack AI job application assistant with CV parsing, Groq-powered CV and cover letter generation, ATS match scoring, Gmail application tracking, real-time voice mock interviews, and a CV audit with PDF export.",
     impact: [
       "Eliminates hours of manual CV and cover letter customization per application with AI-generated, role-specific documents.",
       "Auto-tracks application statuses by scanning connected Gmail for confirmations, interview invites, and rejections.",
@@ -335,7 +335,7 @@ export default function ProjectsClientPage() {
                   <p className="line-clamp-3"><span className="font-semibold text-slate-200">Solution:</span> {project.solution}</p>
                 </div>
 
-                {/* Key impact — staggered slide-in */}
+                {/* Key impact, staggered slide-in */}
                 <div className="relative mt-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#93C5FD]">Key Impact</p>
                   <motion.ul
@@ -358,7 +358,7 @@ export default function ProjectsClientPage() {
                   </motion.ul>
                 </div>
 
-                {/* Tech stack — pop-in badges */}
+                {/* Tech stack, pop-in badges */}
                 <div className="relative mt-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Technology Stack</p>
                   <motion.div

@@ -30,7 +30,7 @@ const truncateText = (text: string, maxLength: number) =>
   text.length > maxLength ? `${text.slice(0, maxLength).trimEnd()}...` : text;
 
 const credibilityPoints = [
-  "Rough idea → working product",
+  "Rough idea to working product",
   "Ships with edge cases thought through",
   "Code the next dev can actually trust",
 ];
@@ -43,11 +43,10 @@ const quickStats = [
 ];
 
 const findoraFeatures = [
-  "Secure auth with email verification, password reset, and role-based access",
-  "Lost/found item reporting with image uploads, search, and filter tools",
-  "Real-time chat plus 2-step handover code verification for trusted returns",
-  "Admin dashboard for user management, item moderation, and audit logs",
-  "Trust points and profile stats that reward verified successful returns",
+  "Post lost or found items with photos and searchable details",
+  "Chat with claimants and verify returns with a handover code",
+  "Give admins tools to review reports and manage users",
+  "Track successful returns and trust points",
 ];
 
 const otherProjects: ProjectCard[] = [
@@ -108,7 +107,7 @@ const findoraLiveUrl = "https://findora-snowy.vercel.app/";
 const currentlyExploring = [
   {
     title: "AI systems for real-world products",
-    note: "Exploring how AI can power genuinely useful features — recommendations, voice interfaces, and intelligent automation that solves real problems inside scalable web applications.",
+    note: "Exploring useful AI features such as recommendations, voice interfaces, and automation for real products.",
     icon: "smart_toy",
     accent: "text-[#93C5FD]",
     accentBg: "bg-[#93C5FD]/10",
@@ -116,7 +115,7 @@ const currentlyExploring = [
   },
   {
     title: "System design patterns",
-    note: "Studying reusable architecture decisions for high-change product teams — event-driven systems, service boundaries, and patterns that scale without a full rewrite.",
+    note: "Studying event-driven systems and service boundaries that help products grow without a full rewrite.",
     icon: "schema",
     accent: "text-[#60A5FA]",
     accentBg: "bg-[#60A5FA]/10",
@@ -124,7 +123,7 @@ const currentlyExploring = [
   },
   {
     title: "Backend performance",
-    note: "Profiling and tuning under realistic production load — query optimisation, caching strategies, and identifying bottlenecks that move real numbers in production.",
+    note: "Improving query performance, caching, and the parts of a system that slow users down.",
     icon: "speed",
     accent: "text-[#BFDBFE]",
     accentBg: "bg-[#BFDBFE]/10",
@@ -133,11 +132,11 @@ const currentlyExploring = [
 ];
 
 const services = [
-  { title: "Frontend Development", description: "I create clear, engaging product experiences that make it easy for people to use your platform.", icon: "web" },
-  { title: "Backend Development", description: "I build the core systems behind your product so they stay fast, secure, and dependable as you grow.", icon: "dns" },
-  { title: "API Integration", description: "I connect your tools and services so your product runs as one smooth, connected experience.", icon: "api" },
-  { title: "Responsive Design", description: "I make sure your product looks clean and works well on phones, tablets, and desktop screens.", icon: "devices" },
-  { title: "Cloud Solutions", description: "I set up cloud infrastructure that keeps your product online, stable, and ready for increasing demand.", icon: "cloud" },
+  { title: "Frontend Development", description: "Clear, responsive interfaces that make your product easy to use.", icon: "web", tone: "bg-blue-100 text-blue-700" },
+  { title: "Backend Development", description: "Secure APIs and dependable systems built to support real product needs.", icon: "dns", tone: "bg-violet-100 text-violet-700" },
+  { title: "API Integration", description: "Connect payments, email, identity, and other tools into one smooth workflow.", icon: "api", tone: "bg-emerald-100 text-emerald-700" },
+  { title: "Responsive Design", description: "Layouts that feel natural on phones, tablets, laptops, and large screens.", icon: "devices", tone: "bg-amber-100 text-amber-700" },
+  { title: "Cloud Solutions", description: "Practical deployment and infrastructure for stable, growing applications.", icon: "cloud", tone: "bg-sky-100 text-sky-700" },
 ];
 
 const skillGroups = [
@@ -185,38 +184,38 @@ const workExperience = [
   {
     role: "Backend Engineer",
     company: "Auvra",
-    period: "Jan 13, 2026 - Present",
+    period: "Jan 13, 2026 to Present",
     location: "Remote",
-    summary: "Owning backend architecture and core services for a trust-critical platform focused on reliability, compliance, and scale.",
+    summary: "Building backend services for a trust-focused platform with demanding reliability needs.",
     highlights: [
-      "Architected scalable APIs and service layers that support high-growth product requirements and faster feature delivery.",
-      "Integrated critical third-party flows including payment rails, KYC checks, and blockchain-related operations.",
-      "Enforced backend quality standards across security, data integrity, and performance optimization through code review and testing routines.",
-      "Partnered with product and design to convert fast-moving requirements into resilient backend implementations.",
+      "Designed APIs and services for product growth and faster delivery.",
+      "Integrated payment, KYC, and blockchain workflows.",
+      "Set security, data integrity, and performance standards through reviews and tests.",
+      "Worked with product and design to ship resilient features.",
     ],
   },
   {
     role: "Fullstack Engineer (Contract)",
     company: "School Fee & Management System Project",
-    period: "Feb 2026 - Apr 26, 2026",
+    period: "Feb 2026 to Apr 26, 2026",
     location: "Kano, Nigeria",
-    summary: "Delivered a complete fee and distribution workflow platform that digitized school finance and fulfillment operations.",
+    summary: "Delivered a school finance and fulfillment platform from fee setup to item collection.",
     highlights: [
-      "Built end-to-end flows for fee setup, parent payment submissions, verification decisions, and item collection tracking.",
-      "Implemented role-based workflows that reduced operational bottlenecks between admin reviewers and distribution staff.",
-      "Improved accountability with item-level auditability and reporting-friendly data structures for management visibility.",
+      "Built fee setup, payment review, and item collection workflows.",
+      "Added role-based routing for admins and distribution staff.",
+      "Improved audit visibility and management reporting.",
     ],
   },
   {
     role: "Software Engineer Intern (Backend)",
     company: "BOI BUK Innovation Hub",
-    period: "Mar 9, 2026 - Present",
+    period: "Mar 9, 2026 to Present",
     location: "Bayero University Kano, Nigeria",
-    summary: "Building backend foundations for a centralized digital platform connecting innovation hubs across Bayero University Kano.",
+    summary: "Developing backend foundations for a platform connecting innovation hubs at BUK.",
     highlights: [
-      "Mapped PRD requirements into backend modules for hubs directory, programs, events, and communication workflows.",
-      "Contributed API and service design for both public platform experiences and admin-console operations.",
-      "Supported scalable architecture decisions around role-based access, content lifecycle management, and institutional operations.",
+      "Mapped hub, program, event, and communication needs into backend modules.",
+      "Contributed API and admin console design.",
+      "Supported access control and content management architecture.",
     ],
   },
 ];
@@ -569,17 +568,17 @@ export default function HomeClient() {
             Findora
           </h2>
           <p className="mt-3 max-w-2xl text-base text-slate-400 sm:text-lg lg:text-xl">
-            A trust-first lost &amp; found platform built for real communities — because a WhatsApp group is not a recovery system.
+            A simple way to report lost items, connect with finders, and verify safe handovers.
           </p>
         </div>
 
         {/* Outcome metrics */}
         <div className="mb-8 grid grid-cols-2 gap-3 sm:mb-10 sm:grid-cols-4">
           {[
-            { value: "2-step",    label: "Handover verification" },
-            { value: "Real-time", label: "Chat between claimants" },
-            { value: "RBAC",      label: "Role-based moderation" },
-            { value: "100%",      label: "Structured recovery flow" },
+            { value: "2-step",    label: "Verified handovers" },
+            { value: "Live",      label: "Chat between users" },
+            { value: "Photo",     label: "Lost item reports" },
+            { value: "Admin",     label: "Report moderation" },
           ].map((m) => (
             <div key={m.label} className="rounded-2xl border border-white/[0.07] bg-white/[0.02] px-4 py-4 sm:px-5 sm:py-5">
               <p className="text-xl font-black text-white sm:text-2xl" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>{m.value}</p>
@@ -597,11 +596,11 @@ export default function HomeClient() {
             <div className="space-y-5 text-sm leading-relaxed text-slate-400 sm:text-base">
               <div>
                 <p className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">The Problem</p>
-                <p>Lost items in my department were reported through a WhatsApp group. Posts got buried within hours, claims were unverifiable, and items rarely made it back to their rightful owners. The loudest message won — not the legitimate claimant.</p>
+                <p>Lost item posts in my department disappeared in busy WhatsApp chats, and ownership was hard to verify.</p>
               </div>
               <div>
                 <p className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">The Solution</p>
-                <p>I built Findora as a structured recovery system — secure auth, image-based item reports, real-time chat, two-step handover code verification, and an admin dashboard for moderation. Every return becomes a verifiable process.</p>
+                <p>Findora brings photo reports, search, live chat, and two-step handover codes into one moderated platform.</p>
               </div>
             </div>
 
@@ -631,11 +630,11 @@ export default function HomeClient() {
 
           {/* Right: floating perspective mockup */}
           <div className="relative flex items-center justify-center lg:justify-end">
-            {/* Ambient glow — subtle on mobile, stronger on desktop */}
+            {/* Ambient glow, subtle on mobile and stronger on desktop */}
             <div className="pointer-events-none absolute -inset-2 rounded-3xl bg-[#2563EB]/[0.1] blur-[40px] lg:-inset-4 lg:bg-[#2563EB]/[0.15] lg:blur-[60px]" />
-            {/* Tilt wrapper — flat on mobile, 3D on desktop */}
+            {/* Tilt wrapper, flat on mobile and 3D on desktop */}
             <div className="mockup-tilt relative w-full">
-              {/* Drop shadow beneath frame — desktop only */}
+              {/* Drop shadow beneath frame on desktop */}
               <div className="absolute -bottom-6 left-4 right-4 hidden h-16 rounded-2xl bg-[#2563EB]/20 blur-2xl lg:block" />
               {/* Browser frame */}
               <div className="relative overflow-hidden rounded-xl border border-white/[0.12] bg-[#0f0f11] shadow-[0_16px_40px_-12px_rgba(0,0,0,0.5)] lg:rounded-2xl lg:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.06)]">
@@ -652,7 +651,7 @@ export default function HomeClient() {
                 {/* Screenshot */}
                 <Image
                   src="/findorabrowse.png"
-                  alt="Findora lost and found platform — browse items screen"
+                  alt="Findora lost and found platform, browse items screen"
                   width={900}
                   height={620}
                   className="h-auto w-full"
@@ -679,7 +678,7 @@ export default function HomeClient() {
               <div className={`group relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                 <div className="absolute -inset-2 rotate-1 rounded-[1.6rem] bg-[#f7f5ef] shadow-lg" />
                 <div className="relative overflow-hidden rounded-2xl border-[5px] border-[#f7f5ef] bg-white shadow-[0_18px_45px_-26px_rgba(0,0,0,0.7)]">
-                  <Image src={project.image} alt={`${project.name} — project preview`} width={1200} height={700} className="h-auto w-full transition duration-500 group-hover:scale-[1.015]" />
+                  <Image src={project.image} alt={`${project.name}, project preview`} width={1200} height={700} className="h-auto w-full transition duration-500 group-hover:scale-[1.015]" />
                 </div>
                 <span className="absolute -bottom-3 right-5 rounded-full bg-[#DBEAFE] px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#1d4ed8] shadow-sm">Selected work · 0{index + 1}</span>
               </div>
@@ -712,69 +711,34 @@ export default function HomeClient() {
 
       {/* ── Services ── */}
       <motion.section id="services" aria-label="Services and expertise" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <h2 className="-rotate-1 font-handwriting text-3xl leading-[1.1] text-slate-200 sm:text-4xl lg:text-5xl">Services &amp; Expertise</h2>
-          <p className="text-sm text-slate-500">What I can help your team build.</p>
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-3 sm:mb-10">
+          <div>
+            <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#93C5FD]">How I can help</p>
+            <h2 className="-rotate-1 font-handwriting text-3xl leading-[1.1] text-slate-200 sm:text-4xl lg:text-5xl">Services &amp; Expertise</h2>
+          </div>
+          <p className="max-w-sm text-sm text-slate-400">Practical engineering for products that need to work well and grow.</p>
         </div>
-        <motion.div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
-
-          {/* ── Feature card: tall, col 1, rows 1+2 ── */}
-          <motion.article
-            variants={cardReveal}
-            whileHover={reduceMotion ? undefined : { y: -8, scale: 1.01 }}
-            className="dark-surface group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-[#161618]/90 p-6 transition hover:border-white/[0.14] sm:col-span-2 lg:col-span-1 lg:row-span-2"
-          >
-            <div className="absolute inset-x-0 top-0 h-[2px] rounded-t-2xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8]" />
-            <div className="pointer-events-none absolute -left-1/3 top-0 h-full w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition duration-500 group-hover:translate-x-[260%] group-hover:opacity-100" />
-
-            {/* Top */}
-            <div>
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#2563EB]/20 bg-[#2563EB]/10 text-[#60A5FA]">
-                <span className="material-symbols-outlined text-[20px]">dns</span>
+        <motion.div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+          {services.map((service, index) => (
+            <motion.article
+              key={service.title}
+              variants={cardReveal}
+              whileHover={reduceMotion ? undefined : { y: -6 }}
+              className="group flex min-h-64 flex-col rounded-[1.75rem] border border-[#e7e1d4] bg-[#f7f5ef] p-6 shadow-[0_12px_32px_-24px_rgba(0,0,0,0.65)] transition duration-300 hover:border-[#c9d8f5] hover:bg-white hover:shadow-[0_20px_42px_-24px_rgba(0,0,0,0.55)] sm:p-7"
+            >
+              <div className="mb-5 flex items-center justify-between">
+                <span className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${service.tone}`}>
+                  <span className="material-symbols-outlined text-[24px]" aria-hidden="true">{service.icon}</span>
+                </span>
+                <span className="font-mono text-xs font-semibold tracking-widest text-slate-400">0{index + 1}</span>
               </div>
-              <h3 className="mt-5 text-lg font-bold text-white">Backend Development</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-500">
-                {services.find(s => s.title === "Backend Development")?.description}
-              </p>
-            </div>
-
-            {/* Middle: grows to fill */}
-            <ul className="mt-6 flex-1 space-y-2.5">
-              {[
-                "Scalable REST & event-driven API design",
-                "JWT / session auth, RBAC & OAuth flows",
-                "Schema design, indexing & query optimisation",
-                "Payment rails, KYC & webhook integrations",
-                "Real-time systems with WebSockets",
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-2.5 text-sm text-slate-400">
-                  <span className="h-1 w-1 shrink-0 rounded-full bg-[#60A5FA]" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            {/* Bottom: tags */}
-            <div className="mt-6 flex flex-wrap gap-2 border-t border-white/[0.06] pt-5">
-              {["Node.js", "PostgreSQL", "REST APIs", "Auth"].map((t) => (
-                <span key={t} className="rounded-full border border-[#60A5FA]/20 bg-[#2563EB]/10 px-2.5 py-1 text-[11px] font-medium text-[#93C5FD]">{t}</span>
-              ))}
-            </div>
-          </motion.article>
-
-          {/* ── 4 regular cards: cols 2-3, rows 1-2 ── */}
-          {services.filter((s) => s.title !== "Backend Development").map((service) => (
-            <motion.article key={service.title} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.01 }}
-              className="dark-surface group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[#161618]/90 p-6 transition hover:border-white/[0.14]">
-              <div className="pointer-events-none absolute -left-1/3 top-0 h-full w-1/3 rotate-12 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition duration-500 group-hover:translate-x-[260%] group-hover:opacity-100" />
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#2563EB]/20 bg-[#2563EB]/10 text-[#60A5FA]">
-                <span className="material-symbols-outlined text-[20px]">{service.icon}</span>
-              </div>
-              <h3 className="relative mt-4 text-base font-semibold text-white">{service.title}</h3>
-              <p className="relative mt-2 text-sm leading-relaxed text-slate-500">{service.description}</p>
+              <h3 className="text-lg font-bold text-slate-900 sm:text-xl">{service.title}</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{service.description}</p>
+              <a href="#contact" className="mt-5 inline-flex w-fit items-center gap-1.5 border-t border-slate-200 pt-4 text-sm font-semibold text-[#1d4ed8] transition group-hover:text-[#1e40af]">
+                Discuss a project <span className="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1" aria-hidden="true">arrow_forward</span>
+              </a>
             </motion.article>
           ))}
-
         </motion.div>
       </motion.section>
 
@@ -903,55 +867,37 @@ export default function HomeClient() {
       </motion.section>
 
       {/* ── Work Experience ── */}
-      <motion.section id="journey" aria-label="Work experience" className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
-        <div className="mb-10 sm:mb-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Career</p>
-          <h2 className="mt-1 -rotate-1 font-handwriting text-3xl leading-[1.1] text-slate-200 sm:text-4xl lg:text-5xl">Work Experience</h2>
+      <motion.section id="journey" aria-label="Work experience" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+        <div className="mb-8 sm:mb-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Career history</p>
+          <h2 className="mt-1 -rotate-1 font-handwriting text-3xl leading-[1.1] text-slate-200 sm:text-4xl lg:text-5xl">Experience</h2>
         </div>
-        <motion.div className="relative space-y-0" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.08 }}>
-          <div className="experience-rail absolute left-0 top-2 hidden h-[calc(100%-2rem)] w-px bg-gradient-to-b from-[#2563EB]/70 via-[#2563EB]/30 to-transparent sm:block" />
+        <motion.div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.08 }}>
           {workExperience.map((job, index) => (
             <motion.article
               key={`${job.role}-${job.company}`}
-              variants={{ hidden: { opacity: 0, y: reduceMotion ? 0 : 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
-              className={`relative sm:pl-10 ${index !== workExperience.length - 1 ? "pb-10 sm:pb-12" : ""}`}
+              variants={cardReveal}
+              whileHover={reduceMotion ? undefined : { y: -3 }}
+              className={`group relative flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 transition duration-300 hover:border-white/[0.14] hover:bg-white/[0.045] sm:p-6 ${index === 2 ? "md:col-span-2 xl:col-span-1" : ""}`}
             >
-              <div className="absolute left-0 top-[1.4rem] hidden -translate-x-1/2 sm:block">
-                <span className="experience-dot flex h-2.5 w-2.5 rounded-full bg-[#2563EB] shadow-[0_0_0_4px_rgba(37,99,235,0.15),0_0_12px_rgba(37,99,235,0.5)]" />
+              <div className="mb-5 flex items-start justify-between gap-3">
+                <span className="font-mono text-[11px] font-semibold tracking-[0.18em] text-[#60A5FA]">0{index + 1}</span>
+                <span className="text-right text-[11px] leading-relaxed text-slate-500">{job.period}</span>
               </div>
-
-              {/* Card */}
-              <div className="dark-surface group rounded-2xl border border-white/[0.07] bg-[#141416] p-5 transition-all duration-300 hover:border-white/[0.14] sm:p-6 lg:p-7">
-                {/* Top row */}
-                <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-3">
-                  <div>
-                    <h3 className="text-base font-bold text-white sm:text-[1.05rem]">{job.role}</h3>
-                    <div className="mt-1.5 flex flex-wrap items-center gap-x-2.5 gap-y-1">
-                      <span className="text-sm font-semibold text-[#60A5FA]">{job.company}</span>
-                      <span className="hidden h-3.5 w-px bg-white/20 sm:block" aria-hidden="true" />
-                      <span className="flex items-center gap-1 text-xs text-slate-500">
-                        <span className="material-symbols-outlined text-[13px]">location_on</span>
-                        {job.location}
-                      </span>
-                    </div>
-                  </div>
-                  <span className="shrink-0 rounded-md border border-white/[0.08] bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium tabular-nums text-slate-400">
-                    {job.period}
-                  </span>
-                </div>
-
-                {/* Divider */}
-                <div className="my-4 h-px w-full bg-white/[0.06]" />
-
-                {/* Summary */}
-                <p className="text-sm leading-[1.75] text-slate-400">{job.summary}</p>
-
-                {/* Highlights */}
-                <ul className="mt-5 space-y-3">
+              <h3 className="font-serif text-xl leading-tight text-white sm:text-2xl">{job.role}</h3>
+              <p className="mt-1 text-sm font-semibold text-[#93C5FD]">{job.company}</p>
+              <p className="mt-2 flex items-center gap-1.5 text-xs text-slate-500">
+                <span className="material-symbols-outlined text-[14px]" aria-hidden="true">location_on</span>
+                {job.location}
+              </p>
+              <p className="mt-5 text-sm leading-relaxed text-slate-400">{job.summary}</p>
+              <div className="mt-5 border-t border-white/[0.08] pt-4">
+                <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">Selected contributions</p>
+                <ul className="space-y-2.5">
                   {job.highlights.map((point) => (
-                    <li key={point} className="flex items-start gap-3">
-                      <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#2563EB]" aria-hidden="true" />
-                      <span className="text-sm leading-relaxed text-slate-400">{point}</span>
+                    <li key={point} className="flex items-start gap-2.5 text-xs leading-relaxed text-slate-400">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#60A5FA]" aria-hidden="true" />
+                      {point}
                     </li>
                   ))}
                 </ul>
@@ -971,7 +917,7 @@ export default function HomeClient() {
           {/* Photo side */}
           <div className="relative mx-auto w-full max-w-[300px] rotate-[-2deg] rounded-sm border border-slate-200 bg-white p-3 pb-12 shadow-[0_16px_38px_-18px_rgba(15,23,42,0.35)] transition-transform duration-300 hover:rotate-0 sm:max-w-[340px]">
             <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
-              <Image src="/me3.png" alt="Ahmad Ibrahim — Backend-Focused Full-Stack Engineer" fill sizes="(max-width: 640px) 280px, 340px" className="object-cover object-top" />
+              <Image src="/me3.png" alt="Ahmad Ibrahim, Backend-Focused Full-Stack Engineer" fill sizes="(max-width: 640px) 280px, 340px" className="object-cover object-top" />
             </div>
             <p className="absolute inset-x-0 bottom-3 text-center font-serif text-lg italic text-slate-500">Ahmad Ibrahim · Kano</p>
             <span className="absolute -top-3 left-1/2 h-7 w-20 -translate-x-1/2 rotate-3 bg-[#93C5FD]/70 shadow-sm" />
@@ -1004,52 +950,47 @@ export default function HomeClient() {
         whileInView="show" 
         viewport={{ once: true, amount: 0.18 }}
       >
-        <div className="dark-surface relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-gradient-to-br from-[#1a1a1f] via-[#141416] to-[#111113] p-6 sm:p-10 lg:p-12 shadow-[0_32px_80px_-24px_rgba(0,0,0,0.6)]">
-          {/* Decorative blobs */}
-          <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[#2563EB]/[0.08] blur-3xl" />
-          <div className="pointer-events-none absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-[#2563EB]/[0.05] blur-3xl" />
-          <div className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-white/[0.04]" />
-
+        <div className="relative rounded-3xl border border-[#e7e1d4] bg-[#f7f5ef] p-5 shadow-[0_24px_70px_-42px_rgba(0,0,0,0.55)] sm:p-8 lg:p-10">
           <div className="relative z-10 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-14">
 
             {/* ── Left: copy + channels ── */}
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/[0.08] px-3.5 py-1.5 text-xs font-semibold text-emerald-400 backdrop-blur-sm">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold text-emerald-800">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
                 Available for work
               </div>
 
               <div>
-                <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-[2.75rem] leading-[1.08]" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>
+                <h2 className="text-3xl font-medium leading-[1.08] tracking-tight text-slate-950 sm:text-4xl md:text-[2.75rem]" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>
                   Have a good idea?<br /><span className="italic">Let&apos;s build it.</span>
                 </h2>
-                <p className="mt-3 max-w-md text-sm text-slate-400 leading-relaxed sm:text-[0.9375rem]">
-                  Open to full-time remote roles, freelance backend and full-stack projects, and long-term engineering collaborations. Based in Kano, Nigeria — remote-first.
+                <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-600 sm:text-[0.9375rem]">
+                  Open to remote roles, freelance projects, and long-term engineering work. Based in Kano, Nigeria, and available remotely.
                 </p>
               </div>
 
-              <div className="space-y-3 pt-2 border-t border-white/[0.07]">
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500 pt-1">Direct channels</p>
-                <div className="grid gap-2 sm:grid-cols-2">
+              <div className="border-t border-slate-200 pt-4">
+                <p className="mb-1 text-xs font-semibold text-slate-700">Or find me here</p>
+                <div className="grid gap-x-6 sm:grid-cols-2">
                   {[
                     { icon: "https://cdn.simpleicons.org/gmail/EA4335", label: "Email", handle: "ahmadibrahimsearcher@gmail.com", href: "mailto:ahmadibrahimsearcher@gmail.com" },
-                    { icon: "https://cdn.simpleicons.org/github/FFFFFF", label: "GitHub", handle: "@Searcher06", href: "https://github.com/Searcher06" },
+                    { icon: "https://cdn.simpleicons.org/github/0F172A", label: "GitHub", handle: "@Searcher06", href: "https://github.com/Searcher06" },
                     { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", label: "LinkedIn", handle: "/in/ahmadibrahim06", href: "https://www.linkedin.com/in/ahmadibrahim06" },
-                    { icon: "https://cdn.simpleicons.org/x/FFFFFF", label: "X", handle: "@undefined_dev", href: "https://x.com/undefined_dev" },
+                    { icon: "https://cdn.simpleicons.org/x/0F172A", label: "X", handle: "@undefined_dev", href: "https://x.com/undefined_dev" },
                   ].map((ch) => (
                     <a
                       key={ch.label}
                       href={ch.href}
                       target={ch.href.startsWith("http") ? "_blank" : undefined}
                       rel={ch.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="group flex items-center gap-3 rounded-xl border border-white/[0.07] bg-white/[0.04] px-3.5 py-3 transition-all duration-200 hover:bg-white/[0.08] hover:border-white/[0.14]"
+                      className="group flex min-w-0 items-center gap-3 border-b border-slate-200 py-3 transition-colors hover:border-[#60A5FA]/60"
                     >
-                      <img src={ch.icon} alt={ch.label} className="h-4 w-4 shrink-0" loading="lazy" />
+                      <img src={ch.icon} alt="" aria-hidden="true" className="h-4 w-4 shrink-0" loading="lazy" />
                       <div className="flex min-w-0 flex-1 flex-col">
-                        <span className="text-[11px] font-semibold leading-tight text-white">{ch.label}</span>
-                        <span className="truncate text-[10px] leading-tight text-slate-500 group-hover:text-slate-300 transition-colors">{ch.handle}</span>
+                        <span className="text-xs font-semibold leading-tight text-slate-800">{ch.label}</span>
+                        <span className="truncate text-[11px] leading-tight text-slate-500 transition-colors group-hover:text-slate-700">{ch.handle}</span>
                       </div>
-                      <span className="material-symbols-outlined shrink-0 text-[13px] text-slate-600 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-slate-400">arrow_forward</span>
+                      <span className="material-symbols-outlined shrink-0 text-[15px] text-slate-400 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-slate-700">arrow_forward</span>
                     </a>
                   ))}
                 </div>
@@ -1057,55 +998,60 @@ export default function HomeClient() {
             </div>
 
             {/* ── Right: form ── */}
-            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 sm:p-7 shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
-              <h3 className="text-base font-bold text-white mb-5 tracking-tight">Send a direct message</h3>
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
+              <div className="mb-5 border-b border-slate-200 pb-4">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#2563EB]">Start a conversation</p>
+                <h3 className="mt-1 font-serif text-2xl text-slate-950 sm:text-3xl">Send me a note</h3>
+              </div>
               <form onSubmit={handleFormSubmit} className="space-y-4">
+                <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="form-name" className="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em] mb-1.5">Full Name</label>
+                  <label htmlFor="form-name" className="mb-1.5 block text-xs font-semibold text-slate-700">Your name</label>
                   <input
                     type="text"
                     id="form-name"
                     name="name"
+                    autoComplete="name"
                     required
                     value={formData.name}
                     onChange={handleFormChange}
-                    placeholder="John Doe"
-                    className="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-[#60A5FA]/60 focus:bg-white/[0.07] focus:outline-none transition-all"
+                    placeholder="Your name"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100"
                   />
                 </div>
                 <div>
-                  <label htmlFor="form-email" className="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em] mb-1.5">Email Address</label>
+                  <label htmlFor="form-email" className="mb-1.5 block text-xs font-semibold text-slate-700">Email address</label>
                   <input
                     type="email"
                     id="form-email"
                     name="email"
+                    autoComplete="email"
                     required
                     value={formData.email}
                     onChange={handleFormChange}
-                    placeholder="john@example.com"
-                    className="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-[#60A5FA]/60 focus:bg-white/[0.07] focus:outline-none transition-all"
+                    placeholder="you@example.com"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100"
                   />
                 </div>
+                </div>
                 <div>
-                  <label htmlFor="form-message" className="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em] mb-1.5">Message</label>
+                  <label htmlFor="form-message" className="mb-1.5 block text-xs font-semibold text-slate-700">How can I help?</label>
                   <textarea
                     id="form-message"
                     name="message"
-                    rows={4}
+                    rows={5}
                     required
                     value={formData.message}
                     onChange={handleFormChange}
-                    placeholder="Tell me about your project, role, or timeline..."
-                    className="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-slate-600 focus:border-[#60A5FA]/60 focus:bg-white/[0.07] focus:outline-none resize-none transition-all"
+                    placeholder="Share a few details about your idea, project, or role."
+                    className="w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={sendingForm}
-                  className="group relative mt-1 flex w-full items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(37,99,235,0.35)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(37,99,235,0.55)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-none disabled:opacity-50 disabled:pointer-events-none"
+                  className="mt-1 flex w-full items-center justify-center gap-2 rounded-xl bg-[#2563EB] px-6 py-3.5 text-sm font-semibold text-[#ffffff] transition-colors hover:bg-[#1d4ed8] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200 disabled:pointer-events-none disabled:opacity-50"
                 >
-                  {/* shine sweep */}
-                  <span className="pointer-events-none absolute inset-0 -translate-x-full skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
                   {sendingForm ? (
                     <span className="flex items-center gap-2">
                       <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -1122,7 +1068,7 @@ export default function HomeClient() {
                   )}
                 </button>
                 {submitStatus && (
-                  <p className={`text-xs mt-2 text-center font-medium ${submitStatus.success ? "text-emerald-400" : "text-rose-400"}`}>
+                  <p className={`mt-2 text-center text-xs font-semibold ${submitStatus.success ? "text-emerald-700" : "text-rose-700"}`}>
                     {submitStatus.message}
                   </p>
                 )}

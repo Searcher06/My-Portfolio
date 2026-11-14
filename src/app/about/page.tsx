@@ -7,14 +7,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ahmadibrahim.vercel
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Ahmad Ibrahim — a backend-focused full-stack engineer from Kano, Nigeria. BSc Software Engineering student building reliable APIs, web applications, and trust-critical systems.",
+    "Learn about Ahmad Ibrahim, a backend-focused full-stack engineer from Kano, Nigeria. BSc Software Engineering student building reliable APIs, web applications, and trust-critical systems.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Ahmad Ibrahim | Backend-Focused Full-Stack Engineer",
     description:
       "BSc Software Engineering student building reliable APIs, web applications, and trust-critical systems. Available for remote roles and freelance projects.",
     url: "/about",
-    images: [{ url: "/og/portfolio-og.svg", width: 1200, height: 630, alt: "Ahmad Ibrahim — About" }],
+    images: [{ url: "/og/portfolio-og.svg", width: 1200, height: 630, alt: "About Ahmad Ibrahim" }],
   },
 };
 
@@ -86,7 +86,7 @@ export default function AboutPage() {
             I&apos;m a BSc Software Engineering student and full-stack developer focused on building reliable web applications and backend systems. I enjoy turning ideas into scalable products that solve real problems, stay maintainable, and hold up under real-world conditions.
           </p>
           <p>
-            My work spans backend APIs, full-stack web applications, and trust-critical product features — from JWT authentication flows and payment integrations to real-time chat systems and admin dashboards. I care about writing code that the next developer can read, change, and trust.
+            My work spans backend APIs, full-stack web applications, and trust-critical product features such as JWT authentication, payment integrations, real-time chat, and admin dashboards. I care about writing code that the next developer can read, change, and trust.
           </p>
           <p>
             Currently exploring AI-powered product experiences, system design patterns, and backend performance optimization. I&apos;m open to full-time remote roles, freelance projects, and long-term collaborations.
@@ -118,7 +118,7 @@ export default function AboutPage() {
           <div className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-5">
             <p className="font-semibold text-white">BSc Software Engineering</p>
             <p className="mt-1 text-sm text-[#60A5FA]">Bayero University Kano (BUK)</p>
-            <p className="mt-1 text-sm text-slate-400">2022 – Present · Kano, Nigeria</p>
+            <p className="mt-1 text-sm text-slate-400">2022 to Present · Kano, Nigeria</p>
           </div>
         </section>
 

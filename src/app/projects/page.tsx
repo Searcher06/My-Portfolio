@@ -6,14 +6,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ahmadibrahim.vercel
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Detailed case studies of software projects built by Ahmad Ibrahim — including Findora (lost & found platform), Brillit (AI-powered learning), Vestlee (AI job application assistant), and more.",
+    "Detailed case studies of software projects built by Ahmad Ibrahim, including Findora (lost and found platform), Brillit (AI-powered learning), and Vestlee (AI job application assistant).",
   alternates: { canonical: "/projects" },
   openGraph: {
     title: "Projects | Ahmad Ibrahim",
     description:
       "Detailed case studies covering challenges, solutions, and impact across backend systems, full-stack web apps, and trust-critical products.",
     url: "/projects",
-    images: [{ url: "/og/findora-placeholder.svg", width: 1200, height: 630, alt: "Ahmad Ibrahim — Projects" }],
+    images: [{ url: "/og/findora-placeholder.svg", width: 1200, height: 630, alt: "Ahmad Ibrahim Projects" }],
   },
 };
 
@@ -29,7 +29,7 @@ const breadcrumbJsonLd = {
 const collectionPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Ahmad Ibrahim — Software Projects",
+  name: "Ahmad Ibrahim Software Projects",
   url: `${siteUrl}/projects`,
   description:
     "A detailed collection of software projects by Ahmad Ibrahim, covering full-stack web applications, backend systems, and trust-critical product features.",

@@ -4,7 +4,7 @@ export const profile: Profile = {
   name: "Ahmad Ibrahim",
   headline: "Backend-focused full-stack engineer building reliable web applications, APIs, and trust-critical systems.",
   location: "Kano, Nigeria (Remote)",
-  bio: "I'm a BSc Software Engineering student and full-stack developer focused on building reliable web applications and backend systems. I enjoy turning ideas into scalable products that solve real problems, stay maintainable, and hold up under real-world conditions. My work spans backend APIs, full-stack web apps, and trust-critical features — from auth flows and payment integrations to real-time systems and admin dashboards.",
+  bio: "I'm a BSc Software Engineering student and full-stack developer focused on building reliable web applications and backend systems. I enjoy turning ideas into scalable products that solve real problems, stay maintainable, and hold up under real-world conditions. My work spans backend APIs, full-stack web apps, and trust-critical features such as auth flows, payment integrations, real-time systems, and admin dashboards.",
   skills: [
     "TypeScript",
     "JavaScript",

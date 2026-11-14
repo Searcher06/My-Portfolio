@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: `%s | ${personName}`,
   },
   description:
-    `Official portfolio of ${personName} — a backend-focused full-stack engineer building reliable web applications, APIs, and trust-critical product experiences. Available for remote roles and freelance projects.`,
+    `Official portfolio of ${personName}, a backend-focused full-stack engineer building reliable web applications, APIs, and trust-critical product experiences. Available for remote roles and freelance projects.`,
   keywords: [
     "Ahmad Ibrahim",
     "Full-Stack Engineer",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         url: "/og/portfolio-og.svg",
         width: 1200,
         height: 630,
-        alt: `${personName} — ${personTitle}`,
+        alt: `${personName}, ${personTitle}`,
       },
     ],
     locale: "en_US",
@@ -134,7 +134,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   const profilePageJsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    name: `${personName} — Software Engineer Portfolio`,
+    name: `${personName} Software Engineer Portfolio`,
     url: siteUrl,
     mainEntity: {
       "@type": "Person",

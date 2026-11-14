@@ -97,7 +97,7 @@ export default function ContactPage() {
         </div>
         <h1 className="-rotate-1 font-handwriting text-5xl text-white sm:text-6xl">Get in Touch</h1>
         <p className="mt-3 max-w-xl text-slate-400 leading-relaxed">
-          Open to full-time remote roles, freelance backend and full-stack projects, and long-term engineering collaborations. Based in Kano, Nigeria — remote-first.
+          Open to remote roles, freelance projects, and long-term engineering work. Based in Kano, Nigeria, and available remotely.
         </p>
 
         {/* Primary CTA */}
