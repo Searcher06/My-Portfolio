@@ -401,94 +401,61 @@ export default function HomeClient() {
       <motion.section
         id="home"
         aria-label="Introduction"
-        className="mx-auto grid w-full max-w-7xl gap-8 px-4 pb-16 pt-28 sm:gap-10 sm:px-6 sm:pb-20 sm:pt-28 sm:min-h-[88vh] lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14 lg:min-h-[95vh] lg:px-8 lg:pt-32"
+        className="relative mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-7xl items-center justify-center px-4 pb-14 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8"
         variants={stagger}
         initial="hidden"
         animate="show"
       >
-        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "linear-gradient(rgba(96,165,250,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(96,165,250,0.35) 1px, transparent 1px)", backgroundSize: "52px 52px" }} />
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute -top-20 left-1/2 h-[30rem] w-[38rem] -translate-x-1/2 rounded-full bg-[#2563EB]/[0.08] blur-[120px]" />
+          <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
         </div>
-        <motion.div className="relative z-10 w-full space-y-6 lg:max-w-none" variants={fadeUp}>
-          <div className="space-y-5">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[10px] font-medium tracking-wide text-slate-400 sm:text-[11px]">
-              <span className="flex items-center gap-1.5 text-[#60A5FA]">
-                <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-[#60A5FA]" />
-                Available now
-              </span>
-              <span className="h-3 w-px bg-slate-700" aria-hidden="true" />
-              <span>Backend &amp; Full-stack</span>
-              <span className="h-3 w-px bg-slate-700" aria-hidden="true" />
-              <span>Remote</span>
+        <motion.article variants={fadeUp} className="profile-hero-card relative w-full max-w-[38rem] overflow-visible rounded-[2rem] border border-white/[0.12] bg-[#f7f5ef] text-slate-900 shadow-[0_35px_100px_-35px_rgba(0,0,0,0.75)]">
+          <div className="relative h-36 overflow-hidden rounded-t-[2rem] bg-[#182a49] sm:h-48">
+            <Image src="/me3.png" alt="Ahmad Ibrahim" fill priority sizes="(max-width: 640px) 100vw, 608px" className="object-cover object-[center_34%] opacity-75" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#10203a]/85 via-[#142c50]/15 to-[#10203a]/10" />
+            <span className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/25 px-3 py-1.5 text-[10px] font-semibold tracking-wide text-white backdrop-blur-md sm:right-6 sm:top-5 sm:text-xs">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" /> Available for remote roles
+            </span>
+            <div className="absolute bottom-0 left-6 translate-y-1/2 rounded-2xl bg-[#f7f5ef] p-1.5 shadow-lg sm:left-8">
+              <div className="relative h-[4.5rem] w-[4.5rem] overflow-hidden rounded-xl sm:h-24 sm:w-24">
+                <Image src="/me3.png" alt="Portrait of Ahmad Ibrahim" fill sizes="96px" className="object-cover object-top" />
+              </div>
             </div>
-            <h1 className="text-[2.6rem] font-extrabold leading-[1.04] tracking-[-0.02em] text-white xs:text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem]">
-              Turning ideas into{" "}
-              <span className="hero-gradient bg-gradient-to-r from-[#60A5FA] via-[#93C5FD] to-[#BFDBFE] bg-clip-text text-transparent" style={{ fontFamily: "Instrument Serif, Georgia, serif", fontStyle: "italic" }}>
-                products that hold.
-              </span>
-            </h1>
-            <p className="max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base lg:text-lg">
-              I&apos;m Ahmad Ibrahim — a software engineer building modern web applications and backend systems that stay reliable under real-world use.
-            </p>
           </div>
-          <motion.div className="flex w-full flex-col gap-3 xs:flex-row xs:flex-wrap" variants={fadeUp}>
-            <motion.div whileHover={reduceMotion ? undefined : { y: -2 }} className="w-full xs:w-auto">
-              <Link href="/projects" className="btn-primary inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold sm:text-base">
-                View Projects
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-              </Link>
-            </motion.div>
-            <motion.div whileHover={reduceMotion ? undefined : { y: -2 }} className="w-full xs:w-auto">
-              <a href="https://github.com/Searcher06" target="_blank" rel="noreferrer" className="btn-secondary inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold sm:text-base">
-                <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="" className="h-[1.05rem] w-[1.05rem] theme-icon-invert" loading="eager" />
-                GitHub
+          <div className="px-5 pb-6 pt-14 sm:px-8 sm:pb-8 sm:pt-16">
+            <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#2563EB]">Backend · Full-stack · Kano, Nigeria</p>
+                <h1 className="font-serif text-3xl tracking-tight text-slate-950 sm:text-4xl">Hey, I&apos;m Ahmad</h1>
+              </div>
+              <a href="mailto:ahmadibrahimsearcher@gmail.com" className="inline-flex items-center gap-1.5 rounded-full bg-[#2563EB] px-4 py-2.5 text-xs font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#1d4ed8] sm:text-sm">
+                Let&apos;s talk <span className="material-symbols-outlined text-[16px]">north_east</span>
               </a>
-            </motion.div>
-          </motion.div>
-          <div className="grid grid-cols-3 gap-3 pt-2 lg:hidden">
-            {[{ value: "7+", label: "Projects" }, { value: "35%", label: "Perf. gain" }, { value: "2022", label: "Started" }].map((s) => (
-              <div key={s.label} className="rounded-xl border border-white/[0.07] bg-white/[0.03] px-3 py-3 text-center">
-                <p className="text-base font-bold text-white sm:text-lg">{s.value}</p>
-                <p className="mt-0.5 text-[10px] text-slate-500 sm:text-xs">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Right: profile card */}
-        <motion.aside className="relative z-10 mx-auto mt-4 hidden w-full max-w-[34rem] lg:mx-0 lg:mt-0 lg:block lg:max-w-none" variants={fadeUp}>
-          <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-[#2563EB]/25 via-sky-500/12 to-transparent blur-xl" />
-          <div className="force-dark dark-surface relative rounded-[2rem] border border-white/[0.09] bg-gradient-to-br from-[#1a1a1f] via-[#141416] to-[#0f0f11] p-5 shadow-[0_32px_80px_-24px_rgba(0,0,0,0.6)] sm:p-7">
-            <div className="mb-6 flex items-center justify-between gap-3">
-              <div className="flex items-center gap-3">
-                <Image src="/ahmadlogo.png" alt="Ahmad Ibrahim logo" width={52} height={52} className="h-11 w-auto" />
-                <div>
-                  <p className="text-sm font-semibold text-white">Ahmad Ibrahim</p>
-                  <p className="text-xs text-slate-500">Backend-Focused Full-Stack Engineer</p>
-                </div>
-              </div>
-              <span className="rounded-full border border-sky-400/35 bg-blue-500/12 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-sky-200">Active</span>
             </div>
-            <div className="terminal-block space-y-3 rounded-2xl border border-white/[0.07] bg-black/40 p-4 font-mono text-xs sm:text-sm">
-              <div className="mb-3 flex items-center justify-between">
-                <div className="flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-red-500/50" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/50" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-green-500/50" />
-                </div>
-                <p className="text-[11px] text-slate-500">profile.ts</p>
-                <span className="rounded border border-[#93C5FD]/20 bg-[#93C5FD]/[0.07] px-1.5 py-0.5 text-[10px] text-[#BFDBFE]">v2026</span>
-              </div>
-              <p><span className="text-[#93C5FD]">name</span>: <span className="text-slate-200">&quot;Ahmad Ibrahim&quot;</span></p>
-              <p><span className="text-[#93C5FD]">role</span>: <span className="text-slate-200">&quot;Backend-Focused Full-Stack Engineer&quot;</span></p>
-              <p><span className="text-[#93C5FD]">focus</span>: <span className="text-slate-200">&quot;Trust systems, auth, APIs&quot;</span></p>
-              <p><span className="text-[#93C5FD]">core</span>: <span className="text-slate-200">[&quot;Node.js&quot;, &quot;PostgreSQL&quot;, &quot;React&quot;]</span></p>
-              <p><span className="text-[#93C5FD]">currently</span>: <span className="text-slate-200">&quot;Building Findora&quot;</span></p>
-              <p><span className="text-[#93C5FD]">style</span>: <span className="text-slate-200">&quot;Fast execution, high ownership&quot;</span></p>
-              <p><span className="text-[#93C5FD]">status</span>: <span className="text-sky-400">&quot;available_now&quot;</span></p>
+            <p className="max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
+              I build dependable web products and backend systems, with a focus on the details that make people trust the software they use.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {[
+                { label: "Projects", href: "#projects" },
+                { label: "About me", href: "#about" },
+                { label: "My experience", href: "#journey" },
+                { label: "GitHub", href: "https://github.com/Searcher06" },
+              ].map((item) => (
+                <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noreferrer" : undefined} className="inline-flex items-center rounded-full border border-slate-300/80 bg-white/75 px-3.5 py-2 text-xs font-semibold text-slate-700 transition hover:border-[#2563EB]/40 hover:bg-white hover:text-[#1d4ed8]">
+                  {item.label}
+                </a>
+              ))}
+            </div>
+            <div className="mt-6 flex items-center gap-2 border-t border-slate-300/70 pt-4 text-xs text-slate-500">
+              <span className="material-symbols-outlined text-[16px] text-[#2563EB]">terminal</span>
+              Currently building <span className="font-semibold text-slate-800">Findora</span>
+              <span className="ml-auto hidden font-mono text-[10px] text-slate-400 sm:inline">reliable by design</span>
             </div>
           </div>
-        </motion.aside>
+          <div className="pointer-events-none absolute -bottom-3 left-10 h-7 w-24 -rotate-3 bg-[#93C5FD]/70 shadow-sm" />
+        </motion.article>
       </motion.section>
 
       {/* ── Marquee strip ── */}
@@ -696,42 +663,43 @@ export default function HomeClient() {
 
       {/* ── Other projects ── */}
       <motion.section aria-label="Selected projects" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
-        <div className="flex items-end justify-between gap-3">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>Selected Projects</h2>
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-3 sm:mb-10">
+          <div>
+            <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#93C5FD]">A few things I&apos;ve worked on</p>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>Products built to solve real problems</h2>
+          </div>
           <Link href="/projects" className="text-sm font-semibold text-[#60A5FA] transition hover:text-[#BFDBFE]">View All Projects</Link>
         </div>
-        <motion.div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
-          {otherProjects.map((project) => (
-            <motion.article key={project.name} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -10, scale: 1.02 }} transition={{ type: "spring", stiffness: 220, damping: 18 }} className="dark-surface group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-[#161618]/90 p-4 transition hover:border-white/[0.14] hover:shadow-[0_20px_50px_-30px_rgba(0,0,0,0.5)] sm:p-5">
-              <div className="overflow-hidden rounded-xl bg-white">
-                <Image src={project.image} alt={`${project.name} — project preview`} width={1200} height={700} className="w-full h-auto transition duration-500 group-hover:scale-[1.02]" />
+        <motion.div className="divide-y divide-white/[0.12]" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+          {otherProjects.map((project, index) => (
+            <motion.article key={project.name} variants={cardReveal} className="grid gap-6 py-8 first:pt-0 last:pb-0 sm:gap-9 sm:py-12 lg:grid-cols-2 lg:items-center lg:gap-14">
+              <div className={`group relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                <div className="absolute -inset-2 rotate-1 rounded-[1.6rem] bg-[#f7f5ef] shadow-lg" />
+                <div className="relative overflow-hidden rounded-2xl border-[5px] border-[#f7f5ef] bg-white shadow-[0_18px_45px_-26px_rgba(0,0,0,0.7)]">
+                  <Image src={project.image} alt={`${project.name} — project preview`} width={1200} height={700} className="h-auto w-full transition duration-500 group-hover:scale-[1.015]" />
+                </div>
+                <span className="absolute -bottom-3 right-5 rounded-full bg-[#DBEAFE] px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#1d4ed8] shadow-sm">Selected work · 0{index + 1}</span>
               </div>
-              <h3 className="mt-4 text-base font-semibold text-white sm:text-lg">{project.name}</h3>
-              <p className="mt-3 text-sm text-slate-400"><span className="font-medium text-slate-200">Problem:</span> {truncateText(project.problem, 120)}</p>
-              <p className="mt-2 text-sm text-slate-400"><span className="font-medium text-slate-200">Solution:</span> {truncateText(project.solution, 130)}</p>
-              <div className="mt-4">
-                <p className="mb-2 text-xs uppercase tracking-[0.15em] text-slate-500">Tools Used</p>
-                <div className="flex flex-wrap gap-2">
+              <div className={`relative ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#93C5FD]">{index === 0 ? "School operations" : index === 1 ? "Education platform" : "AI career assistant"}</p>
+                <h3 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>{project.name}</h3>
+                <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-400 sm:text-base">
+                  <p><span className="font-semibold text-slate-200">The challenge</span><br />{truncateText(project.problem, 190)}</p>
+                  <p><span className="font-semibold text-slate-200">What I built</span><br />{truncateText(project.solution, 210)}</p>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2">
                   {project.tools.map((tool) => (
-                    <span key={tool.name} className="inline-flex items-center gap-1.5 rounded-full border border-[#93C5FD]/20 bg-[#2563EB]/[0.08] px-2.5 py-1 text-xs font-medium text-[#BFDBFE]">
-                      <img src={tool.iconUrl} alt={`${tool.name} logo`} width={14} height={14} className="h-3.5 w-3.5" loading="lazy" />
+                    <span key={tool.name} className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.1] bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-slate-300">
+                      <img src={tool.iconUrl} alt="" aria-hidden="true" width={14} height={14} className="h-3.5 w-3.5" loading="lazy" />
                       {tool.name}
                     </span>
                   ))}
                 </div>
-              </div>
-              <div className="mt-auto border-t border-white/[0.07] pt-4">
-                <div className={`grid gap-2 ${project.liveUrl ? "grid-cols-[1fr_auto]" : "grid-cols-1"}`}>
-                  <Link href={project.href} className="group/details inline-flex h-11 items-center justify-center gap-1.5 rounded-xl border border-white/[0.09] bg-white/[0.04] px-4 text-sm font-semibold text-slate-200 transition hover:border-white/[0.18] hover:bg-white/[0.08] hover:text-white">
-                    View details
-                    <span className="material-symbols-outlined text-[15px] transition-transform group-hover/details:translate-x-0.5">arrow_forward</span>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link href={project.href} className="inline-flex items-center gap-1.5 rounded-full bg-[#f7f5ef] px-5 py-2.5 text-sm font-bold text-slate-900 transition hover:bg-white">
+                    Read the case study <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                   </Link>
-                  {project.liveUrl && (
-                    <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="group/live inline-flex h-11 items-center justify-center gap-1.5 rounded-xl bg-white px-4 text-sm font-bold text-[#06101F] shadow-[0_14px_32px_-18px_rgba(255,255,255,0.85),0_10px_26px_-20px_rgba(56,189,248,0.9)] transition hover:bg-[#DBEAFE]">
-                      Live site
-                      <span className="material-symbols-outlined text-[15px] transition-transform group-hover/live:-translate-y-0.5 group-hover/live:translate-x-0.5">north_east</span>
-                    </Link>
-                  )}
+                  {project.liveUrl && <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 px-2 py-2.5 text-sm font-semibold text-[#93C5FD] transition hover:text-white">Visit live site <span className="material-symbols-outlined text-[16px]">north_east</span></Link>}
                 </div>
               </div>
             </motion.article>
@@ -994,37 +962,31 @@ export default function HomeClient() {
       <motion.section id="about" aria-label="About Ahmad Ibrahim" className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Who I am</p>
         <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">About Me</h2>
-        <div className="mt-8 grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:gap-16">
+        <div className="about-paper relative mt-8 rounded-[1.5rem] border border-[#e7e1d4] bg-[#f7f5ef] p-5 shadow-[0_24px_70px_-38px_rgba(0,0,0,0.7)] sm:p-8 lg:p-10">
+          <span className="pointer-events-none absolute -top-3 left-1/2 h-7 w-24 -translate-x-1/2 -rotate-2 bg-[#93C5FD]/70 shadow-sm" />
+          <div className="grid gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-12">
           {/* Photo side */}
-          <div className="relative mx-auto flex w-full max-w-[280px] items-center justify-center sm:max-w-[320px] lg:mx-0 lg:max-w-none">
-            <div className="absolute h-[88%] w-[88%] animate-spin-slow rounded-full border-2 border-dashed border-[#2563EB]/40" />
-            <div className="absolute h-[78%] w-[78%] rounded-full bg-gradient-to-br from-[#2563EB]/20 via-[#38BDF8]/10 to-transparent blur-2xl" />
-            <div className="relative z-10 h-[72%] w-[72%] overflow-hidden rounded-full ring-2 ring-[#2563EB]/30 ring-offset-4 ring-offset-transparent">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#1e3a8a]/60 to-[#0c1a3a]/80" />
-              <Image src="/me3.png" alt="Ahmad Ibrahim — Backend-Focused Full-Stack Engineer" width={447} height={558} className="relative z-10 h-full w-full object-cover object-top" priority />
+          <div className="relative mx-auto w-full max-w-[300px] rotate-[-2deg] rounded-sm border border-slate-200 bg-white p-3 pb-12 shadow-[0_16px_38px_-18px_rgba(15,23,42,0.35)] transition-transform duration-300 hover:rotate-0 sm:max-w-[340px]">
+            <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <Image src="/me3.png" alt="Ahmad Ibrahim — Backend-Focused Full-Stack Engineer" fill sizes="(max-width: 640px) 280px, 340px" className="object-cover object-top" />
             </div>
-            <div className="about-chip absolute right-0 top-4 z-20 flex items-center gap-2 rounded-2xl border border-white/[0.1] bg-white/[0.07] px-3 py-2 shadow-lg backdrop-blur-md">
-              <span className="flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.8)]" />
-              <span className="text-xs font-semibold text-white">Available for work</span>
-            </div>
-            <div className="about-chip absolute bottom-4 left-0 z-20 flex items-center gap-2 rounded-2xl border border-white/[0.1] bg-white/[0.07] px-3 py-2 shadow-lg backdrop-blur-md">
-              <span className="material-symbols-outlined text-[14px] text-[#60A5FA]">code</span>
-              <span className="text-xs font-semibold text-white">Backend Engineer</span>
-            </div>
+            <p className="absolute inset-x-0 bottom-3 text-center font-serif text-lg italic text-slate-500">Ahmad Ibrahim · Kano</p>
+            <span className="absolute -top-3 left-1/2 h-7 w-20 -translate-x-1/2 rotate-3 bg-[#93C5FD]/70 shadow-sm" />
           </div>
           {/* Text side */}
-          <div className="flex flex-col justify-center space-y-5 text-sm leading-relaxed text-slate-400 sm:text-base">
-            <p className="text-lg font-bold leading-snug text-white sm:text-xl lg:text-2xl" style={{ fontFamily: "Instrument Serif, Georgia, serif", fontStyle: "italic" }}>Building software that does what it promises.</p>
+          <div className="flex flex-col justify-center space-y-5 text-sm leading-relaxed text-slate-600 sm:text-base">
+            <p className="text-2xl font-bold leading-snug text-slate-950 sm:text-3xl" style={{ fontFamily: "Instrument Serif, Georgia, serif", fontStyle: "italic" }}>Building software that does what it promises.</p>
             <p>I&apos;m Ahmad Ibrahim, a BSc Software Engineering student and full-stack developer focused on building reliable web applications and backend systems. I enjoy turning ideas into scalable products designed to solve real problems, stay maintainable, and hold up under real-world use.</p>
             <p>Currently exploring AI-powered product experiences, scalable system design, and backend performance optimization.</p>
             <div className="grid grid-cols-3 gap-3 pt-2">
               {[{ value: "8+", label: "Projects" }, { value: "2022", label: "Started" }, { value: "3+", label: "Roles" }].map((s) => (
-                <div key={s.label} className="dark-surface rounded-xl border border-white/[0.07] bg-white/[0.03] px-3 py-3 text-center">
-                  <p className="text-lg font-bold text-white">{s.value}</p>
+                <div key={s.label} className="rounded-xl border border-slate-200 bg-white/80 px-3 py-3 text-center shadow-sm">
+                  <p className="text-lg font-bold text-slate-900">{s.value}</p>
                   <p className="mt-0.5 text-[11px] text-slate-500">{s.label}</p>
                 </div>
               ))}
             </div>
+          </div>
           </div>
         </div>
       </motion.section>
