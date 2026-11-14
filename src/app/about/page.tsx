@@ -81,7 +81,7 @@ export default function AboutPage() {
 
         {/* Bio */}
         <section className="mt-10 space-y-4 text-slate-300 leading-relaxed" aria-label="Biography">
-          <h2 className="text-xl font-bold text-white">Who I am</h2>
+          <h2 className="-rotate-1 font-handwriting text-3xl text-slate-200">Who I am</h2>
           <p>
             I&apos;m a BSc Software Engineering student and full-stack developer focused on building reliable web applications and backend systems. I enjoy turning ideas into scalable products that solve real problems, stay maintainable, and hold up under real-world conditions.
           </p>
@@ -95,7 +95,7 @@ export default function AboutPage() {
 
         {/* Skills */}
         <section className="mt-10" aria-label="Technical skills">
-          <h2 className="text-xl font-bold text-white mb-5">Technical Skills</h2>
+          <h2 className="mb-5 -rotate-1 font-handwriting text-3xl text-slate-200">Technical Skills</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {skills.map((group) => (
               <div key={group.label} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4">
@@ -114,7 +114,7 @@ export default function AboutPage() {
 
         {/* Education */}
         <section className="mt-10" aria-label="Education">
-          <h2 className="text-xl font-bold text-white mb-5">Education</h2>
+          <h2 className="mb-5 -rotate-1 font-handwriting text-3xl text-slate-200">Education</h2>
           <div className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-5">
             <p className="font-semibold text-white">BSc Software Engineering</p>
             <p className="mt-1 text-sm text-[#60A5FA]">Bayero University Kano (BUK)</p>

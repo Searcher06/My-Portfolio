@@ -292,14 +292,14 @@ export default function HomeClient() {
 
       {/* ── Navigation ── */}
       <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-3 sm:px-6 lg:px-8">
-        <nav className={`mx-auto flex h-[4.25rem] w-full max-w-7xl items-center justify-between rounded-2xl border px-5 backdrop-blur-2xl transition-all duration-500 sm:h-[4.25rem] sm:px-7 ${
+        <nav className={`mx-auto flex h-[3.75rem] w-full max-w-7xl items-center justify-between rounded-2xl border px-3 backdrop-blur-2xl transition-all duration-500 sm:h-[4.25rem] sm:px-7 ${
           scrolled
             ? "border-white/[0.08] bg-[#0c0c0e]/80 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.05)]"
             : "border-transparent bg-[#0c0c0e]/30 shadow-none"
         }`}>
-          <a href="#home" className="inline-flex items-center gap-3 shrink-0">
-            <Image src="/ahmadlogo.png" alt="Ahmad Ibrahim logo" width={44} height={44} className="h-9 w-auto sm:h-10" />
-            <span className="text-sm font-semibold text-white sm:text-[0.9375rem]">Ahmad Ibrahim</span>
+          <a href="#home" className="inline-flex shrink-0 items-center gap-2 sm:gap-3">
+            <Image src="/ahmadlogo.png" alt="Ahmad Ibrahim logo" width={44} height={44} className="h-8 w-auto sm:h-10" />
+            <span className="text-xs font-semibold text-white sm:text-[0.9375rem]">Ahmad Ibrahim</span>
           </a>
           <ul className="hidden items-center gap-0.5 lg:flex">
             {navItems.map((item) => (
@@ -311,7 +311,7 @@ export default function HomeClient() {
               </li>
             ))}
           </ul>
-          <div className="flex items-center gap-2.5 shrink-0">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2.5">
             <a href="#contact" className="hidden items-center gap-1.5 rounded-xl bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/[0.11] hover:text-white lg:inline-flex">
               Hire Me
               <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
@@ -352,7 +352,7 @@ export default function HomeClient() {
               onClick={() => setMobileNavOpen(false)}
             />
             <motion.div
-              className="mobile-nav-panel fixed inset-x-4 top-[4.5rem] z-50 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111113]/96 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.85),0_0_0_1px_rgba(255,255,255,0.06)] backdrop-blur-2xl sm:inset-x-6 lg:hidden"
+              className="mobile-nav-panel fixed inset-x-3 top-[5.25rem] z-50 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111113]/96 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.85),0_0_0_1px_rgba(255,255,255,0.06)] backdrop-blur-2xl sm:inset-x-6 lg:hidden"
               initial={{ opacity: 0, y: -10, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 300, damping: 28 } }}
               exit={{ opacity: 0, y: -8, scale: 0.97, transition: { duration: 0.16 } }}
@@ -401,7 +401,7 @@ export default function HomeClient() {
       <motion.section
         id="home"
         aria-label="Introduction"
-        className="relative mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-7xl items-center justify-center px-4 pb-14 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8"
+        className="relative mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-7xl items-start justify-center px-4 pb-14 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pt-36"
         variants={stagger}
         initial="hidden"
         animate="show"
@@ -410,16 +410,19 @@ export default function HomeClient() {
           <div className="absolute -top-20 left-1/2 h-[30rem] w-[38rem] -translate-x-1/2 rounded-full bg-[#2563EB]/[0.08] blur-[120px]" />
           <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
         </div>
-        <motion.article variants={fadeUp} className="profile-hero-card relative w-full max-w-[38rem] overflow-visible rounded-[2rem] border border-white/[0.12] bg-[#f7f5ef] text-slate-900 shadow-[0_35px_100px_-35px_rgba(0,0,0,0.75)]">
-          <div className="relative h-36 overflow-hidden rounded-t-[2rem] bg-[#182a49] sm:h-48">
-            <Image src="/me3.png" alt="Ahmad Ibrahim" fill priority sizes="(max-width: 640px) 100vw, 608px" className="object-cover object-[center_34%] opacity-75" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#10203a]/85 via-[#142c50]/15 to-[#10203a]/10" />
-            <span className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/25 px-3 py-1.5 text-[10px] font-semibold tracking-wide text-white backdrop-blur-md sm:right-6 sm:top-5 sm:text-xs">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" /> Available for remote roles
-            </span>
+        <motion.article variants={fadeUp} className="profile-hero-card relative w-full max-w-[38rem] overflow-visible rounded-[2rem] border border-white/[0.12] bg-[#f7f5ef] text-slate-900 shadow-[0_35px_100px_-35px_rgba(0,0,0,0.75)] lg:max-w-[44rem]">
+          <div className="relative h-32 sm:h-44 lg:h-52">
+            <div className="absolute inset-0 overflow-hidden rounded-t-[2rem] bg-[#182a49]">
+              <Image src="/me3.png" alt="Ahmad Ibrahim" fill priority sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 608px, 792px" className="object-cover object-[center_34%] opacity-75" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#10203a]/85 via-[#142c50]/15 to-[#10203a]/10" />
+              <span className="force-dark absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/25 bg-[#0c1628]/75 px-3 py-1.5 text-[10px] font-semibold tracking-wide backdrop-blur-md sm:right-6 sm:top-5 sm:text-xs">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+                <span className="text-white">Available for remote roles</span>
+              </span>
+            </div>
             <div className="absolute bottom-0 left-6 translate-y-1/2 rounded-2xl bg-[#f7f5ef] p-1.5 shadow-lg sm:left-8">
               <div className="relative h-[4.5rem] w-[4.5rem] overflow-hidden rounded-xl sm:h-24 sm:w-24">
-                <Image src="/me3.png" alt="Portrait of Ahmad Ibrahim" fill sizes="96px" className="object-cover object-top" />
+                <Image src="/me3.png" alt="Portrait of Ahmad Ibrahim" fill sizes="96px" className="object-cover object-[center_20%]" />
               </div>
             </div>
           </div>
@@ -433,7 +436,7 @@ export default function HomeClient() {
                 Let&apos;s talk <span className="material-symbols-outlined text-[16px]">north_east</span>
               </a>
             </div>
-            <p className="max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
+            <p className="max-w-xl text-sm leading-relaxed text-[#475569] sm:text-base">
               I build dependable web products and backend systems, with a focus on the details that make people trust the software they use.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
@@ -666,7 +669,7 @@ export default function HomeClient() {
         <div className="mb-8 flex flex-wrap items-end justify-between gap-3 sm:mb-10">
           <div>
             <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#93C5FD]">A few things I&apos;ve worked on</p>
-            <h2 className="text-3xl font-bold text-white sm:text-4xl" style={{ fontFamily: "Instrument Serif, Georgia, serif" }}>Products built to solve real problems</h2>
+            <h2 className="-rotate-1 font-handwriting text-3xl leading-[1.1] text-slate-200 sm:text-4xl lg:text-5xl">Products built to solve real problems</h2>
           </div>
           <Link href="/projects" className="text-sm font-semibold text-[#60A5FA] transition hover:text-[#BFDBFE]">View All Projects</Link>
         </div>
@@ -710,7 +713,7 @@ export default function HomeClient() {
       {/* ── Services ── */}
       <motion.section id="services" aria-label="Services and expertise" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <div className="flex flex-wrap items-end justify-between gap-3">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">Services &amp; Expertise</h2>
+          <h2 className="-rotate-1 font-handwriting text-3xl leading-[1.1] text-slate-200 sm:text-4xl lg:text-5xl">Services &amp; Expertise</h2>
           <p className="text-sm text-slate-500">What I can help your team build.</p>
         </div>
         <motion.div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
@@ -794,7 +797,7 @@ export default function HomeClient() {
           <div className="relative mb-8 flex items-center gap-4">
             <div>
               <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#93C5FD]">What I&apos;m into right now</p>
-              <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">Currently Exploring</h2>
+              <h2 className="mt-1 -rotate-1 font-handwriting text-3xl leading-[1.1] text-slate-200 sm:text-4xl lg:text-5xl">Currently Exploring</h2>
             </div>
             <div className="ml-2 hidden h-px flex-1 bg-gradient-to-r from-[#2563EB]/30 to-transparent sm:block" />
           </div>
@@ -846,7 +849,7 @@ export default function HomeClient() {
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#93C5FD]">Core Stack</p>
-            <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">Built across the whole stack.</h2>
+            <h2 className="mt-1 -rotate-1 font-handwriting text-3xl leading-[1.1] text-slate-200 sm:text-4xl lg:text-5xl">Built across the whole stack.</h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-slate-400">
             Structured engineering across frontend, backend, databases, and DevOps tools to deliver resilient and scalable systems.
@@ -903,7 +906,7 @@ export default function HomeClient() {
       <motion.section id="journey" aria-label="Work experience" className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
         <div className="mb-10 sm:mb-14">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Career</p>
-          <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">Work Experience</h2>
+          <h2 className="mt-1 -rotate-1 font-handwriting text-3xl leading-[1.1] text-slate-200 sm:text-4xl lg:text-5xl">Work Experience</h2>
         </div>
         <motion.div className="relative space-y-0" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.08 }}>
           <div className="experience-rail absolute left-0 top-2 hidden h-[calc(100%-2rem)] w-px bg-gradient-to-b from-[#2563EB]/70 via-[#2563EB]/30 to-transparent sm:block" />
@@ -961,7 +964,7 @@ export default function HomeClient() {
       {/* ── About ── */}
       <motion.section id="about" aria-label="About Ahmad Ibrahim" className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Who I am</p>
-        <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">About Me</h2>
+        <h2 className="mt-1 -rotate-1 font-handwriting text-3xl leading-[1.1] text-slate-200 sm:text-4xl lg:text-5xl">About Me</h2>
         <div className="about-paper relative mt-8 rounded-[1.5rem] border border-[#e7e1d4] bg-[#f7f5ef] p-5 shadow-[0_24px_70px_-38px_rgba(0,0,0,0.7)] sm:p-8 lg:p-10">
           <span className="pointer-events-none absolute -top-3 left-1/2 h-7 w-24 -translate-x-1/2 -rotate-2 bg-[#93C5FD]/70 shadow-sm" />
           <div className="grid gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-12">

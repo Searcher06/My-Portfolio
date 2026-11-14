@@ -95,7 +95,7 @@ export default function ContactPage() {
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
           <span className="text-xs font-semibold text-emerald-400">Available for work</span>
         </div>
-        <h1 className="text-3xl font-bold text-white sm:text-4xl">Get in Touch</h1>
+        <h1 className="-rotate-1 font-handwriting text-5xl text-white sm:text-6xl">Get in Touch</h1>
         <p className="mt-3 max-w-xl text-slate-400 leading-relaxed">
           Open to full-time remote roles, freelance backend and full-stack projects, and long-term engineering collaborations. Based in Kano, Nigeria — remote-first.
         </p>
