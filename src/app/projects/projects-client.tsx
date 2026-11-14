@@ -228,7 +228,7 @@ export default function ProjectsClientPage() {
 
           {/* Logo */}
           <Link href="/" className="inline-flex shrink-0 items-center gap-3">
-            <Image src="/ahmadlogo.png" alt="Ahmad logo" width={44} height={44} className="h-9 w-auto sm:h-10" />
+            <Image src="/ahmad-mark.svg" alt="Ahmad Ibrahim logo" width={44} height={44} className="h-9 w-9 sm:h-10 sm:w-10" />
             <span className="hidden text-sm font-semibold text-white sm:block sm:text-[0.9375rem]">Ahmad Ibrahim</span>
           </Link>
 

@@ -35,13 +35,6 @@ const credibilityPoints = [
   "Code the next dev can actually trust",
 ];
 
-const quickStats = [
-  { label: "Projects Built", value: "8", trend: "+4 this year" },
-  { label: "Workflows Improved", value: "3", trend: "Across different product types" },
-  { label: "Performance Gain", value: "35%", trend: "Faster app experience for users" },
-  { label: "Current Focus", value: "Findora", trend: "A trust-first product for real communities" },
-];
-
 const findoraFeatures = [
   "Post lost or found items with photos and searchable details",
   "Chat with claimants and verify returns with a handover code",
@@ -297,7 +290,7 @@ export default function HomeClient() {
             : "border-transparent bg-[#0c0c0e]/30 shadow-none"
         }`}>
           <a href="#home" className="inline-flex shrink-0 items-center gap-2 sm:gap-3">
-            <Image src="/ahmadlogo.png" alt="Ahmad Ibrahim logo" width={44} height={44} className="h-8 w-auto sm:h-10" />
+            <Image src="/ahmad-mark.svg" alt="Ahmad Ibrahim logo" width={44} height={44} className="h-8 w-8 sm:h-10 sm:w-10" />
             <span className="text-xs font-semibold text-white sm:text-[0.9375rem]">Ahmad Ibrahim</span>
           </a>
           <ul className="hidden items-center gap-0.5 lg:flex">
@@ -511,39 +504,11 @@ export default function HomeClient() {
         </div>
       </motion.section>
 
-      {/* ── Quick stats ── */}
-      <motion.section id="projects" aria-label="Key statistics" className="mx-auto w-full max-w-7xl px-4 pt-16 pb-0 sm:px-6 sm:pt-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
-        <motion.div className="grid grid-cols-2 gap-3 lg:grid-cols-4" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
-          {/* Wide accent card */}
-          <motion.article variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 240, damping: 16 }}
-            className="dark-surface col-span-2 flex flex-col justify-between rounded-2xl border border-[#2563EB]/25 bg-gradient-to-br from-[#2563EB]/[0.12] via-[#2563EB]/[0.06] to-transparent p-5 sm:p-6">
-            <p className="text-[10px] uppercase tracking-[0.14em] text-[#60A5FA] sm:text-xs">{quickStats[0].label}</p>
-            <p className="mt-2 text-4xl font-black text-white sm:text-5xl">{quickStats[0].value}</p>
-            <p className="mt-1.5 text-xs text-[#93C5FD]/70">{quickStats[0].trend}</p>
-          </motion.article>
-          {/* Two regular cards */}
-          {quickStats.slice(1, 3).map((stat) => (
-            <motion.article key={stat.label} variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 240, damping: 16 }}
-              className="dark-surface flex flex-col justify-between rounded-2xl border border-white/[0.07] bg-[#161618]/90 p-4 sm:p-5 transition hover:border-white/[0.14]">
-              <p className="text-[10px] uppercase tracking-[0.14em] text-[#93C5FD] sm:text-xs">{stat.label}</p>
-              <p className="mt-1.5 text-2xl font-bold text-white sm:mt-2 sm:text-3xl">{stat.value}</p>
-              <p className="mt-1 text-[10px] text-slate-500 sm:text-xs">{stat.trend}</p>
-            </motion.article>
-          ))}
-          {/* Bottom wide card */}
-          <motion.article variants={cardReveal} whileHover={reduceMotion ? undefined : { y: -8, scale: 1.02 }} transition={{ type: "spring", stiffness: 240, damping: 16 }}
-            className="dark-surface col-span-2 flex flex-col justify-between rounded-2xl border border-[#38BDF8]/20 bg-gradient-to-br from-[#38BDF8]/[0.08] via-[#2563EB]/[0.05] to-transparent p-5 sm:p-6">
-            <p className="text-[10px] uppercase tracking-[0.14em] text-[#38BDF8] sm:text-xs">{quickStats[3].label}</p>
-            <p className="mt-2 text-2xl font-bold text-white sm:text-3xl">{quickStats[3].value}</p>
-            <p className="mt-1.5 text-xs text-[#93C5FD]/70">{quickStats[3].trend}</p>
-          </motion.article>
-        </motion.div>
-      </motion.section>
-
       {/* ── Featured project: Findora ── */}
       <motion.section
+        id="projects"
         aria-label="Featured project: Findora"
-        className="mx-auto w-full max-w-7xl px-4 pt-10 pb-16 sm:px-6 sm:pt-12 sm:pb-24 lg:px-8 lg:pb-32"
+        className="mx-auto w-full max-w-7xl px-4 pt-12 pb-16 sm:px-6 sm:pt-16 sm:pb-24 lg:px-8 lg:pb-32"
         variants={sectionReveal}
         initial="hidden"
         whileInView="show"

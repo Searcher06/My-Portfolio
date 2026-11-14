@@ -52,7 +52,7 @@ export function Footer() {
           {/* Brand column */}
           <div className="space-y-5">
             <Link href="/#home" className="inline-flex items-center gap-3">
-              <Image src="/ahmadlogo.png" alt="Ahmad logo" width={44} height={44} className="h-10 w-auto" />
+              <Image src="/ahmad-mark.svg" alt="Ahmad Ibrahim logo" width={44} height={44} className="h-10 w-10" />
               <span className="text-base font-semibold text-white">Ahmad Ibrahim</span>
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-slate-500">

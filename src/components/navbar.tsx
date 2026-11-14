@@ -38,7 +38,7 @@ export function Navbar() {
             className="group relative flex items-center gap-3"
             aria-label="Home - Alex Morgan Portfolio"
           >
-            <Image src="/ahmadlogo.png" alt="Ahmad logo" width={48} height={48} className="h-10 w-auto sm:h-12" />
+            <Image src="/ahmad-mark.svg" alt="Ahmad Ibrahim logo" width={48} height={48} className="h-10 w-10 sm:h-12 sm:w-12" />
             <div className="flex flex-col">
               <span className="font-display font-bold text-base sm:text-lg text-[#f0f2f5] tracking-tight">Alex Morgan</span>
               <span className="text-[10px] sm:text-xs text-[#6366F1] font-semibold tracking-[0.15em] uppercase">Senior Full-Stack Engineer</span>

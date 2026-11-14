@@ -14,9 +14,9 @@ const sameAsLinks = [
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   icons: {
-    icon: "/ahmadlogo.png",
-    shortcut: "/ahmadlogo.png",
-    apple: "/ahmadlogo.png",
+    icon: "/ahmad-mark.svg",
+    shortcut: "/ahmad-mark.svg",
+    apple: "/ahmad-mark.svg",
   },
   title: {
     default: `${personName} | ${personTitle}`,
