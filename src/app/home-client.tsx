@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import ThemeToggle from "@/components/ThemeToggle";
 
 type Tool = {
   name: string;
@@ -226,6 +225,7 @@ export default function HomeClient() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const reduceMotion = useReducedMotion();
+  const [typedRole, setTypedRole] = useState("");
 
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [sendingForm, setSendingForm] = useState(false);
@@ -256,6 +256,40 @@ export default function HomeClient() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const roles = ["Backend Engineer", "Full-Stack Developer", "API Builder"];
+    if (reduceMotion) {
+      setTypedRole(roles[0]);
+      return;
+    }
+
+    let roleIndex = 0;
+    let characterIndex = 0;
+    let deleting = false;
+    let timer: ReturnType<typeof setTimeout>;
+
+    const typeNextCharacter = () => {
+      const role = roles[roleIndex];
+      characterIndex += deleting ? -1 : 1;
+      setTypedRole(role.slice(0, characterIndex));
+
+      let delay = deleting ? 42 : 82;
+      if (!deleting && characterIndex === role.length) {
+        deleting = true;
+        delay = 1400;
+      } else if (deleting && characterIndex === 0) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        delay = 280;
+      }
+
+      timer = setTimeout(typeNextCharacter, delay);
+    };
+
+    timer = setTimeout(typeNextCharacter, 250);
+    return () => clearTimeout(timer);
+  }, [reduceMotion]);
 
   const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -308,7 +342,9 @@ export default function HomeClient() {
               Hire Me
               <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
             </a>
-            <ThemeToggle />
+            <a href="https://github.com/Searcher06" target="_blank" rel="noreferrer" aria-label="Ahmad Ibrahim on GitHub" className="nav-icon-btn inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.04] text-slate-300 transition-colors hover:border-white/[0.14] hover:bg-white/[0.07] hover:text-white">
+              <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="" aria-hidden="true" className="h-[18px] w-[18px]" />
+            </a>
             <button
               type="button"
               onClick={() => setMobileNavOpen((prev) => !prev)}
@@ -421,7 +457,13 @@ export default function HomeClient() {
           <div className="px-5 pb-6 pt-14 sm:px-8 sm:pb-8 sm:pt-16">
             <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
               <div>
-                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#2563EB]">Backend · Full-stack · Kano, Nigeria</p>
+                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#2563EB]">
+                  <span className="sr-only">Backend Engineer, Full-Stack Developer, API Builder. </span>
+                  <span aria-hidden="true" className="inline-flex min-h-[1.25rem] items-center">
+                    {typedRole}<span className="ml-0.5 h-4 w-px animate-pulse bg-[#2563EB]" />
+                  </span>
+                  <span aria-hidden="true"> · Kano, Nigeria</span>
+                </p>
                 <h1 className="font-serif text-3xl tracking-tight text-slate-950 sm:text-4xl">Hey, I&apos;m Ahmad</h1>
               </div>
               <a href="mailto:ahmadibrahimsearcher@gmail.com" className="inline-flex items-center gap-1.5 rounded-full bg-[#2563EB] px-4 py-2.5 text-xs font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#1d4ed8] sm:text-sm">

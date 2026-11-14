@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import ThemeToggle from "@/components/ThemeToggle";
 
 type ProjectDetail = {
   name: string;
@@ -216,39 +215,41 @@ export default function ProjectsClientPage() {
   };
 
   return (
-    <main className="relative overflow-hidden pb-20">
+    <main className="relative overflow-hidden bg-[#f5f3ee] pb-20 text-[#172033]">
 
       {/* ── Navigation ── */}
       <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-3 sm:px-6 lg:px-8">
         <nav className={`mx-auto flex h-[3.75rem] w-full max-w-7xl items-center justify-between rounded-2xl border px-4 backdrop-blur-2xl transition-all duration-500 sm:h-[4.25rem] sm:px-7 ${
           scrolled
-            ? "border-white/[0.1] bg-[#0c0c0e]/95 shadow-[0_8px_32px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.06)]"
-            : "border-white/[0.06] bg-[#0c0c0e]/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
+            ? "border-[#e6e2da] bg-[#fbfaf7]/95 shadow-[0_8px_32px_rgba(25,35,55,0.1)]"
+            : "border-white/80 bg-[#fbfaf7]/85 shadow-[0_2px_16px_rgba(25,35,55,0.06)]"
         }`}>
 
           {/* Logo */}
           <Link href="/" className="inline-flex shrink-0 items-center gap-3">
             <Image src="/ahmad-mark.svg" alt="Ahmad Ibrahim logo" width={44} height={44} className="h-9 w-9 sm:h-10 sm:w-10" />
-            <span className="hidden text-sm font-semibold text-white sm:block sm:text-[0.9375rem]">Ahmad Ibrahim</span>
+            <span className="hidden text-sm font-semibold text-[#172033] sm:block sm:text-[0.9375rem]">Ahmad Ibrahim</span>
           </Link>
 
           {/* Right side */}
           <div className="flex shrink-0 items-center gap-2">
             <Link
               href="/"
-              className="nav-icon-btn inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.04] text-slate-300 transition-all hover:border-white/[0.14] hover:bg-white/[0.07] hover:text-white sm:h-auto sm:w-auto sm:gap-1.5 sm:rounded-xl sm:px-4 sm:py-2"
+              className="nav-icon-btn inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e2dc] bg-white text-slate-600 transition-all hover:border-[#bfdbfe] hover:text-[#2563eb] sm:h-auto sm:w-auto sm:gap-1.5 sm:rounded-xl sm:px-4 sm:py-2"
             >
               <span className="material-symbols-outlined text-[15px]">arrow_back</span>
               <span className="hidden text-xs font-semibold sm:block sm:text-sm">Home</span>
             </Link>
             <Link
               href="/contact"
-              className="hidden items-center gap-1.5 rounded-xl border border-[#3B82F6] bg-[#2563EB]/10 px-4 py-2 text-sm font-semibold text-[#3B82F6] transition-all hover:border-[#2563EB] hover:bg-[#2563EB] hover:text-white hover:shadow-[0_4px_20px_rgba(37,99,235,0.5)] sm:inline-flex"
+              className="hidden items-center gap-1.5 rounded-xl border border-[#2563eb] bg-[#2563eb] px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-[#1d4ed8] sm:inline-flex"
             >
               Hire Me
               <span className="material-symbols-outlined text-[15px]">arrow_forward</span>
             </Link>
-            <ThemeToggle />
+            <a href="https://github.com/Searcher06" target="_blank" rel="noreferrer" aria-label="Ahmad Ibrahim on GitHub" className="nav-icon-btn inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e2dc] bg-white text-[#536176] transition-colors hover:border-[#bfdbfe] hover:text-[#2563eb]">
+              <img src="https://cdn.simpleicons.org/github/536176" alt="" aria-hidden="true" className="h-[18px] w-[18px]" />
+            </a>
           </div>
         </nav>
       </header>
@@ -265,152 +266,100 @@ export default function ProjectsClientPage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="dark-surface relative overflow-hidden rounded-3xl border border-white/[0.07] bg-gradient-to-b from-[#1a1a1f] via-[#141416] to-[#111113] p-5 sm:p-8 lg:p-10"
+          className="relative overflow-hidden rounded-[2rem] border border-[#e8e4dc] bg-[#fbfaf7] p-6 shadow-[0_12px_36px_rgba(28,39,59,0.07)] sm:p-9 lg:p-12"
         >
-          <div className="pointer-events-none absolute -right-20 -top-16 h-52 w-52 rounded-full bg-white/[0.02] blur-3xl" />
-          <div className="pointer-events-none absolute -left-20 bottom-0 h-44 w-44 rounded-full bg-white/[0.015] blur-3xl" />
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Project Portfolio</p>
-          <h1 className="mt-3 text-2xl font-bold text-white sm:text-4xl lg:text-5xl">Detailed Project Breakdowns</h1>
-          <p className="mt-3 max-w-3xl text-sm text-slate-400 sm:text-base">
-            A deeper look at how I approach complex product challenges, design resilient systems, and deliver business-ready outcomes.
+          <div className="pointer-events-none absolute -right-20 -top-16 h-52 w-52 rounded-full bg-[#2563eb]/[0.06] blur-3xl" />
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#2563eb]">Selected work / Product &amp; engineering</p>
+          <h1 className="mt-3 -rotate-1 font-handwriting text-5xl font-semibold leading-none tracking-tight text-[#172033] sm:text-6xl lg:text-7xl">Projects, up close.</h1>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#68758a] sm:text-base">
+            A closer look at the problems behind each product, the systems I built, and the details that made the work matter.
           </p>
         </motion.section>
 
-        {/* ── Projects grid ── */}
-        <div className="mt-8 grid gap-4 lg:grid-cols-2">
+        {/* Projects, presented as alternating case studies */}
+        <div className="mt-8 divide-y divide-[#dedbd4]">
           {projects.map((project, index) => {
             const projectId = toProjectId(project.name);
             const isHighlighted = highlightedProjectId === projectId;
-            const slideX = rm ? 0 : index === 0 ? 0 : (index - 1) % 2 === 0 ? -52 : 52;
-            const slideY = rm ? 0 : index === 0 ? 52 : 20;
+            const imageFirst = index % 2 === 1;
             return (
               <motion.article
                 key={project.name}
                 id={projectId}
-                initial={{ opacity: 0, x: slideX, y: slideY }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: rm ? 0 : 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.06 }}
-                transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: index === 0 ? 0 : (index - 1) * 0.08 }}
-                whileHover={rm ? undefined : { y: -6, scale: 1.012, transition: { type: "spring", stiffness: 260, damping: 22 } }}
-                className={`dark-surface group relative scroll-mt-28 flex h-full flex-col overflow-hidden rounded-2xl border bg-gradient-to-br from-[#1c1c22] via-[#161618] to-[#131315] p-4 transition-all duration-300 sm:p-5 ${
+                transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                className={`scroll-mt-28 grid grid-cols-1 items-start gap-8 py-9 first:pt-2 last:pb-2 sm:py-12 lg:grid-cols-2 lg:gap-14 ${
                   isHighlighted
-                    ? "border-[#60A5FA]/80 shadow-[0_0_0_1px_rgba(96,165,250,0.45),0_0_40px_-14px_rgba(96,165,250,0.9)]"
-                    : "border-[#BFDBFE]/10 hover:border-[#93C5FD]/32 hover:shadow-[0_16px_36px_-20px_rgba(59,130,246,0.35)]"
+                    ? "rounded-2xl bg-[#eef4ff] px-4 shadow-[0_0_0_1px_rgba(96,165,250,0.32)] sm:px-6"
+                    : ""
                 }`}
               >
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_0%,rgba(255,255,255,0.06),transparent_42%)] opacity-60" />
                 {isHighlighted ? (
-                  <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-[#93C5FD]/55 bg-[#60A5FA]/20 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#BFDBFE] animate-pulse">
-                    <span className="material-symbols-outlined text-[14px]">my_location</span>
-                    Selected
-                  </span>
+                  <span className="sr-only">Selected project</span>
                 ) : null}
 
-                {/* Header row */}
-                <div className="relative flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-[#2563EB]/10 text-[#60A5FA]">
-                      <span className="material-symbols-outlined text-[20px]">{project.icon}</span>
-                    </div>
-                    <h2 className="mt-3 text-lg font-bold text-white sm:text-xl">{project.name}</h2>
-                    <p className="mt-1 text-sm text-slate-400 line-clamp-2">{project.tagline}</p>
+                <div className={`flex flex-col items-start text-left ${imageFirst ? "lg:order-2" : "lg:order-1"}`}>
+                  <div className="mb-3 flex flex-wrap items-center gap-2">
+                    <span className="text-xs font-mono font-medium uppercase tracking-widest text-[#8992a0]">{String(index + 1).padStart(2, "0")} / Project</span>
+                    <span className="rounded-full bg-[#eaf1ff] px-2.5 py-1 text-[11px] font-semibold text-[#2563eb]">{project.status}</span>
                   </div>
-                  <span className="w-fit whitespace-nowrap rounded-full bg-[#2563EB]/10 px-2.5 py-1 text-[11px] font-semibold text-[#BFDBFE]">
-                    {project.status}
-                  </span>
-                </div>
-
-                {/* Image + text */}
-                <div className="relative mt-4 space-y-3 text-sm text-slate-400">
-                  <div className="overflow-hidden rounded-2xl bg-white">
-                    <Image
-                      src={project.image}
-                      alt={`${project.name} project preview`}
-                      width={1200}
-                      height={700}
-                      className="w-full h-auto"
-                    />
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[#dbeafe] bg-[#eff6ff] text-[#2563eb]">
+                    <span className="material-symbols-outlined text-[20px]">{project.icon}</span>
                   </div>
-                  <p className="line-clamp-3"><span className="font-semibold text-slate-200">Challenge:</span> {project.challenge}</p>
-                  <p className="line-clamp-3"><span className="font-semibold text-slate-200">Solution:</span> {project.solution}</p>
-                </div>
-
-                {/* Key impact, staggered slide-in */}
-                <div className="relative mt-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#93C5FD]">Key Impact</p>
-                  <motion.ul
-                    className="mt-2.5 space-y-2 text-sm text-slate-400"
-                    variants={impactList}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, amount: 0.25 }}
-                  >
-                    {project.impact.map((point) => (
-                      <motion.li
-                        key={point}
-                        variants={impactItem}
-                        className="flex items-start gap-2 rounded-lg border border-white/[0.07] bg-black/20 p-2"
-                      >
-                        <span className="material-symbols-outlined mt-0.5 text-[16px] text-[#60A5FA]">done</span>
-                        <span>{point}</span>
-                      </motion.li>
-                    ))}
-                  </motion.ul>
-                </div>
-
-                {/* Tech stack, pop-in badges */}
-                <div className="relative mt-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Technology Stack</p>
-                  <motion.div
-                    className="mt-2 flex flex-wrap gap-2"
-                    variants={stackContainer}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                  >
-                    {project.stack.map((item) => (
-                      <motion.span
-                        key={item.name}
-                        variants={stackBadge}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.04] px-2.5 py-1 text-xs text-slate-300 sm:px-3"
-                      >
-                        <img src={item.iconUrl} alt={`${item.name} logo`} width={14} height={14} className="h-3.5 w-3.5" loading="lazy" />
-                        {item.name}
-                      </motion.span>
-                    ))}
-                  </motion.div>
-                </div>
-
-                {/* Highlights + links */}
-                <div className="relative mt-auto border-t border-white/[0.07] pt-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Project Highlights</p>
-                  <p className="mt-2 text-sm text-slate-400">{project.highlights.join(" · ")}</p>
-                  {(project.liveUrl ?? project.repoUrl) && (
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 rounded-lg border border-[#93C5FD]/28 bg-[#2563EB]/10 px-3 py-1.5 text-xs font-semibold text-[#BFDBFE] transition hover:border-[#93C5FD]/55 hover:text-white"
-                        >
-                          <span className="material-symbols-outlined text-[14px]">open_in_new</span>
-                          Live Site
-                        </a>
-                      )}
-                      {project.repoUrl && (
-                        <a
-                          href={project.repoUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-slate-300 transition hover:border-[#60A5FA]/40 hover:text-white"
-                        >
-                          <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="GitHub" className="h-3.5 w-3.5" />
-                          GitHub Repo
-                        </a>
-                      )}
+                  <h2 className="mt-3 text-2xl font-semibold leading-tight tracking-tight text-[#172033] sm:text-3xl">{project.name}</h2>
+                  <p className="mt-2 text-base font-medium leading-snug text-[#3c495d]">{project.tagline}</p>
+                  <details className="group/details mt-5 w-full border-y border-[#e5e2dc] py-3">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-[#263247] [&::-webkit-details-marker]:hidden">
+                      Read the project details
+                      <span className="material-symbols-outlined text-[18px] text-[#2563eb] transition-transform group-open/details:rotate-180">expand_more</span>
+                    </summary>
+                    <div className="pt-3">
+                      <p className="text-sm leading-7 text-[#68758a]"><span className="font-semibold text-[#263247]">The challenge. </span>{project.challenge}</p>
+                      <p className="mt-3 text-sm leading-7 text-[#68758a]"><span className="font-semibold text-[#263247]">What I built. </span>{project.solution}</p>
+                      <div className="mt-5 w-full">
+                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#2563eb]">Outcomes</p>
+                        <motion.ul className="mt-2 space-y-2 text-sm leading-6 text-[#68758a]" variants={impactList} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}>
+                          {project.impact.map((point) => (
+                            <motion.li key={point} variants={impactItem} className="flex items-start gap-2">
+                              <span className="material-symbols-outlined mt-0.5 text-[16px] text-[#2563eb]">done</span><span>{point}</span>
+                            </motion.li>
+                          ))}
+                        </motion.ul>
+                      </div>
+                      <p className="mt-4 text-xs leading-5 text-[#718096]">{project.highlights.join(" / ")}</p>
                     </div>
-                  )}
+                  </details>
+
+                  <div className="mt-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#718096]">Built with</p>
+                    <motion.div className="mt-2 flex flex-wrap gap-2" variants={stackContainer} initial="hidden" whileInView="show" viewport={{ once: true }}>
+                      {project.stack.map((item) => (
+                        <motion.span key={item.name} variants={stackBadge} className="inline-flex items-center gap-1.5 rounded-full border border-[#e8e4dc] bg-white px-2.5 py-1 text-xs text-[#536176] sm:px-3">
+                          <img src={item.iconUrl} alt={`${item.name} logo`} width={14} height={14} className="h-3.5 w-3.5" loading="lazy" />{item.name}
+                        </motion.span>
+                      ))}
+                    </motion.div>
+                  </div>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-[#2563eb] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#1d4ed8]">Live site<span className="material-symbols-outlined text-[14px]">north_east</span></a>}
+                    {project.repoUrl && <a href={project.repoUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-[#e5e2dc] bg-white px-4 py-2 text-xs font-semibold text-[#536176] transition hover:border-[#bfdbfe] hover:text-[#2563eb]"><img src="https://cdn.simpleicons.org/github/536176" alt="" aria-hidden="true" className="h-3.5 w-3.5" />GitHub Repo</a>}
+                  </div>
+                </div>
+
+                <div className={`w-full ${imageFirst ? "lg:order-1" : "lg:order-2"}`}>
+                  <div className="overflow-hidden rounded-2xl border border-[#e3e0d9] bg-white shadow-[0_8px_24px_rgba(28,39,59,0.07)] transition duration-300 hover:shadow-[0_16px_36px_rgba(28,39,59,0.12)]">
+                    <div className="flex items-center gap-3 border-b border-[#e8e6e1] bg-[#f3f4f6] px-4 py-2.5">
+                      <div className="flex gap-1.5"><span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" /><span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" /><span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" /></div>
+                      <div className="flex-1 truncate rounded-md border border-[#e5e4e1] bg-white px-3 py-1 text-center font-mono text-[11px] text-[#68758a]">
+                        {project.liveUrl ? project.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "") : "Project preview"}
+                      </div>
+                    </div>
+                    <div className="relative w-full overflow-hidden bg-white">
+                      <Image src={project.image} alt={`${project.name} project preview`} width={1600} height={1000} sizes="(max-width: 1024px) calc(100vw - 32px), 560px" className="block h-auto w-full object-contain" />
+                    </div>
+                  </div>
                 </div>
               </motion.article>
             );
@@ -424,7 +373,7 @@ export default function ProjectsClientPage() {
           viewport={{ once: true, amount: 0.6 }}
           className="mt-8"
         >
-          <Link href="/" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#93C5FD] transition hover:text-white">
+          <Link href="/" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2563eb] transition hover:text-[#172033]">
             <span className="material-symbols-outlined text-[16px]">arrow_back</span>
             Back to home
           </Link>
