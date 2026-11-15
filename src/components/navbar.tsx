@@ -5,6 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
+// Replace this placeholder with Ahmad's Google Drive CV link when it's ready.
+const cvUrl = "https://drive.google.com/file/d/ADD_YOUR_CV_LINK_HERE/view";
+
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
@@ -71,7 +74,17 @@ export function Navbar() {
           </ul>
 
           {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
+          <div className="hidden items-center gap-2 md:flex">
+            <a
+              href={cvUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/[0.1] px-4 py-2.5 text-sm font-semibold text-[#f0f2f5] transition-colors hover:border-white/25 hover:bg-white/[0.04]"
+              aria-label="View CV (Google Drive link to be added)"
+            >
+              <span>View CV</span>
+              <span className="material-symbols-outlined text-[17px]" aria-hidden="true">description</span>
+            </a>
             <Link
               href="/contact"
               className="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold"
@@ -127,6 +140,16 @@ export function Navbar() {
               );
             })}
             <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,0.05)]">
+              <a
+                href={cvUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-2 flex w-full items-center justify-center gap-2 rounded-xl border border-white/[0.1] px-4 py-3 text-base font-semibold text-[#f0f2f5] transition-colors hover:border-white/25 hover:bg-white/[0.04]"
+                aria-label="View CV (Google Drive link to be added)"
+              >
+                <span>View CV</span>
+                <span className="material-symbols-outlined text-[18px]" aria-hidden="true">description</span>
+              </a>
               <Link
                 href="/contact"
                 className="btn-primary w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-base font-semibold"

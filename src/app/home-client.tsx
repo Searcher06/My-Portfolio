@@ -96,6 +96,8 @@ const otherProjects: ProjectCard[] = [
 
 const findoraLiveUrl = "https://findora-snowy.vercel.app/";
 const emailDraftHref = "mailto:ahmadibrahimsearcher@gmail.com?subject=Project%20or%20work%20inquiry&body=Hi%20Ahmad%2C%0D%0A%0D%0AI%27d%20like%20to%20talk%20about%20a%20project%20or%20opportunity.%0D%0A%0D%0AThanks%2C%0D%0A";
+// Replace this placeholder with Ahmad's Google Drive CV link when it's ready.
+const cvUrl = "https://drive.google.com/file/d/ADD_YOUR_CV_LINK_HERE/view";
 
 const currentlyExploring = [
   {
@@ -280,9 +282,9 @@ export default function HomeClient() {
             ))}
           </ul>
           <div className="flex shrink-0 items-center gap-1.5 sm:gap-2.5">
-            <a href="#contact" className="hidden items-center gap-1.5 rounded-xl bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/[0.11] hover:text-white lg:inline-flex">
-              Hire Me
-              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+            <a href={cvUrl} target="_blank" rel="noopener noreferrer" className="hidden items-center gap-1 text-sm font-medium text-slate-400 transition-colors hover:text-white sm:inline-flex" aria-label="View CV (Google Drive link to be added)">
+              View CV
+              <span className="material-symbols-outlined text-[15px]" aria-hidden="true">open_in_new</span>
             </a>
             <a href="https://github.com/Searcher06" target="_blank" rel="noreferrer" aria-label="Ahmad Ibrahim on GitHub" className="nav-icon-btn inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.04] text-slate-300 transition-colors hover:border-white/[0.14] hover:bg-white/[0.07] hover:text-white">
               <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="" aria-hidden="true" className="h-[18px] w-[18px]" />
@@ -346,17 +348,18 @@ export default function HomeClient() {
                     <span className="material-symbols-outlined text-[15px] text-slate-600">chevron_right</span>
                   </motion.a>
                 ))}
-              </motion.div>
-              <div className="p-3 pt-1">
-                <a
-                  href="#contact"
-                  onClick={() => setMobileNavOpen(false)}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#38BDF8] py-3 text-sm font-semibold text-white shadow-[0_8px_28px_-6px_rgba(37,99,235,0.55),0_2px_8px_rgba(37,99,235,0.3)]"
+                <motion.a
+                  href={cvUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View CV (Google Drive link to be added)"
+                  className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/[0.06]"
+                  variants={{ hidden: { opacity: 0, y: 6 }, show: { opacity: 1, y: 0, transition: { duration: 0.28 } } }}
                 >
-                  Hire Me
-                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-                </a>
-              </div>
+                  <span>View CV</span>
+                  <span className="material-symbols-outlined text-[15px] text-slate-500" aria-hidden="true">open_in_new</span>
+                </motion.a>
+              </motion.div>
             </motion.div>
           </>
         )}
@@ -415,9 +418,11 @@ export default function HomeClient() {
                 { label: "About me", href: "#about" },
                 { label: "My experience", href: "#journey" },
                 { label: "GitHub", href: "https://github.com/Searcher06" },
+                { label: "View CV", href: cvUrl },
               ].map((item) => (
-                <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noreferrer" : undefined} className="inline-flex items-center rounded-full border border-slate-300/80 bg-white/75 px-3.5 py-2 text-xs font-semibold text-slate-700 transition hover:border-[#2563EB]/40 hover:bg-white hover:text-[#1d4ed8]">
+                <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} className={item.label === "View CV" ? "inline-flex items-center gap-1 px-1 py-2 text-xs font-medium text-slate-500 transition hover:text-[#1d4ed8]" : "inline-flex items-center rounded-full border border-slate-300/80 bg-white/75 px-3.5 py-2 text-xs font-semibold text-slate-700 transition hover:border-[#2563EB]/40 hover:bg-white hover:text-[#1d4ed8]"}>
                   {item.label}
+                  {item.label === "View CV" && <span className="material-symbols-outlined text-[14px]" aria-hidden="true">open_in_new</span>}
                 </a>
               ))}
             </div>
