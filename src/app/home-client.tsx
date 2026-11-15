@@ -406,8 +406,8 @@ export default function HomeClient() {
         <motion.article variants={fadeUp} className="profile-hero-card relative w-full max-w-[38rem] overflow-visible rounded-[2rem] border border-white/[0.12] bg-[#f7f5ef] text-slate-900 shadow-[0_35px_100px_-35px_rgba(0,0,0,0.75)] lg:max-w-[44rem]">
           <div className="relative h-32 sm:h-44 lg:h-52">
             <div className="absolute inset-0 overflow-hidden rounded-t-[2rem] bg-[#182a49]">
-              <Image src="/me3.png" alt="Ahmad Ibrahim" fill loading="eager" fetchPriority="high" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 608px, 792px" className="object-cover object-[center_34%] opacity-75" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#10203a]/85 via-[#142c50]/15 to-[#10203a]/10" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.42),transparent_58%),linear-gradient(135deg,#10203a,#18345b)]" />
+              <Image src="/ahmad-mark.svg" alt="Ahmad Ibrahim logo" width={128} height={128} className="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-[0_12px_32px_rgba(0,0,0,0.3)] sm:h-24 sm:w-24 lg:h-28 lg:w-28" />
               <span className="force-dark absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/25 bg-[#0c1628]/75 px-3 py-1.5 text-[10px] font-semibold tracking-wide backdrop-blur-md sm:right-6 sm:top-5 sm:text-xs">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
                 <span className="text-white">Available for remote roles</span>
@@ -415,7 +415,7 @@ export default function HomeClient() {
             </div>
             <div className="absolute bottom-0 left-6 translate-y-1/2 rounded-2xl bg-[#f7f5ef] p-1.5 shadow-lg sm:left-8">
               <div className="relative h-[4.5rem] w-[4.5rem] overflow-hidden rounded-xl sm:h-24 sm:w-24">
-                <Image src="/me3.png" alt="Portrait of Ahmad Ibrahim" fill sizes="96px" className="object-cover object-[center_20%]" />
+                <Image src="/ahmad-mark.svg" alt="Ahmad Ibrahim logo" fill sizes="96px" className="object-contain" />
               </div>
             </div>
           </div>
