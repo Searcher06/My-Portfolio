@@ -7,12 +7,12 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ahmadibrahim.vercel
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Ahmad Ibrahim, a software engineer based in Nigeria. BSc Software Engineering student building reliable APIs, web applications, and trust-critical systems.",
+    "Learn about Ahmad Ibrahim, a Software Engineer studying for a BSc in Software Engineering and interested in backend engineering, software design, and AI.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Ahmad Ibrahim | Software Engineer",
     description:
-      "BSc Software Engineering student building reliable APIs, web applications, and trust-critical systems. Available for remote roles and freelance projects.",
+      "A Software Engineer focused on helping businesses work efficiently, improve customer experience, and turn ideas into valuable products.",
     url: "/about",
     images: [{ url: "/og/portfolio-og.svg", width: 1200, height: 630, alt: "About Ahmad Ibrahim" }],
   },
@@ -82,15 +82,10 @@ export default function AboutPage() {
         {/* Bio */}
         <section className="mt-10 space-y-4 text-slate-300 leading-relaxed" aria-label="Biography">
           <h2 className="-rotate-1 font-handwriting text-3xl text-slate-200">Who I am</h2>
-          <p>
-            I&apos;m a BSc Software Engineering student and full-stack developer focused on building reliable web applications and backend systems. I enjoy turning ideas into scalable products that solve real problems, stay maintainable, and hold up under real-world conditions.
-          </p>
-          <p>
-            My work spans backend APIs, full-stack web applications, and trust-critical product features such as JWT authentication, payment integrations, real-time chat, and admin dashboards. I care about writing code that the next developer can read, change, and trust.
-          </p>
-          <p>
-            Currently exploring AI-powered product experiences, system design patterns, and backend performance optimization. I&apos;m open to full-time remote roles, freelance projects, and long-term collaborations.
-          </p>
+          <p>Hi there, my name is Ahmad Ibrahim and I am a Software Engineer currently studying for my BSc degree in Software Engineering.</p>
+          <p>I design software that helps businesses be more efficient, provides a good customer experience, and transforms great ideas into valuable products.</p>
+          <p>In addition to developing effective software solutions, I aim to understand the problems being solved, who will use the software, and the engineering practices needed for robust software design.</p>
+          <p>From a technical perspective, I have a passion for back-end engineering, software design, and building intelligent solutions using AI technologies.</p>
         </section>
 
         {/* Skills */}

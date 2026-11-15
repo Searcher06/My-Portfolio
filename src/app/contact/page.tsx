@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ahmadibrahim.vercel.app";
+const emailDraftHref = "mailto:ahmadibrahimsearcher@gmail.com?subject=Project%20or%20work%20inquiry&body=Hi%20Ahmad%2C%0D%0A%0D%0AI%27d%20like%20to%20talk%20about%20a%20project%20or%20opportunity.%0D%0A%0D%0AThanks%2C%0D%0A";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Ahmad Ibrahim | Software Engineer",
     description:
-      "Available for remote backend and full-stack roles, freelance projects, and engineering collaborations. Reach out via email, GitHub, LinkedIn, or X.",
+      "Available for remote roles and freelance projects. Reach out by email, WhatsApp, GitHub, LinkedIn, or X.",
     url: "/contact",
     images: [{ url: "/og/portfolio-og.svg", width: 1200, height: 630, alt: "Contact Ahmad Ibrahim" }],
   },
@@ -24,6 +25,13 @@ const contactChannels = [
     href: "mailto:ahmadibrahimsearcher@gmail.com",
     icon: "https://cdn.simpleicons.org/gmail/EA4335",
     description: "Best for project discussions and opportunities.",
+  },
+  {
+    label: "WhatsApp",
+    handle: "+234 813 939 2918",
+    href: "https://wa.me/2348139392918",
+    icon: "https://cdn.simpleicons.org/whatsapp/25D366",
+    description: "Message me directly on WhatsApp.",
   },
   {
     label: "GitHub",
@@ -102,11 +110,11 @@ export default function ContactPage() {
 
         {/* Primary CTA */}
         <a
-          href="mailto:ahmadibrahimsearcher@gmail.com"
-          className="btn-primary mt-6 inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold"
+          href={emailDraftHref}
+          className="group mt-6 inline-flex items-center gap-2 border-b border-slate-500 pb-1 text-sm font-medium text-slate-200 transition-colors hover:border-white hover:text-white"
         >
-          <span className="material-symbols-outlined text-[17px]">mail</span>
-          Send me an email
+          ahmadibrahimsearcher@gmail.com
+          <span className="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true">north_east</span>
         </a>
 
         {/* Channels */}

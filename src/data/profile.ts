@@ -24,6 +24,7 @@ export const profile: Profile = {
   ],
   socialLinks: [
     { label: "GitHub", href: "https://github.com/Searcher06" },
+    { label: "WhatsApp", href: "https://wa.me/2348139392918" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/ahmadibrahim06" },
     { label: "X / Twitter", href: "https://x.com/undefined_dev" },
     { label: "Email", href: "mailto:ahmadibrahimsearcher@gmail.com" },

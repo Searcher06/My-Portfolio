@@ -95,6 +95,7 @@ const otherProjects: ProjectCard[] = [
 ];
 
 const findoraLiveUrl = "https://findora-snowy.vercel.app/";
+const emailDraftHref = "mailto:ahmadibrahimsearcher@gmail.com?subject=Project%20or%20work%20inquiry&body=Hi%20Ahmad%2C%0D%0A%0D%0AI%27d%20like%20to%20talk%20about%20a%20project%20or%20opportunity.%0D%0A%0D%0AThanks%2C%0D%0A";
 
 const currentlyExploring = [
   {
@@ -225,30 +226,6 @@ export default function HomeClient() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const reduceMotion = useReducedMotion();
-
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [sendingForm, setSendingForm] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
-
-  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSendingForm(true);
-    setSubmitStatus(null);
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1200));
-      setSubmitStatus({ success: true, message: "Thank you! Your message has been sent successfully." });
-      setFormData({ name: "", email: "", message: "" });
-    } catch {
-      setSubmitStatus({ success: false, message: "Something went wrong. Please try again or email directly." });
-    } finally {
-      setSendingForm(false);
-    }
-  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -405,9 +382,9 @@ export default function HomeClient() {
         </div>
         <motion.article variants={fadeUp} className="profile-hero-card relative w-full max-w-[38rem] overflow-visible rounded-[2rem] border border-white/[0.12] bg-[#f7f5ef] text-slate-900 shadow-[0_35px_100px_-35px_rgba(0,0,0,0.75)] lg:max-w-[44rem]">
           <div className="relative h-32 sm:h-44 lg:h-52">
-            <div className="absolute inset-0 overflow-hidden rounded-t-[2rem] bg-[#182a49]">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.42),transparent_58%),linear-gradient(135deg,#10203a,#18345b)]" />
-              <Image src="/ahmad-mark.svg" alt="Ahmad Ibrahim logo" width={128} height={128} className="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-[0_12px_32px_rgba(0,0,0,0.3)] sm:h-24 sm:w-24 lg:h-28 lg:w-28" />
+            <div className="absolute inset-0 overflow-hidden rounded-t-[2rem] bg-black">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.08),transparent_62%),linear-gradient(135deg,#000,#111)]" />
+              <Image src="/ahmad-mark-white.svg" alt="Ahmad Ibrahim logo" width={520} height={520} className="absolute left-1/2 top-1/2 h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_8px_24px_rgba(0,0,0,0.25)] sm:h-[440px] sm:w-[440px] lg:h-[520px] lg:w-[520px]" />
               <span className="force-dark absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/25 bg-[#0c1628]/75 px-3 py-1.5 text-[10px] font-semibold tracking-wide backdrop-blur-md sm:right-6 sm:top-5 sm:text-xs">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
                 <span className="text-white">Available for remote roles</span>
@@ -891,15 +868,23 @@ export default function HomeClient() {
           {/* Text side */}
           <div className="flex flex-col justify-center space-y-5 text-sm leading-relaxed text-slate-600 sm:text-base">
             <p className="text-2xl font-bold leading-snug text-slate-950 sm:text-3xl" style={{ fontFamily: "Instrument Serif, Georgia, serif", fontStyle: "italic" }}>Building software that does what it promises.</p>
-            <p>I&apos;m Ahmad Ibrahim, a BSc Software Engineering student and full-stack developer focused on building reliable web applications and backend systems. I enjoy turning ideas into scalable products designed to solve real problems, stay maintainable, and hold up under real-world use.</p>
-            <p>Currently exploring AI-powered product experiences, scalable system design, and backend performance optimization.</p>
-            <div className="grid grid-cols-3 gap-3 pt-2">
-              {[{ value: "8+", label: "Projects" }, { value: "2022", label: "Started" }, { value: "3+", label: "Roles" }].map((s) => (
-                <div key={s.label} className="rounded-xl border border-slate-200 bg-white/80 px-3 py-3 text-center shadow-sm">
-                  <p className="text-lg font-bold text-slate-900">{s.value}</p>
-                  <p className="mt-0.5 text-[11px] text-slate-500">{s.label}</p>
-                </div>
-              ))}
+            <p>Hi there, my name is Ahmad Ibrahim and I am a Software Engineer currently studying for my BSc degree in Software Engineering.</p>
+            <p>I design software that helps businesses be more efficient, provides a good customer experience, and transforms great ideas into valuable products.</p>
+            <p>In addition to developing effective software solutions, I aim to understand the problems being solved, who will use the software, and the engineering practices needed for robust software design.</p>
+            <p>From a technical perspective, I have a passion for back-end engineering, software design, and building intelligent solutions using AI technologies.</p>
+            <div className="border-t border-slate-200 pt-3" aria-label="How I approach software">
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { label: "Understand the problem", icon: "search" },
+                  { label: "Design for people", icon: "groups" },
+                  { label: "Build robust software", icon: "verified" },
+                ].map((area) => (
+                  <span key={area.label} className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm">
+                    <span className="material-symbols-outlined text-[15px] text-[#2563EB]" aria-hidden="true">{area.icon}</span>
+                    {area.label}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
           </div>
@@ -940,6 +925,7 @@ export default function HomeClient() {
                 <div className="grid gap-x-6 sm:grid-cols-2">
                   {[
                     { icon: "https://cdn.simpleicons.org/gmail/EA4335", label: "Email", handle: "ahmadibrahimsearcher@gmail.com", href: "mailto:ahmadibrahimsearcher@gmail.com" },
+                    { icon: "https://cdn.simpleicons.org/whatsapp/25D366", label: "WhatsApp", handle: "+234 813 939 2918", href: "https://wa.me/2348139392918" },
                     { icon: "https://cdn.simpleicons.org/github/0F172A", label: "GitHub", handle: "@Searcher06", href: "https://github.com/Searcher06" },
                     { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", label: "LinkedIn", handle: "/in/ahmadibrahim06", href: "https://www.linkedin.com/in/ahmadibrahim06" },
                     { icon: "https://cdn.simpleicons.org/x/0F172A", label: "X", handle: "@undefined_dev", href: "https://x.com/undefined_dev" },
@@ -963,82 +949,17 @@ export default function HomeClient() {
               </div>
             </div>
 
-            {/* ── Right: form ── */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
-              <div className="mb-5 border-b border-slate-200 pb-4">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#2563EB]">Start a conversation</p>
-                <h3 className="mt-1 font-serif text-2xl text-slate-950 sm:text-3xl">Send me a note</h3>
-              </div>
-              <form onSubmit={handleFormSubmit} className="space-y-4">
-                <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="form-name" className="mb-1.5 block text-xs font-semibold text-slate-700">Your name</label>
-                  <input
-                    type="text"
-                    id="form-name"
-                    name="name"
-                    autoComplete="name"
-                    required
-                    value={formData.name}
-                    onChange={handleFormChange}
-                    placeholder="Your name"
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="form-email" className="mb-1.5 block text-xs font-semibold text-slate-700">Email address</label>
-                  <input
-                    type="email"
-                    id="form-email"
-                    name="email"
-                    autoComplete="email"
-                    required
-                    value={formData.email}
-                    onChange={handleFormChange}
-                    placeholder="you@example.com"
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100"
-                  />
-                </div>
-                </div>
-                <div>
-                  <label htmlFor="form-message" className="mb-1.5 block text-xs font-semibold text-slate-700">How can I help?</label>
-                  <textarea
-                    id="form-message"
-                    name="message"
-                    rows={5}
-                    required
-                    value={formData.message}
-                    onChange={handleFormChange}
-                    placeholder="Share a few details about your idea, project, or role."
-                    className="w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={sendingForm}
-                  className="mt-1 flex w-full items-center justify-center gap-2 rounded-xl bg-[#2563EB] px-6 py-3.5 text-sm font-semibold text-[#ffffff] transition-colors hover:bg-[#1d4ed8] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200 disabled:pointer-events-none disabled:opacity-50"
-                >
-                  {sendingForm ? (
-                    <span className="flex items-center gap-2">
-                      <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" />
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
-                      </svg>
-                      Sending…
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2.5">
-                      Send Message
-                      <span className="material-symbols-outlined text-[17px] transition-transform duration-300 group-hover:translate-x-0.5">arrow_forward</span>
-                    </span>
-                  )}
-                </button>
-                {submitStatus && (
-                  <p className={`mt-2 text-center text-xs font-semibold ${submitStatus.success ? "text-emerald-700" : "text-rose-700"}`}>
-                    {submitStatus.message}
-                  </p>
-                )}
-              </form>
+            {/* ── Right: email draft CTA ── */}
+            <div className="flex h-full flex-col justify-center border-t border-slate-200 pt-6 sm:pt-8 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Email</p>
+              <h3 className="mt-2 font-serif text-2xl text-slate-950 sm:text-3xl">Have a project in mind?</h3>
+              <p className="mt-2 max-w-sm text-sm leading-relaxed text-slate-600">
+                Send me a message and tell me a little about it.
+              </p>
+              <a href={emailDraftHref} className="mt-5 inline-flex w-fit items-center gap-2 border-b border-slate-400 pb-1 text-sm font-medium text-slate-900 transition-colors hover:border-slate-900">
+                ahmadibrahimsearcher@gmail.com
+                <span className="material-symbols-outlined text-[16px]" aria-hidden="true">north_east</span>
+              </a>
             </div>
 
           </div>
