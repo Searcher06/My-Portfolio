@@ -35,10 +35,10 @@ const credibilityPoints = [
 ];
 
 const findoraFeatures = [
-  "Post lost or found items with photos and searchable details",
-  "Chat with claimants and verify returns with a handover code",
-  "Give admins tools to review reports and manage users",
-  "Track successful returns and trust points",
+  "Post lost or found items with photos",
+  "Search reports and get suggested matches",
+  "Chat and confirm returns with a five-digit code",
+  "Help admins review reports and manage users",
 ];
 
 const otherProjects: ProjectCard[] = [
@@ -46,9 +46,9 @@ const otherProjects: ProjectCard[] = [
     name: "School Payment & Distribution Management System",
     image: "/schoolmanagement.png",
     problem:
-      "School fee tracking and item distribution were fragmented, making payment review, role assignment, and fulfillment difficult to manage end-to-end.",
+      "The school needed one place to manage fee payments and hand out school items.",
     solution:
-      "Built a full workflow covering fee configuration, parent payment submissions, admin item-level review, role-based staff routing, and collection tracking with reporting.",
+      "Built a system where parents submit payments, admins review them, and staff track item collection.",
     tools: [
       { name: "React", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
       { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
@@ -61,9 +61,9 @@ const otherProjects: ProjectCard[] = [
     name: "Brillit",
     image: "/brillitbrowse.png",
     problem:
-      "Learners struggle to find the right educational videos quickly, and generic feeds rarely match personal learning goals.",
+      "Finding the right learning video can take too long.",
     solution:
-      "Built a personalized educational video platform with AI-powered recommendations, typo-tolerant search, and secure user profiles.",
+      "Built a learning app with personal video suggestions and fast search that handles misspelled words.",
     tools: [
       { name: "Node.js", iconUrl: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
       { name: "MongoDB", iconUrl: "https://cdn.simpleicons.org/mongodb/47A248" },
@@ -76,9 +76,9 @@ const otherProjects: ProjectCard[] = [
     name: "Vestlee",
     image: "/vestleepic.png",
     problem:
-      "Applying for jobs is a full-time job. Developers waste hours tweaking CVs and writing cover letters per role, with no reliable way to track applications or prepare for interviews.",
+      "Job applications take time: tailoring CVs, writing letters, and tracking replies.",
     solution:
-      "Built an AI job application assistant with CV tailoring, ATS match scoring, Gmail-based application tracking, real-time voice mock interviews, and a CV audit system with one-click fixes.",
+      "Built an assistant for role-specific CVs and letters, Gmail tracking, CV checks, and voice interview practice.",
     tools: [
       { name: "Next.js", iconUrl: "https://cdn.simpleicons.org/nextdotjs/FFFFFF" },
       { name: "TypeScript", iconUrl: "https://cdn.simpleicons.org/typescript/3178C6" },
@@ -187,22 +187,22 @@ const workExperience = [
     ],
   },
   {
-    role: "Fullstack Engineer (Contract)",
-    company: "School Fee & Management System Project",
+    role: "Full-Stack Engineer (Contract)",
+    company: "Primary Colours School",
     period: "Feb 2026 to Apr 26, 2026",
-    location: "Kano, Nigeria",
-    summary: "Delivered a school finance and fulfillment platform from fee setup to item collection.",
+    location: "Nigeria",
+    summary: "Built a school system to review fee payments and track item handovers.",
     highlights: [
-      "Built fee setup, payment review, and item collection workflows.",
-      "Added role-based routing for admins and distribution staff.",
-      "Improved audit visibility and management reporting.",
+      "Created a form for parents to send payment details and proof.",
+      "Helped admins review payments and assign items to staff.",
+      "Added tools to track collections and view payment reports.",
     ],
   },
   {
     role: "Software Engineer Intern (Backend)",
     company: "BOI BUK Innovation Hub",
     period: "Mar 9, 2026 to Present",
-    location: "Bayero University Kano, Nigeria",
+    location: "Bayero University, Nigeria",
     summary: "Developing backend foundations for a platform connecting innovation hubs at BUK.",
     highlights: [
       "Mapped hub, program, event, and communication needs into backend modules.",
@@ -225,7 +225,6 @@ export default function HomeClient() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const reduceMotion = useReducedMotion();
-  const [typedRole, setTypedRole] = useState("");
 
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [sendingForm, setSendingForm] = useState(false);
@@ -256,40 +255,6 @@ export default function HomeClient() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    const roles = ["Backend Engineer", "Full-Stack Developer", "API Builder"];
-    if (reduceMotion) {
-      setTypedRole(roles[0]);
-      return;
-    }
-
-    let roleIndex = 0;
-    let characterIndex = 0;
-    let deleting = false;
-    let timer: ReturnType<typeof setTimeout>;
-
-    const typeNextCharacter = () => {
-      const role = roles[roleIndex];
-      characterIndex += deleting ? -1 : 1;
-      setTypedRole(role.slice(0, characterIndex));
-
-      let delay = deleting ? 42 : 82;
-      if (!deleting && characterIndex === role.length) {
-        deleting = true;
-        delay = 1400;
-      } else if (deleting && characterIndex === 0) {
-        deleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        delay = 280;
-      }
-
-      timer = setTimeout(typeNextCharacter, delay);
-    };
-
-    timer = setTimeout(typeNextCharacter, 250);
-    return () => clearTimeout(timer);
-  }, [reduceMotion]);
 
   const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -441,7 +406,7 @@ export default function HomeClient() {
         <motion.article variants={fadeUp} className="profile-hero-card relative w-full max-w-[38rem] overflow-visible rounded-[2rem] border border-white/[0.12] bg-[#f7f5ef] text-slate-900 shadow-[0_35px_100px_-35px_rgba(0,0,0,0.75)] lg:max-w-[44rem]">
           <div className="relative h-32 sm:h-44 lg:h-52">
             <div className="absolute inset-0 overflow-hidden rounded-t-[2rem] bg-[#182a49]">
-              <Image src="/me3.png" alt="Ahmad Ibrahim" fill priority sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 608px, 792px" className="object-cover object-[center_34%] opacity-75" />
+              <Image src="/me3.png" alt="Ahmad Ibrahim" fill loading="eager" fetchPriority="high" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 608px, 792px" className="object-cover object-[center_34%] opacity-75" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#10203a]/85 via-[#142c50]/15 to-[#10203a]/10" />
               <span className="force-dark absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/25 bg-[#0c1628]/75 px-3 py-1.5 text-[10px] font-semibold tracking-wide backdrop-blur-md sm:right-6 sm:top-5 sm:text-xs">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
@@ -457,13 +422,7 @@ export default function HomeClient() {
           <div className="px-5 pb-6 pt-14 sm:px-8 sm:pb-8 sm:pt-16">
             <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
               <div>
-                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#2563EB]">
-                  <span className="sr-only">Backend Engineer, Full-Stack Developer, API Builder. </span>
-                  <span aria-hidden="true" className="inline-flex min-h-[1.25rem] items-center">
-                    {typedRole}<span className="ml-0.5 h-4 w-px animate-pulse bg-[#2563EB]" />
-                  </span>
-                  <span aria-hidden="true"> · Kano, Nigeria</span>
-                </p>
+                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#2563EB]">Software Engineer</p>
                 <h1 className="font-serif text-3xl tracking-tight text-slate-950 sm:text-4xl">Hey, I&apos;m Ahmad</h1>
               </div>
               <a href="mailto:ahmadibrahimsearcher@gmail.com" className="inline-flex items-center gap-1.5 rounded-full bg-[#2563EB] px-4 py-2.5 text-xs font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#1d4ed8] sm:text-sm">
@@ -471,7 +430,7 @@ export default function HomeClient() {
               </a>
             </div>
             <p className="max-w-xl text-sm leading-relaxed text-[#475569] sm:text-base">
-              I build dependable web products and backend systems, with a focus on the details that make people trust the software they use.
+              I build software that helps businesses grow, operate smarter, and create more value.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {[
@@ -924,9 +883,9 @@ export default function HomeClient() {
           {/* Photo side */}
           <div className="relative mx-auto w-full max-w-[300px] rotate-[-2deg] rounded-sm border border-slate-200 bg-white p-3 pb-12 shadow-[0_16px_38px_-18px_rgba(15,23,42,0.35)] transition-transform duration-300 hover:rotate-0 sm:max-w-[340px]">
             <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
-              <Image src="/me3.png" alt="Ahmad Ibrahim, Backend-Focused Full-Stack Engineer" fill sizes="(max-width: 640px) 280px, 340px" className="object-cover object-top" />
+              <Image src="/me3.png" alt="Ahmad Ibrahim, Software Engineer" fill sizes="(max-width: 640px) 280px, 340px" className="object-cover object-top" />
             </div>
-            <p className="absolute inset-x-0 bottom-3 text-center font-serif text-lg italic text-slate-500">Ahmad Ibrahim · Kano</p>
+            <p className="absolute inset-x-0 bottom-3 text-center font-serif text-lg italic text-slate-500">Ahmad Ibrahim · Nigeria</p>
             <span className="absolute -top-3 left-1/2 h-7 w-20 -translate-x-1/2 rotate-3 bg-[#93C5FD]/70 shadow-sm" />
           </div>
           {/* Text side */}
@@ -972,7 +931,7 @@ export default function HomeClient() {
                   Have a good idea?<br /><span className="italic">Let&apos;s build it.</span>
                 </h2>
                 <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-600 sm:text-[0.9375rem]">
-                  Open to remote roles, freelance projects, and long-term engineering work. Based in Kano, Nigeria, and available remotely.
+                  Open to remote roles, freelance projects, and long-term engineering work. Based in Nigeria and available remotely.
                 </p>
               </div>
 

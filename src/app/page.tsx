@@ -4,9 +4,9 @@ import HomeClient from "./home-client";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ahmadibrahim.vercel.app";
 
 export const metadata: Metadata = {
-  title: "Ahmad Ibrahim | Backend-Focused Full-Stack Engineer",
+  title: "Ahmad Ibrahim | Software Engineer",
   description:
-    "Ahmad Ibrahim is a backend-focused full-stack engineer building reliable web applications, APIs, and trust-critical systems. Available for remote roles and freelance projects.",
+    "Ahmad Ibrahim is a software engineer building reliable web applications, APIs, and trust-critical systems. Available for remote roles and freelance projects.",
   keywords: [
     "Ahmad Ibrahim",
     "Full-Stack Engineer",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "API Development",
     "Freelance Backend Developer",
     "Nigeria software engineer",
-    "Kano developer",
+    "Nigeria software engineer",
   ],
   alternates: {
     canonical: "/",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: "Ahmad Ibrahim | Backend-Focused Full-Stack Engineer",
+    title: "Ahmad Ibrahim | Software Engineer",
     description:
       "Building reliable web applications, APIs, and trust-critical systems. Available for remote roles and freelance projects.",
     siteName: "Ahmad Ibrahim Portfolio",
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
         url: "/og/portfolio-og.svg",
         width: 1200,
         height: 630,
-        alt: "Ahmad Ibrahim, Backend-Focused Full-Stack Engineer",
+        alt: "Ahmad Ibrahim, Software Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ahmad Ibrahim | Backend-Focused Full-Stack Engineer",
+    title: "Ahmad Ibrahim | Software Engineer",
     description:
       "Building reliable web applications, APIs, and trust-critical systems. Available for remote roles and freelance projects.",
     images: ["/og/portfolio-og.svg"],
@@ -62,7 +62,7 @@ const projectsJsonLd = {
       name: "Findora",
       url: `${siteUrl}/projects#findora`,
       description:
-        "Trust-based lost and found platform with real-time chat, 2-step handover verification, and admin moderation.",
+        "A campus app for lost and found reports, match suggestions, and verified item returns.",
     },
     {
       "@type": "ListItem",
@@ -70,7 +70,7 @@ const projectsJsonLd = {
       name: "School Payment & Distribution Management System",
       url: `${siteUrl}/projects#school-payment-and-distribution-management-system`,
       description:
-        "End-to-end school fee and item distribution workflow platform with role-based access and PDF reporting.",
+        "A school system for online fee payments, admin review, and tracking item collection.",
     },
     {
       "@type": "ListItem",
@@ -78,7 +78,7 @@ const projectsJsonLd = {
       name: "Brillit",
       url: `${siteUrl}/projects#brillit`,
       description:
-        "Personalized educational video platform with Gemini-powered recommendations and Typesense search.",
+        "A learning app with personal video suggestions and fast search that handles misspelled words.",
     },
     {
       "@type": "ListItem",
@@ -86,7 +86,7 @@ const projectsJsonLd = {
       name: "Vestlee",
       url: `${siteUrl}/projects#vestlee`,
       description:
-        "AI-powered job application assistant with CV tailoring, ATS match scoring, Gmail application tracking, real-time voice mock interviews via Deepgram, and CV audit with one-click fixes.",
+        "A job search assistant for tailored CVs and letters, Gmail tracking, CV checks, and voice interview practice.",
     },
   ],
 };

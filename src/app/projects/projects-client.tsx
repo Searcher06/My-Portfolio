@@ -30,18 +30,19 @@ const toProjectId = (name: string) =>
 const projects: ProjectDetail[] = [
   {
     name: "School Payment & Distribution Management System",
-    tagline: "Payment review and item fulfillment workflow platform.",
+    tagline: "A school system for fee payments and item collection.",
     icon: "school",
     image: "/schoolmanagement.png",
     status: "Live",
     challenge:
-      "School operations were slowed by disconnected processes for fee setup, payment verification, and item handover, making accountability and fulfillment tracking difficult.",
+      "The school needed one clear way to collect fees, check payments, and track school items given to families.",
     solution:
-      "Built an end-to-end school management workflow with role-based access, configurable academic structures and fee items, parent payment submissions with evidence uploads, admin item-level review actions, and staff collection tracking.",
+      "Parents submit payment details and proof online. Admins review payments, then staff see assigned items and mark them collected.",
     impact: [
-      "Improved fee collection operations with a structured review pipeline for pending, accepted, partial, and rejected submissions.",
-      "Reduced fulfillment bottlenecks by routing accepted items directly to staff based on role assignments.",
-      "Increased operational visibility through admin dashboards, configuration health checks, and PDF reporting.",
+      "Parents can send payment details and proof online.",
+      "Admins can review each payment and approve or reject items.",
+      "Staff can see assigned items and mark them collected.",
+      "Admins can view reports and find items without an assigned staff member.",
     ],
     stack: [
       { name: "React", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
@@ -51,22 +52,23 @@ const projects: ProjectDetail[] = [
       { name: "Mongoose", iconUrl: "https://cdn.simpleicons.org/mongoose/880000" },
       { name: "Tailwind CSS", iconUrl: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
     ],
-    highlights: ["Item-level admin approval flow", "Role-based staff assignment routing", "Payment evidence and fulfillment tracking"],
+    highlights: ["Online payment submissions", "Payment review", "Item collection tracking"],
   },
   {
     name: "Findora",
-    tagline: "Trust-based lost and found platform for real communities.",
+    tagline: "A campus app that helps people find and return lost items.",
     icon: "verified_user",
     image: "/findorabrowse.png",
     status: "Live",
     challenge:
-      "Most lost-and-found systems fail because reports are unstructured, communication is scattered, and ownership handovers are hard to verify.",
+      "When something goes missing on campus, it can be hard to reach the person who found it and make sure it gets returned to the right owner.",
     solution:
-      "Built a full-stack workflow with secure authentication, item reporting with image uploads, real-time chat, and a two-step code exchange to verify final handovers.",
+      "Users can post and search reports, get suggested matches, chat, and confirm a return with a five-digit code.",
     impact: [
-      "Made item recovery safer with a verified handover process instead of guess-based claims.",
-      "Improved response speed through searchable reports, status filters, and direct finder-owner chat.",
-      "Enabled moderation and accountability with role-based controls, flags, and audit visibility.",
+      "People can post lost or found items with photos and details.",
+      "Search and match suggestions help connect lost items with found reports.",
+      "A five-digit code helps both people confirm the handover.",
+      "Admins can review reports and manage users.",
     ],
     stack: [
       { name: "React", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
@@ -76,23 +78,23 @@ const projects: ProjectDetail[] = [
       { name: "Socket.IO", iconUrl: "https://cdn.simpleicons.org/socketdotio/010101" },
       { name: "Cloudinary", iconUrl: "https://cdn.simpleicons.org/cloudinary/3448C5" },
     ],
-    highlights: ["2-step code handover verification", "Real-time secure chat", "Admin moderation and trust points"],
+    highlights: ["Lost and found reports", "Chat and match suggestions", "Verified item returns"],
     liveUrl: "https://findora-snowy.vercel.app/",
   },
   {
     name: "Brillit",
-    tagline: "Personalized educational video platform powered by AI and fast search.",
+    tagline: "A learning app that helps people find videos that fit their interests.",
     icon: "smart_display",
     image: "/brillitbrowse.png",
     status: "Live",
     challenge:
-      "Educational platforms often show generic content, making it hard for learners to discover videos that match their interests and learning path.",
+      "Learners can spend too much time searching for videos that match what they want to study.",
     solution:
-      "Built a full-stack learning platform with JWT auth, Google Gemini-driven recommendations, and Typesense-powered typo-tolerant search for faster discovery.",
+      "Brillit suggests videos based on interests and watch history, with fast search that can handle misspelled words.",
     impact: [
-      "Improved learning relevance with personalized suggestions based on watch history and selected interests.",
-      "Reduced search friction with blazing-fast, typo-tolerant video discovery across educational content.",
-      "Enabled smooth user retention with secure profiles, Cloudinary media handling, and seamless YouTube playback.",
+      "Video suggestions reflect each learner's interests and watch history.",
+      "Search helps people find videos, even when a word is misspelled.",
+      "Learners can manage their profiles and watch videos in the app.",
     ],
     stack: [
       { name: "React", iconUrl: "https://cdn.simpleicons.org/react/61DAFB" },
@@ -103,25 +105,26 @@ const projects: ProjectDetail[] = [
       { name: "Google Gemini", iconUrl: "https://cdn.simpleicons.org/googlegemini/8E75FF" },
       { name: "Cloudinary", iconUrl: "https://cdn.simpleicons.org/cloudinary/3448C5" },
     ],
-    highlights: ["Gemini-powered recommendations", "Typesense search engine", "JWT auth and profile personalization"],
+    highlights: ["Personalized video suggestions", "Fast search", "In-app video playback"],
     liveUrl: "https://brillit.vercel.app/",
     repoUrl: "https://github.com/Searcher06/Brillit.io",
   },
   {
     name: "Vestlee",
-    tagline: "AI job application assistant for tailored CVs, cover letters, Gmail tracking, and mock interviews.",
+    tagline: "A job search assistant for CVs, applications, and interview practice.",
     icon: "work",
     image: "/vestleepic.png",
     status: "In Progress",
     challenge:
-      "Applying for jobs is a full-time job in itself. Developers waste hours tweaking CVs and writing cover letters for every role, with no reliable way to track applications or prepare for interviews systematically.",
+      "Applying for jobs means tailoring documents, tracking replies, and finding time to practise for interviews.",
     solution:
-      "Built a full-stack AI job application assistant with CV parsing, Groq-powered CV and cover letter generation, ATS match scoring, Gmail application tracking, real-time voice mock interviews, and a CV audit with PDF export.",
+      "Vestlee helps tailor CVs and cover letters, track updates from Gmail, check CVs against job posts, and practise interviews by voice.",
     impact: [
-      "Eliminates hours of manual CV and cover letter customization per application with AI-generated, role-specific documents.",
-      "Auto-tracks application statuses by scanning connected Gmail for confirmations, interview invites, and rejections.",
-      "Helps developers prepare with real-time AI voice mock interviews and detailed post-session feedback on communication, technical depth, and confidence.",
-      "ATS match scoring identifies keyword gaps before applying, improving pass rates through applicant tracking systems.",
+      "Create a CV and cover letter tailored to each role.",
+      "Track application updates from a connected Gmail account.",
+      "Compare a CV with a job post and spot missing keywords.",
+      "Practise interviews by voice and get feedback.",
+      "Review a CV and export the updated version as a PDF.",
     ],
     stack: [
       { name: "Next.js", iconUrl: "https://cdn.simpleicons.org/nextdotjs/FFFFFF" },
@@ -138,11 +141,10 @@ const projects: ProjectDetail[] = [
       { name: "Zustand", iconUrl: "https://cdn.simpleicons.org/zustand/FF4154" },
     ],
     highlights: [
-      "AI CV tailoring + ATS match scoring",
-      "Gmail OAuth for auto application tracking",
-      "Real-time voice mock interviews with Deepgram",
-      "AI CV audit with one-click automated fixes",
-      "PDF export for tailored CVs",
+      "CV and cover letter writing help",
+      "Gmail application tracking",
+      "Voice interview practice",
+      "CV checks and PDF export",
     ],
     liveUrl: "https://vestlee.vercel.app/",
     repoUrl: "https://github.com/Searcher06/Vestlee",

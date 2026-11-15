@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ahmadibrahim.vercel.app";
 const personName = "Ahmad Ibrahim";
-const personTitle = "Backend-Focused Full-Stack Engineer";
+const personTitle = "Software Engineer";
 const sameAsLinks = [
   "https://github.com/Searcher06",
   "https://www.linkedin.com/in/ahmadibrahim06",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: `%s | ${personName}`,
   },
   description:
-    `Official portfolio of ${personName}, a backend-focused full-stack engineer building reliable web applications, APIs, and trust-critical product experiences. Available for remote roles and freelance projects.`,
+    `Official portfolio of ${personName}, a software engineer building reliable web applications, APIs, and trust-critical product experiences. Available for remote roles and freelance projects.`,
   keywords: [
     "Ahmad Ibrahim",
     "Full-Stack Engineer",
@@ -35,7 +35,6 @@ export const metadata: Metadata = {
     "API Development",
     "Freelance Backend Developer",
     "Nigeria software engineer",
-    "Kano developer",
     "software portfolio",
   ],
   authors: [{ name: personName, url: siteUrl }],
@@ -114,7 +113,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     },
     alumniOf: {
       "@type": "CollegeOrUniversity",
-      name: "Bayero University Kano",
+      name: "Bayero University",
     },
   };
 
@@ -145,10 +144,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   };
 
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
-        {/* Prevent flash of wrong theme */}
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');document.documentElement.classList.toggle('dark',t!=='light');}catch(e){document.documentElement.classList.add('dark');}})();` }} />
         <link href="https://fonts.googleapis.com" rel="preconnect" />
         <link crossOrigin="" href="https://fonts.gstatic.com" rel="preconnect" />
         <link
@@ -172,7 +169,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }}
         />
       </head>
-      <body className="bg-[#0c0c0e] text-white font-display overflow-x-hidden antialiased">
+      <body className="bg-[#F5F5F7] text-slate-900 font-display overflow-x-hidden antialiased">
         {children}
         <Footer />
       </body>

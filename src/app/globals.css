@@ -2,20 +2,20 @@
 
 @layer base {
   :root {
-    --bg: #0c0c0e;
-    --bg-secondary: #111113;
-    --bg-tertiary: #1a1a1f;
-    --fg: #F1F5F9;
-    --fg-muted: #94A3B8;
+    --bg: #F5F5F7;
+    --bg-secondary: #ededf0;
+    --bg-tertiary: #ffffff;
+    --fg: #0f172a;
+    --fg-muted: #475569;
     --fg-dim: #64748B;
     --accent: #2563EB;
     --accent-bright: #3B82F6;
-    --accent-glow: rgba(37, 99, 235, 0.18);
-    --accent-dim: rgba(37, 99, 235, 0.08);
-    --card: rgba(20, 20, 22, 0.9);
-    --card-border: rgba(255, 255, 255, 0.07);
-    --border: rgba(255, 255, 255, 0.07);
-    --border-subtle: rgba(255, 255, 255, 0.04);
+    --accent-glow: rgba(37, 99, 235, 0.12);
+    --accent-dim: rgba(37, 99, 235, 0.06);
+    --card: rgba(255, 255, 255, 0.96);
+    --card-border: rgba(15, 23, 42, 0.08);
+    --border: rgba(15, 23, 42, 0.08);
+    --border-subtle: rgba(15, 23, 42, 0.04);
     --white: #ffffff;
     --brand: #2563EB;
     --brand-dim: #1D4ED8;
@@ -78,8 +78,8 @@ body {
   font-family: var(--font-sans);
   background: var(--bg);
   background-image:
-    radial-gradient(ellipse 60% 40% at 50% -10%, rgba(37, 99, 235, 0.07), transparent),
-    linear-gradient(180deg, #0c0c0e 0%, #0f0f11 50%, #0c0c0e 100%);
+    radial-gradient(ellipse 60% 40% at 50% -10%, rgba(37, 99, 235, 0.06), transparent),
+    linear-gradient(180deg, #F5F5F7 0%, #F0F0F2 50%, #F5F5F7 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;

@@ -7,10 +7,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ahmadibrahim.vercel
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Ahmad Ibrahim, a backend-focused full-stack engineer from Kano, Nigeria. BSc Software Engineering student building reliable APIs, web applications, and trust-critical systems.",
+    "Learn about Ahmad Ibrahim, a software engineer based in Nigeria. BSc Software Engineering student building reliable APIs, web applications, and trust-critical systems.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Ahmad Ibrahim | Backend-Focused Full-Stack Engineer",
+    title: "About Ahmad Ibrahim | Software Engineer",
     description:
       "BSc Software Engineering student building reliable APIs, web applications, and trust-critical systems. Available for remote roles and freelance projects.",
     url: "/about",
@@ -65,11 +65,11 @@ export default function AboutPage() {
           </div>
           <div>
             <h1 className="text-3xl font-bold text-white sm:text-4xl">Ahmad Ibrahim</h1>
-            <p className="mt-1 text-base text-[#60A5FA] font-medium">Backend-Focused Full-Stack Engineer</p>
+            <p className="mt-1 text-base text-[#60A5FA] font-medium">Software Engineer</p>
             <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-400">
               <span className="flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-[14px]">location_on</span>
-                Kano, Nigeria · Remote
+                Nigeria · Remote
               </span>
               <span className="flex items-center gap-1.5 text-emerald-400">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
@@ -117,8 +117,8 @@ export default function AboutPage() {
           <h2 className="mb-5 -rotate-1 font-handwriting text-3xl text-slate-200">Education</h2>
           <div className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-5">
             <p className="font-semibold text-white">BSc Software Engineering</p>
-            <p className="mt-1 text-sm text-[#60A5FA]">Bayero University Kano (BUK)</p>
-            <p className="mt-1 text-sm text-slate-400">2022 to Present · Kano, Nigeria</p>
+            <p className="mt-1 text-sm text-[#60A5FA]">Bayero University (BUK)</p>
+            <p className="mt-1 text-sm text-slate-400">2022 to Present · Nigeria</p>
           </div>
         </section>
 

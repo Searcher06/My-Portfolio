@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Get in touch with Ahmad Ibrahim for backend development, full-stack projects, API integrations, and remote engineering opportunities. Available for freelance and full-time roles.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact Ahmad Ibrahim | Backend-Focused Full-Stack Engineer",
+    title: "Contact Ahmad Ibrahim | Software Engineer",
     description:
       "Available for remote backend and full-stack roles, freelance projects, and engineering collaborations. Reach out via email, GitHub, LinkedIn, or X.",
     url: "/contact",
@@ -97,7 +97,7 @@ export default function ContactPage() {
         </div>
         <h1 className="-rotate-1 font-handwriting text-5xl text-white sm:text-6xl">Get in Touch</h1>
         <p className="mt-3 max-w-xl text-slate-400 leading-relaxed">
-          Open to remote roles, freelance projects, and long-term engineering work. Based in Kano, Nigeria, and available remotely.
+          Open to remote roles, freelance projects, and long-term engineering work. Based in Nigeria and available remotely.
         </p>
 
         {/* Primary CTA */}
