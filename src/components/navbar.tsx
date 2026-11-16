@@ -5,8 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
-// Replace this placeholder with Ahmad's Google Drive CV link when it's ready.
-const cvUrl = "https://drive.google.com/file/d/ADD_YOUR_CV_LINK_HERE/view";
+const cvUrl = "https://drive.google.com/file/d/1RgAANbhgDxLBSMivdDQ-DWHRH0kNjC-5/view?usp=sharing";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -80,7 +79,7 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl border border-white/[0.1] px-4 py-2.5 text-sm font-semibold text-[#f0f2f5] transition-colors hover:border-white/25 hover:bg-white/[0.04]"
-              aria-label="View CV (Google Drive link to be added)"
+              aria-label="View Ahmad Ibrahim's CV"
             >
               <span>View CV</span>
               <span className="material-symbols-outlined text-[17px]" aria-hidden="true">description</span>
@@ -145,7 +144,7 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mb-2 flex w-full items-center justify-center gap-2 rounded-xl border border-white/[0.1] px-4 py-3 text-base font-semibold text-[#f0f2f5] transition-colors hover:border-white/25 hover:bg-white/[0.04]"
-                aria-label="View CV (Google Drive link to be added)"
+                aria-label="View Ahmad Ibrahim's CV"
               >
                 <span>View CV</span>
                 <span className="material-symbols-outlined text-[18px]" aria-hidden="true">description</span>

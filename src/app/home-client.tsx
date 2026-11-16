@@ -96,8 +96,7 @@ const otherProjects: ProjectCard[] = [
 
 const findoraLiveUrl = "https://findora-snowy.vercel.app/";
 const emailDraftHref = "mailto:ahmadibrahimsearcher@gmail.com?subject=Project%20or%20work%20inquiry&body=Hi%20Ahmad%2C%0D%0A%0D%0AI%27d%20like%20to%20talk%20about%20a%20project%20or%20opportunity.%0D%0A%0D%0AThanks%2C%0D%0A";
-// Replace this placeholder with Ahmad's Google Drive CV link when it's ready.
-const cvUrl = "https://drive.google.com/file/d/ADD_YOUR_CV_LINK_HERE/view";
+const cvUrl = "https://drive.google.com/file/d/1RgAANbhgDxLBSMivdDQ-DWHRH0kNjC-5/view?usp=sharing";
 
 const currentlyExploring = [
   {
@@ -282,7 +281,7 @@ export default function HomeClient() {
             ))}
           </ul>
           <div className="flex shrink-0 items-center gap-1.5 sm:gap-2.5">
-            <a href={cvUrl} target="_blank" rel="noopener noreferrer" className="hidden items-center gap-1 text-sm font-medium text-slate-400 transition-colors hover:text-white sm:inline-flex" aria-label="View CV (Google Drive link to be added)">
+            <a href={cvUrl} target="_blank" rel="noopener noreferrer" className="hidden items-center gap-1 text-sm font-medium text-slate-400 transition-colors hover:text-white sm:inline-flex" aria-label="View Ahmad Ibrahim's CV">
               View CV
               <span className="material-symbols-outlined text-[15px]" aria-hidden="true">open_in_new</span>
             </a>
@@ -352,7 +351,7 @@ export default function HomeClient() {
                   href={cvUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="View CV (Google Drive link to be added)"
+                  aria-label="View Ahmad Ibrahim's CV"
                   className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/[0.06]"
                   variants={{ hidden: { opacity: 0, y: 6 }, show: { opacity: 1, y: 0, transition: { duration: 0.28 } } }}
                 >
