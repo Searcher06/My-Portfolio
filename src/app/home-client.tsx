@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -259,7 +259,7 @@ export default function HomeClient() {
   return (
     <main className="relative overflow-hidden">
 
-      {/* ── Navigation ── */}
+      {/* â”€â”€ Navigation â”€â”€ */}
       <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-3 sm:px-6 lg:px-8">
         <nav className={`mx-auto flex h-[3.75rem] w-full max-w-7xl items-center justify-between rounded-2xl border px-3 backdrop-blur-2xl transition-all duration-500 sm:h-[4.25rem] sm:px-7 ${
           scrolled
@@ -311,7 +311,7 @@ export default function HomeClient() {
         </nav>
       </header>
 
-      {/* ── Mobile nav dropdown ── */}
+      {/* â”€â”€ Mobile nav dropdown â”€â”€ */}
       <AnimatePresence>
         {mobileNavOpen && (
           <>
@@ -364,12 +364,12 @@ export default function HomeClient() {
         )}
       </AnimatePresence>
 
-      {/* ── Background atmosphere ── */}
+      {/* â”€â”€ Background atmosphere â”€â”€ */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-72 left-1/2 h-[56rem] w-[56rem] -translate-x-1/2 rounded-full bg-[#2563EB]/[0.05] blur-[180px]" />
       </div>
 
-      {/* ── Hero ── */}
+      {/* â”€â”€ Hero â”€â”€ */}
       <motion.section
         id="home"
         aria-label="Introduction"
@@ -435,7 +435,7 @@ export default function HomeClient() {
         </motion.article>
       </motion.section>
 
-      {/* ── Marquee strip ── */}
+      {/* â”€â”€ Marquee strip â”€â”€ */}
       <div className="relative overflow-hidden border-y border-white/[0.06] bg-gradient-to-r from-white/[0.01] via-white/[0.02] to-white/[0.01] py-3.5">
         {/* fade edges */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#0c0c0e] to-transparent z-10 dark-fade-left" />
@@ -470,7 +470,7 @@ export default function HomeClient() {
         </div>
       </div>
 
-      {/* ── Credibility bar ── */}
+      {/* â”€â”€ Credibility bar â”€â”€ */}
       <motion.section aria-label="Core principles" className="border-y border-white/[0.06] bg-gradient-to-r from-white/[0.01] via-white/[0.025] to-white/[0.01] mt-8 sm:mt-12" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
         <div className="mx-auto grid w-full max-w-7xl gap-2 px-4 py-4 sm:px-6 sm:py-5 md:grid-cols-3 lg:px-8">
           {credibilityPoints.map((point, i) => (
@@ -486,7 +486,7 @@ export default function HomeClient() {
         </div>
       </motion.section>
 
-      {/* ── Featured project: Findora ── */}
+      {/* â”€â”€ Featured project: Findora â”€â”€ */}
       <motion.section
         id="projects"
         aria-label="Featured project: Findora"
@@ -610,7 +610,7 @@ export default function HomeClient() {
         </div>
       </motion.section>
 
-      {/* ── Other projects ── */}
+      {/* â”€â”€ Other projects â”€â”€ */}
       <motion.section aria-label="Selected projects" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <div className="mb-8 flex flex-wrap items-end justify-between gap-3 sm:mb-10">
           <div>
@@ -627,7 +627,7 @@ export default function HomeClient() {
                 <div className="relative overflow-hidden rounded-2xl border-[5px] border-[#f7f5ef] bg-white shadow-[0_18px_45px_-26px_rgba(0,0,0,0.7)]">
                   <Image src={project.image} alt={`${project.name}, project preview`} width={1200} height={700} className="h-auto w-full transition duration-500 group-hover:scale-[1.015]" />
                 </div>
-                <span className="absolute -bottom-3 right-5 rounded-full bg-[#DBEAFE] px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#1d4ed8] shadow-sm">Selected work · 0{index + 1}</span>
+                <span className="absolute -bottom-3 right-5 rounded-full bg-[#DBEAFE] px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#1d4ed8] shadow-sm">Selected work Â· 0{index + 1}</span>
               </div>
               <div className={`relative ${index % 2 === 1 ? "lg:order-1" : ""}`}>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#93C5FD]">{index === 0 ? "School operations" : index === 1 ? "Education platform" : "AI career assistant"}</p>
@@ -656,7 +656,7 @@ export default function HomeClient() {
         </motion.div>
       </motion.section>
 
-      {/* ── Services ── */}
+      {/* â”€â”€ Services â”€â”€ */}
       <motion.section id="services" aria-label="Services and expertise" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <div className="mb-8 flex flex-wrap items-end justify-between gap-3 sm:mb-10">
           <div>
@@ -689,7 +689,7 @@ export default function HomeClient() {
         </motion.div>
       </motion.section>
 
-      {/* ── Currently exploring ── */}
+      {/* â”€â”€ Currently exploring â”€â”€ */}
       <motion.section
         aria-label="Currently exploring"
         className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8"
@@ -755,7 +755,7 @@ export default function HomeClient() {
         </div>
       </motion.section>
 
-      {/* ── Skills ── */}
+      {/* â”€â”€ Skills â”€â”€ */}
       <motion.section aria-label="Technical skills" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
@@ -813,7 +813,7 @@ export default function HomeClient() {
         </div>
       </motion.section>
 
-      {/* ── Work Experience ── */}
+      {/* â”€â”€ Work Experience â”€â”€ */}
       <motion.section id="journey" aria-label="Work experience" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
         <div className="mb-8 sm:mb-10">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Career history</p>
@@ -854,20 +854,34 @@ export default function HomeClient() {
         </motion.div>
       </motion.section>
 
-      {/* ── About ── */}
+      {/* â”€â”€ About â”€â”€ */}
       <motion.section id="about" aria-label="About Ahmad Ibrahim" className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" variants={sectionReveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#93C5FD]">Who I am</p>
         <h2 className="mt-1 -rotate-1 font-handwriting text-3xl leading-[1.1] text-slate-200 sm:text-4xl lg:text-5xl">About Me</h2>
         <div className="about-paper relative mt-8 rounded-[1.5rem] border border-[#e7e1d4] bg-[#f7f5ef] p-5 shadow-[0_24px_70px_-38px_rgba(0,0,0,0.7)] sm:p-8 lg:p-10">
           <span className="pointer-events-none absolute -top-3 left-1/2 h-7 w-24 -translate-x-1/2 -rotate-2 bg-[#93C5FD]/70 shadow-sm" />
           <div className="grid gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-12">
-          {/* Photo side */}
-          <div className="relative mx-auto w-full max-w-[300px] rotate-[-2deg] rounded-sm border border-slate-200 bg-white p-3 pb-12 shadow-[0_16px_38px_-18px_rgba(15,23,42,0.35)] transition-transform duration-300 hover:rotate-0 sm:max-w-[340px]">
-            <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
-              <Image src="/me3.png" alt="Ahmad Ibrahim, Software Engineer" fill sizes="(max-width: 640px) 280px, 340px" className="object-cover object-top" />
+          {/* Branded profile panel */}
+          <div className="relative mx-auto w-full max-w-[340px]">
+            <div className="relative flex aspect-[4/4.5] flex-col justify-between overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#08090b] p-6 text-white shadow-[0_24px_55px_-24px_rgba(15,23,42,0.55)] sm:p-8">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_42%,rgba(255,255,255,0.11),transparent_55%),linear-gradient(145deg,#111318,#030405_70%)]" />
+              <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:32px_32px] [mask-image:linear-gradient(to_bottom,black,transparent_78%)]" />
+              <div className="relative z-10 flex items-center justify-between">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/55">Software Engineer</span>
+                <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.65)]" aria-label="Available for work" />
+              </div>
+              <div className="relative z-10 flex flex-1 items-center justify-center py-5">
+                <Image src="/ahmad-mark-white.svg" alt="Ahmad Ibrahim monogram" width={300} height={300} className="h-44 w-44 drop-shadow-[0_12px_32px_rgba(255,255,255,0.12)] sm:h-52 sm:w-52" />
+              </div>
+              <div className="relative z-10 flex items-end justify-between border-t border-white/15 pt-4">
+                <div>
+                  <p className="font-serif text-2xl leading-none sm:text-3xl">Ahmad Ibrahim</p>
+                  <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.18em] text-white/55">Software Engineer Â· Nigeria</p>
+                </div>
+                <span className="font-mono text-[10px] text-white/35">01 / 01</span>
+              </div>
             </div>
-            <p className="absolute inset-x-0 bottom-3 text-center font-serif text-lg italic text-slate-500">Ahmad Ibrahim · Nigeria</p>
-            <span className="absolute -top-3 left-1/2 h-7 w-20 -translate-x-1/2 rotate-3 bg-[#93C5FD]/70 shadow-sm" />
+            <span className="pointer-events-none absolute -bottom-2 -right-2 h-12 w-16 -rotate-6 rounded-sm bg-[#93C5FD]/70 shadow-sm" />
           </div>
           {/* Text side */}
           <div className="flex flex-col justify-center space-y-5 text-sm leading-relaxed text-slate-600 sm:text-base">
@@ -895,7 +909,7 @@ export default function HomeClient() {
         </div>
       </motion.section>
 
-      {/* ── Contact & Call to Action ── */}
+      {/* â”€â”€ Contact & Call to Action â”€â”€ */}
       <motion.section 
         id="contact" 
         aria-label="Contact Ahmad Ibrahim" 
@@ -908,7 +922,7 @@ export default function HomeClient() {
         <div className="relative rounded-3xl border border-[#e7e1d4] bg-[#f7f5ef] p-5 shadow-[0_24px_70px_-42px_rgba(0,0,0,0.55)] sm:p-8 lg:p-10">
           <div className="relative z-10 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-14">
 
-            {/* ── Left: copy + channels ── */}
+            {/* â”€â”€ Left: copy + channels â”€â”€ */}
             <div className="space-y-6">
               <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold text-emerald-800">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
@@ -953,7 +967,7 @@ export default function HomeClient() {
               </div>
             </div>
 
-            {/* ── Right: email draft CTA ── */}
+            {/* â”€â”€ Right: email draft CTA â”€â”€ */}
             <div className="flex h-full flex-col justify-center border-t border-slate-200 pt-6 sm:pt-8 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Email</p>
               <h3 className="mt-2 font-serif text-2xl text-slate-950 sm:text-3xl">Have a project in mind?</h3>
